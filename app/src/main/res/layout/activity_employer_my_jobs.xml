@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/activityBackground"
     tools:context=".EmployerMyJobsActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -46,12 +47,12 @@
         android:layout_height="@dimen/iconWidthHeight"
         android:background="@android:color/transparent"
         android:contentDescription="@string/myJobsButtonDescription"
-        app:tint="@color/grey"
         app:layout_constraintBottom_toBottomOf="@+id/home_button"
         app:layout_constraintEnd_toStartOf="@+id/my_profile_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/home_button"
-        app:srcCompat="@drawable/myjobs_icon" />
+        app:srcCompat="@drawable/myjobs_icon"
+        app:tint="@color/grey" />
 
     <ImageButton
         android:id="@+id/my_profile_button"
@@ -59,12 +60,12 @@
         android:layout_height="@dimen/iconWidthHeight"
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="@string/myProfileButtonDescription"
-        app:tint="@color/grey"
         app:layout_constraintBottom_toBottomOf="@+id/my_jobs_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/my_jobs_button"
-        app:srcCompat="@drawable/myprofile_icon" />
+        app:srcCompat="@drawable/myprofile_icon"
+        app:tint="@color/grey" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/employee_my_jobs_tabs"
@@ -101,11 +102,27 @@
 
     <ListView
         android:id="@+id/employer_my_jobs_ongoing"
-        android:layout_width="409dp"
+        android:layout_width="350dp"
         android:layout_height="540dp"
+        android:layout_marginTop="@dimen/listViewConstraint"
+        android:clickable="false"
         android:dividerHeight="@dimen/listViewDividerHeight"
         android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employee_my_jobs_tabs" />
+
+    <ImageView
+        android:id="@+id/employee_my_jobs_prodile_pic"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
