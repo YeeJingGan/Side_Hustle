@@ -16,4 +16,5 @@
     <dimen name="footerDividerHeight">60dp</dimen>
     <dimen name="iconWidthHeight">55dp</dimen>
     <dimen name="listViewDividerHeight">3dp</dimen>
+    <dimen name="employee_home_list_view_margin">10dp</dimen>
 </resources>

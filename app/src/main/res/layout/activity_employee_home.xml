@@ -6,7 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".EmployeeHomeActivity">
 
-    <include layout="@layout/common_layout"/>
+    <include layout="@layout/common_top_layout_with_search_filter" />
 
+    <include layout="@layout/common_bottom_layout" />
+
+    <View
+        android:id="@+id/toolbar_bottom_divider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="60dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/employee_home_list_view_margin"
+        android:layout_marginEnd="@dimen/employee_home_list_view_margin"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navbar_top_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_bottom_divider" />
+
+    <View
+        android:id="@+id/bottom_navbar_top_divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="61dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
