@@ -9,4 +9,10 @@
     <dimen name="padding_start">10dp</dimen>
     <dimen name="toolbar_search_text_size">12sp</dimen>
     <dimen name="toolbar_search_height">30dp</dimen>
+
+    <dimen name="toolbarHeight">80dp</dimen>
+    <dimen name="footerDividerWidth">409dp</dimen>
+    <dimen name="footerDividerHeight">60dp</dimen>
+    <dimen name="iconWidthHeight">55dp</dimen>
+    <dimen name="listViewDividerHeight">3dp</dimen>
 </resources>
