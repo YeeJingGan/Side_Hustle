@@ -4,9 +4,9 @@
     <dimen name="footerDividerWidth">409dp</dimen>
     <dimen name="footerDividerHeight">60dp</dimen>
     <dimen name="iconWidthHeight">55dp</dimen>
-    <dimen name="listViewDividerHeight">3dp</dimen>
-    <dimen name="listViewWidth">350dp</dimen>
-    <dimen name="listViewConstraint">24dp</dimen>
+    <dimen name="listViewDividerHeight">2dp</dimen>
+    <dimen name="listViewWidth">415dp</dimen>
+    <dimen name="listViewConstraint">18dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
