@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="themeColor">#FDB915</color>
     <color name="toolbar_search_background_color">#FFFFFF</color>
+
+    <color name="grey">#797979</color>
 </resources>
