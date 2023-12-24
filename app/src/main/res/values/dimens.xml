@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbarHeight">80dp</dimen>
+    <dimen name="footerDividerWidth">409dp</dimen>
+    <dimen name="footerDividerHeight">60dp</dimen>
+    <dimen name="iconWidthHeight">55dp</dimen>
+    <dimen name="listViewDividerHeight">3dp</dimen>
+</resources>

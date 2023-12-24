@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Side Hustle</string>
+    <string name="homeButtonDescription">Home</string>
+    <string name="myProfileButtonDescription">My Profile</string>
+    <string name="myJobsButtonDescription">My Jobs</string>
+    <string name="ongoingTab">Ongoing</string>
+    <string name="NegotiatingTab">Negotiating</string>
+    <string name="historyTab">History</string>
 </resources>
