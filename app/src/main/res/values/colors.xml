@@ -5,4 +5,6 @@
     <color name="themeColor">#FDB915</color>
     <color name="grey">#797979</color>
     <color name="activityBackground">#F5F5F5</color>
+    <color name="themeColor">#FDB915</color>
+    <color name="toolbar_search_background_color">#FFFFFF</color>
 </resources>
