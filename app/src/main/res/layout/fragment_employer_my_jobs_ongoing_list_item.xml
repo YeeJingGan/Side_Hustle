@@ -24,15 +24,18 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/andika_new_basic_bold"
         android:text="@string/listItemPostition"
+        android:textSize="12sp"
         app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_ongoing_list_item_picture"
-        tools:layout_editor_absoluteX="149dp" />
+        tools:layout_editor_absoluteX="122dp" />
 
     <TextView
         android:id="@+id/employer_my_jobs_ongoing_list_item_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/rowdies"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/employer_my_jobs_ongoing_list_item_start_time"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/employer_my_jobs_list_item_alarm"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoung_list_item_position"
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoung_list_item_position" />
 
@@ -40,8 +43,35 @@
         android:id="@+id/employer_my_jobs_ongoing_list_item_start_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/andika"
         android:text="TextView"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_list_item_alarm"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_list_item_alarm"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_list_item_alarm" />
+
+    <ImageView
+        android:id="@+id/employer_my_jobs_list_item_alarm"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/alarm_icon"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_list_item_picture"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoing_list_item_date" />
+
+    <Button
+        android:id="@+id/employer_my_jobs_detail_button"
+        android:layout_width="@dimen/detailButtonWidth"
+        android:layout_height="@dimen/detailButttonHeight"
+        android:layout_marginEnd="@dimen/listItemPictureConstraint"
+        android:paddingLeft="@dimen/buttonPadding"
+        android:paddingTop="@dimen/buttonPadding"
+        android:paddingRight="@dimen/buttonPadding"
+        android:paddingBottom="@dimen/buttonPadding"
+        android:text="@string/detailsButton"
+        android:backgroundTint="@color/themeColor"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_list_item_start_time"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

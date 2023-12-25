@@ -17,7 +17,11 @@
     <dimen name="padding_start">10dp</dimen>
     <dimen name="toolbar_search_text_size">12sp</dimen>
     <dimen name="toolbar_search_height">30dp</dimen>
-    <dimen name="listItemPictureWidthHeight">100dp</dimen>
+    <dimen name="listItemPictureWidthHeight">75dp</dimen>
     <dimen name="listItemPictureConstraint">16dp</dimen>
     <dimen name="listItemPositionConstraint">60dp</dimen>
+    <dimen name="alarmIconWidthHeight">20dp</dimen>
+    <dimen name="detailButtonWidth">60dp</dimen>
+    <dimen name="detailButttonHeight">25dp</dimen>
+    <dimen name="buttonPadding">3dp</dimen>
 </resources>
