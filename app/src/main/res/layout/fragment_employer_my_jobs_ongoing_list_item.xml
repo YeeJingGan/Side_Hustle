@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,22 +8,40 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.example.sidehustle.EmployerMyJobsOngoingListItem"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/employer_my_jobs_ongoing_list_item_picture"
+        android:layout_width="@dimen/listItemPictureWidthHeight"
+        android:layout_height="@dimen/listItemPictureWidthHeight"
+        android:layout_marginStart="@dimen/listItemPictureConstraint"
+        android:layout_marginTop="@dimen/listItemPictureConstraint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/employer_my_jobs_ongoung_list_item_position"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hhhhhhhhhhh" />
+        android:fontFamily="@font/andika_new_basic_bold"
+        android:text="@string/listItemPostition"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_ongoing_list_item_picture"
+        tools:layout_editor_absoluteX="149dp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/employer_my_jobs_ongoing_list_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/employer_my_jobs_ongoing_list_item_start_time"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoung_list_item_position"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoung_list_item_position" />
+
+    <TextView
+        android:id="@+id/employer_my_jobs_ongoing_list_item_start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_list_item_picture"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoing_list_item_date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
