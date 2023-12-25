@@ -7,20 +7,6 @@
     android:background="@drawable/reactangle_white"
     tools:context=".EmployerHomeUploadJobsActivity">
 
-    <TextView
-        android:id="@+id/job_tittle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
-        android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
-        android:background="@drawable/reactangle_white"
-        android:fontFamily="@font/inter"
-        android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
-        android:paddingRight="@dimen/uploadJobsInputTittlePadding"
-        android:text="@string/jobTittle"
-        app:layout_constraintBottom_toBottomOf="@+id/job_tittle_input"
-        app:layout_constraintStart_toStartOf="@+id/job_tittle_input" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/employer_home_upload_jobs_toolbar"
         android:layout_width="0dp"
@@ -61,7 +47,7 @@
 
     <Button
         android:id="@+id/submit_button"
-        android:layout_width="@dimen/submitButtonWidth"
+        android:layout_width="0dp"
         android:layout_height="@dimen/submitButtonHeight"
         android:background="@drawable/rectangle"
         android:fontFamily="@font/inter_bold"
@@ -69,11 +55,13 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reset_button"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/reset_button"
-        android:layout_width="@dimen/submitButtonWidth"
+        android:layout_width="0dp"
         android:layout_height="@dimen/submitButtonHeight"
         android:background="@drawable/reactangle_white"
         android:backgroundTint="@color/white"
@@ -82,7 +70,9 @@
         android:textColor="@color/themeColor"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/submit_button" />
 
     <TextView
         android:id="@+id/upload_jobs_instruction"
@@ -97,120 +87,478 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employer_home_upload_jobs_toolbar" />
 
-    <EditText
-        android:id="@+id/job_tittle_input"
-        android:layout_width="@dimen/uploadJobsInfoBoxWidth"
-        android:layout_height="@dimen/uploadJobsInfoBoxHeight"
-        android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
-        android:background="@drawable/upload_jobs_input_box"
-        android:ems="10"
-        android:focusedByDefault="true"
-        android:fontFamily="@font/inter"
-        android:hint="@string/uploadJobsJobTittle"
-        android:inputType="text"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/jobDetails"
-        app:layout_constraintStart_toStartOf="@+id/upload_jobs_instruction"
-        app:layout_constraintTop_toBottomOf="@+id/upload_jobs_instruction" />
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upload_jobs_instruction"
+        app:layout_constraintVertical_bias="1.0">
 
-    <TextView
-        android:id="@+id/job_tittle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
-        android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
-        android:background="@drawable/reactangle_white"
-        android:fontFamily="@font/inter"
-        android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
-        android:paddingRight="@dimen/uploadJobsInputTittlePadding"
-        android:text="@string/jobTittle"
-        app:layout_constraintBottom_toBottomOf="@+id/job_tittle_input"
-        app:layout_constraintStart_toStartOf="@+id/job_tittle_input" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/wages_input"
-        android:layout_width="@dimen/uploadJobsInfoBoxWidth"
-        android:layout_height="@dimen/uploadJobsInfoBoxHeight"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/upload_jobs_input_box"
-        android:fontFamily="@font/inter"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/job_tittle_input"
-        app:layout_constraintTop_toBottomOf="@+id/job_tittle_input"
-        tools:text="RM ??" />
+            <TextView
+                android:id="@+id/job_tittle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/jobTittle"
+                app:layout_constraintBottom_toBottomOf="@+id/job_tittle_input"
+                app:layout_constraintStart_toStartOf="@+id/job_tittle_input" />
 
-    <TextView
-        android:id="@+id/wages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter"
-        android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
-        android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
-        android:background="@drawable/reactangle_white"
-        android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
-        android:paddingRight="@dimen/uploadJobsInputTittlePadding"
-        android:text="@string/wages"
-        app:layout_constraintBottom_toBottomOf="@+id/wages_input"
-        app:layout_constraintStart_toStartOf="@+id/wages_input" />
+            <EditText
+                android:id="@+id/job_tittle_input"
+                android:layout_width="@dimen/uploadJobsInfoBoxWidth"
+                android:layout_height="@dimen/uploadJobsInfoBoxHeight"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/upload_jobs_input_box"
+                android:ems="10"
+                android:focusedByDefault="true"
+                android:fontFamily="@font/inter"
+                android:hint="@string/uploadJobsJobTittle"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/minus_button"
-        android:layout_width="@dimen/backButtonWidthHeight"
-        android:layout_height="@dimen/backButtonWidthHeight"
-        android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
-        android:backgroundTint="@android:color/transparent"
-        android:contentDescription="reduce"
-        app:layout_constraintBottom_toBottomOf="@+id/wages_input"
-        app:layout_constraintStart_toStartOf="@+id/wages_input"
-        app:layout_constraintTop_toTopOf="@+id/wages_input"
-        app:srcCompat="@drawable/minus_icon"
-        app:tint="@color/themeColor" />
+            <TextView
+                android:id="@+id/job_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/jobTittle"
+                app:layout_constraintBottom_toBottomOf="@+id/job_tittle_input"
+                app:layout_constraintStart_toStartOf="@+id/job_tittle_input" />
 
-    <ImageButton
-        android:id="@+id/plus_button"
-        android:layout_width="@dimen/backButtonWidthHeight"
-        android:layout_height="@dimen/backButtonWidthHeight"
-        android:layout_marginEnd="@dimen/uploadJobsInputTittleConstraint"
-        android:backgroundTint="@android:color/transparent"
-        android:contentDescription="increase"
-        app:layout_constraintBottom_toBottomOf="@+id/wages_input"
-        app:layout_constraintEnd_toEndOf="@+id/wages_input"
-        app:layout_constraintTop_toTopOf="@+id/wages_input"
-        app:srcCompat="@drawable/plus_icon"
-        app:tint="@color/themeColor" />
+            <TextView
+                android:id="@+id/wages_input"
+                android:layout_width="@dimen/uploadJobsInfoBoxWidth"
+                android:layout_height="@dimen/uploadJobsInfoBoxHeight"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/upload_jobs_input_box"
+                android:fontFamily="@font/inter"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/job_tittle_input"
+                app:layout_constraintTop_toBottomOf="@+id/job_tittle_input"
+                tools:text="RM ??" />
 
-    <TextView
-        android:id="@+id/working_time_input"
-        android:layout_width="@dimen/uploadJobsInfoBoxWidth"
-        android:layout_height="@dimen/uploadJobsInfoBoxHeight"
-        android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
-        android:background="@drawable/upload_jobs_input_box"
-        app:layout_constraintStart_toStartOf="@+id/wages_input"
-        app:layout_constraintTop_toBottomOf="@+id/wages_input" />
+            <TextView
+                android:id="@+id/wages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/wages"
+                app:layout_constraintBottom_toBottomOf="@+id/wages_input"
+                app:layout_constraintStart_toStartOf="@+id/wages_input" />
 
-    <TextView
-        android:id="@+id/working_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
-        android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
-        android:background="@drawable/reactangle_white"
-        android:fontFamily="@font/inter"
-        android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
-        android:paddingRight="@dimen/uploadJobsInputTittlePadding"
-        android:text="@string/workingTime"
-        app:layout_constraintBottom_toBottomOf="@+id/working_time_input"
-        app:layout_constraintStart_toStartOf="@+id/working_time_input" />
+            <ImageButton
+                android:id="@+id/minus_button"
+                android:layout_width="@dimen/backButtonWidthHeight"
+                android:layout_height="@dimen/backButtonWidthHeight"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="reduce"
+                app:layout_constraintBottom_toBottomOf="@+id/wages_input"
+                app:layout_constraintStart_toStartOf="@+id/wages_input"
+                app:layout_constraintTop_toTopOf="@+id/wages_input"
+                app:srcCompat="@drawable/minus_icon"
+                app:tint="@color/themeColor" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
-        android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
-        app:layout_constraintBottom_toBottomOf="@+id/working_time_input"
-        app:layout_constraintStart_toStartOf="@+id/working_time_input"
-        app:layout_constraintTop_toBottomOf="@+id/working_time"
-        app:srcCompat="@drawable/schedule_icon" />
+            <ImageButton
+                android:id="@+id/plus_button"
+                android:layout_width="@dimen/backButtonWidthHeight"
+                android:layout_height="@dimen/backButtonWidthHeight"
+                android:layout_marginEnd="@dimen/uploadJobsInputTittleConstraint"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="increase"
+                app:layout_constraintBottom_toBottomOf="@+id/wages_input"
+                app:layout_constraintEnd_toEndOf="@+id/wages_input"
+                app:layout_constraintTop_toTopOf="@+id/wages_input"
+                app:srcCompat="@drawable/plus_icon"
+                app:tint="@color/themeColor" />
+
+            <TextView
+                android:id="@+id/working_date_input"
+                android:layout_width="@dimen/uploadJobsInfoBoxWidth"
+                android:layout_height="@dimen/dateTimeBoxHieght"
+                android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/upload_jobs_input_box"
+                app:layout_constraintStart_toStartOf="@+id/wages_input"
+                app:layout_constraintTop_toBottomOf="@+id/wages_input" />
+
+            <TextView
+                android:id="@+id/working_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/dateTimeTittleConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/workingDate"
+                app:layout_constraintBottom_toBottomOf="@+id/working_date_input"
+                app:layout_constraintStart_toStartOf="@+id/working_date_input" />
+
+            <ImageView
+                android:id="@+id/calendar_icon"
+                android:layout_width="@dimen/alarmIconWidthHeight"
+                android:layout_height="@dimen/alarmIconWidthHeight"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/grey"
+                app:layout_constraintBottom_toBottomOf="@+id/start_date"
+                app:layout_constraintStart_toStartOf="@+id/working_date_input"
+                app:layout_constraintTop_toTopOf="@+id/start_date"
+                app:srcCompat="@drawable/calendar_icon" />
+
+            <EditText
+                android:id="@+id/start_date"
+                android:layout_width="@dimen/dateInput"
+                android:layout_height="@dimen/backButtonWidthHeight"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/themeColor"
+                android:ems="10"
+                android:hint="@string/date"
+                android:inputType="datetime|date"
+                android:paddingBottom="2dp"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/calendar_icon"
+                app:layout_constraintTop_toTopOf="@+id/working_date_input" />
+
+            <EditText
+                android:id="@+id/end_date"
+                android:layout_width="@dimen/dateInput"
+                android:layout_height="@dimen/backButtonWidthHeight"
+                android:layout_marginEnd="@dimen/uploadJobsInputTittleConstraint"
+                android:backgroundTint="@color/themeColor"
+                android:ems="10"
+                android:hint="@string/date"
+                android:inputType="date"
+                android:paddingBottom="2dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/start_date"
+                app:layout_constraintEnd_toEndOf="@+id/working_date_input" />
+
+            <TextView
+                android:id="@+id/to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
+                android:text="@string/to"
+                android:textColor="@color/themeColor"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/start_date"
+                app:layout_constraintEnd_toStartOf="@+id/end_date"
+                app:layout_constraintStart_toEndOf="@+id/start_date"
+                app:layout_constraintTop_toTopOf="@+id/start_date" />
+
+            <CheckBox
+                android:id="@+id/one_day_check"
+                android:layout_width="@dimen/oneDayCheckBoxWidth"
+                android:layout_height="@dimen/oneDayCheckBoxHeight"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/inter"
+                android:scaleX="1.0"
+                android:scaleY="1.0"
+                android:text="@string/oneDay"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/working_date_input"
+                app:layout_constraintEnd_toEndOf="@+id/working_date_input" />
+
+            <TextView
+                android:id="@+id/working_time_input"
+                android:layout_width="@dimen/uploadJobsInfoBoxWidth"
+                android:layout_height="@dimen/uploadJobsInfoBoxHeight"
+                android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/upload_jobs_input_box"
+                app:layout_constraintStart_toStartOf="@+id/working_date_input"
+                app:layout_constraintTop_toBottomOf="@+id/working_date_input" />
+
+            <TextView
+                android:id="@+id/working_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/workingTime"
+                app:layout_constraintBottom_toBottomOf="@+id/working_time_input"
+                app:layout_constraintStart_toStartOf="@+id/working_time_input" />
+
+            <ImageView
+                android:id="@+id/schedule_icon"
+                android:layout_width="@dimen/alarmIconWidthHeight"
+                android:layout_height="@dimen/alarmIconWidthHeight"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                app:layout_constraintBottom_toBottomOf="@+id/working_time_input"
+                app:layout_constraintStart_toStartOf="@+id/working_time_input"
+                app:layout_constraintTop_toBottomOf="@+id/working_time"
+                app:srcCompat="@drawable/schedule_icon" />
+
+            <EditText
+                android:id="@+id/start_time"
+                android:layout_width="@dimen/dateInput"
+                android:layout_height="@dimen/backButtonWidthHeight"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/themeColor"
+                android:ems="10"
+                android:hint="@string/time"
+                android:inputType="time"
+                android:paddingBottom="2dp"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/working_time_input"
+                app:layout_constraintStart_toEndOf="@+id/schedule_icon"
+                app:layout_constraintTop_toTopOf="@+id/working_time_input"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/end_time"
+                android:layout_width="@dimen/dateInput"
+                android:layout_height="@dimen/backButtonWidthHeight"
+                android:layout_marginEnd="@dimen/uploadJobsInputTittleConstraint"
+                android:backgroundTint="@color/themeColor"
+                android:ems="10"
+                android:hint="@string/time"
+                android:inputType="time"
+                android:paddingBottom="2dp"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/start_time"
+                app:layout_constraintEnd_toEndOf="@+id/working_time_input" />
+
+            <TextView
+                android:id="@+id/to_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
+                android:text="@string/to"
+                android:textColor="@color/themeColor"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/start_time"
+                app:layout_constraintEnd_toStartOf="@+id/end_time"
+                app:layout_constraintStart_toEndOf="@+id/start_time"
+                app:layout_constraintTop_toTopOf="@+id/start_time" />
+
+            <TextView
+                android:id="@+id/address_input"
+                android:layout_width="@dimen/uploadJobsInfoBoxWidth"
+                android:layout_height="@dimen/addressInputBoxHeight"
+                android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/upload_jobs_input_box"
+                app:layout_constraintStart_toStartOf="@+id/working_time_input"
+                app:layout_constraintTop_toBottomOf="@+id/working_time_input" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/addressConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/address"
+                app:layout_constraintBottom_toBottomOf="@+id/address_input"
+                app:layout_constraintStart_toStartOf="@+id/address_input" />
+
+            <EditText
+                android:id="@+id/address_1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/addressInputHeight"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/themeColor"
+                android:ems="10"
+                android:hint="@string/address_1"
+                android:inputType="text"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/address_input"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/address_input"
+                app:layout_constraintTop_toBottomOf="@+id/address" />
+
+            <EditText
+                android:id="@+id/address_2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/addressInputHeight"
+                android:backgroundTint="@color/themeColor"
+                android:ems="10"
+                android:hint="@string/address_2"
+                android:inputType="text"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/address_1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/address_1"
+                app:layout_constraintTop_toBottomOf="@+id/address_1" />
+
+            <EditText
+                android:id="@+id/post_code"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/addressInputHeight"
+                android:backgroundTint="@color/themeColor"
+                android:ems="10"
+                android:hint="@string/postcode"
+                android:inputType="textPostalAddress"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/address_2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/address_2"
+                app:layout_constraintTop_toBottomOf="@+id/address_2" />
+
+            <Spinner
+                android:id="@+id/state"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/addressInputHeight"
+                app:layout_constraintEnd_toEndOf="@+id/post_code"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/post_code"
+                app:layout_constraintTop_toBottomOf="@+id/post_code" />
+
+            <TextView
+                android:id="@+id/url_input"
+                android:layout_width="@dimen/uploadJobsInfoBoxWidth"
+                android:layout_height="@dimen/uploadJobsInfoBoxHeight"
+                android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/upload_jobs_input_box"
+                android:hint="@string/urlHint"
+                android:textColor="@color/grey"
+                app:layout_constraintStart_toStartOf="@+id/address_input"
+                app:layout_constraintTop_toBottomOf="@+id/address_input" />
+
+            <TextView
+                android:id="@+id/url"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/locationURL"
+                app:layout_constraintBottom_toBottomOf="@+id/url_input"
+                app:layout_constraintStart_toStartOf="@+id/url_input" />
+
+            <TextView
+                android:id="@+id/requirements_input"
+                android:layout_width="@dimen/uploadJobsInfoBoxWidth"
+                android:layout_height="@dimen/uploadJobsInfoBoxHeight"
+                android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/upload_jobs_input_box"
+                app:layout_constraintStart_toEndOf="@+id/url_input"
+                app:layout_constraintStart_toStartOf="@+id/url_input"
+                app:layout_constraintTop_toBottomOf="@+id/url_input" />
+
+            <TextView
+                android:id="@+id/requirements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/requirements"
+                app:layout_constraintBottom_toBottomOf="@+id/requirements_input"
+                app:layout_constraintStart_toStartOf="@+id/requirements_input" />
+
+            <ImageButton
+                android:id="@+id/add_button"
+                android:layout_width="@dimen/alarmIconWidthHeight"
+                android:layout_height="@dimen/alarmIconWidthHeight"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:backgroundTint="@android:color/transparent"
+                android:clickable="false"
+                android:contentDescription="Back"
+                app:layout_constraintBottom_toBottomOf="@+id/requirements_input"
+                app:layout_constraintStart_toStartOf="@+id/requirements_input"
+                app:layout_constraintTop_toBottomOf="@+id/requirements"
+                app:srcCompat="@drawable/plus_icon"
+                app:tint="@color/themeColor" />
+
+            <EditText
+                android:id="@+id/requirement_text_view"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/addressInputHeight"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="@color/themeColor"
+                android:fontFamily="@font/inter"
+                android:hint="@string/hintRequirement"
+                android:paddingBottom="2dp"
+                android:text="@string/hintRequirement"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/requirements_input"
+                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintStart_toEndOf="@+id/add_button"
+                app:layout_constraintTop_toTopOf="@+id/requirements_input" />
+
+            <EditText
+                android:id="@+id/description_input"
+                android:layout_width="@dimen/uploadJobsInfoBoxWidth"
+                android:layout_height="@dimen/uploadJobsInfoBoxHeight"
+                android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/upload_jobs_input_box"
+                android:hint="@string/hintDescription"
+                android:textColor="@color/grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/requirements_input"
+                app:layout_constraintStart_toStartOf="@+id/requirements_input"
+                app:layout_constraintTop_toBottomOf="@+id/requirements_input" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                android:layout_marginBottom="@dimen/uploadJobsInputTittleConstraint"
+                android:background="@drawable/reactangle_white"
+                android:fontFamily="@font/inter"
+                android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
+                android:paddingRight="@dimen/uploadJobsInputTittlePadding"
+                android:text="@string/description"
+                app:layout_constraintBottom_toBottomOf="@+id/description_input"
+                app:layout_constraintStart_toStartOf="@+id/description_input" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

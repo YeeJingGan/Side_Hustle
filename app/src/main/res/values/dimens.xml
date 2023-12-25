@@ -32,4 +32,12 @@
     <dimen name="uploadJobInfoBoxPaddingTop">13dp</dimen>
     <dimen name="uploadJobsInputTittleConstraint">40dp</dimen>
     <dimen name="uploadJobsInputTittlePadding">5dp</dimen>
+    <dimen name="dateInput">100dp</dimen>
+    <dimen name="dateTimeBoxHieght">100dp</dimen>
+    <dimen name="dateTimeTittleConstraint">90dp</dimen>
+    <dimen name="oneDayCheckBoxWidth">100dp</dimen>
+    <dimen name="oneDayCheckBoxHeight">48dp</dimen>
+    <dimen name="addressInputBoxHeight">232dp</dimen>
+    <dimen name="addressConstraint">222dp</dimen>
+    <dimen name="addressInputHeight">48dp</dimen>
 </resources>

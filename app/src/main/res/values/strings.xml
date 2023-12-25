@@ -25,4 +25,19 @@
     <string name="wages">Wages</string>
     <string name="wages_input">RM ??</string>
     <string name="workingTime">Working Time</string>
+    <string name="to">to</string>
+    <string name="date">DD/MM/YYYY</string>
+    <string name="workingDate">Working Date</string>
+    <string name="oneDay">One Day</string>
+    <string name="time">00:00</string>
+    <string name="address">Address</string>
+    <string name="address_1">address 1</string>
+    <string name="address_2">address 2</string>
+    <string name="postcode">postcode</string>
+    <string name="locationURL">Location URL</string>
+    <string name="urlHint">Enter location URL (Google Map, Waze, etc)</string>
+    <string name="requirements">Requirements</string>
+    <string name="hintRequirement">Enter your requirement</string>
+    <string name="description">Description</string>
+    <string name="hintDescription">Enter your description</string>
 </resources>
