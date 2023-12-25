@@ -10,15 +10,23 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findViewById<Button>(R.id.my_butt).setOnClickListener {
-            toEmployeeHome(it)
-        }
+
+        setListeners()
     }
 
-    fun toEmployeeHome(view: View){
-        val context = view.context
-        val intent = Intent(context,EmployerMyJobsActivity::class.java)
+    private fun setListeners(){
+        findViewById<Button>(R.id.my_butt).setOnClickListener {
+            toAnotherActivity(it,EmployerMyJobsActivity::class.java)
+        }
 
-        context.startActivity(intent)
+        findViewById<Button>(R.id.my_butt2).setOnClickListener{
+            toAnotherActivity(it,EmployerHomeUploadJobsActivity::class.java)
+        }
+    }
+    private fun toAnotherActivity(view:View, destinationActivity: Class<*>){
+        view.context.let{
+            val intent = Intent(it,destinationActivity)
+            it.startActivity(intent)
+        }
     }
 }

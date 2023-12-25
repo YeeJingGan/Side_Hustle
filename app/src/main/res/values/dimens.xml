@@ -24,4 +24,12 @@
     <dimen name="detailButtonWidth">60dp</dimen>
     <dimen name="detailButttonHeight">25dp</dimen>
     <dimen name="buttonPadding">3dp</dimen>
+    <dimen name="backButtonWidthHeight">48dp</dimen>
+    <dimen name="submitButtonHeight">56dp</dimen>
+    <dimen name="submitButtonWidth">196.25dp</dimen>
+    <dimen name="uploadJobsInfoBoxWidth">350dp</dimen>
+    <dimen name="uploadJobsInfoBoxHeight">50dp</dimen>
+    <dimen name="uploadJobInfoBoxPaddingTop">13dp</dimen>
+    <dimen name="uploadJobsInputTittleConstraint">40dp</dimen>
+    <dimen name="uploadJobsInputTittlePadding">5dp</dimen>
 </resources>

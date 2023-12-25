@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployerMyJobsOngoingListItem">
+    tools:context=".EmployerMyJobsOngoingListItemFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -22,11 +22,12 @@
         android:id="@+id/employer_my_jobs_ongoung_list_item_position"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
         android:fontFamily="@font/andika_new_basic_bold"
         android:text="@string/listItemPostition"
         android:textSize="12sp"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_ongoing_list_item_picture"
-        tools:layout_editor_absoluteX="122dp" />
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_list_item_picture"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_ongoing_list_item_picture" />
 
     <TextView
         android:id="@+id/employer_my_jobs_ongoing_list_item_date"

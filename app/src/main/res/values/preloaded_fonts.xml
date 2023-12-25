@@ -3,6 +3,8 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/andika</item>
         <item>@font/andika_new_basic_bold</item>
+        <item>@font/inter</item>
+        <item>@font/inter_bold</item>
         <item>@font/rowdies</item>
     </array>
 </resources>

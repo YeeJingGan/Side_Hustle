@@ -19,9 +19,18 @@
         android:id="@+id/my_butt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Employer My Jobs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/my_butt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Employer Post Job"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_butt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
