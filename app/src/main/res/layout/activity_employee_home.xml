@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_grey"
-    tools:context=".EmployeeHomeActivity">
+    tools:context=".activites.employee.EmployeeHomeActivity">
 
     <include layout="@layout/layout_common_top_search_filter" />
 
@@ -60,7 +60,7 @@
         android:padding="@dimen/favorite_button_padding"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navbar_top_divider"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/favorite_24px"
+        app:srcCompat="@drawable/ic_favorite_24px"
         app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

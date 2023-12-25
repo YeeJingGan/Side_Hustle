@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/reviews_comments_vertical_divider"
         app:layout_constraintTop_toTopOf="@+id/reviews_comments_profile_picture"
-        app:srcCompat="@drawable/star_24px" />
+        app:srcCompat="@drawable/ic_star_24px" />
 
     <ImageView
         android:id="@+id/reviews_comments_star_2"
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toStartOf="@+id/reviews_comments_star_3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/reviews_comments_star_1"
-        app:srcCompat="@drawable/star_24px" />
+        app:srcCompat="@drawable/ic_star_24px" />
 
     <ImageView
         android:id="@+id/reviews_comments_star_3"
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toStartOf="@+id/reviews_comments_star_4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/reviews_comments_star_2"
-        app:srcCompat="@drawable/star_24px" />
+        app:srcCompat="@drawable/ic_star_24px" />
 
     <ImageView
         android:id="@+id/reviews_comments_star_4"
@@ -78,7 +78,7 @@
         app:layout_constraintEnd_toStartOf="@+id/reviews_comments_star_5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/reviews_comments_star_3"
-        app:srcCompat="@drawable/star_24px" />
+        app:srcCompat="@drawable/ic_star_24px" />
 
     <ImageView
         android:id="@+id/reviews_comments_star_5"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/reviews_comments_star_4"
-        app:srcCompat="@drawable/star_24px" />
+        app:srcCompat="@drawable/ic_star_24px" />
 
     <View
         android:id="@+id/reviews_comments_vertical_divider"

@@ -1,4 +1,4 @@
-package com.example.sidehustle
+package com.example.sidehustle.activites.employee
 
 import android.content.Intent
 import android.graphics.PorterDuff
@@ -8,6 +8,9 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.ListView
 import androidx.core.content.ContextCompat
+import com.example.sidehustle.Job
+import com.example.sidehustle.JobAdapter
+import com.example.sidehustle.R
 
 class EmployeeHomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +60,7 @@ class EmployeeHomeActivity : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.my_profile_button).setOnClickListener {
-            toAnotherActivity(it,EmployeeMyProfileActivity::class.java)
+            toAnotherActivity(it, EmployeeMyProfileActivity::class.java)
         }
     }
 

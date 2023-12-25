@@ -1,7 +1,8 @@
-package com.example.sidehustle
+package com.example.sidehustle.activites.employee
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sidehustle.R
 
 class EmployeeMyJobsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
