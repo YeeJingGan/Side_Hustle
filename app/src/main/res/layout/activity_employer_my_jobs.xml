@@ -37,7 +37,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_footer_divider"
-        app:srcCompat="@drawable/home_icon"
+        app:srcCompat="@drawable/home_24px"
         app:tint="@color/grey" />
 
     <ImageButton
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toStartOf="@+id/my_profile_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/home_button"
-        app:srcCompat="@drawable/myjobs_icon" />
+        app:srcCompat="@drawable/work_24px" />
 
     <ImageButton
         android:id="@+id/my_profile_button"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/my_jobs_button"
-        app:srcCompat="@drawable/myprofile_icon" />
+        app:srcCompat="@drawable/account_circle_24px" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/employee_my_jobs_tabs"

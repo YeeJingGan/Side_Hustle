@@ -6,4 +6,6 @@
     <color name="toolbar_search_background_color">#FFFFFF</color>
 
     <color name="grey">#797979</color>
+    <color name="background_grey">#F5F5F5</color>
+    <color name="theme_text_color">#B3000000</color>
 </resources>
