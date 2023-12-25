@@ -4,7 +4,7 @@
     <dimen name="footerDividerWidth">409dp</dimen>
     <dimen name="footerDividerHeight">60dp</dimen>
     <dimen name="iconWidthHeight">55dp</dimen>
-    <dimen name="listViewDividerHeight">2dp</dimen>
+    <dimen name="listViewDividerHeight">5dp</dimen>
     <dimen name="listViewWidth">415dp</dimen>
     <dimen name="listViewConstraint">18dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
@@ -21,8 +21,8 @@
     <dimen name="listItemPictureConstraint">16dp</dimen>
     <dimen name="listItemPositionConstraint">60dp</dimen>
     <dimen name="alarmIconWidthHeight">20dp</dimen>
-    <dimen name="detailButtonWidth">60dp</dimen>
-    <dimen name="detailButttonHeight">25dp</dimen>
+    <dimen name="detailButtonWidth">80dp</dimen>
+    <dimen name="detailButttonHeight">48dp</dimen>
     <dimen name="buttonPadding">3dp</dimen>
     <dimen name="backButtonWidthHeight">48dp</dimen>
     <dimen name="submitButtonHeight">56dp</dimen>
@@ -40,4 +40,6 @@
     <dimen name="addressInputBoxHeight">232dp</dimen>
     <dimen name="addressConstraint">222dp</dimen>
     <dimen name="addressInputHeight">48dp</dimen>
+    <dimen name="listItemPadding">8dp</dimen>
+    <dimen name="employeeNumWidthHieght">20dp</dimen>
 </resources>

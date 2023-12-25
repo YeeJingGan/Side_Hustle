@@ -113,6 +113,7 @@
         android:id="@+id/employee_my_jobs_tabs"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/reactangle_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employee_home_toolbar"

@@ -40,4 +40,11 @@
     <string name="hintRequirement">Enter your requirement</string>
     <string name="description">Description</string>
     <string name="hintDescription">Enter your description</string>
+    <string name="list_item_wages">RM ??</string>
+    <string name="list_item_date">DD/MM/YYYY to DD/MM/YYYY</string>
+    <string name="listItemTime">00:00 to 00:00</string>
+    <string name="employeeNum">3</string>
+    <string name="employees">Employees</string>
+    <string name="employeeName">Gan Yee Jing</string>
+    />
 </resources>
