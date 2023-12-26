@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ListView
+import android.window.OnBackInvokedDispatcher
 import androidx.core.content.ContextCompat
 import com.example.sidehustle.Job
 import com.example.sidehustle.JobAdapter
@@ -56,10 +57,12 @@ class EmployeeHomeActivity : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.my_jobs_button).setOnClickListener {
+            finish()
             toAnotherActivity(it, EmployeeJobDetailsActivity::class.java)
         }
 
         findViewById<ImageButton>(R.id.my_profile_button).setOnClickListener {
+            finish()
             toAnotherActivity(it, EmployeeMyProfileActivity::class.java)
         }
     }
@@ -69,5 +72,10 @@ class EmployeeHomeActivity : AppCompatActivity() {
             val intent = Intent(it, destinationActivity)
             it.startActivity(intent)
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 }

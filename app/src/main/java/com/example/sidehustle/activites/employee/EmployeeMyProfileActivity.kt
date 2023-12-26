@@ -3,6 +3,7 @@ package com.example.sidehustle.activites.employee
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import androidx.viewpager2.widget.ViewPager2
@@ -31,10 +32,12 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
 
     private fun setListeners() {
         findViewById<ImageButton>(R.id.my_jobs_button).setOnClickListener {
+            finish()
             toAnotherActivity(it, EmployeeJobDetailsActivity::class.java)
         }
 
         findViewById<ImageButton>(R.id.home_button).setOnClickListener {
+            finish()
             toAnotherActivity(it, EmployeeHomeActivity::class.java)
         }
 
@@ -83,5 +86,9 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
             val intent = Intent(it, destinationActivity)
             it.startActivity(intent)
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 }

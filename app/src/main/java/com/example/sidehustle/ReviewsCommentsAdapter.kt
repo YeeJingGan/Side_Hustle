@@ -38,7 +38,6 @@ class ReviewsCommentsAdapter(private val reviews: List<Review>) :
             reviewNameView.text = currentView.reviewName.toString()
             reviewContentView.text = currentView.reviewContent.toString()
             reviewProfilePicture.setImageResource(currentView.photoResId)
-            // TODO: RMB implement stars
             for ((index, star) in starList.withIndex()) {
                 if (index == currentView.reviewStarNum) {
                     break
