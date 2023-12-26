@@ -40,4 +40,5 @@
     <string name="sample_file_name_txt">sample_file.pdf</string>
     <string name="upload_txt">Upload</string>
     <string name="favorite_jobs_txt">Favorite Jobs</string>
+    <string name="my_jobs_txt">My Jobs</string>
 </resources>

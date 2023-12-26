@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_grey"
-    android:contentDescription="@string/settings_txt"
-    tools:context=".activites.employee.EmployeeMyProfileActivity">
+    tools:context=".activites.employer.EmployerMyProfileActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_profile_toolbar"
@@ -45,16 +43,6 @@
         app:layout_constraintStart_toStartOf="@+id/my_profile_profile_avatar"
         app:layout_constraintTop_toBottomOf="@+id/my_profile_profile_avatar"
         tools:text="@string/my_profile_name_txt" />
-
-    <ImageView
-        android:id="@+id/my_profile_edit_name_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/employee_home_job_list_textview_margin"
-        app:layout_constraintBottom_toBottomOf="@+id/my_profile_profile_name"
-        app:layout_constraintStart_toEndOf="@+id/my_profile_profile_name"
-        app:layout_constraintTop_toTopOf="@+id/my_profile_profile_name"
-        app:srcCompat="@drawable/ic_edit_24px" />
 
     <ImageView
         android:id="@+id/my_profile_star_1"
@@ -123,41 +111,15 @@
         android:id="@+id/my_profile_settings_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/background_my_profile_rounded_corner"
         android:backgroundTint="@android:color/white"
         android:contentDescription="@string/settings_txt"
         android:padding="9dp"
-        app:layout_constraintBottom_toBottomOf="@+id/my_profile_upload_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/my_profile_upload_icon"
-        app:srcCompat="@drawable/ic_settings_50px" />
-
-    <ImageButton
-        android:id="@+id/my_profile_upload_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/background_my_profile_rounded_corner"
-        android:backgroundTint="@android:color/white"
-        android:contentDescription="@string/upload_resume_txt"
-        android:padding="9dp"
-        app:layout_constraintEnd_toStartOf="@+id/my_profile_settings_icon"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_profile_divider_1"
-        app:srcCompat="@drawable/ic_upload_file_50px" />
-
-    <TextView
-        android:id="@+id/my_profile_upload_resume_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/upload_resume_txt"
-        app:layout_constraintEnd_toEndOf="@+id/my_profile_upload_icon"
-        app:layout_constraintStart_toStartOf="@+id/my_profile_upload_icon"
-        app:layout_constraintTop_toBottomOf="@+id/my_profile_upload_icon" />
+        app:srcCompat="@drawable/ic_settings_50px" />
 
     <TextView
         android:id="@+id/my_profile_settings_textview"
@@ -178,7 +140,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_profile_upload_resume_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/my_profile_settings_textview" />
 
     <TextView
         android:id="@+id/my_profile_reviews_comments_textview"
@@ -243,7 +205,7 @@
         app:srcCompat="@drawable/ic_chevron_right_24px" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/employee_my_profile_bottom_nav"
+        android:id="@+id/employer_my_profile_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"

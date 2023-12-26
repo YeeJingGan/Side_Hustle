@@ -46,7 +46,7 @@ class ReviewsCommentsAdapter(private val reviews: List<Review>) :
                 star.setColorFilter(
                     ContextCompat.getColor(
                         itemView.context,
-                        R.color.themeColor
+                        R.color.theme_color
                     ), PorterDuff.Mode.SRC_IN
                 )
             }

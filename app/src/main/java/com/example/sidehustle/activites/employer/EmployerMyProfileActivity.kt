@@ -1,4 +1,4 @@
-package com.example.sidehustle.activites.employee
+package com.example.sidehustle.activites.employer
 
 import android.content.Intent
 import android.graphics.PorterDuff
@@ -11,16 +11,20 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.sidehustle.R
 import com.example.sidehustle.Review
 import com.example.sidehustle.ReviewsCommentsAdapter
+import com.example.sidehustle.activites.employee.EmployeeHomeActivity
+import com.example.sidehustle.activites.employee.EmployeeJobDetailsActivity
+import com.example.sidehustle.activites.employee.EmployeeMyJobsActivity
+import com.example.sidehustle.activites.employee.EmployeeMyProfileActivity
+import com.example.sidehustle.activites.employee.EmployeeSettingsActivity
+import com.example.sidehustle.activites.employee.EmployeeUploadResumeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class EmployeeMyProfileActivity : AppCompatActivity() {
-
+class EmployerMyProfileActivity : AppCompatActivity() {
     lateinit var viewPager2: ViewPager2
     lateinit var adapter: ReviewsCommentsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_employee_my_profile)
-
+        setContentView(R.layout.activity_employer_my_profile)
         val reviews = createReviewsCommentsList()
 
         viewPager2 = findViewById(R.id.my_profile_viewpager2)
@@ -30,7 +34,7 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
 
         setListeners()
 
-        findViewById<BottomNavigationView>(R.id.employee_my_profile_bottom_nav).apply {
+        findViewById<BottomNavigationView>(R.id.employer_my_profile_bottom_nav).apply {
             selectedItemId = R.id.bottom_nav_my_profile_button
             setOnItemSelectedListener {
                 when (it.itemId) {
@@ -63,14 +67,13 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
         }
     }
 
+
     private fun setListeners() {
+
         findViewById<ImageButton>(R.id.my_profile_settings_icon).setOnClickListener {
-            toAnotherActivity(it, EmployeeSettingsActivity::class.java)
+            toAnotherActivity(it, EmployerSettingsActivity::class.java)
         }
 
-        findViewById<ImageButton>(R.id.my_profile_upload_icon).setOnClickListener {
-            toAnotherActivity(it,EmployeeUploadResumeActivity::class.java)
-        }
 
         val previousButton = findViewById<ImageButton>(R.id.my_profile_previous_review_button)
         val nextButton = findViewById<ImageButton>(R.id.my_profile_next_review_button)
@@ -114,6 +117,7 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
             it.startActivity(intent)
         }
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         finishAffinity()

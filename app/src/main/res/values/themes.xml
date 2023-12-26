@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.SideHustle" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">@color/theme_color</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textColor">@color/theme_text_color</item>
+        <item name="android:textColor">@color/black_80alpha</item>
     </style>
 
     <style name="Theme.SideHustle" parent="Base.Theme.SideHustle" />

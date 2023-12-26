@@ -10,7 +10,7 @@
         android:id="@+id/employer_my_jobs_toolbar"
         android:layout_width="0dp"
         android:layout_height="@dimen/toolbarHeight"
-        android:background="@color/themeColor"
+        android:background="@color/theme_color"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,9 +73,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_toolbar"
-        app:tabIndicatorColor="@color/themeColor"
+        app:tabIndicatorColor="@color/theme_color"
         app:tabIndicatorFullWidth="true"
-        app:tabSelectedTextColor="@color/themeColor"
+        app:tabSelectedTextColor="@color/theme_color"
         app:tabTextColor="@color/grey">
 
         <com.google.android.material.tabs.TabItem

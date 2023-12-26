@@ -11,7 +11,7 @@
         android:id="@+id/employee_settings_toolbar"
         android:layout_width="0dp"
         android:layout_height="350dp"
-        android:background="@color/themeColor"
+        android:background="@color/theme_color"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"

@@ -7,11 +7,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ListView
-import android.window.OnBackInvokedDispatcher
 import androidx.core.content.ContextCompat
 import com.example.sidehustle.Job
 import com.example.sidehustle.JobAdapter
 import com.example.sidehustle.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 
 class EmployeeHomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +26,41 @@ class EmployeeHomeActivity : AppCompatActivity() {
 
         listView.adapter = jobAdapter
 
-        setIconColor()
         setListeners()
+
+        findViewById<BottomNavigationView>(R.id.employee_home_bottom_nav).apply {
+            selectedItemId = R.id.bottom_nav_home_button
+            setOnItemSelectedListener {
+                when (it.itemId) {
+                    R.id.bottom_nav_home_button -> false
+                    R.id.bottom_nav_my_jobs_button -> {
+                        finish()
+                        startActivity(
+                            Intent(
+                                applicationContext,
+                                EmployeeMyJobsActivity::class.java
+                            )
+                        )
+                        true
+                    }
+
+                    R.id.bottom_nav_my_profile_button -> {
+                        finish()
+                        startActivity(
+                            Intent(
+                                applicationContext,
+                                EmployeeMyProfileActivity::class.java
+                            )
+                        )
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+        }
+
+
     }
 
     private fun createJobList(): List<Job> {
@@ -42,28 +76,9 @@ class EmployeeHomeActivity : AppCompatActivity() {
         )
     }
 
-    private fun setIconColor() {
-        findViewById<ImageButton>(R.id.home_button).setColorFilter(
-            ContextCompat.getColor(
-                this,
-                R.color.themeColor
-            ), PorterDuff.Mode.SRC_IN
-        )
-    }
-
     private fun setListeners() {
         findViewById<ImageButton>(R.id.favorite_button).setOnClickListener {
             toAnotherActivity(it, EmployeeFavoriteJobsActivity::class.java)
-        }
-
-        findViewById<ImageButton>(R.id.my_jobs_button).setOnClickListener {
-            finish()
-            toAnotherActivity(it, EmployeeJobDetailsActivity::class.java)
-        }
-
-        findViewById<ImageButton>(R.id.my_profile_button).setOnClickListener {
-            finish()
-            toAnotherActivity(it, EmployeeMyProfileActivity::class.java)
         }
     }
 

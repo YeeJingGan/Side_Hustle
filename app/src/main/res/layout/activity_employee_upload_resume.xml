@@ -11,7 +11,7 @@
         android:id="@+id/employee_upload_resume_toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/themeColor"
+        android:background="@color/theme_color"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/background_my_profile_rounded_corner"
-        android:backgroundTint="@color/themeColor"
+        android:backgroundTint="@color/theme_color"
         android:text="@string/upload_txt"
         app:layout_constraintStart_toStartOf="@+id/employee_upload_resume_my_resume_textview"
         app:layout_constraintTop_toBottomOf="@+id/employee_upload_resume_file_layout" />
