@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_reactangle_white"
+    android:textAlignment="center"
+    tools:context=".EmployeeHomeJobDetailsApplyJobsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/employer_comment_rating_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/themeColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/employer_comment_rating_backButton"
+        android:layout_width="@dimen/backButtonWidthHeight"
+        android:layout_height="@dimen/backButtonWidthHeight"
+        android:layout_marginStart="@dimen/backButtonConstraint"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="Back"
+        app:layout_constraintStart_toStartOf="@+id/employer_comment_rating_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/employer_comment_rating_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/backButtonConstraint"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/applyNegotiate"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_comment_rating_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/employer_comment_rating_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/employer_comment_rating_toolbar" />
+
+    <Button
+        android:id="@+id/employee_application_apply_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/submitButtonHeight"
+        android:background="@drawable/background_rectangle_theme_color"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/apply"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/employee_application_reset_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/employee_application_reset_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/submitButtonHeight"
+        android:background="@drawable/background_reactangle_white"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/resetButton"
+        android:textColor="@color/themeColor"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/employee_application_apply_button" />
+
+    <TextView
+        android:id="@+id/employee_application_expected_pay_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/applyNegotiateConstraint"
+        android:layout_marginTop="@dimen/listItemPositionConstraint"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/expectedPay"
+        android:textColor="@color/themeColor"
+        android:textSize="@dimen/employee_details_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_comment_rating_toolbar" />
+
+    <TextView
+        android:id="@+id/employee_application_expected_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="@string/applicantsWagesOffered"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_application_plus_button"
+        app:layout_constraintEnd_toStartOf="@+id/employee_application_plus_button"
+        app:layout_constraintStart_toEndOf="@+id/employee_application_minus_button"
+        app:layout_constraintTop_toTopOf="@+id/employee_application_minus_button" />
+
+    <ImageButton
+        android:id="@+id/employee_application_minus_button"
+        android:layout_width="@dimen/backButtonWidthHeight"
+        android:layout_height="@dimen/backButtonWidthHeight"
+        android:layout_marginStart="@dimen/applyNegotiateConstraint"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="reduce"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_expected_pay_header"
+        app:srcCompat="@drawable/ic_minus"
+        app:tint="@color/themeColor" />
+
+    <ImageButton
+        android:id="@+id/employee_application_plus_button"
+        android:layout_width="@dimen/backButtonWidthHeight"
+        android:layout_height="@dimen/backButtonWidthHeight"
+        android:layout_marginEnd="@dimen/applyNegotiateConstraint"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="increase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/employee_application_minus_button"
+        app:srcCompat="@drawable/ic_plus"
+        app:tint="@color/themeColor" />
+
+    <View
+        android:id="@+id/comment_rating_divider"
+        android:layout_width="375dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_plus_button" />
+
+    <TextView
+        android:id="@+id/employer_history_rating_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/comment"
+        android:textColor="@color/themeColor"
+        android:textSize="@dimen/employee_details_text_size"
+        app:layout_constraintStart_toStartOf="@+id/employee_application_minus_button"
+        app:layout_constraintTop_toBottomOf="@+id/comment_rating_divider" />
+
+    <EditText
+        android:id="@+id/job_application_comment"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/addressInputHeight"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:backgroundTint="@color/themeColor"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:hint="@string/commentHint"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/comment_rating_divider"
+        app:layout_constraintStart_toStartOf="@+id/employer_history_rating_header"
+        app:layout_constraintTop_toBottomOf="@+id/employer_history_rating_header" />
+
+    <View
+        android:id="@+id/employee_application_divider_2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/comment_rating_divider"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/comment_rating_divider"
+        app:layout_constraintTop_toBottomOf="@+id/job_application_comment" />
+
+    <TextView
+        android:id="@+id/employee_application_language_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/languages"
+        android:textColor="@color/themeColor"
+        android:textSize="@dimen/employee_details_text_size"
+        app:layout_constraintStart_toStartOf="@+id/job_application_comment"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_divider_2" />
+
+    <TextView
+        android:id="@+id/employee_application_language_header_2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:background="@drawable/background_rectangle_theme_color"
+        android:text="@string/languages"
+        android:textAlignment="center"
+        android:textColor="@color/toolbar_search_background_color"
+        app:layout_constraintEnd_toStartOf="@+id/employee_application_proficiency_header"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/employee_application_minus_button"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_language_header" />
+
+    <TextView
+        android:id="@+id/employee_application_proficiency_header"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:text="@string/proficiency"
+        android:textAlignment="center"
+        android:textColor="@color/themeColor"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_application_language_header_2"
+        app:layout_constraintEnd_toEndOf="@+id/employee_application_plus_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/employee_application_language_header_2" />
+
+    <EditText
+        android:id="@+id/employee_application_language_value"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/addressInputHeight"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:hint="@string/employee_details_language_value"
+        android:inputType="text"
+        android:text="@string/employee_details_language_value"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/employee_application_language_header_2"
+        app:layout_constraintStart_toStartOf="@+id/employee_application_language_header_2"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_language_header_2" />
+
+    <Spinner
+        android:id="@+id/employee_application_proficiency_spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_application_language_value"
+        app:layout_constraintEnd_toEndOf="@+id/employee_application_proficiency_header"
+        app:layout_constraintStart_toEndOf="@+id/employee_application_language_value"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_proficiency_header" />
+
+    <ImageButton
+        android:id="@+id/employee_application_add_button"
+        android:layout_width="@dimen/addressInputHeight"
+        android:layout_height="@dimen/addressInputHeight"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/add"
+        app:layout_constraintStart_toStartOf="@+id/employee_application_language_header"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_language_value"
+        app:srcCompat="@drawable/ic_add_circle"
+        app:tint="@color/themeColor" />
+
+    <View
+        android:id="@+id/employee_application_divider_3"
+        android:layout_width="375dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/employee_application_divider_2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/employee_application_divider_2"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_add_button" />
+
+    <TextView
+        android:id="@+id/employee_application_document_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/supportingDocument"
+        android:textColor="@color/themeColor"
+        android:textSize="@dimen/employee_details_text_size"
+        app:layout_constraintStart_toStartOf="@+id/job_application_comment"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_divider_3" />
+
+    <ImageButton
+        android:id="@+id/employee_application_add_button_2"
+        android:layout_width="@dimen/addressInputHeight"
+        android:layout_height="@dimen/addressInputHeight"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/add"
+        app:layout_constraintStart_toStartOf="@+id/employee_application_document_header"
+        app:layout_constraintTop_toBottomOf="@+id/employee_application_document_header"
+        app:srcCompat="@drawable/ic_add_circle"
+        app:tint="@color/themeColor" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:hint="@string/add_2"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_application_add_button_2"
+        app:layout_constraintEnd_toEndOf="@+id/employee_application_divider_3"
+        app:layout_constraintStart_toEndOf="@+id/employee_application_add_button_2"
+        app:layout_constraintTop_toTopOf="@+id/employee_application_add_button_2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

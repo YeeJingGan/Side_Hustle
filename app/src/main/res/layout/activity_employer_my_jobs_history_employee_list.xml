@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployerMyJobsEmployeeActicity">
+    android:background="@drawable/background_reactangle_white"
+    tools:context=".EmployerMyJobsHistoryEmployeeListActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/employer_my_jobs_employee_toolbar"
+        android:id="@+id/employer_history_employee_list_toolbar"
         android:layout_width="0dp"
         android:layout_height="@dimen/toolbar_height"
         android:background="@color/themeColor"
@@ -19,20 +20,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/employer_my_jobs_employee_backButton"
+        android:id="@+id/employer_history_employee_list_backButton"
         android:layout_width="@dimen/backButtonWidthHeight"
         android:layout_height="@dimen/backButtonWidthHeight"
         android:layout_marginStart="@dimen/backButtonConstraint"
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="Back"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_history_employee_list_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_icon"
+        app:srcCompat="@drawable/ic_back"
         app:tint="@color/white" />
 
     <TextView
-        android:id="@+id/employee"
+        android:id="@+id/employer_history_employee_list_employee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -40,12 +41,12 @@
         android:text="@string/employees"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_employee_toolbar"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_employee_toolbar" />
+        app:layout_constraintBottom_toBottomOf="@+id/employer_history_employee_list_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/employer_history_employee_list_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/employer_history_employee_list_toolbar" />
 
     <ListView
-        android:id="@+id/employer_my_jobs_employee_list"
+        android:id="@+id/employer_history_employee_list"
         android:layout_width="350dp"
         android:layout_height="540dp"
         android:layout_marginTop="@dimen/listViewConstraint"
@@ -55,8 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_employee_toolbar"
-        tools:listitem="@layout/fragment_employer_my_jobs_employee_list_item"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/employer_history_employee_list_toolbar"
+        tools:listitem="@layout/fragment_employer_my_jobs_history_employee_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

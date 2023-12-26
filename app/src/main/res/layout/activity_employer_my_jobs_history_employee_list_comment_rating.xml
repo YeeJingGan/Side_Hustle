@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmployerMyJobsHistoryEmployeeListCommentRatingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/employer_comment_rating_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/themeColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/employer_comment_rating_backButton"
+        android:layout_width="@dimen/backButtonWidthHeight"
+        android:layout_height="@dimen/backButtonWidthHeight"
+        android:layout_marginStart="@dimen/backButtonConstraint"
+        android:layout_marginTop="@dimen/backButtonConstraint"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="Back"
+        app:layout_constraintStart_toStartOf="@+id/employer_comment_rating_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/employer_comment_rating_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/backButtonConstraint"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/commentRating"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_comment_rating_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/employer_comment_rating_toolbar"
+        app:layout_constraintTop_toTopOf="@+id/employer_comment_rating_toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="@dimen/listItemPictureWidthHeight"
+        android:layout_height="@dimen/listItemPictureWidthHeight"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_comment_rating_toolbar"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/employer_comment_rating_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/listItemPictureConstraint"
+        android:fontFamily="@font/andika"
+        android:text="@string/employeeName"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/employer_history_rating_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/rating"
+        android:textColor="@color/themeColor"
+        android:textSize="@dimen/employee_details_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_comment_rating_name" />
+
+    <ImageView
+        android:id="@+id/comment_rating_star_1"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_star"
+        app:layout_constraintStart_toStartOf="@+id/employer_history_rating_header"
+        app:layout_constraintTop_toBottomOf="@+id/employer_history_rating_header" />
+
+    <ImageView
+        android:id="@+id/comment_rating_star_2"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/comment_rating_star_1"
+        app:layout_constraintStart_toEndOf="@+id/comment_rating_star_1" />
+
+    <ImageView
+        android:id="@+id/comment_rating_star_3"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/comment_rating_star_2"
+        app:layout_constraintStart_toEndOf="@+id/comment_rating_star_2" />
+
+    <ImageView
+        android:id="@+id/comment_rating_star_4"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/comment_rating_star_3"
+        app:layout_constraintStart_toEndOf="@+id/comment_rating_star_3" />
+
+    <ImageView
+        android:id="@+id/comment_rating_star_5"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/comment_rating_star_4"
+        app:layout_constraintStart_toEndOf="@+id/comment_rating_star_4" />
+
+    <View
+        android:id="@+id/comment_rating_divider"
+        android:layout_width="375dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comment_rating_star_1" />
+
+    <TextView
+        android:id="@+id/employer_history_comment_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/comment"
+        android:textColor="@color/themeColor"
+        android:textSize="@dimen/employee_details_text_size"
+        app:layout_constraintStart_toStartOf="@+id/comment_rating_star_1"
+        app:layout_constraintTop_toBottomOf="@+id/comment_rating_divider" />
+
+    <EditText
+        android:id="@+id/comment_rating_comment"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/addressInputHeight"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/themeColor"
+        android:ems="10"
+        android:fontFamily="@font/inter"
+        android:hint="@string/commentHint"
+        android:inputType="text"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/comment_rating_divider"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/employer_history_comment_header"
+        app:layout_constraintTop_toBottomOf="@+id/employer_history_comment_header" />
+
+    <Button
+        android:id="@+id/comment_rating_submit_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/submitButtonHeight"
+        android:background="@drawable/background_rectangle_theme_color"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/submitButton"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/comment_rating_reset_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/comment_rating_reset_button"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/submitButtonHeight"
+        android:background="@drawable/background_reactangle_white"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/resetButton"
+        android:textColor="@color/themeColor"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/comment_rating_submit_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

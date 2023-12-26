@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_reactangle_white"
+    android:paddingLeft="@dimen/listItemPadding"
+    android:paddingTop="@dimen/listItemPadding"
+    android:paddingRight="@dimen/listItemPadding"
+    android:paddingBottom="@dimen/listItemPadding"
+    tools:context=".EmployerMyJobsOngoingFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/employer_my_jobs_ongoung_list_item_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/andika_new_basic_bold"
+        android:text="@string/listItemPostition"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/employer_my_jobs_ongoing_list_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/andika"
+        android:text="@string/list_item_date"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_list_item_calendar"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_list_item_calendar"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_list_item_calendar" />
+
+    <ImageView
+        android:id="@+id/employer_my_jobs_list_item_calendar"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_schedule"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoung_list_item_position"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoung_list_item_position"
+        app:srcCompat="@drawable/ic_calendar" />
+
+    <Button
+        android:id="@+id/employer_my_jobs_detail_button"
+        android:layout_width="@dimen/detailButtonWidth"
+        android:layout_height="@dimen/detailButttonHeight"
+        android:backgroundTint="@color/themeColor"
+        android:paddingLeft="@dimen/buttonPadding"
+        android:paddingTop="@dimen/buttonPadding"
+        android:paddingRight="@dimen/buttonPadding"
+        android:paddingBottom="@dimen/buttonPadding"
+        android:text="@string/viewEmployeeButton"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/list_item_schedule_icon"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/list_item_schedule_icon"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_schedule"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_list_item_calendar"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_list_item_calendar"
+        app:srcCompat="@drawable/ic_schedule" />
+
+    <TextView
+        android:id="@+id/list_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/andika"
+        android:text="@string/listItemTime"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/list_item_schedule_icon"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoing_list_item_date" />
+
+    <ImageView
+        android:id="@+id/list_item_employee_icon"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_icon"
+        app:layout_constraintEnd_toStartOf="@+id/employee_num"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_ongoung_list_item_position"
+        app:srcCompat="@drawable/ic_icon" />
+
+    <TextView
+        android:id="@+id/employee_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/andika"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:padding="0dp"
+        android:paddingTop="0dp"
+        android:text="@string/employeeNum"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/list_item_employee_icon"
+        app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_detail_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

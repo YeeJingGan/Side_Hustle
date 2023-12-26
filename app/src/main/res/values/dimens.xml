@@ -45,4 +45,6 @@
     <dimen name="backButtonConstraint">8dp</dimen>
     <dimen name="viewResumeButtonHeight">20dp</dimen>
     <dimen name="employee_details_text_size">16sp</dimen>
+    <dimen name="applyNegotiateConstraint">24dp</dimen>
+    <dimen name="employer_home_constraint">60dp</dimen>
 </resources>

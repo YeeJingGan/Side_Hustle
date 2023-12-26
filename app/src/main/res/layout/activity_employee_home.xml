@@ -6,6 +6,98 @@
     android:layout_height="match_parent"
     tools:context=".EmployeeHomeActivity">
 
-    <include layout="@layout/common_layout"/>
+    <include layout="@layout/common_layout" />
+
+    <TextView
+        android:id="@+id/approved_jobs_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/approvedJobs"
+        app:layout_constraintBottom_toTopOf="@+id/employer_home_divider_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/employer_home_expand_button" />
+
+    <ImageButton
+        android:id="@+id/employer_home_expand_button"
+        android:layout_width="@dimen/backButtonWidthHeight"
+        android:layout_height="@dimen/backButtonWidthHeight"
+        android:layout_marginTop="@dimen/employer_home_constraint"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/expandLessButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_expand_less"
+        app:tint="@color/themeColor" />
+
+    <View
+        android:id="@+id/employer_home_divider_1"
+        android:layout_width="391dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_home_expand_button" />
+
+    <ListView
+        android:id="@+id/employer_home_approved_jobs_list"
+        android:layout_width="350dp"
+        android:layout_height="540dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:dividerHeight="@dimen/listViewDividerHeight"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_home_divider_1"
+        tools:listitem="@layout/fragment_employer_home_approved_jobs"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/pending_approved_jobs_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/pendingApproval"
+        app:layout_constraintBottom_toTopOf="@+id/employer_home_divider_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/employer_home_expand_button_2" />
+
+    <ImageButton
+        android:id="@+id/employer_home_expand_button_2"
+        android:layout_width="@dimen/backButtonWidthHeight"
+        android:layout_height="@dimen/backButtonWidthHeight"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_home_approved_jobs_list"
+        app:srcCompat="@drawable/ic_expand_less"
+        app:tint="@color/themeColor" />
+
+    <View
+        android:id="@+id/employer_home_divider_2"
+        android:layout_width="391dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_home_expand_button_2" />
+
+    <ListView
+        android:id="@+id/employer_home_pending_approved_jobs_list"
+        android:layout_width="350dp"
+        android:layout_height="540dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:dividerHeight="@dimen/listViewDividerHeight"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_home_divider_2"
+        tools:visibility="visible"
+        tools:listitem="@layout/fragment_employer_home_approved_jobs"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

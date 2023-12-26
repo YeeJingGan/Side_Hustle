@@ -13,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [EmployerMyJobsEmployeeListItemFragment.newInstance] factory method to
+ * Use the [EmployerMyJobsHistoryFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EmployerMyJobsEmployeeListItemFragment : Fragment() {
+class EmployerMyJobsHistoryFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,11 +34,7 @@ class EmployerMyJobsEmployeeListItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(
-            R.layout.fragment_employer_my_jobs_employee_list_item,
-            container,
-            false
-        )
+        return inflater.inflate(R.layout.fragment_employer_my_jobs_history, container, false)
     }
 
     companion object {
@@ -48,12 +44,12 @@ class EmployerMyJobsEmployeeListItemFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment EmployerMyJobsEmployeeListItemFragment.
+         * @return A new instance of fragment EmployerMyJobsHistoryFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            EmployerMyJobsEmployeeListItemFragment().apply {
+            EmployerMyJobsHistoryFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

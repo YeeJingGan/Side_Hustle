@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/employer_home_upload_jobs_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_icon"
+        app:srcCompat="@drawable/ic_back"
         app:tint="@color/white" />
 
     <TextView
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="@+id/employer_home_upload_jobs_toolbar" />
 
     <Button
-        android:id="@+id/submit_button"
+        android:id="@+id/comment_rating_submit_button"
         android:layout_width="0dp"
         android:layout_height="@dimen/submitButtonHeight"
         android:background="@drawable/background_rectangle_theme_color"
@@ -55,12 +55,12 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/reset_button"
+        app:layout_constraintEnd_toStartOf="@+id/comment_rating_reset_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/reset_button"
+        android:id="@+id/comment_rating_reset_button"
         android:layout_width="0dp"
         android:layout_height="@dimen/submitButtonHeight"
         android:background="@drawable/background_reactangle_white"
@@ -72,7 +72,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/submit_button" />
+        app:layout_constraintStart_toEndOf="@+id/comment_rating_submit_button" />
 
     <TextView
         android:id="@+id/upload_jobs_instruction"
@@ -90,7 +90,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/submit_button"
+        app:layout_constraintBottom_toTopOf="@+id/comment_rating_submit_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_reactangle_white"
+    android:paddingLeft="@dimen/listItemPadding"
+    android:paddingTop="@dimen/listItemPadding"
+    android:paddingRight="@dimen/listItemPadding"
+    android:paddingBottom="@dimen/listItemPadding"
+    tools:context=".EmployerMyJobsNegotiatingFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <TextView
+        android:id="@+id/employer_my_jobs_negotiating_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/andika_new_basic_bold"
+        android:text="@string/employerMyJobsNegotiatingPosition"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/employer_my_jobs_negotiating_wages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rowdies"
+        android:text="@string/employer_my_jobs_negotiating_wages"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_position"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_position" />
+
+    <ImageView
+        android:id="@+id/employer_my_jobs_negotiating_calendar"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/ic_schedule"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_wages"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_wages"
+        app:srcCompat="@drawable/ic_calendar" />
+
+    <TextView
+        android:id="@+id/employer_my_jobs_negotiating_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/andika"
+        android:text="@string/employer_my_jobs_negotiating_date"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_calendar"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_calendar" />
+
+    <ImageView
+        android:id="@+id/employer_my_jobs_negotiating_schedule"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_schedule"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_calendar"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_calendar"
+        app:srcCompat="@drawable/ic_schedule" />
+
+    <TextView
+        android:id="@+id/employer_my_jobs_negotiating_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/andika"
+        android:text="@string/employer_my_jobs_negotiating_time"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_schedule"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_schedule" />
+
+    <Button
+        android:id="@+id/employer_my_jobs_negotiating_view_applicant_button"
+        android:layout_width="@dimen/detailButtonWidth"
+        android:layout_height="@dimen/detailButttonHeight"
+        android:backgroundTint="@color/themeColor"
+        android:paddingLeft="@dimen/buttonPadding"
+        android:paddingTop="@dimen/buttonPadding"
+        android:paddingRight="@dimen/buttonPadding"
+        android:paddingBottom="@dimen/buttonPadding"
+        android:text="@string/viewApplicantButton"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_time"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/employer_my_jobs_negotiating_employee"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_icon"
+        app:layout_constraintEnd_toStartOf="@+id/employer_my_jobs_negotiating_applicant_num"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_position"
+        app:srcCompat="@drawable/ic_icon" />
+
+    <TextView
+        android:id="@+id/employer_my_jobs_negotiating_applicant_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/employer_my_jobs_negotiating_applicant_num"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_employee"
+        app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_negotiating_view_applicant_button"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_employee" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

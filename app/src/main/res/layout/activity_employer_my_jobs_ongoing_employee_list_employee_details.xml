@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:autofillHints="@string/default_employee_comment_for_employer"
-    tools:context=".EmployerMyJobsEmployeeDetailsActivity">
+    tools:context=".EmployerMyJobsOngoingEmployeeListEmployeeDetailsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/employer_my_jobs_employee_details_toolbar"
@@ -29,7 +29,7 @@
         android:contentDescription="Back"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_toolbar"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_icon"
+        app:srcCompat="@drawable/ic_back"
         app:tint="@color/white" />
 
     <TextView
@@ -68,7 +68,7 @@
             android:paddingBottom="@dimen/listItemPadding">
 
             <View
-                android:id="@+id/employer_details_divider_"
+                android:id="@+id/employer_details_divider_1"
                 android:layout_width="375dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
@@ -194,7 +194,7 @@
                 android:text="@string/comment"
                 android:textSize="@dimen/employee_details_text_size"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_" />
+                app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_1" />
 
             <TextView
                 android:id="@+id/employee_details_comment"
@@ -373,6 +373,41 @@
                 android:textSize="@dimen/employee_details_text_size"
                 app:layout_constraintStart_toStartOf="@+id/employer_details_divider_4"
                 app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_4" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager2"
+                android:layout_width="0dp"
+                android:layout_height="1500dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FF0000"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toEndOf="@+id/imageButton"
+                app:layout_constraintTop_toBottomOf="@+id/employee_details_review_header" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/viewPager2"
+                app:layout_constraintStart_toStartOf="@+id/employee_details_review_header"
+                app:layout_constraintTop_toTopOf="@+id/viewPager2"
+                app:srcCompat="@drawable/ic_minus"
+                tools:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@+id/viewPager2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewPager2"
+                app:srcCompat="@drawable/ic_plus" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

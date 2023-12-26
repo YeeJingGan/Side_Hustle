@@ -3,9 +3,9 @@ package com.example.sidehustle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class EmployerMyJobsEmployeeActicity : AppCompatActivity() {
+class EmployerMyJobsHistoryEmployeeListCommentRatingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_employer_my_jobs_employee_acticity)
+        setContentView(R.layout.activity_employer_my_jobs_history_employee_list_comment_rating)
     }
 }
