@@ -25,14 +25,76 @@
         android:layout_marginStart="16dp"
         android:fontFamily="@font/andika"
         android:text="@string/employeeName"
+        android:textColor="@color/black"
+        android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/employee_pic"
         app:layout_constraintTop_toTopOf="@+id/employee_pic" />
 
     <TextView
-        android:id="@+id/employeeWages"
+        android:id="@+id/employee_wages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="78dp" />
+        android:fontFamily="@font/rowdies"
+        android:text="@string/finalWages"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/employee_name"
+        app:layout_constraintTop_toBottomOf="@+id/employee_name" />
+
+    <ImageView
+        android:id="@+id/star_1"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/star_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_pic"
+        app:layout_constraintStart_toStartOf="@+id/employee_wages"
+        app:layout_constraintTop_toBottomOf="@+id/employee_wages" />
+
+    <ImageView
+        android:id="@+id/star_2"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/star_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/star_1"
+        app:layout_constraintStart_toEndOf="@+id/star_1" />
+
+    <ImageView
+        android:id="@+id/star_3"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/star_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/star_2"
+        app:layout_constraintStart_toEndOf="@+id/star_2" />
+
+    <ImageView
+        android:id="@+id/star_4"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/star_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/star_3"
+        app:layout_constraintStart_toEndOf="@+id/star_3" />
+
+    <ImageView
+        android:id="@+id/star_5"
+        android:layout_width="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:src="@drawable/star_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/star_4"
+        app:layout_constraintStart_toEndOf="@+id/star_4" />
+
+    <Button
+        android:id="@+id/employer_my_jobs_view_employee_button"
+        android:layout_width="@dimen/detailButtonWidth"
+        android:layout_height="@dimen/detailButttonHeight"
+        android:backgroundTint="@color/themeColor"
+        android:paddingLeft="@dimen/buttonPadding"
+        android:paddingTop="@dimen/buttonPadding"
+        android:paddingRight="@dimen/buttonPadding"
+        android:paddingBottom="@dimen/buttonPadding"
+        android:text="@string/detailsButton"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/star_5"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

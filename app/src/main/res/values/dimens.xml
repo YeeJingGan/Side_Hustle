@@ -42,4 +42,6 @@
     <dimen name="addressInputHeight">48dp</dimen>
     <dimen name="listItemPadding">8dp</dimen>
     <dimen name="employeeNumWidthHieght">20dp</dimen>
+    <dimen name="backButtonConstraint">8dp</dimen>
+    <dimen name="viewResumeButtonHeight">20dp</dimen>
 </resources>

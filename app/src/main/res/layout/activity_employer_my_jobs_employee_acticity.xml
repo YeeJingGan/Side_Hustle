@@ -22,7 +22,7 @@
         android:id="@+id/employer_my_jobs_employee_backButton"
         android:layout_width="@dimen/backButtonWidthHeight"
         android:layout_height="@dimen/backButtonWidthHeight"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/backButtonConstraint"
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="Back"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_toolbar"

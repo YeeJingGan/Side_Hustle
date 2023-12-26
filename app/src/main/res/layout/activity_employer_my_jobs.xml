@@ -94,7 +94,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/home_button"
         app:srcCompat="@drawable/myjobs_icon"
-        app:tint="@color/grey" />
+        app:tint="@color/themeColor" />
 
     <ImageButton
         android:id="@+id/my_profile_button"

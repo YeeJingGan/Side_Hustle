@@ -46,5 +46,10 @@
     <string name="employeeNum">3</string>
     <string name="employees">Employees</string>
     <string name="employeeName">Gan Yee Jing</string>
+    <string name="finalWages">RM ??</string>
+    <string name="viewEmployeeButton">View Employee</string>
+    <string name="employeeDetails">Employee Details</string>
+    <string name="viewResume">View Resume</string>
+    <string name="employeeDetailsPosition">Bartender</string>
     />
 </resources>
