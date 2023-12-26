@@ -24,4 +24,20 @@
     <string name="settings_txt">Settings</string>
     <string name="reviews_comments_txt"><![CDATA[Reviews & Comments]]></string>
     <string name="lorem_ipsum_txt">Lorem Ipsun dolor sit amet blablabla</string>
+    <string name="account_security_txt"><![CDATA[Account & Security]]></string>
+    <string name="username_txt">Username</string>
+    <string name="app_appearance_txt">App Appearance</string>
+    <string name="password_txt">Password</string>
+    <string name="theme_txt">Theme</string>
+    <string name="font_size_txt">Font Size</string>
+    <string name="language_txt">Language</string>
+    <string name="others_txt">Others</string>
+    <string name="notifications_txt">Notifications</string>
+    <string name="contact_us_txt">Contact Us</string>
+    <string name="about_txt">About</string>
+    <string name="logout_txt">Logout</string>
+    <string name="my_resume_txt">My Resume</string>
+    <string name="sample_file_name_txt">sample_file.pdf</string>
+    <string name="upload_txt">Upload</string>
+    <string name="favorite_jobs_txt">Favorite Jobs</string>
 </resources>

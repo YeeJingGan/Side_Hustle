@@ -1,11 +1,13 @@
 package com.example.sidehustle.activites.employee
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
+import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.sidehustle.R
 import com.example.sidehustle.Review
@@ -26,8 +28,17 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
 
         viewPager2.adapter = adapter
 
+        setIconColor()
         setListeners()
 
+    }
+    private fun setIconColor() {
+        findViewById<ImageButton>(R.id.my_profile_button).setColorFilter(
+            ContextCompat.getColor(
+                this,
+                R.color.themeColor
+            ), PorterDuff.Mode.SRC_IN
+        )
     }
 
     private fun setListeners() {
@@ -43,6 +54,10 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
 
         findViewById<ImageButton>(R.id.my_profile_settings_icon).setOnClickListener {
             toAnotherActivity(it, EmployeeSettingsActivity::class.java)
+        }
+
+        findViewById<ImageButton>(R.id.my_profile_upload_icon).setOnClickListener {
+            toAnotherActivity(it,EmployeeUploadResumeActivity::class.java)
         }
 
         val previousButton = findViewById<ImageButton>(R.id.my_profile_previous_review_button)

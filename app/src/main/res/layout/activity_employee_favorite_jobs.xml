@@ -6,4 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".activites.employee.EmployeeFavoriteJobsActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/employee_favorite_jobs_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/themeColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_white_36px"
+        app:title="@string/favorite_jobs_txt"
+        app:titleTextAppearance="@style/toolbar_text_style" />
+
+    <ListView
+        android:id="@+id/employee_favorite_jobs_list_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/employee_home_list_view_margin"
+        android:layout_marginTop="@dimen/employee_home_list_view_margin"
+        android:layout_marginEnd="@dimen/employee_home_list_view_margin"
+        android:layout_marginBottom="@dimen/employee_home_list_view_margin"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_favorite_jobs_toolbar"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/layout_employee_home_job_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

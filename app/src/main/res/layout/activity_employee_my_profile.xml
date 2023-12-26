@@ -8,42 +8,30 @@
     android:contentDescription="@string/settings_txt"
     tools:context=".activites.employee.EmployeeMyProfileActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/my_profile_toolbar"
         android:layout_width="0dp"
-        android:layout_height="@dimen/toolbar_height"
+        android:layout_height="wrap_content"
         android:background="@color/themeColor"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:contentInsetStart="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/my_profile_txt"
+        app:titleTextAppearance="@style/toolbar_text_style" />
 
     <ImageView
         android:id="@+id/side_hustle_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/toolbar_photo_margin"
+        android:layout_marginStart="8dp"
         android:contentDescription="@string/side_hustle_icon_description"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/my_profile_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/my_profile_toolbar"
         app:srcCompat="@drawable/side_hustle_yellow_background" />
-
-    <TextView
-        android:id="@+id/my_profile_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/my_profile_toolbar_margin"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/my_profile_txt"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toEndOf="@+id/side_hustle_icon"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/my_profile_txt" />
 
     <include layout="@layout/layout_common_bottom" />
 
@@ -51,10 +39,10 @@
         android:id="@+id/my_profile_profile_avatar"
         android:layout_width="@dimen/my_profile_photo_size"
         android:layout_height="@dimen/my_profile_photo_size"
-        android:layout_marginTop="@dimen/my_profile_photo_margin"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/my_profile_toolbar"
         app:srcCompat="@drawable/sample_profile_photo" />
 
     <TextView
@@ -77,7 +65,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/my_profile_profile_name"
         app:layout_constraintStart_toEndOf="@+id/my_profile_profile_name"
         app:layout_constraintTop_toTopOf="@+id/my_profile_profile_name"
-        app:srcCompat="@drawable/ic_border_colo_24px" />
+        app:srcCompat="@drawable/ic_edit_24px" />
 
     <ImageView
         android:id="@+id/my_profile_star_1"

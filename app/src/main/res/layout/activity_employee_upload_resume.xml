@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_grey"
+    tools:context=".activites.employee.EmployeeUploadResumeActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/employee_upload_resume_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/themeColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_white_36px"
+        app:title="@string/upload_resume_txt"
+        app:titleTextAppearance="@style/toolbar_text_style" />
+
+    <TextView
+        android:id="@+id/employee_upload_resume_my_resume_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/my_resume_txt"
+        android:textColor="@color/text_grey_80opac"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_upload_resume_toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/employee_upload_resume_file_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_settings_rounded_corner"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/employee_upload_resume_my_resume_textview"
+        app:layout_constraintTop_toBottomOf="@+id/employee_upload_resume_my_resume_textview"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/employee_upload_resume_pdf_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_picture_as_pdf_48px"
+            app:tint="@color/warning_red" />
+
+        <TextView
+            android:id="@+id/employee_upload_resume_file_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/employee_upload_resume_pdf_icon"
+            app:layout_constraintStart_toEndOf="@+id/employee_upload_resume_pdf_icon"
+            app:layout_constraintTop_toTopOf="@+id/employee_upload_resume_pdf_icon"
+            tools:text="@string/sample_file_name_txt" />
+
+        <ImageButton
+            android:id="@+id/employee_upload_resume_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/employee_upload_resume_file_name_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/employee_upload_resume_file_name_textview"
+            app:srcCompat="@drawable/ic_cancel_36px" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/employee_upload_resume_upload_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_my_profile_rounded_corner"
+        android:backgroundTint="@color/themeColor"
+        android:text="@string/upload_txt"
+        app:layout_constraintStart_toStartOf="@+id/employee_upload_resume_my_resume_textview"
+        app:layout_constraintTop_toBottomOf="@+id/employee_upload_resume_file_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
