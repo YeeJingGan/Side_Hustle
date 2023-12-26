@@ -51,5 +51,14 @@
     <string name="employeeDetails">Employee Details</string>
     <string name="viewResume">View Resume</string>
     <string name="employeeDetailsPosition">Bartender</string>
+    <string name="comment">Comment</string>
+    <string name="employee_comment_for_employer">Comment comment comment</string>
+    <string name="default_employee_comment_for_employer">This employee does not leaves any comment</string>
+    <string name="supportingDocument">Supporting Document</string>
+    <string name="languages">Languages</string>
+    <string name="proficiency">Proficiency</string>
+    <string name="employee_details_language_value">English</string>
+    <string name="proficiencyValue">Good</string>
+    <string name="reviewAndComment">Reviews and Comments</string>
     />
 </resources>

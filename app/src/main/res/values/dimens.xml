@@ -44,4 +44,5 @@
     <dimen name="employeeNumWidthHieght">20dp</dimen>
     <dimen name="backButtonConstraint">8dp</dimen>
     <dimen name="viewResumeButtonHeight">20dp</dimen>
+    <dimen name="employee_details_text_size">16sp</dimen>
 </resources>

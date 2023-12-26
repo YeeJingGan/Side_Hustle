@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/reactangle_white"
+    android:background="@drawable/background_reactangle_white"
     android:paddingLeft="@dimen/listItemPadding"
     android:paddingTop="@dimen/listItemPadding"
     android:paddingRight="@dimen/listItemPadding"
@@ -40,10 +40,10 @@
         android:layout_width="@dimen/alarmIconWidthHeight"
         android:layout_height="@dimen/alarmIconWidthHeight"
         android:layout_marginTop="8dp"
-        android:src="@drawable/schedule_icon"
+        android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoung_list_item_position"
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoung_list_item_position"
-        app:srcCompat="@drawable/calendar_icon" />
+        app:srcCompat="@drawable/ic_calendar" />
 
     <Button
         android:id="@+id/employer_my_jobs_detail_button"
@@ -65,10 +65,10 @@
         android:layout_width="@dimen/alarmIconWidthHeight"
         android:layout_height="@dimen/alarmIconWidthHeight"
         android:layout_marginTop="8dp"
-        android:src="@drawable/schedule_icon"
+        android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_list_item_calendar"
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_list_item_calendar"
-        app:srcCompat="@drawable/schedule_icon" />
+        app:srcCompat="@drawable/ic_schedule" />
 
     <TextView
         android:id="@+id/list_item_time"
