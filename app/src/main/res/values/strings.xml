@@ -98,5 +98,13 @@
     <string name="approvedJobsDate">DD/MM/YYYY to DD/MM/YYYY</string>
     <string name="approvedJobsTime">00:00 to 00:00</string>
     <string name="expandLessButton">Expand Less</string>
+    <string name="closeApplication">Close Application</string>
+    <string name="deletePost">Delete Post</string>
+    <string name="jobDetailsCompanyName">Poptics Optometry Sdn Bhd</string>
+    <string name="jobDetailsCompanyLocation">Bandar Puteri, Puchong, Selangor</string>
+    <string name="company_initial_offered_wages">RM ??</string>
+    <string name="companyRequirement">Hard Working</string>
+    <string name="job_description_value">Our company is the best. Come Come</string>
+    <string name="favourite">Add to Favourite</string>
     />
 </resources>
