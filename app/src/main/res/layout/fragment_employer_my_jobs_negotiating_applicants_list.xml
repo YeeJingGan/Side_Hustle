@@ -44,8 +44,8 @@
 
     <ImageView
         android:id="@+id/applicants_star_1"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_list_pic"
         app:layout_constraintStart_toStartOf="@+id/applicants_wages_offered"
@@ -53,39 +53,39 @@
 
     <ImageView
         android:id="@+id/applicants_star_2"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_star_1"
         app:layout_constraintStart_toEndOf="@+id/applicants_star_1" />
 
     <ImageView
         android:id="@+id/applicants_star_3"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_star_2"
         app:layout_constraintStart_toEndOf="@+id/applicants_star_2" />
 
     <ImageView
         android:id="@+id/applicants_star_4"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_star_3"
         app:layout_constraintStart_toEndOf="@+id/applicants_star_3" />
 
     <ImageView
         android:id="@+id/applicants_star_5"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_star_4"
         app:layout_constraintStart_toEndOf="@+id/applicants_star_4" />
 
     <Button
         android:id="@+id/applicants_list_view_applicant_button"
-        android:layout_width="@dimen/detailButtonWidth"
+        android:layout_width="@dimen/button_details_width_height"
         android:layout_height="@dimen/detailButttonHeight"
         android:backgroundTint="@color/themeColor"
         android:paddingLeft="@dimen/buttonPadding"

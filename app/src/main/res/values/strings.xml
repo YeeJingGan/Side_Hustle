@@ -91,13 +91,14 @@
     <string name="pendingComment2">pending comment</string>
     <string name="commentRating">Comment and Rate</string>
     <string name="rating">Rating</string>
-    <string name="approvedJobs">Approved Jobs</string>
-    <string name="pendingApproval">Pending Approval</string>
-    <string name="approvedJobsPosition">Singer</string>
-    <string name="approvedJobsWages">RM ??</string>
-    <string name="approvedJobsDate">DD/MM/YYYY to DD/MM/YYYY</string>
-    <string name="approvedJobsTime">00:00 to 00:00</string>
-    <string name="expandLessButton">Expand Less</string>
+    <string name="title_approved_jobs">Approved Jobs</string>
+    <string name="title_pending_approval">Pending Approval</string>
+    <string name="employer_approved_jobs_position">Singer</string>
+    <string name="employer_approved_jobs_wages">RM ??</string>
+    <string name="employer_approved_jobs_date">DD/MM/YYYY to DD/MM/YYYY</string>
+    <string name="employer_approved_jobs_time">00:00 to 00:00</string>
+    <string name="button_description_expand_less">Expand Less</string>
+    <string name="button_description_expand_more">Expand Less</string>
     <string name="closeApplication">Close Application</string>
     <string name="deletePost">Delete Post</string>
     <string name="jobDetailsCompanyName">Poptics Optometry Sdn Bhd</string>
@@ -106,5 +107,9 @@
     <string name="companyRequirement">Hard Working</string>
     <string name="job_description_value">Our company is the best. Come Come</string>
     <string name="favourite">Add to Favourite</string>
+    <string name="button_description_upload_job">Upload Job</string>
+    <string name="ic_description_approved_date">Working Date(s)</string>
+    <string name="ic_description_approved_time">Working period</string>
+    <string name="ic_description_applicants_num">Number of Applicants</string>
     />
 </resources>

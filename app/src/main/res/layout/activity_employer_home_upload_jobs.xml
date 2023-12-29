@@ -225,8 +225,8 @@
 
             <ImageView
                 android:id="@+id/calendar_icon"
-                android:layout_width="@dimen/alarmIconWidthHeight"
-                android:layout_height="@dimen/alarmIconWidthHeight"
+                android:layout_width="@dimen/icon_width_height"
+                android:layout_height="@dimen/icon_width_height"
                 android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="@color/grey"
@@ -315,8 +315,8 @@
 
             <ImageView
                 android:id="@+id/schedule_icon"
-                android:layout_width="@dimen/alarmIconWidthHeight"
-                android:layout_height="@dimen/alarmIconWidthHeight"
+                android:layout_width="@dimen/icon_width_height"
+                android:layout_height="@dimen/icon_width_height"
                 android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
                 app:layout_constraintBottom_toBottomOf="@+id/working_time_input"
                 app:layout_constraintStart_toStartOf="@+id/working_time_input"
@@ -496,8 +496,8 @@
 
             <ImageButton
                 android:id="@+id/add_button"
-                android:layout_width="@dimen/alarmIconWidthHeight"
-                android:layout_height="@dimen/alarmIconWidthHeight"
+                android:layout_width="@dimen/icon_width_height"
+                android:layout_height="@dimen/icon_width_height"
                 android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
                 android:backgroundTint="@android:color/transparent"
                 android:clickable="false"

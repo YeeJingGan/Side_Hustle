@@ -37,8 +37,8 @@
 
     <ImageView
         android:id="@+id/employer_my_jobs_list_item_calendar"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoung_list_item_position"
@@ -47,7 +47,7 @@
 
     <Button
         android:id="@+id/employer_my_jobs_detail_button"
-        android:layout_width="@dimen/detailButtonWidth"
+        android:layout_width="@dimen/button_details_width_height"
         android:layout_height="@dimen/detailButttonHeight"
         android:backgroundTint="@color/themeColor"
         android:paddingLeft="@dimen/buttonPadding"
@@ -62,8 +62,8 @@
 
     <ImageView
         android:id="@+id/list_item_schedule_icon"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_list_item_calendar"
@@ -82,8 +82,8 @@
 
     <ImageView
         android:id="@+id/list_item_employee_icon"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_icon"

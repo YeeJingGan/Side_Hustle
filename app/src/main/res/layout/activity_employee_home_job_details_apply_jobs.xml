@@ -188,7 +188,7 @@
     <TextView
         android:id="@+id/employee_application_language_header_2"
         android:layout_width="0dp"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="@dimen/backButtonConstraint"
         android:background="@drawable/background_rectangle_theme_color"
         android:text="@string/languages"
@@ -202,7 +202,7 @@
     <TextView
         android:id="@+id/employee_application_proficiency_header"
         android:layout_width="0dp"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_height="@dimen/icon_width_height"
         android:text="@string/proficiency"
         android:textAlignment="center"
         android:textColor="@color/themeColor"

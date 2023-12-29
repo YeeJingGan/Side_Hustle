@@ -20,9 +20,9 @@
     <dimen name="listItemPictureWidthHeight">75dp</dimen>
     <dimen name="listItemPictureConstraint">16dp</dimen>
     <dimen name="listItemPositionConstraint">60dp</dimen>
-    <dimen name="alarmIconWidthHeight">20dp</dimen>
-    <dimen name="detailButtonWidth">80dp</dimen>
-    <dimen name="detailButttonHeight">48dp</dimen>
+    <dimen name="icon_width_height">20dp</dimen>
+    <dimen name="button_details_width_height">80dp</dimen>
+
     <dimen name="buttonPadding">3dp</dimen>
     <dimen name="backButtonWidthHeight">48dp</dimen>
     <dimen name="submitButtonHeight">56dp</dimen>
@@ -47,4 +47,9 @@
     <dimen name="employee_details_text_size">16sp</dimen>
     <dimen name="applyNegotiateConstraint">24dp</dimen>
     <dimen name="employer_home_constraint">60dp</dimen>
+
+
+    <dimen name="button_width_height">48dp</dimen>
+    <dimen name="list_view_constraint">16dp</dimen>
+    <dimen name="button_text_size">12</dimen>
 </resources>

@@ -97,8 +97,8 @@
 
     <ImageView
         android:id="@+id/job_details_company_location_pin"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         app:layout_constraintBottom_toTopOf="@+id/job_details_star_1"
         app:layout_constraintStart_toStartOf="@+id/job_details_company_name"
         app:layout_constraintTop_toBottomOf="@+id/job_details_company_name"
@@ -117,40 +117,40 @@
 
     <ImageView
         android:id="@+id/job_details_star_1"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/employer_me_jobs_jobs_detail_pic"
         app:layout_constraintStart_toStartOf="@+id/job_details_company_location_pin" />
 
     <ImageView
         android:id="@+id/job_details_star_2"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/job_details_star_1"
         app:layout_constraintStart_toEndOf="@+id/job_details_star_1" />
 
     <ImageView
         android:id="@+id/job_details_star_3"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/job_details_star_2"
         app:layout_constraintStart_toEndOf="@+id/job_details_star_2" />
 
     <ImageView
         android:id="@+id/job_details_star_4"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/job_details_star_3"
         app:layout_constraintStart_toEndOf="@+id/job_details_star_3" />
 
     <ImageView
         android:id="@+id/job_details_star_5"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
         app:layout_constraintBottom_toBottomOf="@+id/job_details_star_4"
         app:layout_constraintStart_toEndOf="@+id/job_details_star_4" />
@@ -170,8 +170,8 @@
 
     <ImageView
         android:id="@+id/money_icon"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@+id/offered_position"
         app:layout_constraintTop_toBottomOf="@+id/offered_position"
@@ -179,8 +179,8 @@
 
     <ImageView
         android:id="@+id/jobs_details_calendar_icon"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@+id/money_icon"
         app:layout_constraintTop_toBottomOf="@+id/money_icon"
@@ -188,8 +188,8 @@
 
     <ImageView
         android:id="@+id/employer_job_details_schedule_icon"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@+id/jobs_details_calendar_icon"
         app:layout_constraintTop_toBottomOf="@+id/jobs_details_calendar_icon"
@@ -210,7 +210,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
-        android:text="@string/approvedJobsDate"
+        android:text="@string/employer_approved_jobs_date"
         app:layout_constraintBottom_toBottomOf="@+id/jobs_details_calendar_icon"
         app:layout_constraintStart_toStartOf="@+id/offered_wages" />
 
@@ -219,7 +219,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter"
-        android:text="@string/approvedJobsTime"
+        android:text="@string/employer_approved_jobs_time"
         app:layout_constraintBottom_toBottomOf="@+id/employer_job_details_schedule_icon"
         app:layout_constraintStart_toStartOf="@+id/employer_job_details_date" />
 
@@ -257,8 +257,8 @@
 
         <ImageView
             android:id="@+id/employer_job_details_check_box"
-            android:layout_width="@dimen/alarmIconWidthHeight"
-            android:layout_height="@dimen/alarmIconWidthHeight"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_check_box" />

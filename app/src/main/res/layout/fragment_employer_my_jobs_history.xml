@@ -37,8 +37,8 @@
 
     <ImageView
         android:id="@+id/employer_history_calendar"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="@dimen/backButtonConstraint"
         android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_history_position"
@@ -47,7 +47,7 @@
 
     <Button
         android:id="@+id/employer_history_button"
-        android:layout_width="@dimen/detailButtonWidth"
+        android:layout_width="@dimen/button_details_width_height"
         android:layout_height="@dimen/detailButttonHeight"
         android:backgroundTint="@color/themeColor"
         android:paddingLeft="@dimen/buttonPadding"
@@ -62,8 +62,8 @@
 
     <ImageView
         android:id="@+id/employer_history_schedule_icon"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="@dimen/backButtonConstraint"
         android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_history_calendar"
@@ -82,8 +82,8 @@
 
     <ImageView
         android:id="@+id/employer_history_icon"
-        android:layout_width="@dimen/alarmIconWidthHeight"
-        android:layout_height="@dimen/alarmIconWidthHeight"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
         android:layout_marginEnd="@dimen/backButtonConstraint"
         android:src="@drawable/ic_icon"
         app:layout_constraintEnd_toStartOf="@+id/employer_history_comment_num"
