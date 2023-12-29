@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">Side Hustle</string>
+    <string name="app_name">SideHustle</string>
+    <string name="login_instruction">Please enter your registration email and password</string>
+    <string name="login_welcome">Welcome to Side Hustle</string>
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Password</string>
+    <string name="login_continue">Continue</string>
+    <string name="login_or">or</string>
+    <string name="login_signupPrompt">Don\'t Have an Account? Sign up here!</string>
+    <string name="login_signup">Sign Up</string>
+    <string name="login_forgotPassword">Forgot Password?</string>
+    <string name="register_employer">Employer</string>
+    <string name="register_employerDescription">Find the right employee!</string>
+    <string name="register_employee">Employee</string>
+    <string name="register_employeeDescription">Find the right job for you!</string>
+    <string name="register_whoareyou">Who are you?</string>
+    <string name="register_toolbarTitle">Registration</string>
+    <string name="register_slogan">Value Your Work,\nNegotiate Your Worth</string>
+    <string name="register_joinUs">Join Side Hustle now. It\'s free!</string>
+    <string name="register_username">Username</string>
 </resources>

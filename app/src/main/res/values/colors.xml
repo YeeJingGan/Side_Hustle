@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="theme_yellow">#FDB915</color>
+    <color name="theme_gray">#F5F5F5</color>
+    <color name="theme_textgray">#747474</color>    <!--Opacity should be 80%-->
 </resources>
