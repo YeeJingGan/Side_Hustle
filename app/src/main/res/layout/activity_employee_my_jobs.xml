@@ -6,4 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".EmployeeMyJobsActivity">
 
+    <include
+        layout="@layout/layout_common_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include layout="@layout/layout_common_top_search_filter"/>
+
+    <include
+        android:id="@+id/include19"
+        layout="@layout/common_my_jobs_tab"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tab_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/employee_my_jobs_ongoing"
+        android:layout_width="350dp"
+        android:layout_height="540dp"
+        android:layout_marginTop="@dimen/list_view_constraint"
+        android:clickable="false"
+        android:dividerHeight="@dimen/listViewDividerHeight"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include19"
+        tools:listitem="@layout/fragment_employer_my_jobs_ongoing" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
