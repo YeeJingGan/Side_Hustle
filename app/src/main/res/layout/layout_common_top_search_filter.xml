@@ -21,12 +21,11 @@
         android:id="@+id/profile_avatar"
         android:layout_width="@dimen/toolbar_picture_size"
         android:layout_height="@dimen/toolbar_picture_size"
-        android:layout_marginStart="@dimen/toolbar_photo_margin"
-        android:layout_marginTop="@dimen/toolbar_photo_margin"
+        android:layout_marginStart="16dp"
         android:background="@drawable/background_circle_white"
         android:contentDescription="@string/profile_avatar_description"
-        app:layout_constraintStart_toEndOf="@+id/employee_home_toolbar"
-        app:layout_constraintStart_toStartOf="@+id/employee_home_toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_home_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/employee_home_toolbar"
         app:srcCompat="@drawable/sample_profile_photo" />
 
