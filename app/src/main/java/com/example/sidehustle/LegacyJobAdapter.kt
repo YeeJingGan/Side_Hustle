@@ -10,7 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
-class JobAdapter(private val context: Context, private val jobList: List<Job>) : BaseAdapter() {
+class LegacyJobAdapter(private val context: Context, private val jobList: List<LegacyJob>) : BaseAdapter() {
     override fun getCount(): Int {
         return jobList.size
     }
@@ -32,7 +32,7 @@ class JobAdapter(private val context: Context, private val jobList: List<Job>) :
         return view
     }
 
-    private fun bindJobData(view: View, job: Job) {
+    private fun bindJobData(view: View, job: LegacyJob) {
         val jobProfilePhotoView = view.findViewById<ImageView>(R.id.job_profile_photo_imageview)
         val jobNameView = view.findViewById<TextView>(R.id.job_name_textview)
         val jobPriceView = view.findViewById<TextView>(R.id.job_price_textview)
@@ -49,7 +49,7 @@ class JobAdapter(private val context: Context, private val jobList: List<Job>) :
         }
     }
 
-    private fun toJobDetails(view: View, job: Job) {
+    private fun toJobDetails(view: View, job: LegacyJob) {
 //      RMB Remove this
         val context = view.context
         val intent = Intent(context, EmployeeHomeJobDetailsActivity::class.java)

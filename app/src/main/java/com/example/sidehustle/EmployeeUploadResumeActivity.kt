@@ -11,7 +11,7 @@ import com.google.android.material.appbar.MaterialToolbar
 
 class EmployeeUploadResumeActivity : AppCompatActivity() {
 
-    private var resumePdfFile: PdfFile? = null
+    private var resumePdfFile: LegacyPdfFile? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_employee_upload_resume)
@@ -32,7 +32,7 @@ class EmployeeUploadResumeActivity : AppCompatActivity() {
 
         uploadButton.setOnClickListener {
             // TODO: Implement file picker here
-            val newResumePdfFile = PdfFile("TEST_FILE_NAME.pdf","test_path")
+            val newResumePdfFile = LegacyPdfFile("TEST_FILE_NAME.pdf","test_path")
             handleResumeUpload(newResumePdfFile)
         }
 
@@ -45,7 +45,7 @@ class EmployeeUploadResumeActivity : AppCompatActivity() {
         updateUI()
     }
 
-    private fun handleResumeUpload(newResumePdfFile: PdfFile){
+    private fun handleResumeUpload(newResumePdfFile: LegacyPdfFile){
 
         resumePdfFile = newResumePdfFile
 

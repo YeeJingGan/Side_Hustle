@@ -91,12 +91,12 @@ class EmployerMyProfileActivity : AppCompatActivity() {
         }
     }
 
-    private fun createReviewsCommentsList(): List<Review> {
+    private fun createReviewsCommentsList(): List<LegacyReview> {
         return listOf(
-            Review(R.drawable.sample_profile_photo, "Employer 1", 5, "Content 1"),
-            Review(R.drawable.sample_profile_photo, "Employer 2", 4, "Content 2"),
-            Review(R.drawable.sample_profile_photo, "Employer 3", 3, "Content 3"),
-            Review(R.drawable.sample_profile_photo, "Employer 4", 2, "Content 4"),
+            LegacyReview(R.drawable.sample_profile_photo, "Employer 1", 5, "Content 1"),
+            LegacyReview(R.drawable.sample_profile_photo, "Employer 2", 4, "Content 2"),
+            LegacyReview(R.drawable.sample_profile_photo, "Employer 3", 3, "Content 3"),
+            LegacyReview(R.drawable.sample_profile_photo, "Employer 4", 2, "Content 4"),
         )
     }
 
@@ -109,6 +109,6 @@ class EmployerMyProfileActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        finishAffinity()
+//        finishAffinity()
     }
 }

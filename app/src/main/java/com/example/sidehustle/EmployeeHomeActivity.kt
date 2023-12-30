@@ -15,8 +15,8 @@ class EmployeeHomeActivity : AppCompatActivity() {
 
         val listView = findViewById<ListView>(R.id.employee_home_job_list_view)
 
-        val jobList: List<Job> = createJobList()
-        val jobAdapter = JobAdapter(this, jobList)
+        val jobList: List<LegacyJob> = createJobList()
+        val jobAdapter = LegacyJobAdapter(this, jobList)
 
         listView.adapter = jobAdapter
 
@@ -57,16 +57,16 @@ class EmployeeHomeActivity : AppCompatActivity() {
 
     }
 
-    private fun createJobList(): List<Job> {
+    private fun createJobList(): List<LegacyJob> {
 // TODO: Replace with a real job list
         return mutableListOf(
-            Job(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            Job(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            Job(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            Job(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            Job(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            Job(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            Job(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
+            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
+            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
+            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
+            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
+            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
+            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
+            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
         )
     }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployeeMyJobsNegotiatingActivity">
+    tools:context=".EmployerMyJobsNegotiatingActivity">
 
     <include layout="@layout/layout_common_top_search_filter"/>
 

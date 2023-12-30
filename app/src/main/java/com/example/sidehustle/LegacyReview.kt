@@ -1,6 +1,6 @@
 package com.example.sidehustle
 
-data class Review(
+data class LegacyReview(
     val photoResId: Int,
     val reviewName: String,
     val reviewStarNum : Int,

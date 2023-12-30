@@ -72,7 +72,7 @@
             android:name=".EmployerMyJobsNegotiatingApplicantsListActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployeeMyJobsNegotiatingActivity"
+            android:name=".EmployerMyJobsNegotiatingActivity"
             android:exported="false" />
         <activity
             android:name=".EmployerMyJobsOngoingEmployeeListEmployeeDetailsActivity"

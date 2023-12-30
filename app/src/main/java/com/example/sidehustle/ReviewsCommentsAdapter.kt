@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class ReviewsCommentsAdapter(private val reviews: List<Review>) :
+class ReviewsCommentsAdapter(private val reviews: List<LegacyReview>) :
     RecyclerView.Adapter<ReviewsCommentsAdapter.ReviewsCommentsViewHolder>() {
 
     inner class ReviewsCommentsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
