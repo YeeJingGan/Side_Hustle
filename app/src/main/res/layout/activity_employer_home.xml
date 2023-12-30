@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployeeHomeActivity">
+    tools:context=".EmployerHomeActivity">
 
     <include layout="@layout/common_layout" />
 
@@ -105,8 +105,8 @@
         android:id="@+id/employer_home_button_upload"
         android:layout_width="@dimen/button_width_height"
         android:layout_height="@dimen/button_width_height"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="76dp"
         android:background="@drawable/circle_white_background"
         android:backgroundTint="@color/themeColor"
         android:contentDescription="@string/button_description_upload_job"
@@ -115,5 +115,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/black" />
+
+    <include
+        layout="@layout/common_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

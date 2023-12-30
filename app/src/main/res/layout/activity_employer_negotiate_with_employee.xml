@@ -7,51 +7,35 @@
     android:background="@drawable/background_reactangle_white"
     tools:context=".EmployerNegotiateWithEmployeeActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/employer_negotiate_with_employee_toolbar"
+    <include
+        android:id="@+id/include15"
+        layout="@layout/common_back_toolbar"
         android:layout_width="0dp"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@color/themeColor"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/employer_negotiate_with_employee_backButton"
-        android:layout_width="@dimen/backButtonWidthHeight"
-        android:layout_height="@dimen/backButtonWidthHeight"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="@android:color/transparent"
-        android:contentDescription="Back"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_negotiate_with_employee_toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back"
-        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/employer_negotiate_with_employee_negotiate_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="@dimen/common_constraint_24"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/negotiate"
+        android:text="@string/title_negotiate"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_negotiate_with_employee_toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/employer_negotiate_with_employee_toolbar"
-        app:layout_constraintTop_toTopOf="@+id/employer_negotiate_with_employee_toolbar" />
+        app:layout_constraintBottom_toBottomOf="@+id/include15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include15" />
 
     <Button
         android:id="@+id/employer_negotiate_with_employee_offer_button"
         android:layout_width="0dp"
-        android:layout_height="@dimen/submitButtonHeight"
+        android:layout_height="wrap_content"
         android:background="@drawable/background_rectangle_theme_color"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/offerButton"
+        android:text="@string/button_text_offer"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,11 +46,11 @@
     <Button
         android:id="@+id/employer_negotiate_with_employee_reset_button"
         android:layout_width="0dp"
-        android:layout_height="@dimen/submitButtonHeight"
+        android:layout_height="wrap_content"
         android:background="@drawable/background_reactangle_white"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/resetButton"
+        android:text="@string/button_text_reset"
         android:textColor="@color/themeColor"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,19 +60,19 @@
 
     <TextView
         android:id="@+id/employer_negotiate_with_employee_wages_input"
-        android:layout_width="@dimen/uploadJobsInfoBoxWidth"
-        android:layout_height="@dimen/uploadJobsInfoBoxHeight"
+        android:layout_width="@dimen/upload_jobs_info_box_width"
+        android:layout_height="@dimen/upload_jobs_info_box_height"
         android:layout_marginTop="@dimen/listItemPositionConstraint"
         android:background="@drawable/upload_jobs_input_box"
         android:fontFamily="@font/inter"
-        android:text="@string/employerWagesOfferred"
+        android:text="@string/hint_negotiate_wages"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employer_negotiate_with_employee_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/include15" />
 
     <TextView
         android:id="@+id/employer_negotiate_with_employee_wages"
@@ -100,7 +84,7 @@
         android:fontFamily="@font/inter"
         android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
         android:paddingRight="@dimen/uploadJobsInputTittlePadding"
-        android:text="@string/offeredPay"
+        android:text="@string/title_offered_pay"
         app:layout_constraintBottom_toBottomOf="@+id/employer_negotiate_with_employee_wages_input"
         app:layout_constraintStart_toStartOf="@+id/employer_negotiate_with_employee_wages_input" />
 
@@ -110,7 +94,7 @@
         android:layout_height="@dimen/backButtonWidthHeight"
         android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
         android:backgroundTint="@android:color/transparent"
-        android:contentDescription="reduce"
+        android:contentDescription="@string/button_description_minus"
         app:layout_constraintBottom_toBottomOf="@+id/employer_negotiate_with_employee_wages_input"
         app:layout_constraintStart_toStartOf="@+id/employer_negotiate_with_employee_wages_input"
         app:layout_constraintTop_toTopOf="@+id/employer_negotiate_with_employee_wages_input"
@@ -123,7 +107,7 @@
         android:layout_height="@dimen/backButtonWidthHeight"
         android:layout_marginEnd="@dimen/uploadJobsInputTittleConstraint"
         android:backgroundTint="@android:color/transparent"
-        android:contentDescription="increase"
+        android:contentDescription="@string/button_description_plus"
         app:layout_constraintBottom_toBottomOf="@+id/employer_negotiate_with_employee_wages_input"
         app:layout_constraintEnd_toEndOf="@+id/employer_negotiate_with_employee_wages_input"
         app:layout_constraintTop_toTopOf="@+id/employer_negotiate_with_employee_wages_input"
@@ -133,14 +117,14 @@
 
     <EditText
         android:id="@+id/employer_negotiate_with_employee_comment_input"
-        android:layout_width="@dimen/uploadJobsInfoBoxWidth"
-        android:layout_height="@dimen/uploadJobsInfoBoxHeight"
+        android:layout_width="@dimen/upload_jobs_info_box_width"
+        android:layout_height="@dimen/upload_jobs_info_box_height"
         android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
         android:background="@drawable/upload_jobs_input_box"
         android:ems="10"
         android:focusedByDefault="true"
         android:fontFamily="@font/inter"
-        android:hint="@string/commentHint"
+        android:hint="@string/hint_comment"
         android:inputType="text"
         android:textColor="@color/black"
         android:textSize="14sp"
@@ -159,7 +143,7 @@
         android:fontFamily="@font/inter"
         android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
         android:paddingRight="@dimen/uploadJobsInputTittlePadding"
-        android:text="@string/comment"
+        android:text="@string/title_comment"
         app:layout_constraintBottom_toBottomOf="@+id/employer_negotiate_with_employee_comment_input"
         app:layout_constraintStart_toStartOf="@+id/employer_negotiate_with_employee_comment_input" />
 

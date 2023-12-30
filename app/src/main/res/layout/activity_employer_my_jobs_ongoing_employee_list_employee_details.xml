@@ -7,65 +7,49 @@
     android:autofillHints="@string/default_employee_comment_for_employer"
     tools:context=".EmployerMyJobsOngoingEmployeeListEmployeeDetailsActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/employer_my_jobs_employee_details_toolbar"
+    <include
+        android:id="@+id/include6"
+        layout="@layout/common_back_toolbar"
         android:layout_width="0dp"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@color/themeColor"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/employer_my_jobs_employee_details_backButton"
-        android:layout_width="@dimen/backButtonWidthHeight"
-        android:layout_height="@dimen/backButtonWidthHeight"
-        android:layout_marginStart="@dimen/backButtonConstraint"
-        android:layout_marginTop="@dimen/backButtonConstraint"
-        android:backgroundTint="@android:color/transparent"
-        android:contentDescription="Back"
-        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_toolbar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back"
-        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/employer_my_jobs_ongoing_employee_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/backButtonConstraint"
+        android:layout_marginEnd="@dimen/common_constraint_24"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/employeeDetails"
+        android:text="@string/title_employee_details"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_employee_details_toolbar"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_employee_details_toolbar" />
+        app:layout_constraintBottom_toBottomOf="@+id/include6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include6" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingLeft="@dimen/listItemPadding"
-        android:paddingTop="@dimen/listItemPadding"
-        android:paddingRight="@dimen/listItemPadding"
-        android:paddingBottom="@dimen/listItemPadding"
+        android:paddingLeft="@dimen/list_item_padding"
+        android:paddingTop="@dimen/list_item_padding"
+        android:paddingRight="@dimen/list_item_padding"
+        android:paddingBottom="@dimen/list_item_padding"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_employee_details_toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/include6"
         app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="@dimen/listItemPadding"
-            android:paddingTop="@dimen/listItemPadding"
-            android:paddingRight="@dimen/listItemPadding"
-            android:paddingBottom="@dimen/listItemPadding">
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/list_item_padding"
+            android:paddingTop="@dimen/list_item_padding"
+            android:paddingRight="@dimen/list_item_padding"
+            android:paddingBottom="@dimen/list_item_padding">
 
             <View
                 android:id="@+id/employer_details_divider_1"
@@ -79,8 +63,9 @@
 
             <ImageView
                 android:id="@+id/employer_my_jobs_employee_details_employee_pic"
-                android:layout_width="@dimen/listItemPictureWidthHeight"
-                android:layout_height="@dimen/listItemPictureWidthHeight"
+                android:layout_width="@dimen/portrait_width_height"
+                android:layout_height="@dimen/portrait_width_height"
+                android:contentDescription="@string/pic_description_employee_pic"
                 app:layout_constraintBottom_toBottomOf="@+id/employee_details_view_resume_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_employee_details_employee_name"
@@ -90,10 +75,11 @@
                 android:id="@+id/employer_my_jobs_employee_details_employee_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/common_constraint_16"
                 android:fontFamily="@font/andika_new_basic_bold"
                 android:paddingLeft="4dp"
-                android:text="@string/employeeName"
+                android:paddingRight="4dp"
+                android:text="@string/employee_name"
                 android:textColor="@color/black"
                 android:textSize="@dimen/employee_details_text_size"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_employee_pic"
@@ -103,6 +89,7 @@
                 android:id="@+id/employer_my_jobs_employee_details_star_1"
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
+                android:contentDescription="@string/ic_description_rating"
                 android:src="@drawable/ic_star"
                 app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_employee_name"
                 app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_employee_details_employee_name" />
@@ -111,6 +98,7 @@
                 android:id="@+id/employer_my_jobs_employee_details_star_2"
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
+                android:contentDescription="@string/ic_description_rating"
                 android:src="@drawable/ic_star"
                 app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_1"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_1" />
@@ -119,6 +107,7 @@
                 android:id="@+id/employer_my_jobs_employee_details_star_3"
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
+                android:contentDescription="@string/title_rating"
                 android:src="@drawable/ic_star"
                 app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_2"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_2" />
@@ -127,6 +116,7 @@
                 android:id="@+id/employer_my_jobs_employee_details_star_4"
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
+                android:contentDescription="@string/ic_description_rating"
                 android:src="@drawable/ic_star"
                 app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_3"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_3" />
@@ -135,16 +125,17 @@
                 android:id="@+id/employer_my_jobs_employee_details_star_5"
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
+                android:contentDescription="@string/ic_description_rating"
                 android:src="@drawable/ic_star"
                 app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_4"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_4" />
 
             <Button
                 android:id="@+id/employee_details_view_resume_button"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_width="@dimen/large_button_width"
+                android:layout_height="@dimen/button_width_height"
                 android:backgroundTint="@color/themeColor"
-                android:text="@string/viewResume"
+                android:text="@string/button_text_view_resume"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_star_1"
                 app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_employee_details_star_3" />
@@ -156,7 +147,8 @@
                 android:layout_marginTop="@dimen/listViewConstraint"
                 android:fontFamily="@font/andika_new_basic_bold"
                 android:paddingLeft="4dp"
-                android:text="@string/employeeDetailsPosition"
+                android:paddingRight="4dp"
+                android:text="@string/employer_approved_jobs_position"
                 android:textColor="@color/black"
                 android:textSize="@dimen/employee_details_text_size"
                 app:layout_constraintStart_toStartOf="parent"
@@ -166,8 +158,9 @@
                 android:id="@+id/imageView"
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="@dimen/common_constraint_8"
+                android:layout_marginTop="@dimen/common_constraint_8"
+                android:contentDescription="@string/ic_description_employee_wages"
                 app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_position"
                 app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_employee_details_position"
                 app:srcCompat="@drawable/ic_money" />
@@ -178,34 +171,33 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/inter"
-                android:text="@string/finalWages"
+                android:text="@string/employee_wages"
                 android:textColor="@color/black"
                 android:textSize="@dimen/employee_details_text_size"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintStart_toEndOf="@+id/imageView" />
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
 
             <TextView
                 android:id="@+id/employee_details_comment_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/common_constraint_8"
                 android:fontFamily="@font/inter_bold"
-                android:text="@string/comment"
+                android:text="@string/title_comment"
                 android:textSize="@dimen/employee_details_text_size"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_position"
                 app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_1" />
 
             <TextView
                 android:id="@+id/employee_details_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/andika"
-                android:text="@string/employee_comment_for_employer"
+                android:text="@string/employee_comment"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="@+id/employee_details_comment_header"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/employee_details_comment_header" />
 
             <View
@@ -223,23 +215,21 @@
                 android:id="@+id/employee_details_document_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/inter_bold"
-                android:text="@string/supportingDocument"
+                android:text="@string/title_supporting_document"
                 android:textSize="@dimen/employee_details_text_size"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/employee_details_comment_header"
                 app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_2" />
 
             <Button
                 android:id="@+id/supporting_docuemnt_view_button"
                 android:layout_width="@dimen/backButtonWidthHeight"
                 android:layout_height="@dimen/backButtonWidthHeight"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/common_constraint_8"
                 android:background="@drawable/ic_pdf"
-                android:contentDescription="pdf"
-                app:layout_constraintStart_toStartOf="@+id/employee_details_document_header"
+                android:contentDescription="@string/button_description_pdf"
+                app:layout_constraintStart_toStartOf="@+id/employee_details_comment"
                 app:layout_constraintTop_toBottomOf="@+id/employee_details_document_header" />
 
             <View
@@ -256,21 +246,19 @@
                 android:id="@+id/employee_details_languages_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/inter_bold"
-                android:text="@string/languages"
+                android:text="@string/title_languages"
                 android:textSize="@dimen/employee_details_text_size"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/employee_details_document_header"
                 app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_3" />
 
             <TableLayout
                 android:id="@+id/tableLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/employee_details_languages_header"
+                app:layout_constraintStart_toStartOf="@+id/supporting_docuemnt_view_button"
                 app:layout_constraintTop_toBottomOf="@+id/employee_details_languages_header">
 
                 <TableRow
@@ -284,11 +272,11 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/background_rectangle_theme_color"
                         android:fontFamily="@font/inter"
-                        android:paddingLeft="@dimen/listItemPadding"
-                        android:paddingTop="@dimen/listItemPadding"
-                        android:paddingRight="@dimen/listItemPadding"
-                        android:paddingBottom="@dimen/listItemPadding"
-                        android:text="@string/languages"
+                        android:paddingLeft="@dimen/list_item_padding"
+                        android:paddingTop="@dimen/list_item_padding"
+                        android:paddingRight="@dimen/list_item_padding"
+                        android:paddingBottom="@dimen/list_item_padding"
+                        android:text="@string/title_languages"
                         android:textColor="@color/white"
                         android:textSize="@dimen/employee_details_text_size" />
 
@@ -296,14 +284,14 @@
                         android:id="@+id/employee_details_proficiency_header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/background_reactangle_white"
+                        android:background="@drawable/background_rectangle_theme_color"
                         android:fontFamily="@font/inter"
-                        android:paddingLeft="@dimen/listItemPadding"
-                        android:paddingTop="@dimen/listItemPadding"
-                        android:paddingRight="@dimen/listItemPadding"
-                        android:paddingBottom="@dimen/listItemPadding"
-                        android:text="@string/proficiency"
-                        android:textColor="@color/themeColor"
+                        android:paddingLeft="@dimen/list_item_padding"
+                        android:paddingTop="@dimen/list_item_padding"
+                        android:paddingRight="@dimen/list_item_padding"
+                        android:paddingBottom="@dimen/list_item_padding"
+                        android:text="@string/title_proficiency"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/employee_details_text_size"
                         app:layout_constraintBottom_toBottomOf="@+id/table_row_1"
                         app:layout_constraintStart_toEndOf="@+id/table_row_1"
@@ -322,29 +310,29 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/background_reactangle_white"
                         android:fontFamily="@font/inter"
-                        android:paddingLeft="@dimen/listItemPadding"
-                        android:paddingTop="@dimen/listItemPadding"
-                        android:paddingRight="@dimen/listItemPadding"
-                        android:paddingBottom="@dimen/listItemPadding"
-                        android:text="@string/employee_details_language_value"
-                        android:textColor="@color/themeColor"
-                        android:textSize="@dimen/employee_details_text_size"
-                        android:textAlignment="center"/>
+                        android:paddingLeft="@dimen/list_item_padding"
+                        android:paddingTop="@dimen/list_item_padding"
+                        android:paddingRight="@dimen/list_item_padding"
+                        android:paddingBottom="@dimen/list_item_padding"
+                        android:text="@string/employee_language"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/employee_details_text_size" />
 
                     <TextView
                         android:id="@+id/employee_details_proficiency_value"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/background_rectangle_theme_color"
+                        android:background="@drawable/background_reactangle_white"
                         android:fontFamily="@font/inter"
-                        android:paddingLeft="@dimen/listItemPadding"
-                        android:paddingTop="@dimen/listItemPadding"
-                        android:paddingRight="@dimen/listItemPadding"
-                        android:paddingBottom="@dimen/listItemPadding"
-                        android:text="@string/proficiencyValue"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/employee_details_text_size"
+                        android:paddingLeft="@dimen/list_item_padding"
+                        android:paddingTop="@dimen/list_item_padding"
+                        android:paddingRight="@dimen/list_item_padding"
+                        android:paddingBottom="@dimen/list_item_padding"
+                        android:text="@string/employee_proficiency"
                         android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/employee_details_text_size"
                         app:layout_constraintBottom_toBottomOf="@+id/employee_details_proficiency_header"
                         app:layout_constraintStart_toEndOf="@+id/employee_details_proficiency_header"
                         app:layout_constraintTop_toTopOf="@+id/employee_details_proficiency_header" />
@@ -366,18 +354,17 @@
                 android:id="@+id/employee_details_review_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/common_constraint_8"
                 android:fontFamily="@font/inter_bold"
-                android:text="@string/reviewAndComment"
+                android:text="@string/title_review_and_comment"
                 android:textSize="@dimen/employee_details_text_size"
-                app:layout_constraintStart_toStartOf="@+id/employer_details_divider_4"
+                app:layout_constraintStart_toStartOf="@+id/employee_details_languages_header"
                 app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_4" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager2"
                 android:layout_width="0dp"
-                android:layout_height="1500dp"
+                android:layout_height="800dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"

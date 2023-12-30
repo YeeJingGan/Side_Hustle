@@ -4,97 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/listItemPadding"
-    android:paddingTop="@dimen/listItemPadding"
-    android:paddingRight="@dimen/listItemPadding"
-    android:paddingBottom="@dimen/listItemPadding"
+    android:paddingLeft="@dimen/list_item_padding"
+    android:paddingTop="@dimen/list_item_padding"
+    android:paddingRight="@dimen/list_item_padding"
+    android:paddingBottom="@dimen/list_item_padding"
     tools:context=".EmployerMyJobsOngoingEmployeeListFragment" >
 
     <ImageView
-        android:id="@+id/history_employee_pic"
-        android:layout_width="@dimen/listItemPictureWidthHeight"
-        android:layout_height="@dimen/listItemPictureWidthHeight"
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_pic"
+        android:layout_width="@dimen/portrait_width_height"
+        android:layout_height="@dimen/portrait_width_height"
+        android:contentDescription="@string/pic_description_employee_pic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/history_employee_name"
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/common_constraint_16"
         android:fontFamily="@font/andika"
-        android:text="@string/employeeName"
+        android:text="@string/employee_name"
         android:textColor="@color/black"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/history_employee_pic"
-        app:layout_constraintTop_toTopOf="@+id/history_employee_pic" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_pic"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_pic" />
 
     <TextView
-        android:id="@+id/history_employee_wages"
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_wages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/rowdies"
-        android:text="@string/finalWages"
+        android:text="@string/employee_wages"
         android:textColor="@color/black"
         android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/history_employee_name"
-        app:layout_constraintTop_toBottomOf="@+id/history_employee_name" />
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_name"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_name" />
 
     <ImageView
-        android:id="@+id/comment_rating_star_1"
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_1"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:contentDescription="@string/ic_description_rating"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_pic"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_wages"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_wages" />
+
+    <ImageView
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_2"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
-        app:layout_constraintBottom_toBottomOf="@+id/history_employee_pic"
-        app:layout_constraintStart_toStartOf="@+id/history_employee_wages"
-        app:layout_constraintTop_toBottomOf="@+id/history_employee_wages" />
+        android:contentDescription="@string/ic_description_rating"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_1"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_1" />
 
     <ImageView
-        android:id="@+id/comment_rating_star_2"
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_3"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
-        app:layout_constraintBottom_toBottomOf="@+id/comment_rating_star_1"
-        app:layout_constraintStart_toEndOf="@+id/comment_rating_star_1" />
+        android:contentDescription="@string/ic_description_rating"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_2"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_2" />
 
     <ImageView
-        android:id="@+id/comment_rating_star_3"
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_4"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
-        app:layout_constraintBottom_toBottomOf="@+id/comment_rating_star_2"
-        app:layout_constraintStart_toEndOf="@+id/comment_rating_star_2" />
+        android:contentDescription="@string/ic_description_rating"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_3"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_3" />
 
     <ImageView
-        android:id="@+id/comment_rating_star_4"
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_5"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:src="@drawable/ic_star"
-        app:layout_constraintBottom_toBottomOf="@+id/comment_rating_star_3"
-        app:layout_constraintStart_toEndOf="@+id/comment_rating_star_3" />
-
-    <ImageView
-        android:id="@+id/comment_rating_star_5"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
-        app:layout_constraintBottom_toBottomOf="@+id/comment_rating_star_4"
-        app:layout_constraintStart_toEndOf="@+id/comment_rating_star_4" />
+        android:contentDescription="@string/ic_description_rating"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_4"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_4" />
 
     <Button
-        android:id="@+id/employer_history_view_employee_details_button"
-        android:layout_width="@dimen/button_details_width_height"
-        android:layout_height="@dimen/detailButttonHeight"
+        android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_button"
+        android:layout_width="@dimen/small_button_width"
+        android:layout_height="@dimen/button_width_height"
         android:backgroundTint="@color/themeColor"
         android:paddingLeft="@dimen/buttonPadding"
         android:paddingTop="@dimen/buttonPadding"
         android:paddingRight="@dimen/buttonPadding"
         android:paddingBottom="@dimen/buttonPadding"
-        android:text="@string/detailsButton"
+        android:text="@string/button_text_details"
         android:textColor="@color/white"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/history_employee_pic"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_pic"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

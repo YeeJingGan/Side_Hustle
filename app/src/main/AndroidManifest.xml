@@ -55,7 +55,7 @@
             android:name=".EmployerHomeUploadJobsActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployeeHomeActivity"
+            android:name=".EmployerHomeActivity"
             android:exported="false" />
         <activity
             android:name=".EmployerMyJobsOngoingActivity"

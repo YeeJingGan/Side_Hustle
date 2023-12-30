@@ -17,39 +17,46 @@
     <dimen name="padding_start">10dp</dimen>
     <dimen name="toolbar_search_text_size">12sp</dimen>
     <dimen name="toolbar_search_height">30dp</dimen>
-    <dimen name="listItemPictureWidthHeight">75dp</dimen>
     <dimen name="listItemPictureConstraint">16dp</dimen>
     <dimen name="listItemPositionConstraint">60dp</dimen>
     <dimen name="icon_width_height">20dp</dimen>
-    <dimen name="button_details_width_height">80dp</dimen>
 
     <dimen name="buttonPadding">3dp</dimen>
     <dimen name="backButtonWidthHeight">48dp</dimen>
-    <dimen name="submitButtonHeight">56dp</dimen>
-    <dimen name="submitButtonWidth">196.25dp</dimen>
-    <dimen name="uploadJobsInfoBoxWidth">350dp</dimen>
-    <dimen name="uploadJobsInfoBoxHeight">50dp</dimen>
-    <dimen name="uploadJobInfoBoxPaddingTop">13dp</dimen>
+
     <dimen name="uploadJobsInputTittleConstraint">40dp</dimen>
     <dimen name="uploadJobsInputTittlePadding">5dp</dimen>
     <dimen name="dateInput">100dp</dimen>
     <dimen name="dateTimeBoxHieght">100dp</dimen>
     <dimen name="dateTimeTittleConstraint">90dp</dimen>
-    <dimen name="oneDayCheckBoxWidth">100dp</dimen>
-    <dimen name="oneDayCheckBoxHeight">48dp</dimen>
+
     <dimen name="addressInputBoxHeight">232dp</dimen>
     <dimen name="addressConstraint">222dp</dimen>
     <dimen name="addressInputHeight">48dp</dimen>
-    <dimen name="listItemPadding">8dp</dimen>
     <dimen name="employeeNumWidthHieght">20dp</dimen>
     <dimen name="backButtonConstraint">8dp</dimen>
     <dimen name="viewResumeButtonHeight">20dp</dimen>
-    <dimen name="employee_details_text_size">16sp</dimen>
     <dimen name="applyNegotiateConstraint">24dp</dimen>
     <dimen name="employer_home_constraint">60dp</dimen>
 
 
     <dimen name="button_width_height">48dp</dimen>
     <dimen name="list_view_constraint">16dp</dimen>
-    <dimen name="button_text_size">12</dimen>
+    <dimen name="button_text_size">12sp</dimen>
+    <dimen name="common_constraint_16">16dp</dimen>
+    <dimen name="common_constraint_8">8dp</dimen>
+    <dimen name="common_constraint_24">24dp</dimen>
+    <dimen name="tab_constraint">60dp</dimen>
+    <dimen name="large_button_width">120dp</dimen>
+    <dimen name="small_button_width">80dp</dimen>
+    <dimen name="employee_details_text_size">16sp</dimen>
+    <dimen name="portrait_width_height">75dp</dimen>
+    <dimen name="upload_jobs_info_box_width">350dp</dimen>
+    <dimen name="upload_jobs_info_box_height">50dp</dimen>
+    <dimen name="upload_jobs_info_box_padding_top">13dp</dimen>
+    <dimen name="upload_jobs_constraint_14">14dp</dimen>
+    <dimen name="one_day_check_box_width">100dp</dimen>
+    <dimen name="list_item_padding">8dp</dimen>
+
+
 </resources>

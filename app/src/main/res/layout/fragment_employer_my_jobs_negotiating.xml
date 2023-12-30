@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_reactangle_white"
-    android:paddingLeft="@dimen/listItemPadding"
-    android:paddingTop="@dimen/listItemPadding"
-    android:paddingRight="@dimen/listItemPadding"
-    android:paddingBottom="@dimen/listItemPadding"
+    android:paddingLeft="@dimen/list_item_padding"
+    android:paddingTop="@dimen/list_item_padding"
+    android:paddingRight="@dimen/list_item_padding"
+    android:paddingBottom="@dimen/list_item_padding"
     tools:context=".EmployerMyJobsNegotiatingFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/andika_new_basic_bold"
-        android:text="@string/employerMyJobsNegotiatingPosition"
+        android:text="@string/employer_approved_jobs_position"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,16 +29,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/rowdies"
-        android:text="@string/employer_my_jobs_negotiating_wages"
+        android:text="@string/employer_approved_jobs_wages"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_position"
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_position" />
 
     <ImageView
-        android:id="@+id/employer_my_jobs_negotiating_calendar"
+        android:id="@+id/employer_my_jobs_negotiating_ic_calendar"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
+        android:contentDescription="@string/ic_description_approved_date"
         android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_wages"
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_wages"
@@ -50,19 +51,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/andika"
-        android:text="@string/employer_my_jobs_negotiating_date"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_calendar"
-        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_calendar" />
+        android:text="@string/employer_approved_jobs_date"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_calendar"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_ic_calendar"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_calendar" />
 
     <ImageView
-        android:id="@+id/employer_my_jobs_negotiating_schedule"
+        android:id="@+id/employer_my_jobs_negotiating_ic_schedule"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/ic_description_approved_time"
         android:src="@drawable/ic_schedule"
-        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_calendar"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_calendar"
+        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_ic_calendar"
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_ic_calendar"
         app:srcCompat="@drawable/ic_schedule" />
 
     <TextView
@@ -71,31 +74,33 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/andika"
-        android:text="@string/employer_my_jobs_negotiating_time"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_schedule"
-        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_schedule" />
+        android:text="@string/employer_approved_jobs_time"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_schedule"
+        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_ic_schedule"
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_schedule" />
 
     <Button
         android:id="@+id/employer_my_jobs_negotiating_view_applicant_button"
-        android:layout_width="@dimen/button_details_width_height"
-        android:layout_height="@dimen/detailButttonHeight"
+        android:layout_width="@dimen/large_button_width"
+        android:layout_height="@dimen/button_width_height"
         android:backgroundTint="@color/themeColor"
         android:paddingLeft="@dimen/buttonPadding"
         android:paddingTop="@dimen/buttonPadding"
         android:paddingRight="@dimen/buttonPadding"
         android:paddingBottom="@dimen/buttonPadding"
-        android:text="@string/viewApplicantButton"
+        android:text="@string/button_text_view_applicants"
         android:textColor="@color/white"
-        android:textSize="8sp"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_time"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/employer_my_jobs_negotiating_employee"
+        android:id="@+id/employer_my_jobs_negotiating_ic_applicants"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/ic_description_applicants_num"
         android:src="@drawable/ic_icon"
         app:layout_constraintEnd_toStartOf="@+id/employer_my_jobs_negotiating_applicant_num"
         app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_position"
@@ -106,10 +111,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="@string/employer_my_jobs_negotiating_applicant_num"
+        android:text="@string/employer_applicants_num"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_employee"
+        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_applicants"
         app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_negotiating_view_applicant_button"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_employee" />
+        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_applicants" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

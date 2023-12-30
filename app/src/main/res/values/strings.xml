@@ -1,115 +1,147 @@
 <resources>
     <string name="app_name">Side Hustle</string>
-    <string name="homeButtonDescription">Home</string>
-    <string name="myProfileButtonDescription">My Profile</string>
-    <string name="myJobsButtonDescription">My Jobs</string>
-    <string name="ongoingTab">Ongoing</string>
-    <string name="NegotiatingTab">Negotiating</string>
-    <string name="historyTab">History</string>
-    <string name="title_activity_employee_main_acitivty">EmployeeMainAcitivty</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_employee_main_acitivty">EmployeeMainActivity</string>
     <string name="profile_avatar_description">Profile Avatar</string>
     <string name="employee_toolbar_search_hint">How much you can earn today?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="listItemPostition">Bartender</string>
-    <string name="detailsButton">Details</string>
-    <string name="jobDetails">Job Details</string>
-    <string name="submitButton">Submit</string>
-    <string name="resetButton">Reset</string>
-    <string name="uploadJobsInstruction">Please fill in the details below</string>
-    <string name="uploadJobsJobTittle">Enter a job tittle</string>
-    <string name="jobTittle">Job Tittle</string>
-    <string name="wages">Wages</string>
-    <string name="wages_input">RM ??</string>
-    <string name="workingTime">Working Time</string>
-    <string name="to">to</string>
-    <string name="date">DD/MM/YYYY</string>
-    <string name="workingDate">Working Date</string>
-    <string name="oneDay">One Day</string>
-    <string name="time">00:00</string>
-    <string name="address">Address</string>
-    <string name="address_1">address 1</string>
-    <string name="address_2">address 2</string>
-    <string name="postcode">postcode</string>
-    <string name="locationURL">Location URL</string>
-    <string name="urlHint">Enter location URL (Google Map, Waze, etc)</string>
-    <string name="requirements">Requirements</string>
-    <string name="hintRequirement">Enter your requirement</string>
-    <string name="description">Description</string>
-    <string name="hintDescription">Enter your description</string>
-    <string name="list_item_wages">RM ??</string>
-    <string name="list_item_date">DD/MM/YYYY to DD/MM/YYYY</string>
-    <string name="listItemTime">00:00 to 00:00</string>
-    <string name="employeeNum">3</string>
-    <string name="employees">Employees</string>
-    <string name="employeeName">Gan Yee Jing</string>
-    <string name="finalWages">RM ??</string>
-    <string name="viewEmployeeButton">View Employee</string>
-    <string name="employeeDetails">Employee Details</string>
-    <string name="viewResume">View Resume</string>
-    <string name="employeeDetailsPosition">Bartender</string>
-    <string name="comment">Comment</string>
-    <string name="employee_comment_for_employer">Comment comment comment</string>
-    <string name="default_employee_comment_for_employer">This employee does not leaves any comment</string>
-    <string name="supportingDocument">Supporting Document</string>
-    <string name="languages">Languages</string>
-    <string name="proficiency">Proficiency</string>
-    <string name="employee_details_language_value">English</string>
-    <string name="proficiencyValue">Good</string>
-    <string name="reviewAndComment">Reviews and Comments</string>
-    <string name="employerMyJobsNegotiatingPosition">Bartender</string>
-    <string name="employer_my_jobs_negotiating_wages">RM ??</string>
-    <string name="employer_my_jobs_negotiating_date">DD/MM/YYYY to DD/MM/YYYY</string>
-    <string name="employer_my_jobs_negotiating_time">00:00 to 00:00</string>
-    <string name="viewApplicantButton">View Applicants</string>
-    <string name="employer_my_jobs_negotiating_applicant_num">5 / 3</string>
-    <string name="applicantsList">Applicants List</string>
-    <string name="applicantsWagesOffered">RM ??</string>
-    <string name="applicantDetails">Applicant Details</string>
-    <string name="offerSent">Offer Sent</string>
-    <string name="rejectButton">Reject</string>
-    <string name="negotiateButton">Negotiate</string>
-    <string name="acceptButton">Accept</string>
-    <string name="applicantName">Yeap Jie Shen</string>
-    <string name="applicantPosition">Lecturer</string>
-    <string name="offerButton">Offer</string>
-    <string name="negotiate">Negotiate</string>
-    <string name="offeredPay">Offered Pay</string>
-    <string name="commentHint">"Please leave your comment "</string>
-    <string name="employerWagesOfferred">RM ??</string>
-    <string name="expectedPay">Expected Pay</string>
-    <string name="applyNegotiate">Apply / Negotiate</string>
-    <string name="apply">Apply</string>
-    <string name="add">Add</string>
-    <string name="add_2">Upload your document(s) here</string>
-    <string name="pendingComment">Pending Comment:</string>
-    <string name="pendingCommentEmployer">5</string>
-    <string name="commented">Commented</string>
-    <string name="pendingComment2">pending comment</string>
-    <string name="commentRating">Comment and Rate</string>
-    <string name="rating">Rating</string>
+
+
+
+    <string name="ic_description_approved_date">Working Date(s)</string>
+    <string name="ic_description_approved_time">Working Period</string>
+    <string name="ic_description_applicants_num">Number of Applicants</string>
+    <string name="ic_description_offered_wages">Offered Wages</string>
+    <string name="ic_description_requirements">Requirement</string>
+    <string name="ic_description_company_location">Company Location</string>
+    <string name="ic_description_rating">Rating</string>
+    <string name="ic_description_home">Home</string>
+    <string name="ic_description_my_jobs">My Jobs</string>
+    <string name="ic_description_my_profile">My Profile</string>
+    <string name="ic_description_employee_num">Number of Employees</string>
+    <string name="ic_description_employee_wages">Wages</string>
+    <string name="ic_description_requirement">Requirement(s)</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_job_details">Job Details</string>
     <string name="title_approved_jobs">Approved Jobs</string>
     <string name="title_pending_approval">Pending Approval</string>
+    <string name="title_requirements">Requirements</string>
+    <string name="title_description">Description</string>
+    <string name="title_employee">Employees</string>
+    <string name="title_employee_details">Employee Details</string>
+    <string name="title_comment">Comment</string>
+    <string name="title_supporting_document">Supporting Document(s)</string>
+    <string name="title_languages">Languages</string>
+    <string name="title_review_and_comment">Reviews and Comments</string>
+    <string name="title_applicant_details">Applicant Details</string>
+    <string name="title_proficiency">Proficiency</string>
+    <string name="title_pending_comment">Pending Comment:</string>
+    <string name="title_rating">Rating</string>
+    <string name="title_location_url">Location URL</string>
+    <string name="title_job_title">Job Tittle</string>
+    <string name="title_wages">Wages</string>
+    <string name="title_working_time">Working Time</string>
+    <string name="title_working_date">Working Date</string>
+    <string name="title_one_day">One Day</string>
+    <string name="title_to">to</string>
+    <string name="title_address">Address</string>
+    <string name="title_expected_pay">Expected Pay</string>
+    <string name="title_negotiate">Negotiate</string>
+    <string name="title_offered_pay">Offered Pay</string>
+    <string name="title_applicant_list">Applicants List</string>
+    <string name="title_comment_rate">Comment and Rate</string>
+
+    <string name="hint_input_job_title">Enter a job tittle</string>
+    <string name="hint_input_date">DD/MM/YYYY</string>
+    <string name="hint_input_address_1">address 1</string>
+    <string name="hint_input_address_2">address 2</string>
+    <string name="hint_input_postcode">postcode</string>
+    <string name="hint_input_url">Enter location URL (Google Map, Waze, etc)</string>
+    <string name="hint_input_requirement">Enter your requirement</string>
+    <string name="hint_input_description">Enter your description</string>
+    <string name="hint_comment">"Please leave your comment "</string>
+    <string name="hint_negotiate_wages">RM ??</string>
+    <string name="hint_input_time">00:00</string>
+    <string name="hint_upload_document">Upload your document(s) here</string>
+
     <string name="employer_approved_jobs_position">Singer</string>
     <string name="employer_approved_jobs_wages">RM ??</string>
     <string name="employer_approved_jobs_date">DD/MM/YYYY to DD/MM/YYYY</string>
     <string name="employer_approved_jobs_time">00:00 to 00:00</string>
+
     <string name="button_description_expand_less">Expand Less</string>
     <string name="button_description_expand_more">Expand Less</string>
-    <string name="closeApplication">Close Application</string>
-    <string name="deletePost">Delete Post</string>
-    <string name="jobDetailsCompanyName">Poptics Optometry Sdn Bhd</string>
-    <string name="jobDetailsCompanyLocation">Bandar Puteri, Puchong, Selangor</string>
-    <string name="company_initial_offered_wages">RM ??</string>
-    <string name="companyRequirement">Hard Working</string>
-    <string name="job_description_value">Our company is the best. Come Come</string>
-    <string name="favourite">Add to Favourite</string>
     <string name="button_description_upload_job">Upload Job</string>
-    <string name="ic_description_approved_date">Working Date(s)</string>
-    <string name="ic_description_approved_time">Working period</string>
-    <string name="ic_description_applicants_num">Number of Applicants</string>
+    <string name="button_description_back">Back</string>
+    <string name="button_description_pdf">PDF</string>
+    <string name="button_description_plus">Increase</string>
+    <string name="button_description_minus">Decrease</string>
+    <string name="button_description_favourite">Add to Favourite</string>
+
+
+    <string name="employer_upload_jobs_company_name">Poptics Optometry Sdn Bhd</string>
+    <string name="employer_upload_jobs_company_address">Bandar Puteri, Puchong, Selangor</string>
+    <string name="employer_upload_jobs_requirement">Hard Working</string>
+    <string name="employer_upload_jobs_description">Our company is the best. Come Come</string>
+
+    <string name="button_text_details">Details</string>
+    <string name="button_text_close_application">Close Application</string>
+    <string name="button_text_delete_post">Delete Post</string>
+    <string name="button_text_view_employees">View Employees</string>
+    <string name="button_text_view_resume">View Resume</string>
+    <string name="button_text_view_applicants">View Applicant</string>
+    <string name="button_text_reject">Reject</string>
+    <string name="button_text_negotiate">Negotiate</string>
+    <string name="button_text_accept">Accept</string>
+    <string name="button_text_submit">Submit</string>
+    <string name="button_text_reset">Reset</string>
+    <string name="button_text_apply_negotiate">Apply / Negotiate</string>
+    <string name="button_text_apply">Apply</string>
+    <string name="button_text_offer">Offer</string>
+
+    <string name="pic_description_company_logo">Company Logo</string>
+    <string name="pic_description_employee_pic">Employee Portrait</string>
+    <string name="pic_description_applicant_pic">Applicant Portrait</string>
+
+    <string name="employer_applicants_num">5 / 3</string>
+    <string name="employer_employee_num">3</string>
+
+    <string name="tab_text_ongoing">Ongoing</string>
+    <string name="tab_text_negotiating">Negotiating</string>
+    <string name="tab_text_history">History</string>
+
+    <string name="employee_name">Gan Yee Jing</string>
+    <string name="employee_wages">RM ??</string>
+    <string name="employee_comment">Comment comment comment</string>
+    <string name="employee_language">Japanese</string>
+    <string name="employee_proficiency">Excellent</string>
+    <string name="ongoing_jobs_position">Lecturer</string>
+    <string name="ongoing_jobs_date">DD/MM/YYYY to DD/MM/YYYY</string>
+    <string name="ongoing_jobs_time">00:00 to 00:00</string>
+
+    <string name="applicant_name">Yeap Jie Shen</string>
+    <string name="applicant_offered_wages">RM ??</string>
+    <string name="applicant_application_status">Offer Sent</string>
+    <string name="applicant_comment">Im Pro faster accept</string>
+    <string name="applicant_language">English</string>
+    <string name="applicant_proficiency">Good</string>
+
+    <string name="history_date">DD/MM/YYYY to DD/MM/YYYY</string>
+    <string name="history_period">00:00 to 00:00</string>
+    <string name="history_position">Bartender</string>
+    <string name="history_employee_num">2/5</string>
+    <string name="history_portrait">Employee Portrait</string>
+    <string name="history_employee_name">Wong Ah Kau</string>
+    <string name="history_employee_wages">RM ??</string>
+    <string name="history_comment_status">Commented</string>
+
+    <string name="instruction_upload_jobs">Please fill in the details below</string>
+
+    <string name="default_employee_comment_for_employer">This employee does not leaves any comment</string>
+
+
     />
 </resources>

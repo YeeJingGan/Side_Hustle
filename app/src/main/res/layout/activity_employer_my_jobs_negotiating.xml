@@ -6,140 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".EmployeeMyJobsNegotiangActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/employer_my_jobs_toolbar_2"
+    <include layout="@layout/common_layout"/>
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/common_my_jobs_tab"
         android:layout_width="0dp"
-        android:layout_height="@dimen/toolbar_height"
-        android:background="@color/themeColor"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/tab_constraint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/employer_my_jobs_profile_avatar"
-        android:layout_width="@dimen/toolbar_picture_size"
-        android:layout_height="@dimen/toolbar_picture_size"
-        android:layout_marginStart="@dimen/toolbar_photo_margin"
-        android:layout_marginTop="@dimen/toolbar_photo_margin"
-        android:background="@drawable/circle_white_background"
-        android:contentDescription="@string/profile_avatar_description"
-        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_toolbar_2"
-        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_toolbar_2"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_toolbar_2"
-        app:srcCompat="@drawable/sample_profile_photo" />
-
-    <EditText
-        android:id="@+id/employer_my_jobs_search_edit_text"
-        android:layout_width="@dimen/toolbar_search_width"
-        android:layout_height="@dimen/toolbar_search_height"
-        android:background="@drawable/rounded_corner"
-        android:ems="10"
-        android:hint="@string/employee_toolbar_search_hint"
-        android:inputType="text"
-        android:paddingStart="@dimen/padding_start"
-        android:paddingEnd="@dimen/padding_start"
-        android:textSize="@dimen/toolbar_search_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_toolbar_2"
-        app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_toolbar_2"
-        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_profile_avatar"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_toolbar_2" />
-
-    <View
-        android:id="@+id/employer_my_jobs_footer_divider_2"
-        android:layout_width="@dimen/footerDividerWidth"
-        android:layout_height="1dp"
-        android:layout_marginBottom="@dimen/footerDividerHeight"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/employer_my_jobs_home_button_2"
-        android:layout_width="@dimen/iconWidthHeight"
-        android:layout_height="@dimen/iconWidthHeight"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/homeButtonDescription"
-        app:layout_constraintEnd_toStartOf="@+id/employer_my_jobs_button_2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_footer_divider_2"
-        app:srcCompat="@drawable/home_icon"
-        app:tint="@color/grey" />
-
-    <ImageButton
-        android:id="@+id/employer_my_jobs_button_2"
-        android:layout_width="@dimen/iconWidthHeight"
-        android:layout_height="@dimen/iconWidthHeight"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/myJobsButtonDescription"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_home_button_2"
-        app:layout_constraintEnd_toStartOf="@+id/employer_my_jobs_my_profile_button_2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_home_button_2"
-        app:srcCompat="@drawable/myjobs_icon"
-        app:tint="@color/themeColor" />
-
-    <ImageButton
-        android:id="@+id/employer_my_jobs_my_profile_button_2"
-        android:layout_width="@dimen/iconWidthHeight"
-        android:layout_height="@dimen/iconWidthHeight"
-        android:backgroundTint="@android:color/transparent"
-        android:contentDescription="@string/myProfileButtonDescription"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_button_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_button_2"
-        app:srcCompat="@drawable/myprofile_icon"
-        app:tint="@color/grey" />
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/employee_my_jobs_tabs"
-        android:layout_width="409dp"
+    <include
+        layout="@layout/common_footer"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_reactangle_white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_toolbar_2"
-        app:tabIndicatorColor="@color/themeColor"
-        app:tabIndicatorFullWidth="true"
-        app:tabSelectedTextColor="@color/themeColor"
-        app:tabTextColor="@color/grey">
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/ongoing_tab_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ongoingTab"
-            tools:layout_editor_absoluteX="5dp"
-            tools:layout_editor_absoluteY="85dp" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/negotiating_tab_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/NegotiatingTab" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/history_tab_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/historyTab" />
-    </com.google.android.material.tabs.TabLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
         android:id="@+id/employer_my_jobs_negotiating"
         android:layout_width="350dp"
         android:layout_height="540dp"
+        android:layout_marginTop="@dimen/list_view_constraint"
         android:clickable="false"
         android:dividerHeight="@dimen/listViewDividerHeight"
         android:scrollbars="none"
-        app:layout_constraintBottom_toTopOf="@+id/employer_my_jobs_footer_divider_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_my_jobs_tabs"
-        tools:listitem="@layout/fragment_employer_my_jobs_negotiating"/>
+        app:layout_constraintTop_toBottomOf="@+id/include2"
+        tools:listitem="@layout/fragment_employer_my_jobs_negotiating" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

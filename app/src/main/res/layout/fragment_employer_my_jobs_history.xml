@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_reactangle_white"
-    android:paddingLeft="@dimen/listItemPadding"
-    android:paddingTop="@dimen/listItemPadding"
-    android:paddingRight="@dimen/listItemPadding"
-    android:paddingBottom="@dimen/listItemPadding"
+    android:paddingLeft="@dimen/list_item_padding"
+    android:paddingTop="@dimen/list_item_padding"
+    android:paddingRight="@dimen/list_item_padding"
+    android:paddingBottom="@dimen/list_item_padding"
     tools:context=".EmployerMyJobsHistoryFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -18,8 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/andika_new_basic_bold"
-        android:text="@string/employeeDetailsPosition"
-        android:textSize="12sp"
+        android:text="@string/history_position"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,8 +29,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/backButtonConstraint"
         android:fontFamily="@font/andika"
-        android:text="@string/employer_my_jobs_negotiating_date"
-        android:textSize="10sp"
+        android:text="@string/history_date"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/employer_history_calendar"
         app:layout_constraintStart_toEndOf="@+id/employer_history_calendar"
         app:layout_constraintTop_toTopOf="@+id/employer_history_calendar" />
@@ -40,6 +40,7 @@
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="@dimen/backButtonConstraint"
+        android:contentDescription="@string/ic_description_approved_date"
         android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_history_position"
         app:layout_constraintTop_toBottomOf="@+id/employer_history_position"
@@ -47,16 +48,16 @@
 
     <Button
         android:id="@+id/employer_history_button"
-        android:layout_width="@dimen/button_details_width_height"
-        android:layout_height="@dimen/detailButttonHeight"
+        android:layout_width="@dimen/large_button_width"
+        android:layout_height="@dimen/button_width_height"
         android:backgroundTint="@color/themeColor"
         android:paddingLeft="@dimen/buttonPadding"
         android:paddingTop="@dimen/buttonPadding"
         android:paddingRight="@dimen/buttonPadding"
         android:paddingBottom="@dimen/buttonPadding"
-        android:text="@string/viewEmployeeButton"
+        android:text="@string/button_text_view_employees"
         android:textColor="@color/white"
-        android:textSize="8sp"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/employer_history_time"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -65,6 +66,7 @@
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="@dimen/backButtonConstraint"
+        android:contentDescription="@string/ic_description_approved_time"
         android:src="@drawable/ic_schedule"
         app:layout_constraintStart_toStartOf="@+id/employer_history_calendar"
         app:layout_constraintTop_toBottomOf="@+id/employer_history_calendar"
@@ -75,16 +77,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/andika"
-        android:text="@string/employer_my_jobs_negotiating_time"
-        android:textSize="10sp"
+        android:text="@string/history_period"
+        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="@+id/employer_history_schedule_icon"
-        app:layout_constraintStart_toStartOf="@+id/employer_history_date" />
+        app:layout_constraintStart_toStartOf="@+id/employer_history_date"
+        app:layout_constraintTop_toTopOf="@+id/employer_history_schedule_icon" />
 
     <ImageView
         android:id="@+id/employer_history_icon"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:layout_marginEnd="@dimen/backButtonConstraint"
+        android:contentDescription="@string/ic_description_employee_num"
         android:src="@drawable/ic_icon"
         app:layout_constraintEnd_toStartOf="@+id/employer_history_comment_num"
         app:layout_constraintTop_toTopOf="@+id/pendingComment"
@@ -100,7 +104,7 @@
         android:includeFontPadding="false"
         android:padding="0dp"
         android:paddingTop="0dp"
-        android:text="@string/pendingCommentEmployer"
+        android:text="@string/history_employee_num"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/employer_history_icon"
         app:layout_constraintEnd_toEndOf="@+id/employer_history_button" />
@@ -110,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/backButtonConstraint"
-        android:text="@string/pendingComment"
+        android:text="@string/title_pending_comment"
         android:textSize="10sp"
         app:layout_constraintEnd_toStartOf="@+id/employer_history_icon"
         app:layout_constraintTop_toTopOf="@+id/employer_history_position" />
