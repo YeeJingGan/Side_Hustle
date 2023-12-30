@@ -50,5 +50,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/footer_ic_my_jobs"
-        app:srcCompat="@drawable/ic_accout_circle_24px" />
+        app:srcCompat="@drawable/ic_account_circle_24px" />
 </androidx.constraintlayout.widget.ConstraintLayout>

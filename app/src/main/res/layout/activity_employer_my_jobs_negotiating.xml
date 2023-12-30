@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployeeMyJobsNegotiangActivity">
+    tools:context=".EmployeeMyJobsNegotiatingActivity">
 
-    <include layout="@layout/common_layout"/>
+    <include layout="@layout/layout_common_top_search_filter"/>
 
     <include
         android:id="@+id/include2"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        layout="@layout/common_footer"
+        layout="@layout/layout_common_bottom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

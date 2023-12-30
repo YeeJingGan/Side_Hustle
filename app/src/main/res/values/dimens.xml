@@ -75,6 +75,7 @@
     <dimen name="my_profile_photo_size">130dp</dimen>
     <dimen name="my_profile_photo_margin">20dp</dimen>
     <dimen name="reviews_comments_picture_size">40dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 
 </resources>
