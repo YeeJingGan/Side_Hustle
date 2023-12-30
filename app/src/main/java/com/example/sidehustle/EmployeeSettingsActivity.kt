@@ -1,16 +1,15 @@
-package com.example.sidehustle.activites.employer
+package com.example.sidehustle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
-import com.example.sidehustle.R
 
-class EmployerSettingsActivity : AppCompatActivity() {
+class EmployeeSettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_employer_settings)
+        setContentView(R.layout.activity_employee_settings)
 
-        val toolbar = findViewById<Toolbar>(R.id.employer_settings_toolbar)
+        val toolbar = findViewById<Toolbar>(R.id.employee_settings_toolbar)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {
@@ -19,4 +18,5 @@ class EmployerSettingsActivity : AppCompatActivity() {
             setDisplayShowTitleEnabled(false)
         }
     }
+// can override onOptionsItemSelected for custom behaviour
 }

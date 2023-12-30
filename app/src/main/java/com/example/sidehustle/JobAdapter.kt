@@ -9,7 +9,6 @@ import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.sidehustle.activites.employee.EmployeeJobDetailsActivity
 
 class JobAdapter(private val context: Context, private val jobList: List<Job>) : BaseAdapter() {
     override fun getCount(): Int {

@@ -1,4 +1,4 @@
-package com.example.sidehustle.activites.employee
+package com.example.sidehustle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,10 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.sidehustle.PdfFile
-import com.example.sidehustle.R
 import com.google.android.material.appbar.MaterialToolbar
 
 class EmployeeUploadResumeActivity : AppCompatActivity() {

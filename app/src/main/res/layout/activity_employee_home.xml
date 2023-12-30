@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_grey"
-    tools:context=".activites.employee.EmployeeHomeActivity">
+    tools:context=".EmployeeHomeActivity">
 
     <include layout="@layout/layout_common_top_search_filter"/>
 

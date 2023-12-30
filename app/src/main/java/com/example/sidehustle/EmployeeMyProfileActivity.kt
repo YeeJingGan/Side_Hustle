@@ -1,16 +1,11 @@
-package com.example.sidehustle.activites.employee
+package com.example.sidehustle
 
 import android.content.Intent
-import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
-import com.example.sidehustle.R
-import com.example.sidehustle.Review
-import com.example.sidehustle.ReviewsCommentsAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class EmployeeMyProfileActivity : AppCompatActivity() {
@@ -69,7 +64,7 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
         }
 
         findViewById<ImageButton>(R.id.my_profile_upload_icon).setOnClickListener {
-            toAnotherActivity(it,EmployeeUploadResumeActivity::class.java)
+            toAnotherActivity(it, EmployeeUploadResumeActivity::class.java)
         }
 
         val previousButton = findViewById<ImageButton>(R.id.my_profile_previous_review_button)

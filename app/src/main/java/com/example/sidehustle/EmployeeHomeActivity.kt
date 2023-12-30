@@ -1,18 +1,12 @@
-package com.example.sidehustle.activites.employee
+package com.example.sidehustle
 
 import android.content.Intent
-import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ListView
-import androidx.core.content.ContextCompat
-import com.example.sidehustle.Job
-import com.example.sidehustle.JobAdapter
-import com.example.sidehustle.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 
 class EmployeeHomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

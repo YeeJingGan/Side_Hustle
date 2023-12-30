@@ -1,22 +1,11 @@
-package com.example.sidehustle.activites.employer
+package com.example.sidehustle
 
 import android.content.Intent
-import android.graphics.PorterDuff
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
-import com.example.sidehustle.R
-import com.example.sidehustle.Review
-import com.example.sidehustle.ReviewsCommentsAdapter
-import com.example.sidehustle.activites.employee.EmployeeHomeActivity
-import com.example.sidehustle.activites.employee.EmployeeJobDetailsActivity
-import com.example.sidehustle.activites.employee.EmployeeMyJobsActivity
-import com.example.sidehustle.activites.employee.EmployeeMyProfileActivity
-import com.example.sidehustle.activites.employee.EmployeeSettingsActivity
-import com.example.sidehustle.activites.employee.EmployeeUploadResumeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class EmployerMyProfileActivity : AppCompatActivity() {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_grey"
-    tools:context=".activites.employee.EmployeeUploadResumeActivity">
+    tools:context=".EmployeeUploadResumeActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/employee_upload_resume_toolbar"

@@ -1,12 +1,8 @@
-package com.example.sidehustle.activites.employee
+package com.example.sidehustle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
-import androidx.appcompat.widget.Toolbar
-import com.example.sidehustle.Job
-import com.example.sidehustle.JobAdapter
-import com.example.sidehustle.R
 import com.google.android.material.appbar.MaterialToolbar
 
 class EmployeeFavoriteJobsActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.sidehustle.activites.employer
+package com.example.sidehustle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
