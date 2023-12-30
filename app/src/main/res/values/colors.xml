@@ -6,4 +6,5 @@
     <color name="theme_yellow">#FDB915</color>
     <color name="theme_gray">#F5F5F5</color>
     <color name="theme_textgray">#747474</color>    <!--Opacity should be 80%-->
+    <color name="theme_textlightgray">#808080</color>
 </resources>

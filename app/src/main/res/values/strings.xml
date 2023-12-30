@@ -18,4 +18,11 @@
     <string name="register_slogan">Value Your Work,\nNegotiate Your Worth</string>
     <string name="register_joinUs">Join Side Hustle now. It\'s free!</string>
     <string name="register_username">Username</string>
+    <string name="register_passwordShould">Your password should:</string>
+    <string name="register_minimumCharacter">Be a minimum of 8 characters</string>
+    <string name="register_leastLowercase">Include at least one lowercase character (a-z)</string>
+    <string name="register_leastUppercase">Include at least one uppercase character (A-Z)</string>
+    <string name="register_leastNumber">Include at least one number (0–9)</string>
+    <string name="register_leastUnique">Include at least one unique character (*,$,&amp;,…)</string>
+    <string name="register_terms">By signing up, you agree to our Terms and Conditions</string>
 </resources>
