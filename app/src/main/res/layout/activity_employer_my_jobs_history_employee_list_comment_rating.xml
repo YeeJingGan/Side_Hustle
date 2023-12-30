@@ -60,7 +60,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/inter_bold"
         android:text="@string/title_rating"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="@dimen/employee_details_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employer_comment_rating_name" />
@@ -71,7 +71,7 @@
         android:layout_height="@dimen/icon_width_height"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/ic_description_rating"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         app:layout_constraintStart_toStartOf="@+id/employer_comment_rating_title_rating"
         app:layout_constraintTop_toBottomOf="@+id/employer_comment_rating_title_rating" />
 
@@ -79,7 +79,7 @@
         android:id="@+id/employer_comment_rating_star_2"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/ic_description_rating"
         app:layout_constraintBottom_toBottomOf="@+id/employer_comment_rating_star_1"
         app:layout_constraintStart_toEndOf="@+id/employer_comment_rating_star_1" />
@@ -88,7 +88,7 @@
         android:id="@+id/employer_comment_rating_star_3"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/ic_description_rating"
         app:layout_constraintBottom_toBottomOf="@+id/employer_comment_rating_star_2"
         app:layout_constraintStart_toEndOf="@+id/employer_comment_rating_star_2" />
@@ -97,7 +97,7 @@
         android:id="@+id/employer_comment_rating_star_4"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/ic_description_rating"
         app:layout_constraintBottom_toBottomOf="@+id/employer_comment_rating_star_3"
         app:layout_constraintStart_toEndOf="@+id/employer_comment_rating_star_3" />
@@ -106,7 +106,7 @@
         android:id="@+id/employer_comment_rating_star_5"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/ic_description_rating"
         app:layout_constraintBottom_toBottomOf="@+id/employer_comment_rating_star_4"
         app:layout_constraintStart_toEndOf="@+id/employer_comment_rating_star_4" />
@@ -128,7 +128,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/inter_bold"
         android:text="@string/title_comment"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="@dimen/employee_details_text_size"
         app:layout_constraintStart_toStartOf="@+id/employer_comment_rating_star_1"
         app:layout_constraintTop_toBottomOf="@+id/employer_comment_rating_divider" />
@@ -138,7 +138,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/addressInputHeight"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@color/themeColor"
+        android:backgroundTint="@color/theme_color"
         android:ems="10"
         android:fontFamily="@font/inter"
         android:hint="@string/hint_comment"
@@ -171,7 +171,7 @@
         android:backgroundTint="@color/white"
         android:fontFamily="@font/inter_bold"
         android:text="@string/button_text_reset"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

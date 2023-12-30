@@ -48,7 +48,7 @@
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:contentDescription="@string/title_rating"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_pic"
         app:layout_constraintStart_toStartOf="@+id/applicants_wages_offered"
         app:layout_constraintTop_toBottomOf="@+id/applicants_wages_offered" />
@@ -58,7 +58,7 @@
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:contentDescription="@string/title_rating"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_star_1"
         app:layout_constraintStart_toEndOf="@+id/applicants_star_1" />
 
@@ -66,7 +66,7 @@
         android:id="@+id/applicants_star_3"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/title_rating"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_star_2"
         app:layout_constraintStart_toEndOf="@+id/applicants_star_2" />
@@ -75,7 +75,7 @@
         android:id="@+id/applicants_star_4"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/title_rating"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_star_3"
         app:layout_constraintStart_toEndOf="@+id/applicants_star_3" />
@@ -84,7 +84,7 @@
         android:id="@+id/applicants_star_5"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/title_rating"
         app:layout_constraintBottom_toBottomOf="@+id/applicants_star_4"
         app:layout_constraintStart_toEndOf="@+id/applicants_star_4" />
@@ -93,7 +93,7 @@
         android:id="@+id/applicants_list_view_applicant_button"
         android:layout_width="@dimen/large_button_width"
         android:layout_height="@dimen/button_width_height"
-        android:backgroundTint="@color/themeColor"
+        android:backgroundTint="@color/theme_color"
         android:paddingLeft="@dimen/buttonPadding"
         android:paddingTop="@dimen/buttonPadding"
         android:paddingRight="@dimen/buttonPadding"

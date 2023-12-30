@@ -59,4 +59,22 @@
     <dimen name="list_item_padding">8dp</dimen>
 
 
+<!--    New by Jie Shen-->
+    <dimen name="employee_home_list_view_margin">10dp</dimen>
+    <dimen name="job_list_photo_margin">10dp</dimen>
+    <dimen name="employee_home_job_list_photo_size">80dp</dimen>
+    <dimen name="employee_home_job_list_textview_margin">15dp</dimen>
+    <dimen name="employee_home_job_list_photo_margin">10dp</dimen>
+    <dimen name="button_details_height">32dp</dimen>
+    <dimen name="job_place_text_size">10sp</dimen>
+    <dimen name="job_name_text_size">17sp</dimen>
+    <dimen name="job_price_text_size">15sp</dimen>
+    <dimen name="favorite_button_margin">10dp</dimen>
+    <dimen name="favorite_button_padding">12dp</dimen>
+    <dimen name="my_profile_toolbar_margin">15dp</dimen>
+    <dimen name="my_profile_photo_size">130dp</dimen>
+    <dimen name="my_profile_photo_margin">20dp</dimen>
+    <dimen name="reviews_comments_picture_size">40dp</dimen>
+
+
 </resources>

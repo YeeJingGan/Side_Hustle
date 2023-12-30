@@ -51,7 +51,7 @@
         android:backgroundTint="@color/white"
         android:fontFamily="@font/inter_bold"
         android:text="@string/button_text_reset"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
         android:layout_width="@dimen/upload_jobs_info_box_width"
         android:layout_height="@dimen/upload_jobs_info_box_height"
         android:layout_marginTop="@dimen/listItemPositionConstraint"
-        android:background="@drawable/upload_jobs_input_box"
+        android:background="@drawable/background_upload_jobs_input_box"
         android:fontFamily="@font/inter"
         android:text="@string/hint_negotiate_wages"
         android:textAlignment="center"
@@ -99,7 +99,7 @@
         app:layout_constraintStart_toStartOf="@+id/employer_negotiate_with_employee_wages_input"
         app:layout_constraintTop_toTopOf="@+id/employer_negotiate_with_employee_wages_input"
         app:srcCompat="@drawable/ic_minus"
-        app:tint="@color/themeColor" />
+        app:tint="@color/theme_color" />
 
     <ImageButton
         android:id="@+id/employer_negotiate_with_employee_plus_button"
@@ -112,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="@+id/employer_negotiate_with_employee_wages_input"
         app:layout_constraintTop_toTopOf="@+id/employer_negotiate_with_employee_wages_input"
         app:srcCompat="@drawable/ic_plus"
-        app:tint="@color/themeColor" />
+        app:tint="@color/theme_color" />
 
 
     <EditText
@@ -120,7 +120,7 @@
         android:layout_width="@dimen/upload_jobs_info_box_width"
         android:layout_height="@dimen/upload_jobs_info_box_height"
         android:layout_marginTop="@dimen/uploadJobsInputTittleConstraint"
-        android:background="@drawable/upload_jobs_input_box"
+        android:background="@drawable/background_upload_jobs_input_box"
         android:ems="10"
         android:focusedByDefault="true"
         android:fontFamily="@font/inter"

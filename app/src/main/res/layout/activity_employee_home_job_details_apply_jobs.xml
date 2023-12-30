@@ -52,7 +52,7 @@
         android:backgroundTint="@color/white"
         android:fontFamily="@font/inter_bold"
         android:text="@string/button_text_reset"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,7 @@
         android:layout_marginTop="@dimen/listItemPositionConstraint"
         android:fontFamily="@font/inter_bold"
         android:text="@string/title_expected_pay"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="@dimen/employee_details_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include13" />
@@ -95,7 +95,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employee_application_expected_pay_header"
         app:srcCompat="@drawable/ic_minus"
-        app:tint="@color/themeColor" />
+        app:tint="@color/theme_color" />
 
     <ImageButton
         android:id="@+id/employee_application_plus_button"
@@ -107,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/employee_application_minus_button"
         app:srcCompat="@drawable/ic_plus"
-        app:tint="@color/themeColor" />
+        app:tint="@color/theme_color" />
 
     <View
         android:id="@+id/comment_rating_divider"
@@ -126,7 +126,7 @@
         android:layout_marginTop="@dimen/backButtonConstraint"
         android:fontFamily="@font/inter_bold"
         android:text="@string/title_comment"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="@dimen/employee_details_text_size"
         app:layout_constraintStart_toStartOf="@+id/employee_application_minus_button"
         app:layout_constraintTop_toBottomOf="@+id/comment_rating_divider" />
@@ -136,7 +136,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/backButtonConstraint"
-        android:backgroundTint="@color/themeColor"
+        android:backgroundTint="@color/theme_color"
         android:ems="10"
         android:fontFamily="@font/inter"
         android:hint="@string/hint_comment"
@@ -164,7 +164,7 @@
         android:layout_marginTop="@dimen/backButtonConstraint"
         android:fontFamily="@font/inter_bold"
         android:text="@string/title_languages"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="@dimen/employee_details_text_size"
         app:layout_constraintStart_toStartOf="@+id/job_application_comment"
         app:layout_constraintTop_toBottomOf="@+id/employee_application_divider_2" />
@@ -228,7 +228,7 @@
         app:layout_constraintStart_toStartOf="@+id/employee_application_language_header"
         app:layout_constraintTop_toBottomOf="@+id/employee_application_language_value"
         app:srcCompat="@drawable/ic_add_circle"
-        app:tint="@color/themeColor" />
+        app:tint="@color/theme_color" />
 
     <View
         android:id="@+id/employee_application_divider_3"
@@ -248,7 +248,7 @@
         android:layout_marginTop="@dimen/backButtonConstraint"
         android:fontFamily="@font/inter_bold"
         android:text="@string/title_supporting_document"
-        android:textColor="@color/themeColor"
+        android:textColor="@color/theme_color"
         android:textSize="@dimen/employee_details_text_size"
         app:layout_constraintStart_toStartOf="@+id/job_application_comment"
         app:layout_constraintTop_toBottomOf="@+id/employee_application_divider_3" />
@@ -263,7 +263,7 @@
         app:layout_constraintStart_toStartOf="@+id/employee_application_document_header"
         app:layout_constraintTop_toBottomOf="@+id/employee_application_document_header"
         app:srcCompat="@drawable/ic_add_circle"
-        app:tint="@color/themeColor" />
+        app:tint="@color/theme_color" />
 
     <TextView
         android:id="@+id/employee_application_tv_hint"

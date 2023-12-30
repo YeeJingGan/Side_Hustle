@@ -47,7 +47,7 @@
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
         android:contentDescription="@string/ic_description_rating"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_pic"
         app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_wages"
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_wages" />
@@ -56,7 +56,7 @@
         android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_2"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/ic_description_rating"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_1"
         app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_1" />
@@ -65,7 +65,7 @@
         android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_3"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/ic_description_rating"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_2"
         app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_2" />
@@ -74,7 +74,7 @@
         android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_4"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/ic_description_rating"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_3"
         app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_3" />
@@ -83,7 +83,7 @@
         android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_5"
         android:layout_width="@dimen/icon_width_height"
         android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_star"
+        android:src="@drawable/ic_star_hollow_24px"
         android:contentDescription="@string/ic_description_rating"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_4"
         app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_employee_list_lisitem_star_4" />
@@ -92,7 +92,7 @@
         android:id="@+id/employer_my_jobs_ongoing_employee_list_lisitem_button"
         android:layout_width="@dimen/small_button_width"
         android:layout_height="@dimen/button_width_height"
-        android:backgroundTint="@color/themeColor"
+        android:backgroundTint="@color/theme_color"
         android:paddingLeft="@dimen/buttonPadding"
         android:paddingTop="@dimen/buttonPadding"
         android:paddingRight="@dimen/buttonPadding"

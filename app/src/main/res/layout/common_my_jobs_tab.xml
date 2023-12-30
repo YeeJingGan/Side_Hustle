@@ -12,9 +12,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employee_home_toolbar"
-        app:tabIndicatorColor="@color/themeColor"
+        app:tabIndicatorColor="@color/theme_color"
         app:tabIndicatorFullWidth="true"
-        app:tabSelectedTextColor="@color/themeColor"
+        app:tabSelectedTextColor="@color/theme_color"
         app:tabTextColor="@color/grey">
 
         <com.google.android.material.tabs.TabItem

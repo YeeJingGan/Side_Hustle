@@ -90,7 +90,7 @@
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
                 android:contentDescription="@string/ic_description_rating"
-                android:src="@drawable/ic_star"
+                android:src="@drawable/ic_star_hollow_24px"
                 app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_employee_name"
                 app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_employee_details_employee_name" />
 
@@ -99,7 +99,7 @@
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
                 android:contentDescription="@string/ic_description_rating"
-                android:src="@drawable/ic_star"
+                android:src="@drawable/ic_star_hollow_24px"
                 app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_1"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_1" />
 
@@ -108,7 +108,7 @@
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
                 android:contentDescription="@string/title_rating"
-                android:src="@drawable/ic_star"
+                android:src="@drawable/ic_star_hollow_24px"
                 app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_2"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_2" />
 
@@ -117,7 +117,7 @@
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
                 android:contentDescription="@string/ic_description_rating"
-                android:src="@drawable/ic_star"
+                android:src="@drawable/ic_star_hollow_24px"
                 app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_3"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_3" />
 
@@ -126,7 +126,7 @@
                 android:layout_width="@dimen/icon_width_height"
                 android:layout_height="@dimen/icon_width_height"
                 android:contentDescription="@string/ic_description_rating"
-                android:src="@drawable/ic_star"
+                android:src="@drawable/ic_star_hollow_24px"
                 app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_4"
                 app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_4" />
 
@@ -134,7 +134,7 @@
                 android:id="@+id/employee_details_view_resume_button"
                 android:layout_width="@dimen/large_button_width"
                 android:layout_height="@dimen/button_width_height"
-                android:backgroundTint="@color/themeColor"
+                android:backgroundTint="@color/theme_color"
                 android:text="@string/button_text_view_resume"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_star_1"
@@ -227,7 +227,7 @@
                 android:layout_width="@dimen/backButtonWidthHeight"
                 android:layout_height="@dimen/backButtonWidthHeight"
                 android:layout_marginTop="@dimen/common_constraint_8"
-                android:background="@drawable/ic_pdf"
+                android:background="@drawable/ic_picture_as_pdf_24px"
                 android:contentDescription="@string/button_description_pdf"
                 app:layout_constraintStart_toStartOf="@+id/employee_details_comment"
                 app:layout_constraintTop_toBottomOf="@+id/employee_details_document_header" />
