@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/admin_home_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/theme_yellow"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/profile_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/background_circle_white"
+        android:contentDescription="@string/profile_avatar_description"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_home_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/admin_home_toolbar"
+        app:srcCompat="@drawable/logo_icon_white" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_searchview"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_search_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_search_rounded_corner"
+        android:inputType="text"
+        android:textSize="@dimen/toolbar_search_text_size"
+        app:iconifiedByDefault="false"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_home_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/admin_home_toolbar"
+        app:layout_constraintStart_toEndOf="@+id/profile_avatar"
+        app:layout_constraintTop_toTopOf="@+id/admin_home_toolbar"
+        app:queryBackground="@null"
+        app:queryHint="@string/admin_toolbar_search_hint" />
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/search_searchview"-->
+    <!--            android:layout_width="@dimen/toolbar_search_width"-->
+    <!--            android:layout_height="@dimen/toolbar_search_height"-->
+    <!--            android:background="@drawable/background_search_rounded_corner"-->
+    <!--            android:ems="10"-->
+    <!--            android:hint="@string/employee_toolbar_search_hint"-->
+    <!--            android:inputType="text"-->
+    <!--            android:paddingStart="@dimen/padding_start"-->
+    <!--            android:paddingEnd="@dimen/padding_start"-->
+    <!--            android:textSize="@dimen/toolbar_search_text_size"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@+id/employee_home_toolbar"-->
+    <!--            app:layout_constraintEnd_toStartOf="@+id/toolbar_filter_button"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/profile_avatar"-->
+    <!--            app:layout_constraintTop_toTopOf="@+id/employee_home_toolbar" />-->
+
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/toolbar_filter_button"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@android:color/transparent"-->
+    <!--        android:scaleType="center"-->
+    <!--        android:src="@drawable/ic_baseline_tune_24"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/search_searchview"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/search_searchview"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/search_searchview" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
