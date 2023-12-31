@@ -8,6 +8,8 @@ import com.google.android.material.textfield.TextInputEditText
 import androidx.core.content.ContextCompat
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
+import com.google.android.material.appbar.MaterialToolbar
 
 
 class register_user : AppCompatActivity() {
@@ -15,6 +17,13 @@ class register_user : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_user)
+
+        // set the up button #1
+        val toolbar: MaterialToolbar = findViewById(R.id.materialToolbar2)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = null
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         //make the "terms and conditions" in the TextView a clickable link
         val terms: TextView = findViewById(R.id.register_terms)
@@ -33,7 +42,7 @@ class register_user : AppCompatActivity() {
                 updateLeastNumberDrawable(password)
                 updateLeastUniqueDrawable(password)
             }
-            //  at first i only did afterTextChange and it didnt work, idk why i have to define beforeTextChanged and onTextChanged
+            //  at first i only did afterTextChange and it didnt work, have to define beforeTextChanged and onTextChanged
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 val password = s.toString()
                 updateMinimumCharacterDrawable(password)
@@ -54,7 +63,18 @@ class register_user : AppCompatActivity() {
         })
     }
 
-    // some update functions which send to another general update function
+    // set the up button #2
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    // some update functions which send password to another general update function
     private fun updateMinimumCharacterDrawable(password: String) {
         updateDrawableBasedOnCondition(R.id.register_minimumCharacter, password.length >= 8)
     }
@@ -83,6 +103,7 @@ class register_user : AppCompatActivity() {
         textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, null, null, null)
     }
 
+    // functions to set the conditions
     private fun containsLowerCase(password: String): Boolean {
         return password.any { it.isLowerCase() }
     }
