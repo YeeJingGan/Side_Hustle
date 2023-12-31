@@ -15,12 +15,34 @@ class EmployerHomeActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployerHomeBinding
     lateinit var jobs: List<JobEntity>
+    lateinit var approvedJobsAdapter: EmployerHomeJobAdapter
+    lateinit var pendingJobsAdapter: EmployerHomeJobAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employer_home)
 
+        populateJobs()
+
+        approvedJobsAdapter = EmployerHomeJobAdapter(jobs)
+        pendingJobsAdapter = EmployerHomeJobAdapter(jobs)
+
+        setupRecyclerView()
+
+        setListeners()
+    }
+
+    private fun setupRecyclerView() {
+        binding.employerHomeRecyclerviewApprovedJobs.adapter = approvedJobsAdapter
+        binding.employerHomeRecyclerviewApprovedJobs.layoutManager = LinearLayoutManager(this)
+
+        binding.employerHomeRecyclerviewPendingApproval.adapter = pendingJobsAdapter
+        binding.employerHomeRecyclerviewPendingApproval.layoutManager = LinearLayoutManager(this)
+    }
+
+    private fun setListeners() {
         binding.employerHomeButtonExpand1.setOnClickListener {
-            var approvedJobsRecyclerView = binding.employerHomeRecyclerviewApprovedJobs
+            val approvedJobsRecyclerView = binding.employerHomeRecyclerviewApprovedJobs
 
             if (approvedJobsRecyclerView.visibility == View.VISIBLE) {
                 approvedJobsRecyclerView.visibility = View.GONE
@@ -33,7 +55,7 @@ class EmployerHomeActivity : AppCompatActivity() {
         }
 
         binding.employerHomeButtonExpand2.setOnClickListener {
-            var pendingJobsRecyclerView = binding.employerHomeRecyclerviewPendingApproval
+            val pendingJobsRecyclerView = binding.employerHomeRecyclerviewPendingApproval
 
             if (pendingJobsRecyclerView.visibility == View.VISIBLE) {
                 pendingJobsRecyclerView.visibility = View.GONE
@@ -81,16 +103,11 @@ class EmployerHomeActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext, EmployerHomeUploadJobsActivity::class.java))
         }
 
-        populateJobs()
-
-        val approvedJobsAdapter = EmployerHomeJobAdapter(jobs)
-        val pendingJobsAdapter = EmployerHomeJobAdapter(jobs)
-
         binding.employerHomeSearchSearchview.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(newText: String?): Boolean {
-                approvedJobsAdapter.filter.filter(newText)
-                pendingJobsAdapter.filter.filter(newText)
+            override fun onQueryTextChange(query: String?): Boolean {
+                approvedJobsAdapter.filter.filter(query)
+                pendingJobsAdapter.filter.filter(query)
 
                 return true
             }
@@ -104,16 +121,6 @@ class EmployerHomeActivity : AppCompatActivity() {
                 return true
             }
         })
-
-
-
-        binding.employerHomeRecyclerviewApprovedJobs.adapter = approvedJobsAdapter
-        binding.employerHomeRecyclerviewApprovedJobs.layoutManager = LinearLayoutManager(this)
-
-        binding.employerHomeRecyclerviewPendingApproval.adapter = pendingJobsAdapter
-        binding.employerHomeRecyclerviewPendingApproval.layoutManager = LinearLayoutManager(this)
-
-
     }
 
     private fun populateJobs() {
@@ -134,7 +141,7 @@ class EmployerHomeActivity : AppCompatActivity() {
                 2,
                 2,
                 "Job2",
-                "JobState3",
+                "JobState2",
                 80,
                 "2024-01-01",
                 "2024-02-02",

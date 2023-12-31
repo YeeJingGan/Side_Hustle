@@ -82,7 +82,8 @@
             android:exported="false" />
         <activity
             android:name=".EmployerHomeUploadJobsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".EmployerHomeActivity"/>
         <activity
             android:name=".EmployerHomeActivity"
             android:exported="false" />
