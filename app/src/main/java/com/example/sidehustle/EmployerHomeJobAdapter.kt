@@ -4,14 +4,18 @@ import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
 import android.widget.Filterable
 import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sidehustle.databinding.FragmentEmployerHomeApprovedJobsBinding
+import java.util.Locale
 
 class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
-    RecyclerView.Adapter<EmployerHomeJobAdapter.ViewHolder>() {
+    RecyclerView.Adapter<EmployerHomeJobAdapter.ViewHolder>(), Filterable {
+
+    private var filteredJobs: List<JobEntity> = jobs
 
     inner class ViewHolder(private val binding: FragmentEmployerHomeApprovedJobsBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -20,8 +24,8 @@ class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
             binding.job = job
             // TODO : PUT EXTRA PASS DATA TO DESTINATION ACTIVITY
             binding.employerHomeApprovedJobsViewDetailsButton.setOnClickListener {
-                val intent = Intent(it.context,EmployerHomeJobDetailsActivity::class.java)
-                intent.putExtra("jobID",job.jobID)
+                val intent = Intent(it.context, EmployerHomeJobDetailsActivity::class.java)
+                intent.putExtra("jobID", job.jobID)
                 it.context.startActivity(intent)
             }
             binding.executePendingBindings()
@@ -29,11 +33,11 @@ class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
     }
 
     override fun getItemCount(): Int {
-        return jobs.size
+        return filteredJobs.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(jobs[position])
+        holder.bind(filteredJobs[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -47,7 +51,33 @@ class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
         return ViewHolder(binding)
     }
 
-    fun filterList(fileteredJobs : List<JobEntity>){
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val filteredList = mutableListOf<JobEntity>()
 
+                if (constraint.isNullOrBlank()) {
+                    filteredList.addAll(jobs)
+                } else {
+                    val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim()
+
+                    for (job in jobs) {
+                        if (job.jobName.lowercase(Locale.ROOT).contains(filterPattern)) {
+                            filteredList.add(job)
+                        }
+                    }
+                }
+
+                val results = FilterResults()
+                results.values = filteredList
+                return results
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                filteredJobs = results?.values as List<JobEntity>
+                notifyDataSetChanged()
+            }
+
+        }
     }
 }

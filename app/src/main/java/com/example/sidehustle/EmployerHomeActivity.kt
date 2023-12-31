@@ -81,16 +81,24 @@ class EmployerHomeActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext, EmployerHomeUploadJobsActivity::class.java))
         }
 
-        binding.employerHomeInclude.searchSearchview.setOnQueryTextListener(object :
+        populateJobs()
+
+        val approvedJobsAdapter = EmployerHomeJobAdapter(jobs)
+        val pendingJobsAdapter = EmployerHomeJobAdapter(jobs)
+
+        binding.employerHomeSearchSearchview.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
+                approvedJobsAdapter.filter.filter(newText)
+                pendingJobsAdapter.filter.filter(newText)
 
+                return true
             }
 
             override fun onQueryTextSubmit(query: String?): Boolean {
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(
-                    binding.employerHomeInclude.searchSearchview.windowToken,
+                    binding.employerHomeSearchSearchview.windowToken,
                     0
                 )
                 return true
@@ -98,25 +106,16 @@ class EmployerHomeActivity : AppCompatActivity() {
         })
 
 
-        populateJobs()
 
-        binding.employerHomeRecyclerviewApprovedJobs.adapter = EmployerHomeJobAdapter(jobs)
+        binding.employerHomeRecyclerviewApprovedJobs.adapter = approvedJobsAdapter
         binding.employerHomeRecyclerviewApprovedJobs.layoutManager = LinearLayoutManager(this)
 
-        binding.employerHomeRecyclerviewPendingApproval.adapter = EmployerHomeJobAdapter(jobs)
+        binding.employerHomeRecyclerviewPendingApproval.adapter = pendingJobsAdapter
         binding.employerHomeRecyclerviewPendingApproval.layoutManager = LinearLayoutManager(this)
 
 
     }
 
-    private fun filter(query : String){
-        var filteredList : List<JobEntity> = emptyList()
-
-            if(job.jobName.toLowerCase().contains(query.toLowerCase())){
-                filteredList.filter {
-
-                }
-    }
     private fun populateJobs() {
         jobs = listOf(
             JobEntity(
