@@ -12,7 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
         android:background="@drawable/background_reactangle_white"
         android:paddingLeft="@dimen/list_item_padding"
         android:paddingTop="@dimen/list_item_padding"
@@ -20,14 +21,12 @@
         android:paddingBottom="@dimen/list_item_padding"
         tools:context=".EmployerHomeApprovedJobsFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-
         <TextView
             android:id="@+id/employer_home_approved_jobs_listitem_position"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/andika_new_basic_bold"
-            android:text="@string/employer_approved_jobs_position"
+            android:text="@{job.jobName}"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rowdies"
-            android:text="@string/employer_approved_jobs_wages"
+            android:text="@{`RM ` + job.pay}"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/employer_home_approved_jobs_listitem_position"
@@ -48,7 +47,6 @@
             android:layout_width="@dimen/icon_width_height"
             android:layout_height="@dimen/icon_width_height"
             android:contentDescription="@string/ic_description_approved_date"
-            android:src="@drawable/ic_schedule"
             app:layout_constraintStart_toStartOf="@+id/employer_home_approved_jobs_wages"
             app:layout_constraintTop_toBottomOf="@+id/employer_home_approved_jobs_wages"
             app:srcCompat="@drawable/ic_calendar" />
@@ -59,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_constraint_8"
             android:fontFamily="@font/andika"
-            android:text="@string/employer_approved_jobs_date"
+            android:text="@{job.startDate + ` to ` + job.endDate}"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="@+id/employer_home_approved_jobs_calendar"
             app:layout_constraintStart_toEndOf="@+id/employer_home_approved_jobs_calendar" />
@@ -70,7 +68,6 @@
             android:layout_height="@dimen/icon_width_height"
             android:layout_marginTop="@dimen/common_constraint_8"
             android:contentDescription="@string/ic_description_approved_time"
-            android:src="@drawable/ic_schedule"
             app:layout_constraintStart_toStartOf="@+id/employer_home_approved_jobs_calendar"
             app:layout_constraintTop_toBottomOf="@+id/employer_home_approved_jobs_calendar"
             app:srcCompat="@drawable/ic_schedule" />
@@ -80,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/andika"
-            android:text="@string/employer_approved_jobs_time"
+            android:text="@{job.startTime + ` ~ ` + job.endTime}"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="@+id/employer_home_approved_jobs_schedule"
             app:layout_constraintStart_toStartOf="@+id/employer_home_approved_jobs_date" />
@@ -106,7 +103,6 @@
             android:layout_height="@dimen/icon_width_height"
             android:layout_marginEnd="@dimen/common_constraint_8"
             android:contentDescription="@string/ic_description_applicants_num"
-            android:src="@drawable/ic_icon"
             app:layout_constraintEnd_toStartOf="@+id/employer_home_approved_jobs_applicant_num"
             app:layout_constraintTop_toTopOf="@+id/employer_home_approved_jobs_listitem_position"
             app:srcCompat="@drawable/ic_icon" />

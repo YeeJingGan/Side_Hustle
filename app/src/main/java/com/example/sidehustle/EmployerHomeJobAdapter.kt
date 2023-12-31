@@ -1,7 +1,11 @@
 package com.example.sidehustle
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filterable
+import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sidehustle.databinding.FragmentEmployerHomeApprovedJobsBinding
@@ -14,6 +18,12 @@ class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
 
         fun bind(job: JobEntity) {
             binding.job = job
+            // TODO : PUT EXTRA PASS DATA TO DESTINATION ACTIVITY
+            binding.employerHomeApprovedJobsViewDetailsButton.setOnClickListener {
+                val intent = Intent(it.context,EmployerHomeJobDetailsActivity::class.java)
+                intent.putExtra("jobID",job.jobID)
+                it.context.startActivity(intent)
+            }
             binding.executePendingBindings()
         }
     }
@@ -35,5 +45,9 @@ class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
             false
         )
         return ViewHolder(binding)
+    }
+
+    fun filterList(fileteredJobs : List<JobEntity>){
+
     }
 }

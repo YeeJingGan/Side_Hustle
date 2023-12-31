@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="@+id/include7" />
 
     <ListView
-        android:id="@+id/employer_home_listview_approved_jobs"
+        android:id="@+id/employer_home_recyclerview_approved_jobs"
         android:layout_width="350dp"
         android:layout_height="540dp"
         android:layout_marginTop="@dimen/list_view_constraint"
