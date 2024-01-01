@@ -6,9 +6,13 @@ import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.sidehustle.databinding.ActivityEmployerHomeUploadJobsBinding
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -18,6 +22,7 @@ import java.util.Locale
 class EmployerHomeUploadJobsActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployerHomeUploadJobsBinding
+    lateinit var requirementsAdapter: EmployerUploadJobsRequirementsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employer_home_upload_jobs)
@@ -59,13 +64,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
 
         binding.uploadJobTitleOneDay.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                if (!binding.uploadJobInputStartDate.text.isNullOrEmpty()) {
-                    binding.uploadJobInputEndDate.text = binding.uploadJobInputStartDate.text
-                } else {
-                    val today = SimpleDateFormat("DD/MM/yyyy", Locale.getDefault()).format(Date())
-                    binding.uploadJobInputEndDate.text = today
-                    binding.uploadJobInputStartDate.text = today
-                }
+                setOneDayJob()
             }
         }
 
@@ -82,7 +81,33 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
         }
 
         binding.uploadJobResetButton.setOnClickListener {
-            showResetComfirmationDialog()
+            showResetConfirmationDialog()
+        }
+
+        requirementsAdapter = EmployerUploadJobsRequirementsAdapter(
+            mutableListOf(
+                ""
+            )
+        )
+        binding.employerUploadJobsRequirementsRecyclerview.adapter = requirementsAdapter
+        binding.employerUploadJobsRequirementsRecyclerview.layoutManager = LinearLayoutManager(this)
+
+        binding.uploadJobRequirementButtonAdd.setOnClickListener {
+            requirementsAdapter.addRequirement()
+            if (requirementsAdapter.itemCount > 1) {
+                binding.uploadJobRequirementButtonMinus.visibility = View.VISIBLE
+            }
+        }
+
+        binding.uploadJobRequirementButtonMinus.setOnClickListener {
+            if (requirementsAdapter.itemCount > 1) {
+                requirementsAdapter.removeRequirement(binding.employerUploadJobsRequirementsRecyclerview)
+            }
+            if (requirementsAdapter.itemCount == 1) {
+                binding.uploadJobRequirementButtonMinus.visibility = View.GONE
+            }
+
+
         }
     }
 
@@ -111,21 +136,24 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
                     SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(selectedDate.time)
                 textView.text = selectedDateString
 
-                if (!endDateTextView.text.isNullOrEmpty()) {
-                    val endDateCalendar = Calendar.getInstance()
-                    endDateCalendar.time = SimpleDateFormat(
-                        "dd/MM/yyyy",
-                        Locale.getDefault()
-                    ).parse(endDateTextView.text.toString())!!
-                    if (selectedDate.timeInMillis >= endDateCalendar.timeInMillis) {
-                        oneDayCheckBox.isChecked = true
+                if (textView == startDateTextView) {
+                    if (!endDateTextView.text.isNullOrEmpty()) {
+                        val endDateCalendar = Calendar.getInstance()
+                        endDateCalendar.time = SimpleDateFormat(
+                            "dd/MM/yyyy",
+                            Locale.getDefault()
+                        ).parse(endDateTextView.text.toString())!!
+                        if (selectedDate.timeInMillis >= endDateCalendar.timeInMillis) {
+                            oneDayCheckBox.isChecked = true
+                            setOneDayJob()
+                        } else {
+                            oneDayCheckBox.isChecked = false
+                        }
                     } else {
-                        oneDayCheckBox.isChecked = false
+                        oneDayCheckBox.isChecked = true
+                        setOneDayJob()
                     }
-                } else {
-                    oneDayCheckBox.isChecked = true
                 }
-
             },
             currentYear,
             currentMonth,
@@ -142,6 +170,16 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
         }
 
         datePickerDialog.show()
+    }
+
+    private fun setOneDayJob() {
+        if (!binding.uploadJobInputStartDate.text.isNullOrEmpty()) {
+            binding.uploadJobInputEndDate.text = binding.uploadJobInputStartDate.text
+        } else {
+            val today = SimpleDateFormat("DD/MM/yyyy", Locale.getDefault()).format(Date())
+            binding.uploadJobInputEndDate.text = today
+            binding.uploadJobInputStartDate.text = today
+        }
     }
 
     private fun openTimePicker(textView: TextView) {
@@ -217,7 +255,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
         timePickerDialog.show()
     }
 
-    private fun showResetComfirmationDialog() {
+    private fun showResetConfirmationDialog() {
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setTitle("Reset Confirmation")
         dialogBuilder.setMessage("Are you sure you want to reset?")
@@ -231,7 +269,14 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
     }
 
     private fun reset() {
+
+        currentFocus?.let {
+            hideSoftInput(it)
+            it.clearFocus()
+        }
+
         binding.apply {
+            employerUploadJobsScrollview.fullScroll(View.FOCUS_UP)
             uploadJobInputJobTitle.text = null
             uploadJobInputStartDate.text = null
             uploadJobInputEndDate.text = null
@@ -242,8 +287,15 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
             uploadJobInputAddressLine2.text = null
             uploadJobInputPostcode.text = null
             uploadJobInputState.setSelection(0)
-            // TODO : RESET REQUIREMENTS
+            requirementsAdapter.removeAllRequirements()
+
+            uploadJobRequirementButtonMinus.visibility = View.GONE
             uploadJobInputDescription.text = null
         }
+    }
+
+    private fun hideSoftInput(view: View) {
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
     }
 }

@@ -58,7 +58,7 @@
     <string name="hint_input_address_1">address 1</string>
     <string name="hint_input_address_2">address 2</string>
     <string name="hint_input_postcode">postcode</string>
-    <string name="hint_input_url">Enter location URL (Google Map, Waze, etc)</string>
+    <string name="hint_input_url">Enter location URL</string>
     <string name="hint_input_requirement">Enter your requirement</string>
     <string name="hint_input_description">Enter your description</string>
     <string name="hint_comment">"Please leave your comment "</string>

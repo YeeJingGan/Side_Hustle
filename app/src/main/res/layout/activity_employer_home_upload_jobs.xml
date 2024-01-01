@@ -80,6 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/employer_upload_job_toolbar" />
 
         <ScrollView
+            android:id="@+id/employer_upload_jobs_scrollview"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/upload_job_submit_button"
@@ -102,7 +103,6 @@
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/background_upload_jobs_input_box"
                     android:ems="10"
-                    android:focusedByDefault="true"
                     android:fontFamily="@font/inter"
                     android:hint="@string/hint_input_job_title"
                     android:inputType="text"
@@ -427,13 +427,14 @@
                     app:layout_constraintStart_toStartOf="@+id/upload_job_input_postcode"
                     app:layout_constraintTop_toBottomOf="@+id/upload_job_input_postcode" />
 
-                <TextView
+                <EditText
                     android:id="@+id/upload_job_input_url"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/common_constraint_24"
                     android:background="@drawable/background_upload_jobs_input_box"
                     android:hint="@string/hint_input_url"
+                    android:inputType="text"
                     android:textColor="@color/grey"
                     app:layout_constraintEnd_toEndOf="@+id/upload_job_input_address"
                     app:layout_constraintStart_toStartOf="@+id/upload_job_input_address"
@@ -456,9 +457,11 @@
                 <TextView
                     android:id="@+id/upload_job_input_requirement"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/upload_jobs_info_box_height"
+                    android:layout_height="0dp"
                     android:layout_marginTop="@dimen/common_constraint_24"
+                    android:layout_marginBottom="-16dp"
                     android:background="@drawable/background_upload_jobs_input_box"
+                    app:layout_constraintBottom_toBottomOf="@id/employer_upload_jobs_requirements_recyclerview"
                     app:layout_constraintEnd_toEndOf="@+id/upload_job_input_url"
                     app:layout_constraintStart_toStartOf="@+id/upload_job_input_url"
                     app:layout_constraintTop_toBottomOf="@+id/upload_job_input_url" />
@@ -478,37 +481,30 @@
                     app:layout_constraintTop_toBottomOf="@+id/upload_job_input_url" />
 
                 <ImageButton
-                    android:id="@+id/upload_job_button_add"
+                    android:id="@+id/upload_job_requirement_button_add"
                     android:layout_width="@dimen/icon_width_height"
                     android:layout_height="@dimen/icon_width_height"
                     android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
+                    android:layout_marginTop="16dp"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:contentDescription="Back"
-                    app:layout_constraintBottom_toBottomOf="@+id/upload_job_input_requirement"
                     app:layout_constraintStart_toStartOf="@+id/upload_job_input_requirement"
                     app:layout_constraintTop_toBottomOf="@+id/upload_job_title_requirement"
                     app:srcCompat="@drawable/ic_plus"
                     app:tint="@color/theme_color" />
 
-                <EditText
-                    android:id="@+id/upload_job_tv_requirement"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/employer_upload_jobs_requirements_recyclerview"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/addressInputHeight"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_marginEnd="16dp"
-                    android:backgroundTint="@color/theme_color"
-                    android:fontFamily="@font/inter"
-                    android:hint="@string/hint_input_requirement"
-                    android:paddingBottom="2dp"
-                    android:text="@string/hint_input_requirement"
-                    android:textColor="@color/grey"
-                    android:textSize="14sp"
-                    android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="@+id/upload_job_input_requirement"
-                    app:layout_constraintHorizontal_bias="0.118"
-                    app:layout_constraintStart_toEndOf="@+id/upload_job_button_add"
-                    app:layout_constraintTop_toTopOf="@+id/upload_job_input_requirement" />
+                    app:layout_constraintStart_toEndOf="@+id/upload_job_requirement_button_add"
+                    app:layout_constraintTop_toTopOf="@+id/upload_job_requirement_button_add"
+                    tools:listitem="@layout/employer_upload_job_requirement_item" />
 
                 <EditText
                     android:id="@+id/upload_job_input_description"
@@ -539,6 +535,19 @@
                     android:text="@string/title_description"
                     app:layout_constraintStart_toStartOf="@+id/upload_job_input_description"
                     app:layout_constraintTop_toBottomOf="@+id/upload_job_input_requirement" />
+
+                <ImageButton
+                    android:id="@+id/upload_job_requirement_button_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/transparent"
+                    android:tint="@color/theme_color"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/upload_job_requirement_button_add"
+                    app:layout_constraintStart_toStartOf="@+id/upload_job_requirement_button_add"
+                    app:layout_constraintTop_toBottomOf="@+id/upload_job_requirement_button_add"
+                    app:srcCompat="@drawable/ic_minus" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
