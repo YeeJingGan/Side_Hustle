@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -23,6 +25,27 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployerHomeUploadJobsBinding
     lateinit var requirementsAdapter: EmployerUploadJobsRequirementsAdapter
+    lateinit var selectedStateChoice: String
+    var wagesAmount: Int = 10
+    val stateChoices = arrayOf(
+        "Cyberjaya",
+        "Kelantan",
+        "Kuala Lumpur",
+        "Labuan",
+        "Melaka",
+        "Negeri Sembilan",
+        "Pahang",
+        "Perak",
+        "Perlis",
+        "Perlis",
+        "Pulau Pinang",
+        "Putrajaya",
+        "Sabah",
+        "Sarawak",
+        "Selangor",
+        "Terengganu"
+    )
+    lateinit var stateAdapter: ArrayAdapter<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employer_home_upload_jobs)
@@ -35,16 +58,33 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
             setDisplayShowTitleEnabled(false)
         }
 
-        var wagesAmount = 0
         updateWages(wagesAmount)
 
+        setSpinner()
+        setRecyclerView()
+        setListeners()
+    }
+
+    private fun setSpinner() {
+        stateAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, stateChoices)
+        stateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.uploadJobInputStateSpinner.adapter = stateAdapter
+    }
+
+    private fun setRecyclerView() {
+        requirementsAdapter = EmployerUploadJobsRequirementsAdapter(mutableListOf(""))
+        binding.employerUploadJobsRequirementsRecyclerview.adapter = requirementsAdapter
+        binding.employerUploadJobsRequirementsRecyclerview.layoutManager = LinearLayoutManager(this)
+    }
+
+    private fun setListeners() {
         binding.uploadJobButtonPlus.setOnClickListener {
             wagesAmount += 10
             updateWages(wagesAmount)
         }
 
         binding.uploadJobButtonMinus.setOnClickListener {
-            if (wagesAmount > 0) {
+            if (wagesAmount > 10) {
                 wagesAmount -= 10
                 updateWages(wagesAmount)
             }
@@ -84,14 +124,6 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
             showResetConfirmationDialog()
         }
 
-        requirementsAdapter = EmployerUploadJobsRequirementsAdapter(
-            mutableListOf(
-                ""
-            )
-        )
-        binding.employerUploadJobsRequirementsRecyclerview.adapter = requirementsAdapter
-        binding.employerUploadJobsRequirementsRecyclerview.layoutManager = LinearLayoutManager(this)
-
         binding.uploadJobRequirementButtonAdd.setOnClickListener {
             requirementsAdapter.addRequirement()
             if (requirementsAdapter.itemCount > 1) {
@@ -109,10 +141,29 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
 
 
         }
+
+        binding.uploadJobInputStateSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parentView: AdapterView<*>, selectedItemView: View, position: Int, id: Long
+                ) {
+                    selectedStateChoice = stateChoices[position]
+                }
+
+                override fun onNothingSelected(parentView: AdapterView<*>) {
+                    selectedStateChoice = "Cyberjaya"
+                }
+            }
+
+        binding.uploadJobSubmitButton.setOnClickListener {
+            if (validateAllFields()) {
+                showSubmitConfirmationDialog()
+            }
+        }
     }
 
     private fun updateWages(amount: Int) {
-        binding.uploadJobInputWages.text = "RM ${amount}"
+        binding.uploadJobInputWages.text = "RM $amount"
     }
 
     private fun openDatePicker(textView: TextView) {
@@ -126,22 +177,21 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
         val currentDay = calendar.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(
-            this,
-            { _, year, month, dayOfMonth ->
+            this, { _, year, month, dayOfMonth ->
                 val selectedDate = Calendar.getInstance()
                 selectedDate.set(year, month, dayOfMonth)
 
                 // Example: Print the selected date
-                val selectedDateString =
-                    SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(selectedDate.time)
+                val selectedDateString = SimpleDateFormat(
+                    "dd/MM/yyyy", Locale.getDefault()
+                ).format(selectedDate.time)
                 textView.text = selectedDateString
 
                 if (textView == startDateTextView) {
                     if (!endDateTextView.text.isNullOrEmpty()) {
                         val endDateCalendar = Calendar.getInstance()
                         endDateCalendar.time = SimpleDateFormat(
-                            "dd/MM/yyyy",
-                            Locale.getDefault()
+                            "dd/MM/yyyy", Locale.getDefault()
                         ).parse(endDateTextView.text.toString())!!
                         if (selectedDate.timeInMillis >= endDateCalendar.timeInMillis) {
                             oneDayCheckBox.isChecked = true
@@ -154,10 +204,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
                         setOneDayJob()
                     }
                 }
-            },
-            currentYear,
-            currentMonth,
-            currentDay
+            }, currentYear, currentMonth, currentDay
         )
 
         if (textView == endDateTextView && !startDateTextView.text.isNullOrEmpty()) {
@@ -169,6 +216,10 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
             datePickerDialog.datePicker.minDate = calendar.timeInMillis
         }
 
+        val maxDate = Calendar.getInstance()
+        maxDate.add(Calendar.YEAR, 1)
+
+        datePickerDialog.datePicker.maxDate = maxDate.timeInMillis
         datePickerDialog.show()
     }
 
@@ -191,8 +242,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
         val currentMinute = calendar.get(Calendar.MINUTE)
 
         val timePickerDialog = TimePickerDialog(
-            this,
-            { _, hourOfDay, minute ->
+            this, { _, hourOfDay, minute ->
                 val selectedTime = Calendar.getInstance()
                 selectedTime.set(Calendar.HOUR_OF_DAY, hourOfDay)
                 selectedTime.set(Calendar.MINUTE, minute)
@@ -204,24 +254,19 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
                 if (textView == endTimeTextview) {
                     val validTime = Calendar.getInstance()
                     validTime.set(
-                        Calendar.HOUR_OF_DAY,
-                        SimpleDateFormat(
-                            "HH:mm",
-                            Locale.getDefault()
+                        Calendar.HOUR_OF_DAY, SimpleDateFormat(
+                            "HH:mm", Locale.getDefault()
                         ).parse(startTimeTextView.text.toString())!!.hours
                     )
                     validTime.set(
-                        Calendar.MINUTE,
-                        SimpleDateFormat(
-                            "HH:mm",
-                            Locale.getDefault()
+                        Calendar.MINUTE, SimpleDateFormat(
+                            "HH:mm", Locale.getDefault()
                         ).parse(startTimeTextView.text.toString())!!.minutes
                     )
 
                     if (selectedTime.timeInMillis < validTime.timeInMillis) {
                         textView.text = SimpleDateFormat(
-                            "HH:mm",
-                            Locale.getDefault()
+                            "HH:mm", Locale.getDefault()
                         ).format(validTime.time)
 
                         Toast.makeText(
@@ -233,10 +278,8 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
                         validTime.add(Calendar.HOUR_OF_DAY, 10)
                         if (selectedTime.timeInMillis > validTime.timeInMillis) {
                             textView.text = SimpleDateFormat(
-                                "HH:mm",
-                                Locale.getDefault()
+                                "HH:mm", Locale.getDefault()
                             ).format(validTime.time)
-                            Log.i("TIME", "$selectedTime.timeInMillis")
 
                             Toast.makeText(
                                 applicationContext,
@@ -246,10 +289,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
                         }
                     }
                 }
-            },
-            currentHour,
-            currentMinute,
-            true
+            }, currentHour, currentMinute, true
         )
 
         timePickerDialog.show()
@@ -258,7 +298,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
     private fun showResetConfirmationDialog() {
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setTitle("Reset Confirmation")
-        dialogBuilder.setMessage("Are you sure you want to reset?")
+        dialogBuilder.setMessage("Are you sure you want to reset? This can't be undone")
         dialogBuilder.setPositiveButton("Reset") { dialog, which ->
             reset()
         }
@@ -271,8 +311,8 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
     private fun reset() {
 
         currentFocus?.let {
-            hideSoftInput(it)
             it.clearFocus()
+            hideSoftInput(it)
         }
 
         binding.apply {
@@ -280,13 +320,14 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
             uploadJobInputJobTitle.text = null
             uploadJobInputStartDate.text = null
             uploadJobInputEndDate.text = null
+            wagesAmount = 10
+            updateWages(wagesAmount)
             uploadJobTitleOneDay.isChecked = false
             uploadJobInputStartTime.text = null
             uploadJobInputEndTime.text = null
             uploadJobInputAddressLine1.text = null
-            uploadJobInputAddressLine2.text = null
             uploadJobInputPostcode.text = null
-            uploadJobInputState.setSelection(0)
+            uploadJobInputStateSpinner.setSelection(0)
             requirementsAdapter.removeAllRequirements()
 
             uploadJobRequirementButtonMinus.visibility = View.GONE
@@ -294,8 +335,78 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
         }
     }
 
+    private fun validateAllFields(): Boolean {
+
+        currentFocus?.let {
+            it.clearFocus()
+            hideSoftInput(it)
+        }
+
+        if (binding.uploadJobInputJobTitle.text.isNullOrEmpty()) {
+            Toast.makeText(this, "Job title is empty", Toast.LENGTH_SHORT).show()
+            binding.uploadJobInputJobTitle.apply {
+                requestFocus()
+                showSoftInput(this)
+            }
+        } else if (binding.uploadJobInputStartDate.text.isNullOrEmpty()) {
+            Toast.makeText(this, "Start date is empty", Toast.LENGTH_SHORT).show()
+        } else if (binding.uploadJobInputStartTime.text.isNullOrEmpty()) {
+            Toast.makeText(this, "Start time is empty", Toast.LENGTH_SHORT).show()
+        } else if (binding.uploadJobInputAddressLine1.text.isNullOrEmpty()) {
+            Toast.makeText(this, "Address is empty", Toast.LENGTH_SHORT).show()
+            binding.uploadJobInputAddressLine1.apply {
+                requestFocus()
+                showSoftInput(this)
+            }
+        } else if (binding.uploadJobInputPostcode.text.isNullOrEmpty()) {
+            Toast.makeText(this, "Postcode is empty", Toast.LENGTH_SHORT).show()
+            binding.uploadJobInputPostcode.apply {
+                requestFocus()
+                showSoftInput(this)
+            }
+        } else if (binding.uploadJobInputUrl.text.isNullOrEmpty()) {
+            Toast.makeText(this, "Location URL is empty", Toast.LENGTH_SHORT).show()
+            binding.uploadJobInputUrl.apply {
+                requestFocus()
+                showSoftInput(this)
+            }
+        } else if (binding.uploadJobInputDescription.text.isNullOrEmpty()) {
+            Toast.makeText(this, "Description is empty", Toast.LENGTH_SHORT).show()
+            binding.uploadJobInputDescription.apply {
+                requestFocus()
+                showSoftInput(this)
+            }
+        } else {
+            return true
+        }
+        return false
+    }
+
+    private fun showSubmitConfirmationDialog() {
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setTitle("Job Post")
+        dialogBuilder.setMessage("Are you sure you want to post job? This can't be undone")
+        dialogBuilder.setPositiveButton("Post") { dialog, which ->
+            submit()
+        }
+        dialogBuilder.setNegativeButton("Cancel") { dialog, which ->
+            dialog.dismiss()
+        }
+        dialogBuilder.create().show()
+    }
+
+    private fun submit() {
+        // TODO: UPLOAD DATABASE HERE
+        Toast.makeText(this, "HAHA NOT YET SUBMITTED NEED TO DATABASE", Toast.LENGTH_SHORT).show()
+    }
+
     private fun hideSoftInput(view: View) {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    private fun showSoftInput(view: View) {
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
     }
 }
