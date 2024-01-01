@@ -112,25 +112,10 @@
             android:id="@+id/main_button_13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Employee Negotiate"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/main_button_14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Employee Comment Rating"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_button_13" />
-
-        <Button
-            android:id="@+id/main_button_15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Employee Job Details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_button_14" />
+            android:layout_marginStart="5dp"
+            android:text="Employee Setting"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_button_12" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
