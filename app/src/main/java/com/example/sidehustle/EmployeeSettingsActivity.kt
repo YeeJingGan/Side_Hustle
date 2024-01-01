@@ -50,10 +50,15 @@ class EmployeeSettingsActivity : AppCompatActivity() {
         }
         binding.employeeSettingsRightIcon6.setOnClickListener{
             val context = it.context
-            val intent = Intent(context,AboutSideHustleActivity::class.java) //To be updated
+            val intent = Intent(context,AboutSideHustleActivity::class.java)
             context.startActivity(intent)
         }
         binding.employeeSettingsLogoutIcon.setOnClickListener{
+            val context = it.context
+            val intent = Intent(context,MainActivity::class.java) //To be updated
+            context.startActivity(intent)
+        }
+        binding.employeeSettingsLogoutTextview.setOnClickListener{
             val context = it.context
             val intent = Intent(context,MainActivity::class.java) //To be updated
             context.startActivity(intent)
