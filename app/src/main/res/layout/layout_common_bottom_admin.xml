@@ -34,22 +34,22 @@
         android:backgroundTint="@android:color/transparent"
         android:contentDescription="@string/ic_description_my_jobs"
         app:layout_constraintBottom_toBottomOf="@+id/footer_ic_home"
-        app:layout_constraintEnd_toStartOf="@+id/footer_ic_my_profile"
+        app:layout_constraintEnd_toStartOf="@+id/footer_ic_review"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/footer_ic_home"
         app:srcCompat="@drawable/ic_work_24px" />
 
     <ImageButton
-        android:id="@+id/footer_ic_my_profile"
+        android:id="@+id/footer_ic_review"
         android:layout_width="@dimen/button_width_height"
         android:layout_height="@dimen/button_width_height"
         android:backgroundTint="@android:color/transparent"
-        android:contentDescription="@string/ic_description_my_profile"
+        android:contentDescription="@string/ic_description_review"
         app:layout_constraintBottom_toBottomOf="@+id/footer_ic_my_jobs"
         app:layout_constraintEnd_toStartOf="@+id/footer_ic_settings"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/footer_ic_my_jobs"
-        app:srcCompat="@drawable/ic_account_circle_24px" />
+        app:srcCompat="@drawable/ic_review_24px" />
 
     <ImageButton
         android:id="@+id/footer_ic_settings"
@@ -59,7 +59,7 @@
         android:contentDescription="@string/ic_description_my_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/footer_ic_my_profile"
+        app:layout_constraintStart_toEndOf="@+id/footer_ic_review"
         app:layout_constraintTop_toTopOf="@+id/footer_div"
         app:srcCompat="@drawable/ic_settings_24px" />
 </androidx.constraintlayout.widget.ConstraintLayout>

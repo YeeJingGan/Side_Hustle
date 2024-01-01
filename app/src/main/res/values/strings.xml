@@ -27,6 +27,7 @@
     <string name="register_leastUnique">Include at least one unique character (*,$,&amp;,…)</string>
     <string name="register_terms">By signing up, you agree to our <a href="https://generator.lorem-ipsum.info/terms-and-conditions">Terms and Conditions</a></string>
     <string name="admin_toolbar_search_hint">Search for jobs to review</string>
+    <string name="ic_description_review">Review Comments</string>
 
     <!--Below are Strings i got from jieshen&yeejing github (commit msg: "Successful Merge Yee Jing & Jie Shen")-->
     <string name="title_activity_employee_main_acitivty">EmployeeMainActivity</string>
