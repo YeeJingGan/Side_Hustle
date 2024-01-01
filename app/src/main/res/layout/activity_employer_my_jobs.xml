@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<!--         TODO : add data-->
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".EmployeeMyJobsActivity">
+        tools:context=".EmployerMyJobsActivity">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/employee_my_jobs_ongoing_toolbar"
+            android:id="@+id/employer_my_jobs_ongoing_toolbar"
             android:layout_width="0dp"
             android:layout_height="@dimen/toolbar_height"
             android:background="@color/theme_color"
@@ -26,19 +25,19 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/employee_my_jobs_ongoing_portrait"
+            android:id="@+id/employer_my_jobs_ongoing_portrait"
             android:layout_width="@dimen/toolbar_picture_size"
             android:layout_height="@dimen/toolbar_picture_size"
             android:layout_marginStart="16dp"
             android:background="@drawable/background_circle_white"
             android:contentDescription="@string/profile_avatar_description"
-            app:layout_constraintBottom_toBottomOf="@+id/employee_my_jobs_ongoing_toolbar"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_toolbar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/employee_my_jobs_ongoing_toolbar"
+            app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_ongoing_toolbar"
             app:srcCompat="@drawable/sample_profile_photo" />
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/employee_my_jobs_ongoing_searchview"
+            android:id="@+id/employer_my_jobs_ongoing_searchview"
             android:layout_width="0dp"
             android:layout_height="@dimen/toolbar_search_height"
             android:layout_marginStart="16dp"
@@ -47,28 +46,28 @@
             android:inputType="text"
             android:textSize="@dimen/toolbar_search_text_size"
             app:iconifiedByDefault="false"
-            app:layout_constraintBottom_toBottomOf="@+id/employee_my_jobs_ongoing_toolbar"
-            app:layout_constraintEnd_toEndOf="@+id/employee_my_jobs_ongoing_toolbar"
-            app:layout_constraintStart_toEndOf="@+id/employee_my_jobs_ongoing_portrait"
-            app:layout_constraintTop_toTopOf="@+id/employee_my_jobs_ongoing_toolbar"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_toolbar"
+            app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_ongoing_toolbar"
+            app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_ongoing_portrait"
+            app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_ongoing_toolbar"
             app:queryBackground="@null"
             app:queryHint="@string/employee_toolbar_search_hint" />
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/employee_my_jobs_ongoing_tab_layout"
+            android:id="@+id/employer_my_jobs_ongoing_tab_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/background_reactangle_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/employee_my_jobs_ongoing_toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_toolbar"
             app:tabIndicatorColor="@color/theme_color"
             app:tabIndicatorFullWidth="true"
             app:tabSelectedTextColor="@color/theme_color"
             app:tabTextColor="@color/grey">
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/employee_my_jobs_ongoing_ongoing_tab"
+                android:id="@+id/employer_my_jobs_ongoing_ongoing_tab"
                 tools:layout_editor_absoluteX="5dp"
                 tools:layout_editor_absoluteY="85dp"
                 android:layout_width="wrap_content"
@@ -76,13 +75,13 @@
                 android:text="@string/tab_text_ongoing" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/employee_my_jobs_ongoing_negotiating_tab"
+                android:id="@+id/employer_my_jobs_ongoing_negotiating_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_text_negotiating" />
 
             <com.google.android.material.tabs.TabItem
-                android:id="@+id/employee_my_jobs_ongoing_history_tab"
+                android:id="@+id/employer_my_jobs_ongoing_history_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tab_text_history" />
@@ -90,13 +89,13 @@
         </com.google.android.material.tabs.TabLayout>
 
         <ScrollView
-            android:id="@+id/employee_my_jobs_ongoing_scrollview"
+            android:id="@+id/employer_my_jobs_ongoing_scrollview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/employee_my_jobs_ongoing_bottom_nav"
+            app:layout_constraintBottom_toTopOf="@+id/employer_my_jobs_ongoing_bottom_nav"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/employee_my_jobs_ongoing_tab_layout">
+            app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_tab_layout">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -105,20 +104,20 @@
         </ScrollView>
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/employee_my_jobs_view_pager"
+            android:id="@+id/employer_my_jobs_view_pager"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/employee_my_jobs_ongoing_scrollview"
-            app:layout_constraintEnd_toEndOf="@+id/employee_my_jobs_ongoing_scrollview"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_scrollview"
+            app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_ongoing_scrollview"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/employee_my_jobs_ongoing_tab_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_tab_layout" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/employee_my_jobs_ongoing_bottom_nav"
+            android:id="@+id/employer_my_jobs_ongoing_bottom_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"

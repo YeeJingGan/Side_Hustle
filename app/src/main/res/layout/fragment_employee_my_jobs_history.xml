@@ -78,4 +78,14 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/history_detail_button"
         app:layout_constraintTop_toTopOf="@+id/history_position" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="391dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_company_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
