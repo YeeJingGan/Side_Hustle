@@ -46,21 +46,6 @@
         app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_listitem_position"
         app:srcCompat="@drawable/ic_calendar" />
 
-    <Button
-        android:id="@+id/employer_my_jobs_ongoing_listitem_view_details_button"
-        android:layout_width="@dimen/large_button_width"
-        android:layout_height="@dimen/button_width_height"
-        android:backgroundTint="@color/theme_color"
-        android:paddingLeft="@dimen/buttonPadding"
-        android:paddingTop="@dimen/buttonPadding"
-        android:paddingRight="@dimen/buttonPadding"
-        android:paddingBottom="@dimen/buttonPadding"
-        android:text="@string/button_text_view_employees"
-        android:textColor="@color/white"
-        android:textSize="@dimen/button_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_listitem_ic_schedule"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <ImageView
         android:id="@+id/employer_my_jobs_ongoing_listitem_ic_schedule"
         android:layout_width="@dimen/icon_width_height"
@@ -97,7 +82,6 @@
         android:id="@+id/employer_my_jobs_ongoing_listitem_employee_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:fontFamily="@font/andika"
         android:gravity="center"
         android:includeFontPadding="false"
@@ -106,7 +90,7 @@
         android:text="@string/employer_employee_num"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_ongoing_listitem_ic_employee"
-        app:layout_constraintEnd_toEndOf="@+id/employer_my_jobs_ongoing_listitem_view_details_button" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <View
         android:id="@+id/divider4"
@@ -116,7 +100,30 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_listitem_view_details_button" />
+        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_ongoing_listitem_ic_schedule" />
+
+    <ImageView
+        android:id="@+id/employer_ongoing_expand_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/background_rectangle_theme_color"
+        android:src="@drawable/ic_expand_less"
+        app:layout_constraintBottom_toTopOf="@+id/divider4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/employer_ongoing_recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider4"
+        tools:listitem="@layout/fragment_employer_my_jobs_ongoing_employee_list" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

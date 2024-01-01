@@ -40,6 +40,6 @@
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include"
-        tools:listitem="@layout/fragment_employee_my_jobs_ongoing" />
+        tools:listitem="@layout/fragment_employer_my_jobs_ongoing" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

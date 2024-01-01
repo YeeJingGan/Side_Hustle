@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
             setListenerAndToAnotherActivity(mainButton13,EmployeeSettingsActivity::class.java)
             setListenerAndToAnotherActivity(mainButton14,EmployeeMyJobsActivity::class.java)
             setListenerAndToAnotherActivity(mainButton15,EmployerMyJobsActivity::class.java)
+            setListenerAndToAnotherActivity(mainButton15,EmployerSettingsActivity::class.java)
+
 
 
         }

@@ -19,13 +19,5 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/fragment_employer_my_jobs_history" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Hello My Freidn"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
