@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/background_reactangle_white"
     android:paddingLeft="@dimen/list_item_padding"
     android:paddingTop="@dimen/list_item_padding"
@@ -118,5 +118,15 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toStartOf="@+id/employer_history_icon"
         app:layout_constraintTop_toTopOf="@+id/employer_history_position" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="391dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_history_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

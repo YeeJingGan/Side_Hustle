@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/background_reactangle_white"
     android:padding="@dimen/list_item_padding"
     tools:context=".EmployeeMyJobsNegotiatingFragment">
@@ -101,5 +101,15 @@
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/employee_negotiating_button"
         app:layout_constraintTop_toTopOf="@+id/employee_negotiating_name" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_negotiating_working_hours" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
