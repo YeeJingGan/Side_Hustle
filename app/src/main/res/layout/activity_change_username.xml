@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ChangeUsernameActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/change_username_background"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:background="@color/theme_color"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/change_username_main_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_settings_rounded_corner"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Current Username: "
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:ems="10"
+                android:hint="@string/username"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Current Password:"
+                app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+            <EditText
+                android:id="@+id/editTextNumberPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="New Username:"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/new_username"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="@+id/editTextNumberPassword"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Confirm Username:"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/new_username"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@+id/change_username_main_layout"
+            app:layout_constraintStart_toStartOf="@+id/change_username_main_layout"
+            app:srcCompat="@drawable/ic_arrow_back_white_36px" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/background_settings_rounded_corner"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/button_text_submit"
+            android:textColor="@color/theme_color"
+            app:layout_constraintEnd_toEndOf="@+id/change_username_main_layout"
+            app:layout_constraintStart_toStartOf="@+id/change_username_main_layout"
+            app:layout_constraintTop_toBottomOf="@+id/change_username_main_layout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
