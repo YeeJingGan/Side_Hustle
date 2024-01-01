@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmployeeMyJobsHistoryPendingCommentActivity">
+
+    <include
+        android:id="@+id/include31"
+        layout="@layout/common_back_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_jobDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/common_constraint_24"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/title_job_details"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/include31"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_pic"
+        android:layout_width="@dimen/portrait_width_height"
+        android:layout_height="@dimen/portrait_width_height"
+        android:layout_marginStart="@dimen/common_constraint_16"
+        android:layout_marginTop="@dimen/common_constraint_16"
+        android:contentDescription="@string/pic_description_company_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include31"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/employer_upload_jobs_company_name"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_pic"
+        app:layout_constraintTop_toTopOf="@+id/employee_history_pending_comment_pic" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_company_location_pin"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:contentDescription="@string/ic_description_company_location"
+        app:layout_constraintBottom_toTopOf="@+id/employee_history_pending_comment_star_1"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_company_name"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_company_name"
+        app:srcCompat="@drawable/ic_distance_24px" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_company_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_constraint_8"
+        android:fontFamily="@font/inter"
+        android:text="@string/employer_upload_jobs_company_address"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_company_location_pin"
+        app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_company_location_pin" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_star_1"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:contentDescription="@string/ic_description_rating"
+        android:src="@drawable/ic_star_hollow_24px"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_pic"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_company_location_pin" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_star_2"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:src="@drawable/ic_star_hollow_24px"
+        android:contentDescription="@string/ic_description_rating"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_star_1"
+        app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_star_1" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_star_3"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:src="@drawable/ic_star_hollow_24px"
+        android:contentDescription="@string/ic_description_rating"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_star_2"
+        app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_star_2" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_star_4"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:src="@drawable/ic_star_hollow_24px"
+        android:contentDescription="@string/ic_description_rating"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_star_3"
+        app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_star_3" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_star_5"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:src="@drawable/ic_star_hollow_24px"
+        android:contentDescription="@string/ic_description_rating"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_star_4"
+        app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_star_4" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_offered_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_constraint_24"
+        android:fontFamily="@font/andika_new_basic_bold"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:text="@string/ongoing_jobs_position"
+        android:textColor="@color/black"
+        android:textSize="@dimen/employee_details_text_size"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_pic"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_pic" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_money_icon"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:layout_marginTop="@dimen/common_constraint_8"
+        android:contentDescription="@string/ic_description_offered_wages"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_offered_position"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_offered_position"
+        app:srcCompat="@drawable/ic_money" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_calendar_icon"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:layout_marginTop="@dimen/common_constraint_8"
+        android:contentDescription="@string/ic_description_approved_date"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_money_icon"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_money_icon"
+        app:srcCompat="@drawable/ic_calendar" />
+
+    <ImageView
+        android:id="@+id/employee_history_pending_comment_schedule_icon"
+        android:layout_width="@dimen/icon_width_height"
+        android:layout_height="@dimen/icon_width_height"
+        android:layout_marginTop="@dimen/common_constraint_8"
+        android:contentDescription="@string/ic_description_approved_time"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_calendar_icon"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_calendar_icon"
+        app:srcCompat="@drawable/ic_schedule" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_offered_wages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/inter"
+        android:text="@string/employee_wages"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_money_icon"
+        app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_money_icon" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="@string/employer_approved_jobs_date"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_calendar_icon"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_offered_wages" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:text="@string/employer_approved_jobs_time"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_schedule_icon"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_date" />
+
+    <View
+        android:id="@+id/employee_history_pending_comment_div_1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_schedule_icon" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_requirement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_constraint_8"
+        android:fontFamily="@font/inter"
+        android:text="@string/title_requirements"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_div_1"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_div_1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/employee_history_pending_comment_container_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_constraint_8"
+        app:layout_constraintEnd_toEndOf="@+id/employee_history_pending_comment_div_1"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_div_1"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_requirement">
+
+        <ImageView
+            android:id="@+id/employee_history_pending_comment_check_box"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:contentDescription="@string/ic_description_requirement"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_check_box" />
+
+        <TextView
+            android:id="@+id/employee_history_pending_comment_requirement_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/employer_upload_jobs_requirement"
+            app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_check_box"
+            app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_check_box"
+            app:layout_constraintTop_toTopOf="@+id/employee_history_pending_comment_check_box" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/employee_history_pending_comment_div_2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="@+id/employee_history_pending_comment_div_1"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_div_1"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_container_1" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_constraint_8"
+        android:fontFamily="@font/inter"
+        android:text="@string/title_description"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_requirement"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_div_2" />
+
+    <TextView
+        android:id="@+id/employee_history_pending_comment_job_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_constraint_8"
+        android:fontFamily="@font/inter"
+        android:text="@string/employer_upload_jobs_description"
+        app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_description"
+        app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_description" />
+
+    <Button
+        android:id="@+id/employee_history_comment_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rectangle_theme_color"
+        android:text="@string/title_comment"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -221,4 +221,12 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="waiting_reply_applicant_name">Beh Mun Hui</string>
+    <string name="waiting_reply_offered_wages">RM ??</string>
+    <string name="waiting_reply_applicant_comment">Im super duper intelligent</string>
+    <string name="waiting_reply_applicant_language">Korean</string>
+    <string name="waiting_reply_applicant_proficiency">Poor</string>
+    <string name="commented_employee_name">Ashley Wong Rui Ying</string>
+    <string name="title_total_earnings">Total Earnings</string>
+    <string name="employee_total_earnings">RM 100,000</string>
 </resources>
