@@ -7,14 +7,36 @@
     android:layout_height="match_parent"
     tools:context=".AdminJobsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment"
+    <ListView
+        android:id="@+id/admin_home_job_list_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/layout_admin_home_job_item">
+
+    </ListView>
+
+    <ImageButton
+        android:id="@+id/flag_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/favorite_button_margin"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_circle_theme_color"
+        android:contentDescription="@string/favorite_button_description"
+        android:padding="@dimen/favorite_button_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_flag_24px"
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
