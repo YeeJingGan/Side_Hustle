@@ -7,4 +7,7 @@
     <color name="theme_gray">#F5F5F5</color>
     <color name="theme_textgray">#747474</color>    <!--Opacity should be 80%-->
     <color name="theme_textlightgray">#808080</color>
+    <color name="black_80alpha">#CC000000</color>
+    <color name="text_grey_80opac">#CC4A4A4A</color>
+    <color name="warning_red">#FF0000</color>
 </resources>

@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,12 +31,45 @@ class AdminReviewCommentFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
+    /*override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_admin_review_comment, container, false)
+    }*/
+    private lateinit var jobAdapter: JobAdapter
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_admin_review_comment, container, false)
+
+        val jobList: List<Job> = listOf(
+            Job(
+                R.drawable.sample_profile_photo,
+                "Job 1",
+                100,
+                "City 1",
+                "State 1"
+            ),
+            Job(
+                R.drawable.sample_profile_photo,
+                "Job 2",
+                150,
+                "City 2",
+                "State 2"
+            )
+        )
+
+        jobAdapter = JobAdapter(requireContext(), jobList)
+
+        val recyclerView: RecyclerView = view.findViewById(R.id.jobRecyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = jobAdapter
+
+        return view
     }
 
     companion object {

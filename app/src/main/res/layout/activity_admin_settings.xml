@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminSettingsActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="100dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIconTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!--<TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:text="@string/settings_toolbarTitle"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />-->
+
+        <TextView
+            android:id="@+id/admin_settings_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/settings_toolbarTitle"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/admin_settings_main_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/background_settings_rounded_corner"
+        android:paddingVertical="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/admin_settings_account_security_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/account_security_txt"
+            android:textColor="@color/text_grey_80opac"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/admin_settings_lock_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/admin_settings_account_security_textview"
+            app:layout_constraintTop_toBottomOf="@+id/admin_settings_account_security_textview"
+            app:srcCompat="@drawable/ic_lock_24px"
+            app:tint="@color/black_80alpha" />
+
+        <TextView
+            android:id="@+id/admin_settings_password_textview"
+            style="@style/settings_normal_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/password_txt"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_lock_icon"
+            app:layout_constraintEnd_toStartOf="@+id/admin_settings_right_icon_2"
+            app:layout_constraintStart_toEndOf="@+id/admin_settings_lock_icon"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_lock_icon" />
+
+        <ImageView
+            android:id="@+id/admin_settings_right_icon_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_password_textview"
+            app:layout_constraintEnd_toEndOf="@+id/admin_settings_account_security_textview"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_password_textview"
+            app:srcCompat="@drawable/ic_chevron_right_24px" />
+
+        <TextView
+            android:id="@+id/admin_settings_app_appearance_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/app_appearance_txt"
+            android:textColor="@color/text_grey_80opac"
+            app:layout_constraintEnd_toEndOf="@+id/admin_settings_account_security_textview"
+            app:layout_constraintStart_toStartOf="@+id/admin_settings_account_security_textview"
+            app:layout_constraintTop_toBottomOf="@+id/admin_settings_lock_icon" />
+
+        <ImageView
+            android:id="@+id/admin_settings_theme_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/admin_settings_app_appearance_textview"
+            app:layout_constraintTop_toBottomOf="@+id/admin_settings_app_appearance_textview"
+            app:srcCompat="@drawable/ic_contrast_24px"
+            app:tint="@color/black_80alpha" />
+
+        <Switch
+            android:id="@+id/admin_settings_theme_switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/theme_txt"
+            android:thumb="@drawable/ic_dark_mode_24px"
+            android:track="@drawable/background_search_rounded_corner"
+            android:trackTint="@color/theme_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_theme_icon"
+            app:layout_constraintEnd_toEndOf="@+id/admin_settings_app_appearance_textview"
+            app:layout_constraintStart_toEndOf="@+id/admin_settings_theme_icon"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_theme_icon" />
+
+        <ImageView
+            android:id="@+id/admin_settings_font_size_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/admin_settings_theme_icon"
+            app:layout_constraintTop_toBottomOf="@+id/admin_settings_theme_icon"
+            app:srcCompat="@drawable/ic_text_increase_24px"
+            app:tint="@color/black_80alpha" />
+
+        <TextView
+            android:id="@+id/admin_settings_font_size_textview"
+            style="@style/settings_normal_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/font_size_txt"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_font_size_icon"
+            app:layout_constraintEnd_toStartOf="@+id/admin_settings_right_icon_3"
+            app:layout_constraintStart_toEndOf="@+id/admin_settings_font_size_icon"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_font_size_icon" />
+
+        <ImageView
+            android:id="@+id/admin_settings_right_icon_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_font_size_textview"
+            app:layout_constraintEnd_toEndOf="@+id/admin_settings_app_appearance_textview"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_font_size_textview"
+            app:srcCompat="@drawable/ic_chevron_right_24px"
+            android:contentDescription="@string/settings_txt" />
+
+        <TextView
+            android:id="@+id/admin_settings_others_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/inter"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="@+id/admin_settings_app_appearance_textview"
+            app:layout_constraintStart_toStartOf="@+id/admin_settings_app_appearance_textview"
+            app:layout_constraintTop_toBottomOf="@+id/admin_settings_font_size_textview"
+            tools:text="@string/others_txt" />
+
+        <ImageView
+            android:id="@+id/admin_settings_notification_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/admin_settings_others_textview"
+            app:layout_constraintTop_toBottomOf="@+id/admin_settings_others_textview"
+            app:srcCompat="@drawable/ic_notifications_24px"
+            app:tint="@color/black_80alpha" />
+
+        <Switch
+            android:id="@+id/admin_settings_notifications_switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/notifications_txt"
+            android:track="@drawable/background_search_rounded_corner"
+            android:trackTint="@color/theme_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_notification_icon"
+            app:layout_constraintEnd_toEndOf="@+id/admin_settings_others_textview"
+            app:layout_constraintStart_toEndOf="@+id/admin_settings_notification_icon"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_notification_icon" />
+
+        <ImageView
+            android:id="@+id/admin_settings_headsetmic_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/admin_settings_notification_icon"
+            app:layout_constraintTop_toBottomOf="@+id/admin_settings_notification_icon"
+            app:srcCompat="@drawable/ic_headsetmic_24px"
+            app:tint="@color/black_80alpha" />
+
+        <TextView
+            android:id="@+id/admin_settings_contact_us_textview"
+            style="@style/settings_normal_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_us_txt"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_headsetmic_icon"
+            app:layout_constraintEnd_toStartOf="@+id/admin_settings_right_icon_5"
+            app:layout_constraintStart_toEndOf="@+id/admin_settings_headsetmic_icon"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_headsetmic_icon" />
+
+        <ImageView
+            android:id="@+id/admin_settings_right_icon_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_contact_us_textview"
+            app:layout_constraintEnd_toEndOf="@+id/admin_settings_others_textview"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_contact_us_textview"
+            app:srcCompat="@drawable/ic_chevron_right_24px" />
+
+        <ImageView
+            android:id="@+id/admin_settings_help_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/admin_settings_headsetmic_icon"
+            app:layout_constraintTop_toBottomOf="@+id/admin_settings_headsetmic_icon"
+            app:srcCompat="@drawable/ic_help_24px"
+            app:tint="@color/black_80alpha" />
+
+        <TextView
+            android:id="@+id/admin_settings_about_us_textview"
+            style="@style/settings_normal_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/about_txt"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_help_icon"
+            app:layout_constraintEnd_toStartOf="@+id/admin_settings_right_icon_6"
+            app:layout_constraintStart_toEndOf="@+id/admin_settings_help_icon"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_help_icon" />
+
+        <ImageView
+            android:id="@+id/admin_settings_right_icon_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_about_us_textview"
+            app:layout_constraintEnd_toEndOf="@+id/admin_settings_right_icon_5"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_about_us_textview"
+            app:srcCompat="@drawable/ic_chevron_right_24px" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/admin_settings_secondary_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/background_settings_rounded_corner"
+        android:paddingVertical="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_settings_main_layout">
+
+        <ImageView
+            android:id="@+id/admin_settings_logout_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_logout_24px"
+            app:tint="@color/warning_red" />
+
+        <TextView
+            android:id="@+id/admin_settings_logout_textview"
+            style="@style/settings_normal_text_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/logout_txt"
+            android:textColor="@color/warning_red"
+            app:layout_constraintBottom_toBottomOf="@+id/admin_settings_logout_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/admin_settings_logout_icon"
+            app:layout_constraintTop_toTopOf="@+id/admin_settings_logout_icon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

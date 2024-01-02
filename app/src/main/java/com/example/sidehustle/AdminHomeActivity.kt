@@ -1,5 +1,6 @@
 package com.example.sidehustle
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -31,7 +32,7 @@ class AdminHomeActivity : AppCompatActivity(), AdminJobsFragment.OnFragmentInter
     }
 
     override fun onButtonClicked(buttonId: Int) {
-        // when footer imageButton clicked, switch fragments
+        // when footer imageButton clicked, switch fragments/ open activity
         when (buttonId) {
             R.id.footer_ic_home -> {
                 supportFragmentManager.beginTransaction()
@@ -49,9 +50,11 @@ class AdminHomeActivity : AppCompatActivity(), AdminJobsFragment.OnFragmentInter
                     .commit()
             }
             R.id.footer_ic_settings -> {
-                supportFragmentManager.beginTransaction()
+                /*supportFragmentManager.beginTransaction()
                     .replace(R.id.fragmentContainerView, AdminSettingsFragment.newInstance("", ""))
-                    .commit()
+                    .commit()*/
+                val settingsIntent = Intent(this, AdminSettingsActivity::class.java)
+                startActivity(settingsIntent)
             }
         }
     }
