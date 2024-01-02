@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.example.sidehustle.databinding.ActivityMainBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +25,24 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             setListenerAndToAnotherActivity(mainButton1, EmployerHomeActivity::class.java)
             setListenerAndToAnotherActivity(mainButton2, EmployeeHomeActivity::class.java)
+
+        }
+
+        binding.mainButton3.setOnClickListener {
+            val database = SideHustleDatabase.getDatabase(applicationContext)
+            val employeeDao = database.employeeDao()
+
+            val employee = EntityEmployee(
+                0,
+                "username1",
+                "abc@mail.com",
+                "abc123",
+                byteArrayOf(0x48, 101, 108, 108, 111)
+            )
+
+            GlobalScope.launch(Dispatchers.IO) {
+                employeeDao.insert(employee)
+            }
 
         }
     }

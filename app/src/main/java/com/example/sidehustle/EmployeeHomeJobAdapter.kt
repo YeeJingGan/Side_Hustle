@@ -60,8 +60,8 @@ class EmployeeHomeJobAdapter(private val jobs: List<EntityJob>) :
                     val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim()
 
                     for (job in jobs) {
-                        if (job.jobName.lowercase(Locale.ROOT)
-                                .contains(filterPattern) || job.jobState.lowercase(Locale.ROOT)
+                        if (job.title.lowercase(Locale.ROOT)
+                                .contains(filterPattern) || job.state.lowercase(Locale.ROOT)
                                 .contains(filterPattern)
                         ) {
                             filteredList.add(job)

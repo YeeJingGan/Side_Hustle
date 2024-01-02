@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/common_constraint_8"
                     android:fontFamily="@font/inter"
-                    android:text="@{job.jobState}"
+                    android:text="@{job.state}"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/employee_job_details_company_location_pin"
                     app:layout_constraintStart_toEndOf="@+id/employee_job_details_company_location_pin" />
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:fontFamily="@font/inter"
-                    android:text="@{`RM ` + String.valueOf(job.pay)}"
+                    android:text="@{`RM ` + String.valueOf(job.wages)}"
                     app:layout_constraintBottom_toBottomOf="@+id/employee_job_details_money_icon"
                     app:layout_constraintStart_toEndOf="@+id/employee_job_details_money_icon" />
 

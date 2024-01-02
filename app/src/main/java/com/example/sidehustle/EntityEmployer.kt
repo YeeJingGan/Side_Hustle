@@ -1,15 +1,17 @@
 package com.example.sidehustle
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "employer_table")
 data class EntityEmployer(
-    val employerID : Long,
-
-    var employerUsername : String,
-
-    val employerEmail : String,
-
-    var employerPassword : String,
-
-    var employerProfilePicture : ByteArray
+    @PrimaryKey(autoGenerate = true)
+    val employerID: Long = 0L,
+    var employerUsername: String,
+    val employerEmail: String,
+    var employerPassword: String,
+    var employerProfilePicture: ByteArray?
 )
 
 // Sample to populate the entity

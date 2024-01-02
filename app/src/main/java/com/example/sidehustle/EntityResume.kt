@@ -1,13 +1,27 @@
 package com.example.sidehustle
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.PrimaryKey
+
+@Entity(
+    tableName = "resume_table", foreignKeys = [
+        ForeignKey(
+            entity = EntityEmployee::class,
+            parentColumns = ["employeeID"],
+            childColumns = ["employeeID"],
+            onDelete = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
+        )
+    ]
+)
 data class EntityResume(
-    val resumeID : Long,
-
-    val employeeID : Long,
-
-    val resumeFileName : String,
-
-    val resumeFileContent : ByteArray
+    @PrimaryKey(autoGenerate = true)
+    val resumeID: Long = 0L,
+    val employeeID: Long,
+    val fileName: String,
+    val fileContent: ByteArray?
 )
 
 // Sample to populate the entity

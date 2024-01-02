@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/andika_new_basic_bold"
-            android:text="@{job.jobName}"
+            android:text="@{job.title}"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rowdies"
-            android:text="@{`RM ` + String.valueOf(job.pay)}"
+            android:text="@{`RM ` + String.valueOf(job.wages)}"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_position"

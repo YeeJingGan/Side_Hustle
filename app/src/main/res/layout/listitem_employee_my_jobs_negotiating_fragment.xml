@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_constraint_16"
             android:fontFamily="@font/andika"
-            android:text="@{job.jobName}"
+            android:text="@{job.title}"
             app:layout_constraintStart_toEndOf="@+id/employee_negotiating_pic"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rowdies"
-            android:text="@{`RM `+ String.valueOf(job.pay)}"
+            android:text="@{`RM `+ String.valueOf(job.wages)}"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/employee_negotiating_name"
             app:layout_constraintTop_toBottomOf="@+id/employee_negotiating_name" />

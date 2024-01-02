@@ -1,14 +1,37 @@
 package com.example.sidehustle
 
-data class EntityApplication(
-    val employeeID : Long,
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.Index
+import androidx.room.PrimaryKey
 
-    val jobID : Long,
-
-    val applicationID : Long,
-
-    var applicationStatus : String
+@Entity(
+    tableName = "application_table",
+    primaryKeys = ["employeeID", "jobID"],
+    foreignKeys = [
+        ForeignKey(
+            entity = EntityJob::class,
+            parentColumns = ["jobID"],
+            childColumns = ["jobID"],
+            onDelete = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
+        ),
+        ForeignKey(
+            entity = EntityEmployee::class,
+            parentColumns = ["employeeID"],
+            childColumns = ["employeeID"],
+            onDelete = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
+        )
+    ]
 )
+data class EntityApplication(
+    val employeeID: Long = 0L,
+    val jobID: Long,
+    var status: String
+)
+
 
 // Sample to populate the entity
 
