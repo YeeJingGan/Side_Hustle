@@ -5,16 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sidehustle.databinding.FragmentEmployeeHistoryBinding
-import com.example.sidehustle.databinding.FragmentEmployeeMyJobsHistoryBinding
-import com.example.sidehustle.databinding.FragmentEmployeeMyJobsOngoingBinding
+import com.example.sidehustle.databinding.ListitemEmployeeMyJobsHistoryFragmentBinding
 
 class EmployeeHistoryAdapter(private val allJobs: List<JobEntity>) :
     RecyclerView.Adapter<EmployeeHistoryAdapter.ViewHolder>(){
 
     private var jobs: List<JobEntity> = allJobs
 
-    inner class ViewHolder(private val binding: FragmentEmployeeMyJobsHistoryBinding) :
+    inner class ViewHolder(private val binding: ListitemEmployeeMyJobsHistoryFragmentBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(job: JobEntity) {
@@ -39,9 +37,9 @@ class EmployeeHistoryAdapter(private val allJobs: List<JobEntity>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding: FragmentEmployeeMyJobsHistoryBinding = DataBindingUtil.inflate(
+        val binding: ListitemEmployeeMyJobsHistoryFragmentBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_employee_my_jobs_history,
+            R.layout.listitem_employee_my_jobs_history_fragment,
             parent,
             false
         )

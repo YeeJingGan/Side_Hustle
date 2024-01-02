@@ -4,93 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="job"
-            type="com.example.sidehustle.JobEntity" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/background_reactangle_white"
-        android:padding="@dimen/list_item_padding"
-        android:paddingTop="@dimen/list_item_padding"
+        android:layout_height="match_parent"
         tools:context=".EmployeeMyJobsOngoingFragment">
 
         <!-- TODO: Update blank fragment layout -->
 
 
-        <ImageView
-            android:id="@+id/employee_my_jobs_ongoing_pic"
-            android:layout_width="@dimen/employee_home_job_list_photo_size"
-            android:layout_height="@dimen/employee_home_job_list_photo_size"
-            android:contentDescription="@string/pic_description_company_logo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/employee_ongoing_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_constraint_16"
-            android:fontFamily="@font/andika"
-            android:text="@{job.jobName}"
-            app:layout_constraintStart_toEndOf="@+id/employee_my_jobs_ongoing_pic"
-            app:layout_constraintTop_toTopOf="@+id/employee_my_jobs_ongoing_pic" />
-
-        <TextView
-            android:id="@+id/employee_ongoing_offered_wages"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/rowdies"
-            android:text="@{job.startDate + ` to ` + job.endDate}"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/employee_ongoing_ic_schedule"
-            app:layout_constraintStart_toStartOf="@+id/employee_ongoing_name"
-            app:layout_constraintTop_toBottomOf="@+id/employee_ongoing_name" />
-
-        <ImageView
-            android:id="@+id/employee_ongoing_ic_schedule"
-            android:layout_width="@dimen/icon_width_height"
-            android:layout_height="@dimen/icon_width_height"
-            android:contentDescription="@string/ic_description_approved_time"
-            android:src="@drawable/ic_schedule"
-            app:layout_constraintBottom_toBottomOf="@+id/employee_my_jobs_ongoing_pic"
-            app:layout_constraintStart_toStartOf="@+id/employee_ongoing_offered_wages" />
-
-        <TextView
-            android:id="@+id/employee_ongoing_working_hours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/common_constraint_8"
-            android:fontFamily="@font/andika"
-            android:text="@{job.startTime + ` to ` + job.endTime}"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/employee_ongoing_ic_schedule"
-            app:layout_constraintStart_toEndOf="@+id/employee_ongoing_ic_schedule"
-            app:layout_constraintTop_toTopOf="@+id/employee_ongoing_ic_schedule" />
-
-        <Button
-            android:id="@+id/employee_ongoing_button"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employee_ongoing_recycler_view"
             android:layout_width="0dp"
-            android:layout_height="@dimen/button_width_height"
-            android:background="@drawable/background_rectangle_theme_color"
-            android:text="@string/button_text_details"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/employee_ongoing_working_hours"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="8dp"
-            android:background="?android:attr/listDivider"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/employee_ongoing_button" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/listitem_employee_my_jobs_ongoing_fragment" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

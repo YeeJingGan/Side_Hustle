@@ -8,16 +8,15 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.sidehustle.databinding.ActivityEmployeeNegotiateWithEmployerBinding
-import com.example.sidehustle.databinding.ActivityEmployerNegotiateWithEmployeeBinding
+import com.example.sidehustle.databinding.ActivityEmployeeMyJobsNegotiatingJobDetailsNegotiateBinding
 
-class EmployeeNegotiateWithEmployerActivity : AppCompatActivity() {
-    lateinit var binding: ActivityEmployeeNegotiateWithEmployerBinding
+class EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity : AppCompatActivity() {
+    lateinit var binding: ActivityEmployeeMyJobsNegotiatingJobDetailsNegotiateBinding
     var wagesAmount: Int = 10
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =
-            DataBindingUtil.setContentView(this, R.layout.activity_employee_negotiate_with_employer)
+            DataBindingUtil.setContentView(this, R.layout.activity_employee_my_jobs_negotiating_job_details_negotiate)
 
         val intent = intent
 

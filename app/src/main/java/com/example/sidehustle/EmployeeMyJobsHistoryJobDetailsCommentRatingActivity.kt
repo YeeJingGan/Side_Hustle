@@ -9,18 +9,17 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.sidehustle.databinding.ActivityEmployeeMyJobsHistoryCommentRatingBinding
-import com.example.sidehustle.databinding.ActivityEmployerMyJobsHistoryEmployeeListCommentRatingBinding
+import com.example.sidehustle.databinding.ActivityEmployeeMyJobsHistoryJobDetailsCommentRatingBinding
 
-class EmployeeMyJobsHistoryCommentRatingActivity : AppCompatActivity() {
-    lateinit var binding: ActivityEmployeeMyJobsHistoryCommentRatingBinding
+class EmployeeMyJobsHistoryJobDetailsCommentRatingActivity : AppCompatActivity() {
+    lateinit var binding: ActivityEmployeeMyJobsHistoryJobDetailsCommentRatingBinding
     var starsCount: Int = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(
             this,
-            R.layout.activity_employee_my_jobs_history_comment_rating
+            R.layout.activity_employee_my_jobs_history_job_details_comment_rating
         )
 
         setSupportActionBar(binding.employeeCommentRatingToolbar)

@@ -25,26 +25,14 @@
             android:name=".AboutSideHustleActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployeeMyJobsHistoryCommentRatingActivity"
+            android:name=".EmployeeMyJobsHistoryJobDetailsCommentRatingActivity"
             android:exported="false"
-            android:parentActivityName=".EmployeeMyJobsHistoryPendingCommentActivity"/>
-        <activity
-            android:name=".EmployeeMyJobsHistoryPendingCommentActivity"
-            android:exported="false" />
+            android:parentActivityName=".EmployeeMyJobsHistoryJobDetailsActivity"/>
         <activity
             android:name=".EmployeeMyJobsHistoryJobDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployeeMyJobsHistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployeeMyJobsNegotiatingWaitingReplyJosDetailsActivity"
-            android:exported="false" />
-        <activity
             android:name=".EmployeeMyJobsNegotiatingJobDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployeeMyJobsNegotiatingActivity"
             android:exported="false" />
         <activity
             android:name=".EmployeeMyJobsOngoingJobDetailsActivity"
@@ -66,11 +54,11 @@
             android:name=".EmployerMyProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployeeUploadResumeActivity"
+            android:name=".EmployeeMyProfileUploadResumeActivity"
             android:exported="false"
             android:parentActivityName=".EmployeeMyProfileActivity" />
         <activity
-            android:name=".EmployeeSettingsActivity"
+            android:name=".EmployeeMyProfileSettingsActivity"
             android:exported="false"
             android:parentActivityName=".EmployeeMyProfileActivity" />
         <activity
@@ -83,13 +71,12 @@
             android:name=".EmployeeHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployeeFavoriteJobsActivity"
+            android:name=".EmployeeHomeFavoriteJobsActivity"
             android:exported="false"
             android:parentActivityName=".EmployeeHomeActivity" />
         <activity
             android:name=".EmployeeHomeJobDetailsActivity"
-            android:exported="false"
-            android:parentActivityName=".EmployeeHomeActivity" />
+            android:exported="false" />
         <activity
             android:name=".EmployerHomeJobDetailsActivity"
             android:exported="false" />
@@ -107,7 +94,7 @@
             android:name=".EmployeeHomeJobDetailsApplyJobsActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployeeNegotiateWithEmployerActivity"
+            android:name=".EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity"
             android:exported="false"
             android:parentActivityName=".EmployeeMyJobsNegotiatingJobDetailsActivity"/>
         <activity

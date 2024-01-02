@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.widget.ListView
 import com.google.android.material.appbar.MaterialToolbar
 
-class EmployeeFavoriteJobsActivity : AppCompatActivity() {
+class EmployeeHomeFavoriteJobsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_employee_favorite_jobs)
+        setContentView(R.layout.activity_employee_home_favorite_jobs)
 
         val toolbar = findViewById<MaterialToolbar>(R.id.employee_favorite_jobs_toolbar)
         setSupportActionBar(toolbar)

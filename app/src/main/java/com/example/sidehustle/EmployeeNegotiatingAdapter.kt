@@ -5,15 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sidehustle.databinding.FragmentEmployeeMyJobsNegotiatingBinding
-import com.example.sidehustle.databinding.FragmentEmployeeMyJobsOngoingBinding
+import com.example.sidehustle.databinding.ListitemEmployeeMyJobsNegotiatingFragmentBinding
 
 class EmployeeNegotiatingAdapter(private val allJobs: List<JobEntity>) :
     RecyclerView.Adapter<EmployeeNegotiatingAdapter.ViewHolder>(){
 
     private var jobs: List<JobEntity> = allJobs
 
-    inner class ViewHolder(private val binding: FragmentEmployeeMyJobsNegotiatingBinding) :
+    inner class ViewHolder(private val binding: ListitemEmployeeMyJobsNegotiatingFragmentBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(job: JobEntity) {
@@ -39,9 +38,9 @@ class EmployeeNegotiatingAdapter(private val allJobs: List<JobEntity>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding: FragmentEmployeeMyJobsNegotiatingBinding = DataBindingUtil.inflate(
+        val binding: ListitemEmployeeMyJobsNegotiatingFragmentBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_employee_my_jobs_negotiating,
+            R.layout.listitem_employee_my_jobs_negotiating_fragment,
             parent,
             false
         )

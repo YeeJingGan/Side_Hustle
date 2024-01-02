@@ -7,15 +7,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
-import com.example.sidehustle.databinding.ActivityEmployeeSettingsBinding
+import com.example.sidehustle.databinding.ActivityEmployeeMyProfileSettingsBinding
 
 
-class EmployeeSettingsActivity : AppCompatActivity() {
+class EmployeeMyProfileSettingsActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityEmployeeSettingsBinding
+    lateinit var binding: ActivityEmployeeMyProfileSettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding =  DataBindingUtil.setContentView(this, R.layout.activity_employee_settings)
+        binding =  DataBindingUtil.setContentView(this, R.layout.activity_employee_my_profile_settings)
 
         val toolbar = findViewById<Toolbar>(R.id.employee_settings_toolbar)
         setSupportActionBar(toolbar)

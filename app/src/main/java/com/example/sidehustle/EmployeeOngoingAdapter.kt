@@ -3,18 +3,18 @@ package com.example.sidehustle
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Filterable
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sidehustle.databinding.FragmentEmployeeMyJobsOngoingBinding
-import com.example.sidehustle.databinding.FragmentEmployerHomeApprovedJobsBinding
+import com.example.sidehustle.databinding.ListitemEmployeeMyJobsNegotiatingFragmentBinding
+import com.example.sidehustle.databinding.ListitemEmployeeMyJobsOngoingFragmentBinding
 
 class EmployeeOngoingAdapter(private val allJobs: List<JobEntity>) :
     RecyclerView.Adapter<EmployeeOngoingAdapter.ViewHolder>(){
 
     private var jobs: List<JobEntity> = allJobs
 
-    inner class ViewHolder(private val binding: FragmentEmployeeMyJobsOngoingBinding) :
+    inner class ViewHolder(private val binding: ListitemEmployeeMyJobsOngoingFragmentBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(job: JobEntity) {
@@ -39,9 +39,9 @@ class EmployeeOngoingAdapter(private val allJobs: List<JobEntity>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding: FragmentEmployeeMyJobsOngoingBinding = DataBindingUtil.inflate(
+        val binding: ListitemEmployeeMyJobsOngoingFragmentBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_employee_my_jobs_ongoing,
+            R.layout.listitem_employee_my_jobs_ongoing_fragment,
             parent,
             false
         )

@@ -9,12 +9,12 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.appbar.MaterialToolbar
 
-class EmployeeUploadResumeActivity : AppCompatActivity() {
+class EmployeeMyProfileUploadResumeActivity : AppCompatActivity() {
 
     private var resumePdfFile: LegacyPdfFile? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_employee_upload_resume)
+        setContentView(R.layout.activity_employee_my_profile_upload_resume)
 
         val toolbar = findViewById<MaterialToolbar>(R.id.employee_upload_resume_toolbar)
         setSupportActionBar(toolbar)
