@@ -17,7 +17,7 @@ class EmployerHomeJobDetailsActivity : AppCompatActivity() {
         val intent = intent
         val jobID = intent.getLongExtra("jobID",-100)
         Log.i("INTENT",jobID.toString())
-        Toast.makeText(this,"HIHI IND IS $jobID",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"HI HI ID IS $jobID",Toast.LENGTH_SHORT).show()
         // Test PASSED
 
         setSupportActionBar(binding.employerHomeJobDetailsToolbar)

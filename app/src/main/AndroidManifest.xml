@@ -39,7 +39,8 @@
             android:exported="false" />
         <activity
             android:name=".EmployerMyJobsHistoryEmployeeDetailsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".EmployerMyJobsActivity"/>
         <activity
             android:name=".EmployerMyProfileSettingsActivity"
             android:exported="false"
@@ -94,10 +95,12 @@
             android:parentActivityName=".EmployerMyJobsNegotiatingApplicantDetailsActivity"/>
         <activity
             android:name=".EmployerMyJobsNegotiatingApplicantDetailsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".EmployerMyJobsActivity"/>
         <activity
             android:name=".EmployerMyJobsOngoingEmployeeDetailsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".EmployerMyJobsActivity"/>
         <activity
             android:name=".EmployerHomeUploadJobsActivity"
             android:exported="false"

@@ -18,13 +18,7 @@ class EmployerMyJobsNegotiatingApplicantDetailsNegotiateActivity : AppCompatActi
         binding =
             DataBindingUtil.setContentView(this, R.layout.activity_employer_my_jobs_negotiating_applicant_details_negotiate)
 
-        setSupportActionBar(binding.employerNegotiateWithEmployeeToolbar)
-
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_36px)
-            setDisplayShowTitleEnabled(false)
-        }
+        binding.employerMyJobsNegotiatingApplicantDetailsNegotiateBackButton.setOnClickListener { finish() }
 
         updateWages(wagesAmount)
 
@@ -115,6 +109,7 @@ class EmployerMyJobsNegotiatingApplicantDetailsNegotiateActivity : AppCompatActi
     private fun offer() {
         // TODO: UPLOAD DATABASE HERE
         Toast.makeText(this, "HAHA NOT YET OFFERED NEED TO DATABASE", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     private fun hideSoftInput(view: View) {
