@@ -157,6 +157,17 @@
             app:layout_constraintBottom_toBottomOf="@+id/employer_negotiate_with_employee_comment_input"
             app:layout_constraintStart_toStartOf="@+id/employer_negotiate_with_employee_comment_input" />
 
+        <ImageButton
+            android:id="@+id/employer_my_jobs_negotiating_applicant_details_negotiate_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_negotiate_with_employee_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/employer_negotiate_with_employee_toolbar"
+            app:srcCompat="@drawable/ic_arrow_back_white_36px" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

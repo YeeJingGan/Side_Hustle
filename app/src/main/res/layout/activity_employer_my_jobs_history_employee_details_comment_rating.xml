@@ -191,5 +191,16 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/employer_comment_rating_submit_button" />
 
+        <ImageButton
+            android:id="@+id/employer_my_jobs_history_employee_details_comment_rating_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_comment_rating_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/employer_comment_rating_toolbar"
+            app:srcCompat="@drawable/ic_arrow_back_white_36px" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
