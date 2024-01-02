@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_constraint_16"
             android:fontFamily="@font/andika"
-            android:text="@{job.jobName}"
+            android:text="@{job.title}"
             app:layout_constraintStart_toEndOf="@+id/employee_my_jobs_ongoing_pic"
             app:layout_constraintTop_toTopOf="@+id/employee_my_jobs_ongoing_pic" />
 
