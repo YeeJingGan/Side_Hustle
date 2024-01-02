@@ -19,6 +19,14 @@ class EmployerNegotiateWithEmployeeActivity : AppCompatActivity() {
         binding =
             DataBindingUtil.setContentView(this, R.layout.activity_employer_negotiate_with_employee)
 
+        setSupportActionBar(binding.employerNegotiateWithEmployeeToolbar)
+
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_36px)
+            setDisplayShowTitleEnabled(false)
+        }
+
         updateWages(wagesAmount)
 
         binding.employerNegotiateWithEmployeePlusButton.setOnClickListener {
@@ -33,6 +41,15 @@ class EmployerNegotiateWithEmployeeActivity : AppCompatActivity() {
             }
         }
 
+        binding.employerNegotiateWithEmployeeResetButton.setOnClickListener {
+            showResetConfirmationDialog()
+        }
+
+        binding.employerNegotiateWithEmployeeOfferButton.setOnClickListener {
+            if (validateAllFields()) {
+                showOfferConfirmationDialog()
+            }
+        }
 
     }
 
@@ -64,22 +81,43 @@ class EmployerNegotiateWithEmployeeActivity : AppCompatActivity() {
         updateWages(wagesAmount)
     }
 
-    private fun validateAllFields(){
+    private fun validateAllFields(): Boolean {
         currentFocus?.let {
             it.clearFocus()
             hideSoftInput(it)
         }
 
-        if(binding.employerNegotiateWithEmployeeCommentInput.text.isNullOrEmpty()){
-            Toast.makeText(this,"Comment is empty",Toast.LENGTH_SHORT).show()
+        if (binding.employerNegotiateWithEmployeeCommentInput.text.isNullOrEmpty()) {
+            Toast.makeText(this, "Comment is empty", Toast.LENGTH_SHORT).show()
             binding.employerNegotiateWithEmployeeCommentInput.apply {
                 requestFocus()
                 showSoftInput(this)
             }
-        }else{
-            // TODO : SET HERE NOT LESS THAN INITIAL AMOUNT
+        } else {
+            // TODO : SET HERE ELSE IF , NOT LESS THAN INITIAL AMOUNT
+            return true
         }
+        return false
     }
+
+    private fun showOfferConfirmationDialog() {
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setTitle("Offer Confirmation")
+        dialogBuilder.setMessage("Are you sure you want to offer? This can't be undone")
+        dialogBuilder.setPositiveButton("Offer") { dialog, which ->
+            offer()
+        }
+        dialogBuilder.setNegativeButton("Cancel") { dialog, which ->
+            dialog.dismiss()
+        }
+        dialogBuilder.create().show()
+    }
+
+    private fun offer() {
+        // TODO: UPLOAD DATABASE HERE
+        Toast.makeText(this, "HAHA NOT YET OFFERED NEED TO DATABASE", Toast.LENGTH_SHORT).show()
+    }
+
     private fun hideSoftInput(view: View) {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
