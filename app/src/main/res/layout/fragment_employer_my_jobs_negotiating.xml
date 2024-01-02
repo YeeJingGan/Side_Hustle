@@ -1,137 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/background_reactangle_white"
-    android:paddingLeft="@dimen/list_item_padding"
-    android:paddingTop="@dimen/list_item_padding"
-    android:paddingRight="@dimen/list_item_padding"
-    android:paddingBottom="@dimen/list_item_padding"
-    tools:context=".EmployerMyJobsNegotiatingFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
+    <data>
+        <variable
+            name="job"
+            type="com.example.sidehustle.JobEntity" />
+    </data>
 
-
-    <TextView
-        android:id="@+id/employer_my_jobs_negotiating_position"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/andika_new_basic_bold"
-        android:text="@string/employer_approved_jobs_position"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/background_reactangle_white"
+        android:paddingLeft="@dimen/list_item_padding"
+        android:paddingTop="@dimen/list_item_padding"
+        android:paddingRight="@dimen/list_item_padding"
+        android:paddingBottom="@dimen/list_item_padding"
+        tools:context=".EmployerMyJobsNegotiatingFragment">
 
-    <TextView
-        android:id="@+id/employer_my_jobs_negotiating_wages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/rowdies"
-        android:text="@string/employer_approved_jobs_wages"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_position"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_position" />
+        <!-- TODO: Update blank fragment layout -->
 
-    <ImageView
-        android:id="@+id/employer_my_jobs_negotiating_ic_calendar"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:contentDescription="@string/ic_description_approved_date"
-        android:src="@drawable/ic_schedule"
-        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_wages"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_wages"
-        app:srcCompat="@drawable/ic_calendar" />
 
-    <TextView
-        android:id="@+id/employer_my_jobs_negotiating_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/andika"
-        android:text="@string/employer_approved_jobs_date"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_calendar"
-        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_ic_calendar"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_calendar" />
+        <TextView
+            android:id="@+id/employer_my_jobs_negotiating_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andika_new_basic_bold"
+            android:text="@{job.jobName}"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/employer_my_jobs_negotiating_ic_schedule"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/ic_description_approved_time"
-        android:src="@drawable/ic_schedule"
-        app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_ic_calendar"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_ic_calendar"
-        app:srcCompat="@drawable/ic_schedule" />
+        <TextView
+            android:id="@+id/employer_my_jobs_negotiating_wages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rowdies"
+            android:text="@{`RM ` + String.valueOf(job.pay)}"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_position"
+            app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_position" />
 
-    <TextView
-        android:id="@+id/employer_my_jobs_negotiating_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/andika"
-        android:text="@string/employer_approved_jobs_time"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_schedule"
-        app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_ic_schedule"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_schedule" />
+        <ImageView
+            android:id="@+id/employer_my_jobs_negotiating_ic_calendar"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:contentDescription="@string/ic_description_approved_date"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_wages"
+            app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_wages" />
 
-    <ImageView
-        android:id="@+id/employer_my_jobs_negotiating_ic_applicants"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/ic_description_applicants_num"
-        android:src="@drawable/ic_icon"
-        app:layout_constraintEnd_toStartOf="@+id/employer_my_jobs_negotiating_applicant_num"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_position"
-        app:srcCompat="@drawable/ic_icon" />
+        <TextView
+            android:id="@+id/employer_my_jobs_negotiating_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/andika"
+            android:text="@{job.startDate + ` to ` + job.endDate}"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_calendar"
+            app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_ic_calendar"
+            app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_calendar" />
 
-    <TextView
-        android:id="@+id/employer_my_jobs_negotiating_applicant_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/employer_applicants_num"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_applicants"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_applicants" />
+        <ImageView
+            android:id="@+id/employer_my_jobs_negotiating_ic_schedule"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/ic_description_approved_time"
+            android:src="@drawable/ic_schedule"
+            app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_negotiating_ic_calendar"
+            app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_ic_calendar"
+            app:srcCompat="@drawable/ic_schedule" />
 
-    <View
-        android:id="@+id/divider6"
-        android:layout_width="391dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_time" />
+        <TextView
+            android:id="@+id/employer_my_jobs_negotiating_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/andika"
+            android:text="@{job.startTime + ` to ` + job.endTime}"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_schedule"
+            app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_ic_schedule"
+            app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_schedule" />
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/background_rectangle_theme_color"
-        android:src="@drawable/ic_expand_less"
-        app:layout_constraintBottom_toTopOf="@+id/divider6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/white" />
+        <ImageView
+            android:id="@+id/employer_my_jobs_negotiating_ic_applicants"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/ic_description_applicants_num"
+            android:src="@drawable/ic_icon"
+            app:layout_constraintEnd_toStartOf="@+id/employer_my_jobs_negotiating_applicant_num"
+            app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_position"
+            app:srcCompat="@drawable/ic_icon" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/employer_my_jobs_negotiating_recyclerview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6"
-        tools:listitem="@layout/fragment_employer_my_jobs_negotiating_applicants_list"/>
+        <TextView
+            android:id="@+id/employer_my_jobs_negotiating_applicant_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/employer_applicants_num"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_applicants"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_ic_applicants" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="391dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_time" />
+
+        <ImageView
+            android:id="@+id/employer_negotiating_expand_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_rectangle_theme_color"
+            android:src="@drawable/ic_expand"
+            app:layout_constraintBottom_toTopOf="@+id/divider6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employer_my_jobs_negotiating_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider6"
+            tools:listitem="@layout/fragment_employer_my_jobs_negotiating_applicants_list"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
