@@ -1,6 +1,5 @@
 package com.example.sidehustle
 
-import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -49,7 +48,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
     }
 
     private fun apply(view: View) {
-        val intent = Intent(view.context, EmployeeNegotiateWithEmployerActivity::class.java)
+        val intent = Intent(view.context, EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity::class.java)
         intent.putExtra("jobID", job.jobID)
         view.context.startActivity((intent))
     }

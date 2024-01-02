@@ -20,9 +20,9 @@ class EmployeeMyJobsActivity : AppCompatActivity() {
         var tabLayout = binding.employeeMyJobsOngoingTabLayout as TabLayout
 
         val fragmentAdapter = EmployeeMyJobsFragmentAdapter(supportFragmentManager)
-        fragmentAdapter.addFragment(EmployeeOngoingFragment(),"Ongoing")
-        fragmentAdapter.addFragment(EmployeeNegotiatingFragment(),"Negotiating")
-        fragmentAdapter.addFragment(EmployeeHistoryFragment(),"History")
+        fragmentAdapter.addFragment(EmployeeMyJobsOngoingFragment(),"Ongoing")
+        fragmentAdapter.addFragment(EmployeeMyJobsNegotiatingFragment(),"Negotiating")
+        fragmentAdapter.addFragment(EmployeeMyJobsHistoryFragment(),"History")
 
         viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)

@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import com.example.sidehustle.databinding.ActivityMainBinding
 
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     private fun setListeners(){
         binding.apply{
             setListenerAndToAnotherActivity(mainButton1,EmployerHomeActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton2,EmployerMyJobsNegotiatingActivity::class.java)
             setListenerAndToAnotherActivity(mainButton3,EmployerMyJobsOngoingActivity::class.java)
             setListenerAndToAnotherActivity(mainButton4,EmployerMyJobsHistoryActivity::class.java)
             setListenerAndToAnotherActivity(mainButton5,EmployerMyProfileActivity::class.java)
@@ -33,12 +31,9 @@ class MainActivity : AppCompatActivity() {
             setListenerAndToAnotherActivity(mainButton10,EmployerSettingsActivity::class.java)
             setListenerAndToAnotherActivity(mainButton11,EmployerMyJobsNegotiatingApplicantsListApplicantDetailsActivity::class.java)
             setListenerAndToAnotherActivity(mainButton12,EmployerMyJobsOngoingEmployeeListEmployeeDetailsActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton13,EmployeeSettingsActivity::class.java)
+            setListenerAndToAnotherActivity(mainButton13,EmployeeMyProfileSettingsActivity::class.java)
             setListenerAndToAnotherActivity(mainButton14,EmployeeMyJobsActivity::class.java)
             setListenerAndToAnotherActivity(mainButton15,EmployerMyJobsActivity::class.java)
-
-
-
         }
     }
     private fun setListenerAndToAnotherActivity(view: View, destinationActivity: Class<*>) {

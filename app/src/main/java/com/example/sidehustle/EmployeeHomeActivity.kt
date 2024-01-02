@@ -72,7 +72,7 @@ class EmployeeHomeActivity : AppCompatActivity() {
 
     private fun setListeners() {
         findViewById<ImageButton>(R.id.favorite_button).setOnClickListener {
-            toAnotherActivity(it, EmployeeFavoriteJobsActivity::class.java)
+            toAnotherActivity(it, EmployeeHomeFavoriteJobsActivity::class.java)
         }
     }
 
