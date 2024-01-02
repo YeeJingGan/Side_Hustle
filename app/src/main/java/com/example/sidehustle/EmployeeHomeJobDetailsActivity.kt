@@ -18,17 +18,23 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employee_home_job_details)
 
+        val intent = intent
 
-        setSupportActionBar(binding.emplyeeHomeJobDetailsToolbar)
+        setSupportActionBar(binding.employeeHomeJobDetailsToolbar)
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_36px)
+            setDisplayShowTitleEnabled(false)
         }
 
         getData()
 
         setListeners()
 
+        // TODO : CHECK POP WILL GET THE SAME ID OR NOT
+        val jobID = intent.getLongExtra("jobID",-100)
+        Toast.makeText(this,"JOBID is $jobID",Toast.LENGTH_SHORT).show()
     }
 
     private fun setListeners() {
@@ -48,7 +54,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
     }
 
     private fun apply(view: View) {
-        val intent = Intent(view.context, EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity::class.java)
+        val intent = Intent(view.context, EmployeeHomeJobDetailsApplyJobsActivity::class.java)
         intent.putExtra("jobID", job.jobID)
         view.context.startActivity((intent))
     }
@@ -77,7 +83,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
         )
         binding.job = job
 
-        val adapter = EmployeeHomeJobDetailsApplyJobsRequirementAdapter(listOf("REQ 1", "REQ 2", "REQ 3"))
+        val adapter = EmployeeHomeJobDetailsRequirementAdapter(listOf("REQ 1", "REQ 2", "REQ 3"))
 
         binding.employeeHomeJobDetailsRequirementsRecyclerview.adapter = adapter
         binding.employeeHomeJobDetailsRequirementsRecyclerview.layoutManager =

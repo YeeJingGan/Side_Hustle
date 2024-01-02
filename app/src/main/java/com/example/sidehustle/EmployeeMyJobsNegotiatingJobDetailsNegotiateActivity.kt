@@ -120,6 +120,7 @@ class EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity : AppCompatActivity()
     private fun offer() {
         // TODO: UPLOAD DATABASE HERE
         Toast.makeText(this, "HAHA NOT YET OFFERED NEED TO DATABASE", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     private fun hideSoftInput(view: View) {

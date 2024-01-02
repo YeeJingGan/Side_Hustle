@@ -6,8 +6,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sidehustle.databinding.ListitemEmployeeHomeJobDetailsRequirementsBinding
 
-class EmployeeHomeJobDetailsApplyJobsRequirementAdapter(private val requirements: List<String>) :
-    RecyclerView.Adapter<EmployeeHomeJobDetailsApplyJobsRequirementAdapter.ViewHolder>() {
+class EmployeeHomeJobDetailsRequirementAdapter(private val requirements: List<String>) :
+    RecyclerView.Adapter<EmployeeHomeJobDetailsRequirementAdapter.ViewHolder>() {
     class ViewHolder(private val binding: ListitemEmployeeHomeJobDetailsRequirementsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(requirement : String){

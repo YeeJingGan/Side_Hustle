@@ -1,11 +1,10 @@
 package com.example.sidehustle
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.viewpager.widget.ViewPager
 import com.example.sidehustle.databinding.ActivityEmployeeMyJobsBinding
-import com.google.android.material.tabs.TabLayout
 
 
 class EmployeeMyJobsActivity : AppCompatActivity() {
@@ -27,8 +26,42 @@ class EmployeeMyJobsActivity : AppCompatActivity() {
         viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)
 
+        setListeners()
+
     }
 
+    private fun setListeners(){
+        binding.employeeMyJobsOngoingBottomNav.apply {
+            selectedItemId = R.id.bottom_nav_my_jobs_button
+            setOnItemSelectedListener {
+                when (it.itemId) {
+                    R.id.bottom_nav_my_jobs_button -> false
+                    R.id.bottom_nav_home_button -> {
+                        finish()
+                        startActivity(
+                            Intent(
+                                applicationContext,
+                                EmployeeHomeActivity::class.java
+                            )
+                        )
+                        true
+                    }
 
+                    R.id.bottom_nav_my_profile_button -> {
+                        finish()
+                        startActivity(
+                            Intent(
+                                applicationContext,
+                                EmployeeMyProfileActivity::class.java
+                            )
+                        )
+                        true
+                    }
+
+                    else -> false
+                }
+            }
+        }
+    }
 
 }

@@ -26,6 +26,7 @@ class EmployeeMyJobsOngoingFragment : Fragment() {
     }
 
     private fun populateJobs(): List<EntityJob> {
+        // TODO: REPLACE WITH REAL DATA FROM DATABASE
         return listOf(
             EntityJob(
                 1,

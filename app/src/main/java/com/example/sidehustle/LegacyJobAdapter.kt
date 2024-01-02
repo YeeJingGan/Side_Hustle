@@ -25,7 +25,7 @@ class LegacyJobAdapter(private val context: Context, private val jobList: List<L
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view = convertView ?: LayoutInflater.from(context)
-            .inflate(R.layout.layout_employee_home_job_item, parent, false)
+            .inflate(R.layout.listitem_employee_home_jobs, parent, false)
 
         bindJobData(view, jobList[position])
 
@@ -37,7 +37,7 @@ class LegacyJobAdapter(private val context: Context, private val jobList: List<L
         val jobNameView = view.findViewById<TextView>(R.id.job_name_textview)
         val jobPriceView = view.findViewById<TextView>(R.id.job_price_textview)
         val jobPlaceView = view.findViewById<TextView>(R.id.job_place_textview)
-        val detailsButton = view.findViewById<Button>(R.id.details_button)
+        val detailsButton = view.findViewById<Button>(R.id.employee_home_jobs_details_button)
 
         jobProfilePhotoView.setImageResource(job.photoResId)
         jobNameView.text = job.jobName
