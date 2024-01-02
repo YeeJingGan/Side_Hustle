@@ -5,7 +5,6 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
@@ -14,7 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.sidehustle.databinding.ActivityEmployerHomeUploadJobsBinding
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -24,7 +22,7 @@ import java.util.Locale
 class EmployerHomeUploadJobsActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployerHomeUploadJobsBinding
-    lateinit var requirementsAdapter: EmployerUploadJobsRequirementsAdapter
+    lateinit var requirementsAdapter: EmployerHomeUploadJobsRequirementsAdapter
     lateinit var selectedStateChoice: String
     var wagesAmount: Int = 10
     val stateChoices = arrayOf(
@@ -72,7 +70,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
     }
 
     private fun setRecyclerView() {
-        requirementsAdapter = EmployerUploadJobsRequirementsAdapter(mutableListOf(""))
+        requirementsAdapter = EmployerHomeUploadJobsRequirementsAdapter(mutableListOf(""))
         binding.employerUploadJobsRequirementsRecyclerview.adapter = requirementsAdapter
         binding.employerUploadJobsRequirementsRecyclerview.layoutManager = LinearLayoutManager(this)
     }

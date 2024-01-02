@@ -7,11 +7,11 @@
 
         <variable
             name="employee"
-            type="com.example.sidehustle.EmployeeEntity" />
+            type="com.example.sidehustle.EntityEmployee" />
 
         <variable
             name="job"
-            type="com.example.sidehustle.JobEntity" />
+            type="com.example.sidehustle.EntityJob" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -279,7 +279,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/employee_job_details_div_1"
                     app:layout_constraintStart_toStartOf="@+id/employee_job_details_div_1"
                     app:layout_constraintTop_toBottomOf="@+id/employee_job_details_div_1"
-                    tools:listitem="@layout/employee_home_job_details_requirement_item"/>
+                    tools:listitem="@layout/listitem_employee_home_job_details_requirements"/>
 
                 <View
                     android:id="@+id/employee_job_details_div_2"

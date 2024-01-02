@@ -10,14 +10,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class EmployerMyProfileActivity : AppCompatActivity() {
     lateinit var viewPager2: ViewPager2
-    lateinit var adapter: ReviewsCommentsAdapter
+    lateinit var adapter: EmployeeMyProfileReviewsCommentsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_employer_my_profile)
         val reviews = createReviewsCommentsList()
 
         viewPager2 = findViewById(R.id.my_profile_viewpager2)
-        adapter = ReviewsCommentsAdapter(reviews)
+        adapter = EmployeeMyProfileReviewsCommentsAdapter(reviews)
 
         viewPager2.adapter = adapter
 
@@ -60,7 +60,7 @@ class EmployerMyProfileActivity : AppCompatActivity() {
     private fun setListeners() {
 
         findViewById<ImageButton>(R.id.my_profile_settings_icon).setOnClickListener {
-            toAnotherActivity(it, EmployerSettingsActivity::class.java)
+            toAnotherActivity(it, EmployerMyProfileSettingsActivity::class.java)
         }
 
 

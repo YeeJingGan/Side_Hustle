@@ -14,7 +14,7 @@ import com.example.sidehustle.databinding.ActivityEmployerHomeBinding
 class EmployerHomeActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployerHomeBinding
-    lateinit var jobs: List<JobEntity>
+    lateinit var jobs: List<EntityJob>
     lateinit var approvedJobsAdapter: EmployerHomeJobAdapter
     lateinit var pendingJobsAdapter: EmployerHomeJobAdapter
 
@@ -77,7 +77,7 @@ class EmployerHomeActivity : AppCompatActivity() {
                         startActivity(
                             Intent(
                                 applicationContext,
-                                EmployerMyJobsOngoingActivity::class.java
+                                EmployerMyJobsActivity::class.java
                             )
                         )
                         true
@@ -125,7 +125,7 @@ class EmployerHomeActivity : AppCompatActivity() {
 
     private fun populateJobs() {
         jobs = listOf(
-            JobEntity(
+            EntityJob(
                 1,
                 1,
                 "Job1",
@@ -137,7 +137,7 @@ class EmployerHomeActivity : AppCompatActivity() {
                 "16:00:00Z",
                 "jobDescription1"
             ),
-            JobEntity(
+            EntityJob(
                 2,
                 2,
                 "Job2",
@@ -149,7 +149,7 @@ class EmployerHomeActivity : AppCompatActivity() {
                 "16:00:00Z",
                 "jobDescription2"
             ),
-            JobEntity(
+            EntityJob(
                 3,
                 3,
                 "Job3",

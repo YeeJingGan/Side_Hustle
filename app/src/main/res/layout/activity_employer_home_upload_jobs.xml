@@ -499,7 +499,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/upload_job_input_requirement"
                     app:layout_constraintStart_toEndOf="@+id/upload_job_requirement_button_add"
                     app:layout_constraintTop_toTopOf="@+id/upload_job_requirement_button_add"
-                    tools:listitem="@layout/employer_upload_job_requirement_item" />
+                    tools:listitem="@layout/listitem_employer_home_upload_job_requirements" />
 
                 <EditText
                     android:id="@+id/upload_job_input_description"

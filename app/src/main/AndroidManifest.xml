@@ -38,16 +38,10 @@
             android:name=".EmployeeMyJobsOngoingJobDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployerHistoryEmployeeDetailsPendingCommentActivity"
+            android:name=".EmployerMyJobsHistoryEmployeeDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployerHistoryEmployeeDetailsCommentedActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployerMyJobsNegotiatingApplicantDetailsWaitingReplyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployerSettingsActivity"
+            android:name=".EmployerMyProfileSettingsActivity"
             android:exported="false"
             android:parentActivityName=".EmployerMyProfileActivity" />
         <activity
@@ -81,15 +75,9 @@
             android:name=".EmployerHomeJobDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployerMyJobsHistoryEmployeeListCommentRatingActivity"
+            android:name=".EmployerMyJobsHistoryEmployeeDetailsCommentRatingActivity"
             android:exported="false"
-            android:parentActivityName=".EmployerHistoryEmployeeDetailsPendingCommentActivity"/>
-        <activity
-            android:name=".EmployerMyJobsHistoryEmployeeListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployerMyJobsHistoryActivity"
-            android:exported="false" />
+            android:parentActivityName=".EmployerMyJobsHistoryEmployeeDetailsActivity"/>
         <activity
             android:name=".EmployeeHomeJobDetailsApplyJobsActivity"
             android:exported="false" />
@@ -98,23 +86,14 @@
             android:exported="false"
             android:parentActivityName=".EmployeeMyJobsNegotiatingJobDetailsActivity"/>
         <activity
-            android:name=".EmployerNegotiateWithEmployeeActivity"
+            android:name=".EmployerMyJobsNegotiatingApplicantDetailsNegotiateActivity"
             android:exported="false"
-            android:parentActivityName=".EmployerMyJobsNegotiatingApplicantsListApplicantDetailsActivity"/>
+            android:parentActivityName=".EmployerMyJobsNegotiatingApplicantDetailsActivity"/>
         <activity
-            android:name=".EmployerMyJobsNegotiatingApplicantsListApplicantDetailsActivity"
+            android:name=".EmployerMyJobsNegotiatingApplicantDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".EmployerMyJobsNegotiatingApplicantsListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployerMyJobsNegotiatingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployerMyJobsOngoingEmployeeListEmployeeDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployerMyJobsOngoingEmployeeListActicity"
+            android:name=".EmployerMyJobsOngoingEmployeeDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".EmployerHomeUploadJobsActivity"
@@ -122,9 +101,6 @@
             android:parentActivityName=".EmployerHomeActivity" />
         <activity
             android:name=".EmployerHomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EmployerMyJobsOngoingActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

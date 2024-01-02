@@ -1,26 +1,24 @@
 package com.example.sidehustle
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sidehustle.databinding.FragmentEmployerHomeApprovedJobsBinding
+import com.example.sidehustle.databinding.ListitemEmployerHomeJobsBinding
 import java.util.Locale
 
-class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
+class EmployerHomeJobAdapter(private val jobs: List<EntityJob>) :
     RecyclerView.Adapter<EmployerHomeJobAdapter.ViewHolder>(), Filterable {
 
-    private var filteredJobs: List<JobEntity> = jobs
+    private var filteredJobs: List<EntityJob> = jobs
 
-    inner class ViewHolder(private val binding: FragmentEmployerHomeApprovedJobsBinding) :
+    inner class ViewHolder(private val binding: ListitemEmployerHomeJobsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(job: JobEntity) {
+        fun bind(job: EntityJob) {
             binding.job = job
             // TODO : PUT EXTRA PASS DATA TO DESTINATION ACTIVITY
             binding.employerHomeApprovedJobsViewDetailsButton.setOnClickListener {
@@ -42,9 +40,9 @@ class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding: FragmentEmployerHomeApprovedJobsBinding = DataBindingUtil.inflate(
+        val binding: ListitemEmployerHomeJobsBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_employer_home_approved_jobs,
+            R.layout.listitem_employer_home_jobs,
             parent,
             false
         )
@@ -54,7 +52,7 @@ class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {
-                val filteredList = mutableListOf<JobEntity>()
+                val filteredList = mutableListOf<EntityJob>()
 
                 if (constraint.isNullOrBlank()) {
                     filteredList.addAll(jobs)
@@ -74,7 +72,7 @@ class EmployerHomeJobAdapter(private val jobs: List<JobEntity>) :
             }
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                filteredJobs = results?.values as List<JobEntity>
+                filteredJobs = results?.values as List<EntityJob>
                 notifyDataSetChanged()
             }
 
