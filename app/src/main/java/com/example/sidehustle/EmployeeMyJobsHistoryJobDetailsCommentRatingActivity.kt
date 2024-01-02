@@ -128,7 +128,7 @@ class EmployeeMyJobsHistoryJobDetailsCommentRatingActivity : AppCompatActivity()
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setTitle("Submit Confirmation")
         dialogBuilder.setMessage("Are you sure you want to submit? This can't be undone")
-        dialogBuilder.setPositiveButton("Offer") { dialog, which ->
+        dialogBuilder.setPositiveButton("Submit") { dialog, which ->
             submit()
         }
         dialogBuilder.setNegativeButton("Cancel") { dialog, which ->

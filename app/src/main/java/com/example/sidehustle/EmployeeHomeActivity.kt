@@ -1,28 +1,90 @@
 package com.example.sidehustle
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.ImageButton
-import android.widget.ListView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.widget.SearchView
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sidehustle.databinding.ActivityEmployeeHomeBinding
 
 class EmployeeHomeActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityEmployeeHomeBinding
+    lateinit var jobs: List<EntityJob>
+    lateinit var jobAdapter: EmployeeHomeJobAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_employee_home)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_employee_home)
 
-        val listView = findViewById<ListView>(R.id.employee_home_job_list_view)
+        populateJobs()
 
-        val jobList: List<LegacyJob> = createJobList()
-        val jobAdapter = LegacyJobAdapter(this, jobList)
+        setAdapter()
 
-        listView.adapter = jobAdapter
+        setupRecyclerView()
 
         setListeners()
+    }
 
-        findViewById<BottomNavigationView>(R.id.employee_home_bottom_nav).apply {
+    private fun setupRecyclerView() {
+        binding.employeeHomeJobRecyclerview.adapter = jobAdapter
+        binding.employeeHomeJobRecyclerview.layoutManager = LinearLayoutManager(this)
+    }
+
+    private fun populateJobs() {
+        // TODO: Replace with a real job list
+        jobs = listOf(
+            EntityJob(
+                1,
+                1,
+                "Job1",
+                "JobState1",
+                70,
+                "2024-01-01",
+                "2024-02-02",
+                "10:00:00Z",
+                "16:00:00Z",
+                "jobDescription1"
+            ),
+            EntityJob(
+                2,
+                2,
+                "Job2",
+                "JobState2",
+                80,
+                "2024-01-01",
+                "2024-02-02",
+                "10:00:00Z",
+                "16:00:00Z",
+                "jobDescription2"
+            ),
+            EntityJob(
+                3,
+                3,
+                "Job3",
+                "JobState3",
+                90,
+                "2024-01-01",
+                "2024-02-02",
+                "10:00:00Z",
+                "16:00:00Z",
+                "jobDescription1"
+            ),
+        )
+    }
+
+    private fun setAdapter() {
+        jobAdapter = EmployeeHomeJobAdapter(jobs)
+    }
+
+    private fun setListeners() {
+        binding.favoriteButton.setOnClickListener {
+            startActivity((Intent(it.context, EmployeeHomeFavoriteJobsActivity::class.java)))
+        }
+
+        binding.employeeHomeBottomNav.apply {
             selectedItemId = R.id.bottom_nav_home_button
             setOnItemSelectedListener {
                 when (it.itemId) {
@@ -54,33 +116,23 @@ class EmployeeHomeActivity : AppCompatActivity() {
             }
         }
 
+        binding.employeeHomeSearchSearchview.setOnQueryTextListener(object :
+            SearchView.OnQueryTextListener {
+            override fun onQueryTextChange(query: String?): Boolean {
+                jobAdapter.filter.filter(query)
 
-    }
+                return true
+            }
 
-    private fun createJobList(): List<LegacyJob> {
-// TODO: Replace with a real job list
-        return mutableListOf(
-            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-            LegacyJob(R.drawable.sample_profile_photo, "Customer Service", 70, "Ampang", "KL"),
-        )
-    }
-
-    private fun setListeners() {
-        findViewById<ImageButton>(R.id.favorite_button).setOnClickListener {
-            toAnotherActivity(it, EmployeeHomeFavoriteJobsActivity::class.java)
-        }
-    }
-
-    private fun toAnotherActivity(view: View, destinationActivity: Class<*>) {
-        view.context.also {
-            val intent = Intent(it, destinationActivity)
-            it.startActivity(intent)
-        }
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(
+                    binding.employeeHomeSearchSearchview.windowToken,
+                    0
+                )
+                return true
+            }
+        })
     }
 
 }

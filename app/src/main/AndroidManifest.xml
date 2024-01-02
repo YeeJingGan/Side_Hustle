@@ -70,7 +70,8 @@
             android:parentActivityName=".EmployeeHomeActivity" />
         <activity
             android:name=".EmployeeHomeJobDetailsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".EmployeeHomeActivity"/>
         <activity
             android:name=".EmployerHomeJobDetailsActivity"
             android:exported="false"
@@ -81,7 +82,8 @@
             android:parentActivityName=".EmployerMyJobsHistoryEmployeeDetailsActivity"/>
         <activity
             android:name=".EmployeeHomeJobDetailsApplyJobsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".EmployeeHomeJobDetailsActivity"/>
         <activity
             android:name=".EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity"
             android:exported="false"

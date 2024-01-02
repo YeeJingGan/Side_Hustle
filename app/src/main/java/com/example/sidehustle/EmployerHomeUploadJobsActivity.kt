@@ -136,8 +136,6 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
             if (requirementsAdapter.itemCount == 1) {
                 binding.uploadJobRequirementButtonMinus.visibility = View.GONE
             }
-
-
         }
 
         binding.uploadJobInputStateSpinner.onItemSelectedListener =

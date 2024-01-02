@@ -1,65 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".EmployeeHomeActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include layout="@layout/layout_common_top_search_filter" />
+    <data>
 
-    <View
-        android:id="@+id/employee_home_divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="60dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </data>
 
-    <ListView
-        android:id="@+id/employee_home_job_list_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/employee_home_bottom_nav"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_home_divider"
-        tools:listitem="@layout/layout_employee_home_job_item">
-
-    </ListView>
-
-    <ImageButton
-        android:id="@+id/favorite_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/favorite_button_margin"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/background_circle_theme_color"
-        android:contentDescription="@string/favorite_button_description"
-        android:padding="@dimen/favorite_button_padding"
-        app:layout_constraintBottom_toTopOf="@+id/employee_home_bottom_nav"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_favorite_24px"
-        app:tint="@color/white" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/employee_home_bottom_nav"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:itemIconSize="30dp"
-        app:itemIconTint="@drawable/bottom_nav_item_selector"
-        app:itemRippleColor="@android:color/transparent"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        tools:context=".EmployeeHomeActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/employee_home_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="@color/theme_color"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/employee_home_profile_avatar"
+            android:layout_width="@dimen/toolbar_picture_size"
+            android:layout_height="@dimen/toolbar_picture_size"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/background_circle_white"
+            android:contentDescription="@string/profile_avatar_description"
+            app:layout_constraintBottom_toBottomOf="@+id/employee_home_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/employee_home_toolbar"
+            app:srcCompat="@drawable/sample_profile_photo" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/employee_home_search_searchview"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/toolbar_search_height"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/background_search_rounded_corner"
+            android:inputType="text"
+            android:textSize="@dimen/toolbar_search_text_size"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="@+id/employee_home_toolbar"
+            app:layout_constraintEnd_toEndOf="@+id/employee_home_toolbar"
+            app:layout_constraintStart_toEndOf="@+id/employee_home_profile_avatar"
+            app:layout_constraintTop_toTopOf="@+id/employee_home_toolbar"
+            app:queryBackground="@null"
+            app:queryHint="@string/employee_toolbar_search_hint"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employee_home_job_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:divider="@android:color/transparent"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@+id/employee_home_bottom_nav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/employee_home_toolbar"
+            tools:listitem="@layout/listitem_employee_home_jobs" />
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/favorite_button_margin"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_circle_theme_color"
+            android:contentDescription="@string/favorite_button_description"
+            android:padding="@dimen/favorite_button_padding"
+            app:layout_constraintBottom_toTopOf="@+id/employee_home_bottom_nav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_favorite_24px"
+            app:tint="@color/white" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/employee_home_bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:itemIconSize="30dp"
+            app:itemIconTint="@drawable/bottom_nav_item_selector"
+            app:itemRippleColor="@android:color/transparent"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
