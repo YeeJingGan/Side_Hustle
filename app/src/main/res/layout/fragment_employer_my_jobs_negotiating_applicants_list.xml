@@ -1,130 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingLeft="@dimen/list_item_padding"
-    android:paddingTop="@dimen/list_item_padding"
-    android:paddingRight="@dimen/list_item_padding"
-    android:paddingBottom="@dimen/list_item_padding"
-    tools:context=".EmployerMyJobsNegotiatingApplicantsListFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ImageView
-        android:id="@+id/applicants_pic"
-        android:layout_width="@dimen/portrait_width_height"
-        android:layout_height="@dimen/portrait_width_height"
-        android:contentDescription="@string/pic_description_applicant_pic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+    <data>
+        <variable
+            name="employee"
+            type="com.example.sidehustle.EmployeeEntity" />
 
-    <TextView
-        android:id="@+id/applicants_name"
-        android:layout_width="wrap_content"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/common_constraint_8"
-        android:fontFamily="@font/andika"
-        android:text="@string/applicant_name"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/applicants_pic"
-        app:layout_constraintTop_toTopOf="@+id/applicants_pic" />
+        android:paddingLeft="@dimen/list_item_padding"
+        android:paddingTop="@dimen/list_item_padding"
+        android:paddingRight="@dimen/list_item_padding"
+        android:paddingBottom="@dimen/list_item_padding"
+        tools:context=".EmployerMyJobsNegotiatingApplicantsListFragment">
 
-    <TextView
-        android:id="@+id/applicants_wages_offered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/rowdies"
-        android:text="@string/applicant_offered_wages"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/applicants_name"
-        app:layout_constraintTop_toBottomOf="@+id/applicants_name" />
+        <!-- TODO: Update blank fragment layout -->
+        <ImageView
+            android:id="@+id/applicants_pic"
+            android:layout_width="@dimen/portrait_width_height"
+            android:layout_height="@dimen/portrait_width_height"
+            android:contentDescription="@string/pic_description_applicant_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/applicants_star_1"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:contentDescription="@string/title_rating"
-        android:src="@drawable/ic_star_hollow_24px"
-        app:layout_constraintBottom_toBottomOf="@+id/applicants_pic"
-        app:layout_constraintStart_toStartOf="@+id/applicants_wages_offered"
-        app:layout_constraintTop_toBottomOf="@+id/applicants_wages_offered" />
+        <TextView
+            android:id="@+id/applicants_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_constraint_8"
+            android:fontFamily="@font/andika"
+            android:text="@{employee.employeeUsername}"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/applicants_pic"
+            app:layout_constraintTop_toTopOf="@+id/applicants_pic" />
 
-    <ImageView
-        android:id="@+id/applicants_star_2"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:contentDescription="@string/title_rating"
-        android:src="@drawable/ic_star_hollow_24px"
-        app:layout_constraintBottom_toBottomOf="@+id/applicants_star_1"
-        app:layout_constraintStart_toEndOf="@+id/applicants_star_1" />
+        <TextView
+            android:id="@+id/applicants_wages_offered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rowdies"
+            android:text="@string/applicant_offered_wages"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/applicants_name"
+            app:layout_constraintTop_toBottomOf="@+id/applicants_name" />
 
-    <ImageView
-        android:id="@+id/applicants_star_3"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:contentDescription="@string/title_rating"
-        android:src="@drawable/ic_star_hollow_24px"
-        app:layout_constraintBottom_toBottomOf="@+id/applicants_star_2"
-        app:layout_constraintStart_toEndOf="@+id/applicants_star_2" />
+        <ImageView
+            android:id="@+id/applicants_star_1"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:contentDescription="@string/title_rating"
+            android:src="@drawable/ic_star_hollow_24px"
+            app:layout_constraintBottom_toBottomOf="@+id/applicants_pic"
+            app:layout_constraintStart_toStartOf="@+id/applicants_wages_offered"
+            app:layout_constraintTop_toBottomOf="@+id/applicants_wages_offered" />
 
-    <ImageView
-        android:id="@+id/applicants_star_4"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:contentDescription="@string/title_rating"
-        android:src="@drawable/ic_star_hollow_24px"
-        app:layout_constraintBottom_toBottomOf="@+id/applicants_star_3"
-        app:layout_constraintStart_toEndOf="@+id/applicants_star_3" />
+        <ImageView
+            android:id="@+id/applicants_star_2"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:contentDescription="@string/title_rating"
+            android:src="@drawable/ic_star_hollow_24px"
+            app:layout_constraintBottom_toBottomOf="@+id/applicants_star_1"
+            app:layout_constraintStart_toEndOf="@+id/applicants_star_1" />
 
-    <ImageView
-        android:id="@+id/applicants_star_5"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:contentDescription="@string/title_rating"
-        android:src="@drawable/ic_star_hollow_24px"
-        app:layout_constraintBottom_toBottomOf="@+id/applicants_star_4"
-        app:layout_constraintStart_toEndOf="@+id/applicants_star_4" />
+        <ImageView
+            android:id="@+id/applicants_star_3"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:contentDescription="@string/title_rating"
+            android:src="@drawable/ic_star_hollow_24px"
+            app:layout_constraintBottom_toBottomOf="@+id/applicants_star_2"
+            app:layout_constraintStart_toEndOf="@+id/applicants_star_2" />
 
-    <Button
-        android:id="@+id/applicants_list_view_applicant_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/theme_color"
-        android:padding="10dp"
-        android:paddingLeft="@dimen/buttonPadding"
-        android:paddingTop="@dimen/buttonPadding"
-        android:paddingRight="@dimen/buttonPadding"
-        android:paddingBottom="@dimen/buttonPadding"
-        android:text="@string/button_text_view_applicants"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/applicants_pic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/offer_status" />
+        <ImageView
+            android:id="@+id/applicants_star_4"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:contentDescription="@string/title_rating"
+            android:src="@drawable/ic_star_hollow_24px"
+            app:layout_constraintBottom_toBottomOf="@+id/applicants_star_3"
+            app:layout_constraintStart_toEndOf="@+id/applicants_star_3" />
 
-    <TextView
-        android:id="@+id/offer_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:fontFamily="@font/andika"
-        android:text="@string/applicant_application_status"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/applicants_list_view_applicant_button"
-        app:layout_constraintTop_toTopOf="@+id/applicants_name" />
+        <ImageView
+            android:id="@+id/applicants_star_5"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:contentDescription="@string/title_rating"
+            android:src="@drawable/ic_star_hollow_24px"
+            app:layout_constraintBottom_toBottomOf="@+id/applicants_star_4"
+            app:layout_constraintStart_toEndOf="@+id/applicants_star_4" />
 
-    <View
-        android:id="@+id/divider9"
-        android:layout_width="391dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/applicants_list_view_applicant_button" />
+        <Button
+            android:id="@+id/applicants_list_view_applicant_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/theme_color"
+            android:padding="10dp"
+            android:paddingLeft="@dimen/buttonPadding"
+            android:paddingTop="@dimen/buttonPadding"
+            android:paddingRight="@dimen/buttonPadding"
+            android:paddingBottom="@dimen/buttonPadding"
+            android:text="@string/button_text_view_applicants"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/applicants_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/offer_status" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/offer_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/andika"
+            android:text="@string/applicant_application_status"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/applicants_list_view_applicant_button"
+            app:layout_constraintTop_toTopOf="@+id/applicants_name" />
+
+        <View
+            android:id="@+id/divider9"
+            android:layout_width="391dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/applicants_list_view_applicant_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

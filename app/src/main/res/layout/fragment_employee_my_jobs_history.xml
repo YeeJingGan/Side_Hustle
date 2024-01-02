@@ -1,91 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/list_item_padding"
-    tools:context=".EmployeeMyJobsHistoryFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
+    <data>
+        <variable
+            name="job"
+            type="com.example.sidehustle.JobEntity" />
+    </data>
 
-
-    <ImageView
-        android:id="@+id/history_company_logo"
-        android:layout_width="@dimen/employee_home_job_list_photo_size"
-        android:layout_height="@dimen/employee_home_job_list_photo_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/history_position"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/andika_new_basic_bold"
-        android:text="@string/history_position"
-        app:layout_constraintStart_toEndOf="@+id/history_company_logo"
-        app:layout_constraintTop_toTopOf="@+id/history_company_logo" />
+        android:padding="@dimen/list_item_padding"
+        tools:context=".EmployeeMyJobsHistoryFragment">
 
-    <TextView
-        android:id="@+id/history_wages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/rowdies"
-        android:text="@string/history_employee_wages"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/history_position"
-        app:layout_constraintTop_toBottomOf="@+id/history_position" />
+        <!-- TODO: Update blank fragment layout -->
 
-    <ImageView
-        android:id="@+id/history_ic_calendar"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:src="@drawable/ic_calendar"
-        app:layout_constraintBottom_toBottomOf="@+id/history_company_logo"
-        app:layout_constraintStart_toStartOf="@+id/history_wages"
-        app:layout_constraintTop_toBottomOf="@+id/history_wages" />
 
-    <TextView
-        android:id="@+id/history_working_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/employer_approved_jobs_date"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@+id/history_ic_calendar"
-        app:layout_constraintStart_toEndOf="@+id/history_ic_calendar" />
+        <ImageView
+            android:id="@+id/history_company_logo"
+            android:layout_width="@dimen/employee_home_job_list_photo_size"
+            android:layout_height="@dimen/employee_home_job_list_photo_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/history_detail_button"
-        android:layout_width="@dimen/small_button_width"
-        android:layout_height="@dimen/button_width_height"
-        android:background="@drawable/background_rectangle_theme_color"
-        android:fontFamily="@font/inter"
-        android:text="@string/button_text_details"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/history_working_date"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/history_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/andika_new_basic_bold"
+            android:text="@{job.jobName}"
+            app:layout_constraintStart_toEndOf="@+id/history_company_logo"
+            app:layout_constraintTop_toTopOf="@+id/history_company_logo" />
 
-    <TextView
-        android:id="@+id/employeee_history_comment_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/andika"
-        android:text="@string/history_comment_status"
-        android:textColor="@color/grey"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/history_detail_button"
-        app:layout_constraintTop_toTopOf="@+id/history_position" />
+        <TextView
+            android:id="@+id/history_wages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rowdies"
+            android:text="@{`RM `+String.valueOf(job.pay)}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/history_position"
+            app:layout_constraintTop_toBottomOf="@+id/history_position" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="391dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/history_company_logo" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/history_ic_calendar"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintBottom_toBottomOf="@+id/history_company_logo"
+            app:layout_constraintStart_toStartOf="@+id/history_wages"
+            app:layout_constraintTop_toBottomOf="@+id/history_wages" />
+
+        <TextView
+            android:id="@+id/history_working_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{job.startDate + ` to ` + job.endDate}"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/history_ic_calendar"
+            app:layout_constraintStart_toEndOf="@+id/history_ic_calendar" />
+
+        <Button
+            android:id="@+id/history_detail_button"
+            android:layout_width="@dimen/small_button_width"
+            android:layout_height="@dimen/button_width_height"
+            android:background="@drawable/background_rectangle_theme_color"
+            android:fontFamily="@font/inter"
+            android:text="@string/button_text_details"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/history_working_date"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/employeee_history_comment_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andika"
+            android:text="@string/history_comment_status"
+            android:textColor="@color/grey"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/history_detail_button"
+            app:layout_constraintTop_toTopOf="@+id/history_position" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="391dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/history_company_logo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
