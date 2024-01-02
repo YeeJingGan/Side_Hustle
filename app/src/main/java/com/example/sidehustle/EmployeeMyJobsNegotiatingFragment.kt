@@ -19,16 +19,16 @@ class EmployeeMyJobsNegotiatingFragment : Fragment() {
     ): View? {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_employee_my_jobs_negotiating,container,false)
-        val adapter = EmployeeNegotiatingAdapter(populateJobs())
+        val adapter = EmployeeMyJobsNegotiatingAdapter(populateJobs())
 
         binding.employeeNegotiatingRecyclerview.adapter = adapter
         binding.employeeNegotiatingRecyclerview.layoutManager = LinearLayoutManager(requireContext())
         return binding.root
     }
 
-    private fun populateJobs(): List<JobEntity> {
+    private fun populateJobs(): List<EntityJob> {
         return listOf(
-            JobEntity(
+            EntityJob(
                 1,
                 1,
                 "Job1",
@@ -40,7 +40,7 @@ class EmployeeMyJobsNegotiatingFragment : Fragment() {
                 "16:00:00Z",
                 "jobDescription1"
             ),
-            JobEntity(
+            EntityJob(
                 2,
                 2,
                 "Job2",
@@ -52,7 +52,7 @@ class EmployeeMyJobsNegotiatingFragment : Fragment() {
                 "16:00:00Z",
                 "jobDescription2"
             ),
-            JobEntity(
+            EntityJob(
                 3,
                 3,
                 "Job3",

@@ -18,16 +18,16 @@ class EmployeeMyJobsOngoingFragment : Fragment() {
     ): View? {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_employee_my_jobs_ongoing,container,false)
-        val adapter = EmployeeOngoingAdapter(populateJobs())
+        val adapter = EmployeeMyJobsOngoingAdapter(populateJobs())
 
         binding.employeeOngoingRecyclerView.adapter = adapter
         binding.employeeOngoingRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         return binding.root
     }
 
-    private fun populateJobs(): List<JobEntity> {
+    private fun populateJobs(): List<EntityJob> {
         return listOf(
-            JobEntity(
+            EntityJob(
                 1,
                 1,
                 "Job1",
@@ -39,7 +39,7 @@ class EmployeeMyJobsOngoingFragment : Fragment() {
                 "16:00:00Z",
                 "jobDescription1"
             ),
-            JobEntity(
+            EntityJob(
                 2,
                 2,
                 "Job2",
@@ -51,7 +51,7 @@ class EmployeeMyJobsOngoingFragment : Fragment() {
                 "16:00:00Z",
                 "jobDescription2"
             ),
-            JobEntity(
+            EntityJob(
                 3,
                 3,
                 "Job3",

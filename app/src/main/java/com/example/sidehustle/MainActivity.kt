@@ -9,36 +9,26 @@ import com.example.sidehustle.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding : ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setListeners()
     }
 
-    private fun setListeners(){
-        binding.apply{
-            setListenerAndToAnotherActivity(mainButton1,EmployerHomeActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton3,EmployerMyJobsOngoingActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton4,EmployerMyJobsHistoryActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton5,EmployerMyProfileActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton6,EmployerHomeJobDetailsActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton7,EmployerHomeUploadJobsActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton8,EmployerMyJobsHistoryEmployeeListCommentRatingActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton9,EmployerNegotiateWithEmployeeActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton10,EmployerSettingsActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton11,EmployerMyJobsNegotiatingApplicantsListApplicantDetailsActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton12,EmployerMyJobsOngoingEmployeeListEmployeeDetailsActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton13,EmployeeMyProfileSettingsActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton14,EmployeeMyJobsActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton15,EmployerMyJobsActivity::class.java)
+    private fun setListeners() {
+        binding.apply {
+            setListenerAndToAnotherActivity(mainButton1, EmployerHomeActivity::class.java)
+            setListenerAndToAnotherActivity(mainButton2, EmployeeHomeActivity::class.java)
+
         }
     }
+
     private fun setListenerAndToAnotherActivity(view: View, destinationActivity: Class<*>) {
         view.setOnClickListener {
-            startActivity(Intent(it.context,destinationActivity))
+            startActivity(Intent(it.context, destinationActivity))
         }
     }
 }

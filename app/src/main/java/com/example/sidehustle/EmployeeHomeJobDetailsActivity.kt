@@ -12,7 +12,7 @@ import com.example.sidehustle.databinding.ActivityEmployeeHomeJobDetailsBinding
 class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployeeHomeJobDetailsBinding
-    lateinit var job: JobEntity
+    lateinit var job: EntityJob
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -55,7 +55,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
 
     private fun getData() {
         // TODO: RMB GET FROM DATABASE, GET STARS AS WELL AND REQUIREMENTS ALSO
-        binding.employee = EmployeeEntity(
+        binding.employee = EntityEmployee(
             1,
             "Gan Yee Jing",
             "gyjemployee@email.com",
@@ -63,7 +63,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
             byteArrayOf(0x48, 101, 108, 108, 111)
         )
 
-        job = JobEntity(
+        job = EntityJob(
             1,
             1,
             "Job1",
@@ -77,7 +77,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
         )
         binding.job = job
 
-        val adapter = EmployeeHomeJobDetailsRequirementAdapter(listOf("REQ 1", "REQ 2", "REQ 3"))
+        val adapter = EmployeeHomeJobDetailsApplyJobsRequirementAdapter(listOf("REQ 1", "REQ 2", "REQ 3"))
 
         binding.employeeHomeJobDetailsRequirementsRecyclerview.adapter = adapter
         binding.employeeHomeJobDetailsRequirementsRecyclerview.layoutManager =

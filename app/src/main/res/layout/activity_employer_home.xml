@@ -112,7 +112,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/employer_home_divider_1"
-                    tools:listitem="@layout/fragment_employer_home_approved_jobs" />
+                    tools:listitem="@layout/listitem_employer_home_jobs" />
 
                 <TextView
                     android:id="@+id/employer_home_title_pending_approval"
@@ -158,7 +158,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/employer_home_divider_2"
-                    tools:listitem="@layout/fragment_employer_home_approved_jobs" />
+                    tools:listitem="@layout/listitem_employer_home_jobs" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
