@@ -229,4 +229,9 @@
     <string name="commented_employee_name">Ashley Wong Rui Ying</string>
     <string name="title_total_earnings">Total Earnings</string>
     <string name="employee_total_earnings">RM 100,000</string>
+    <string name="abour_side_hustle">Side Hustle is not just a job seeking app; it\'s a thriving community where passion meets opportunity. Founded in 2023 by Yeap Jie Shen, Gan Yee Jing and Jerome Subash A/L Joseph, Side Hustle Connect is the go-to platform for individuals seeking exciting and unconventional opportunities to complement their main income</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="new_username">New Username</string>
+    <string name="new_password">New Password</string>
 </resources>

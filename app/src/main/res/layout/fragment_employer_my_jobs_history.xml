@@ -1,122 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_reactangle_white"
-    android:paddingLeft="@dimen/list_item_padding"
-    android:paddingTop="@dimen/list_item_padding"
-    android:paddingRight="@dimen/list_item_padding"
-    android:paddingBottom="@dimen/list_item_padding"
-    tools:context=".EmployerMyJobsHistoryFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
+    <data>
+    <variable
+        name="job"
+        type="com.example.sidehustle.JobEntity" />
+    </data>
 
-    <TextView
-        android:id="@+id/employer_history_position"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/andika_new_basic_bold"
-        android:text="@string/history_position"
-        android:textSize="@dimen/button_text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/background_reactangle_white"
+        android:paddingLeft="@dimen/list_item_padding"
+        android:paddingTop="@dimen/list_item_padding"
+        android:paddingRight="@dimen/list_item_padding"
+        android:paddingBottom="@dimen/list_item_padding"
+        tools:context=".EmployerMyJobsHistoryFragment">
 
-    <TextView
-        android:id="@+id/employer_history_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/backButtonConstraint"
-        android:fontFamily="@font/andika"
-        android:text="@string/history_date"
-        android:textSize="@dimen/button_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_history_calendar"
-        app:layout_constraintStart_toEndOf="@+id/employer_history_calendar"
-        app:layout_constraintTop_toTopOf="@+id/employer_history_calendar" />
+        <!-- TODO: Update blank fragment layout -->
 
-    <ImageView
-        android:id="@+id/employer_history_calendar"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:layout_marginTop="@dimen/backButtonConstraint"
-        android:contentDescription="@string/ic_description_approved_date"
-        android:src="@drawable/ic_schedule"
-        app:layout_constraintStart_toStartOf="@+id/employer_history_position"
-        app:layout_constraintTop_toBottomOf="@+id/employer_history_position"
-        app:srcCompat="@drawable/ic_calendar" />
+        <TextView
+            android:id="@+id/employer_history_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andika_new_basic_bold"
+            android:text="@{job.jobName}"
+            android:textSize="@dimen/button_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/employer_history_button"
-        android:layout_width="@dimen/large_button_width"
-        android:layout_height="@dimen/button_width_height"
-        android:backgroundTint="@color/theme_color"
-        android:paddingLeft="@dimen/buttonPadding"
-        android:paddingTop="@dimen/buttonPadding"
-        android:paddingRight="@dimen/buttonPadding"
-        android:paddingBottom="@dimen/buttonPadding"
-        android:text="@string/button_text_view_employees"
-        android:textColor="@color/white"
-        android:textSize="@dimen/button_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_history_time"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/employer_history_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/backButtonConstraint"
+            android:fontFamily="@font/andika"
+            android:text="@{job.startDate + ` to ` + job.endDate}"
+            android:textSize="@dimen/button_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_history_calendar"
+            app:layout_constraintStart_toEndOf="@+id/employer_history_calendar"
+            app:layout_constraintTop_toTopOf="@+id/employer_history_calendar" />
 
-    <ImageView
-        android:id="@+id/employer_history_schedule_icon"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:layout_marginTop="@dimen/backButtonConstraint"
-        android:contentDescription="@string/ic_description_approved_time"
-        android:src="@drawable/ic_schedule"
-        app:layout_constraintStart_toStartOf="@+id/employer_history_calendar"
-        app:layout_constraintTop_toBottomOf="@+id/employer_history_calendar"
-        app:srcCompat="@drawable/ic_schedule" />
+        <ImageView
+            android:id="@+id/employer_history_calendar"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:layout_marginTop="@dimen/backButtonConstraint"
+            android:contentDescription="@string/ic_description_approved_date"
+            android:src="@drawable/ic_schedule"
+            app:layout_constraintStart_toStartOf="@+id/employer_history_position"
+            app:layout_constraintTop_toBottomOf="@+id/employer_history_position"
+            app:srcCompat="@drawable/ic_calendar" />
 
-    <TextView
-        android:id="@+id/employer_history_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/andika"
-        android:text="@string/history_period"
-        android:textSize="@dimen/button_text_size"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_history_schedule_icon"
-        app:layout_constraintStart_toStartOf="@+id/employer_history_date"
-        app:layout_constraintTop_toTopOf="@+id/employer_history_schedule_icon" />
+        <ImageView
+            android:id="@+id/employer_history_schedule_icon"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:layout_marginTop="@dimen/backButtonConstraint"
+            android:contentDescription="@string/ic_description_approved_time"
+            android:src="@drawable/ic_schedule"
+            app:layout_constraintStart_toStartOf="@+id/employer_history_calendar"
+            app:layout_constraintTop_toBottomOf="@+id/employer_history_calendar"
+            app:srcCompat="@drawable/ic_schedule" />
 
-    <ImageView
-        android:id="@+id/employer_history_icon"
-        android:layout_width="@dimen/icon_width_height"
-        android:layout_height="@dimen/icon_width_height"
-        android:layout_marginEnd="@dimen/backButtonConstraint"
-        android:contentDescription="@string/ic_description_employee_num"
-        android:src="@drawable/ic_icon"
-        app:layout_constraintEnd_toStartOf="@+id/employer_history_comment_num"
-        app:layout_constraintTop_toTopOf="@+id/pendingComment"
-        app:srcCompat="@drawable/ic_icon" />
+        <TextView
+            android:id="@+id/employer_history_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andika"
+            android:text="@{job.startTime + ` to ` + job.endTime}"
+            android:textSize="@dimen/button_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_history_schedule_icon"
+            app:layout_constraintStart_toStartOf="@+id/employer_history_date"
+            app:layout_constraintTop_toTopOf="@+id/employer_history_schedule_icon" />
 
-    <TextView
-        android:id="@+id/employer_history_comment_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/backButtonConstraint"
-        android:fontFamily="@font/andika"
-        android:gravity="center"
-        android:includeFontPadding="false"
-        android:padding="0dp"
-        android:paddingTop="0dp"
-        android:text="@string/history_employee_num"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/employer_history_icon"
-        app:layout_constraintEnd_toEndOf="@+id/employer_history_button" />
+        <ImageView
+            android:id="@+id/employer_history_icon"
+            android:layout_width="@dimen/icon_width_height"
+            android:layout_height="@dimen/icon_width_height"
+            android:layout_marginEnd="@dimen/backButtonConstraint"
+            android:contentDescription="@string/ic_description_employee_num"
+            android:src="@drawable/ic_icon"
+            app:layout_constraintEnd_toStartOf="@+id/employer_history_comment_num"
+            app:layout_constraintTop_toTopOf="@+id/pendingComment"
+            app:srcCompat="@drawable/ic_icon" />
 
-    <TextView
-        android:id="@+id/pendingComment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/backButtonConstraint"
-        android:text="@string/title_pending_comment"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toStartOf="@+id/employer_history_icon"
-        app:layout_constraintTop_toTopOf="@+id/employer_history_position" />
+        <TextView
+            android:id="@+id/employer_history_comment_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/andika"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="0dp"
+            android:paddingTop="0dp"
+            android:text="@string/history_employee_num"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/employer_history_icon"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/pendingComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/backButtonConstraint"
+            android:text="@string/title_pending_comment"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/employer_history_icon"
+            app:layout_constraintTop_toTopOf="@+id/employer_history_position" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="391dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/employer_history_time" />
+
+        <ImageButton
+            android:id="@+id/employer_my_jobs_history_expand_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_rectangle_theme_color"
+            android:src="@drawable/ic_expand"
+            app:layout_constraintBottom_toTopOf="@+id/divider5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employer_my_jobs_history_recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/divider5"
+            tools:listitem="@layout/fragment_employer_my_jobs_history_employee_list"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
