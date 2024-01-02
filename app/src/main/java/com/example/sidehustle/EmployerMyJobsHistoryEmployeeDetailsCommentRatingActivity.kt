@@ -23,13 +23,7 @@ class EmployerMyJobsHistoryEmployeeDetailsCommentRatingActivity : AppCompatActiv
             R.layout.activity_employer_my_jobs_history_employee_details_comment_rating
         )
 
-        setSupportActionBar(binding.employerCommentRatingToolbar)
-
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_36px)
-            setDisplayShowTitleEnabled(false)
-        }
+        binding.employerMyJobsHistoryEmployeeDetailsCommentRatingBackButton.setOnClickListener { finish() }
 
         binding.employerCommentRatingResetButton.setOnClickListener {
             showResetConfirmationDialog()
