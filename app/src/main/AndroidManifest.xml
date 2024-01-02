@@ -73,7 +73,8 @@
             android:exported="false" />
         <activity
             android:name=".EmployerHomeJobDetailsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".EmployeeHomeActivity"/>
         <activity
             android:name=".EmployerMyJobsHistoryEmployeeDetailsCommentRatingActivity"
             android:exported="false"
