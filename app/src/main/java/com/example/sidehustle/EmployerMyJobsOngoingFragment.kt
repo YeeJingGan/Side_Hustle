@@ -16,7 +16,7 @@ class EmployerMyJobsOngoingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_employer_my_jobs_ongoing,container,false)
 

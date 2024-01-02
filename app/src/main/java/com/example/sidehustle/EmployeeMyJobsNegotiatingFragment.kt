@@ -16,7 +16,7 @@ class EmployeeMyJobsNegotiatingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_employee_my_jobs_negotiating,container,false)
         val adapter = EmployeeMyJobsNegotiatingAdapter(populateJobs())

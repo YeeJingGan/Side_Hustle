@@ -16,8 +16,8 @@ class EmployeeMyJobsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_employee_my_jobs)
 
-        var viewPager = binding.employeeMyJobsViewPager as ViewPager
-        var tabLayout = binding.employeeMyJobsOngoingTabLayout as TabLayout
+        var viewPager = binding.employeeMyJobsViewPager
+        var tabLayout = binding.employeeMyJobsOngoingTabLayout
 
         val fragmentAdapter = EmployeeMyJobsFragmentAdapter(supportFragmentManager)
         fragmentAdapter.addFragment(EmployeeMyJobsOngoingFragment(),"Ongoing")

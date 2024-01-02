@@ -107,8 +107,4 @@ class EmployerMyProfileActivity : AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-//        finishAffinity()
-    }
 }
