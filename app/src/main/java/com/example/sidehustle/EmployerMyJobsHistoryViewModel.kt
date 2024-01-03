@@ -15,7 +15,7 @@ class EmployerMyJobsHistoryViewModel (private val application: Application) :
         val database = SideHustleDatabase.getDatabase(application)
         jobRepository = EntityJobRepository(database.jobDao())
         employeeRepository = EntityEmployeeRepository(database.employeeDao())
-        historyJobs = jobRepository.getByEmployerIDJobsStartingTodayOrLater(1)
+        historyJobs = jobRepository.getJobsStartingTodayOrLater()
         historyEmployees = employeeRepository.allData
 
         // TODO : REPLACE WITH REALREAL ONCE HAVE APPLICATION

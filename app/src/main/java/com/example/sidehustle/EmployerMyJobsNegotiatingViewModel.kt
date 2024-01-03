@@ -15,7 +15,7 @@ class EmployerMyJobsNegotiatingViewModel(private val application: Application) :
         val database = SideHustleDatabase.getDatabase(application)
         jobRepository = EntityJobRepository(database.jobDao())
         employeeRepository = EntityEmployeeRepository(database.employeeDao())
-        negotiatingJobs = jobRepository.getByEmployerIDJobsStartingTodayOrLater(1)
+        negotiatingJobs = jobRepository.getJobsStartingTodayOrLater()
         negotiatingEmployees = employeeRepository.allData
 
         // TODO : REPLACE WITH REALREAL ONCE HAVE APPLICATION

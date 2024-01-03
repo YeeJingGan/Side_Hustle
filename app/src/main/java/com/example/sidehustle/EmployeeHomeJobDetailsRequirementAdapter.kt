@@ -13,6 +13,8 @@ class EmployeeHomeJobDetailsRequirementAdapter(private val requirements: List<St
         fun bind(requirement : String){
             binding.employeeHomeJobDetailsRequirementItemTextview.text = requirement
         }
+
+
     }
 
     override fun getItemCount(): Int {

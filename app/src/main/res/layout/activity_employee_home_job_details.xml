@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="employee"
-            type="com.example.sidehustle.EntityEmployee" />
+            name="employer"
+            type="com.example.sidehustle.EntityEmployer" />
 
         <variable
             name="job"
@@ -78,8 +78,10 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/employee_home_job_details_apply_button"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/employee_home_job_details_toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/employee_home_job_details_toolbar"
+            app:layout_constraintVertical_bias="0.0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/employee_home_job_details_constraintlayout"
@@ -104,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/inter"
-                    android:text="@{employee.employeeUsername}"
+                    android:text="@{employer.employerUsername}"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@+id/employee_me_jobs_jobs_detail_pic"
@@ -184,7 +186,7 @@
                     android:fontFamily="@font/andika_new_basic_bold"
                     android:paddingLeft="4dp"
                     android:paddingRight="4dp"
-                    android:text="@string/employer_approved_jobs_position"
+                    android:text="@{job.title}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/employee_details_text_size"
                     app:layout_constraintStart_toStartOf="@+id/employee_me_jobs_jobs_detail_pic"
@@ -279,7 +281,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/employee_job_details_div_1"
                     app:layout_constraintStart_toStartOf="@+id/employee_job_details_div_1"
                     app:layout_constraintTop_toBottomOf="@+id/employee_job_details_div_1"
-                    tools:listitem="@layout/listitem_employee_home_job_details_requirements"/>
+                    tools:listitem="@layout/listitem_employee_home_job_details_requirements" />
 
                 <View
                     android:id="@+id/employee_job_details_div_2"

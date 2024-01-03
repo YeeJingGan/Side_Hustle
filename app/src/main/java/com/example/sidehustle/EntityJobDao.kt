@@ -29,8 +29,8 @@ interface EntityJobDao {
     @Query("SELECT * FROM job_table WHERE employerID = :employerID AND status LIKE :status ")
     fun getByEmployerIDAndStatus(employerID: Long, status: String): LiveData<List<EntityJob>>
 
-    @Query("SELECT * FROM job_table WHERE date(substr(startDate, 7, 4) || '-' || substr(startDate, 4, 2) || '-' || substr(startDate, 1, 2)) >= date('now') AND status LIKE 'APPROVED'")
-    fun getJobsStartingTodayOrLater(): LiveData<List<EntityJob>>
+    @Query("SELECT * FROM job_table WHERE date(substr(startDate, 7, 4) || '-' || substr(startDate, 4, 2) || '-' || substr(startDate, 1, 2)) > date('now') AND status LIKE 'APPROVED'")
+    fun getJobsStartingTomorrow(): LiveData<List<EntityJob>>
 
     @Query("SELECT * FROM job_table WHERE date(substr(startDate, 7, 4) || '-' || substr(startDate, 4, 2) || '-' || substr(startDate, 1, 2)) >= date('now') AND status LIKE 'APPROVED' AND employerID = :employerID")
     fun getByEmployerIDJobsStartingTodayOrLater(employerID: Long): LiveData<List<EntityJob>>
