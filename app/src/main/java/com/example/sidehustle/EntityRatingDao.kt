@@ -20,4 +20,11 @@ interface EntityRatingDao {
     @Query("DELETE FROM rating_table")
     suspend fun clear()
 
+    @Query("SELECT * FROM rating_table ORDER BY ratingID ASC")
+    fun readAllData(): LiveData<List<EntityRating>>
+
+    @Query("SELECT AVG(rating) FROM rating_table WHERE jobID IN (SELECT jobID FROM job_table WHERE employerID = :employerID) AND commenter LIKE :commenter")
+    suspend fun getAverageRatingByJobIDAndCommenter(employerID: Long, commenter: String): Double?
+
+
 }
