@@ -22,16 +22,13 @@ data class EntityJob(
     val employerID: Long,
     val title: String,
     val state: String,
+    val address: String,
+    val postcode: String,
     val wages: Int,
     val startDate: String,
     val endDate: String,
     val startTime: String,
     val endTime: String,
-    val description: String
+    val description: String,
+    val status: String
 )
-
-// Sample to populate the entity
-
-//EntityJob(1,1,"Job1","JobState1",70,"2024-01-01","2024-02-02","10:00:00Z","16:00:00Z","jobDescription1")
-//EntityJob(2,2,"Job2","JobState2",80,"2024-01-01","2024-02-02","10:00:00Z","16:00:00Z","jobDescription2")
-//EntityJob(3,3,"Job3","JobState3",90,"2024-01-01","2024-02-02","10:00:00Z","16:00:00Z","jobDescription1")

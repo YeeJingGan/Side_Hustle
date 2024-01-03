@@ -10,8 +10,7 @@ data class EntityEmployee(
     val employeeID: Long = 0L,
     var employeeUsername: String,
     val employeeEmail: String,
-    var employeePassword: String,
-    var employeeProfilePicture: ByteArray?
+    var employeePassword: String
 )
 
 // Sample to populate the entity

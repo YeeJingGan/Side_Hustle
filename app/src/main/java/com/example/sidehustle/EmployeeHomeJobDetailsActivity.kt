@@ -66,20 +66,20 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
             "Gan Yee Jing",
             "gyjemployee@email.com",
             "abc123",
-            byteArrayOf(0x48, 101, 108, 108, 111)
         )
 
         job = EntityJob(
             1,
             1,
             "Job1",
-            "JobState1",
+            "JobState1",                "Address3",
+            "70000",
             70,
             "2024-01-01",
             "2024-02-02",
             "10:00:00Z",
             "16:00:00Z",
-            "jobDescription1"
+            "jobDescription1","APPROVED"
         )
         binding.job = job
 
@@ -89,5 +89,10 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
         binding.employeeHomeJobDetailsRequirementsRecyclerview.layoutManager =
             LinearLayoutManager(this)
 
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 }

@@ -55,7 +55,7 @@
 
     <string name="hint_input_job_title">Enter a job title</string>
     <string name="hint_input_date">DD/MM/YYYY</string>
-    <string name="hint_input_address_1">address 1</string>
+    <string name="hint_input_address">address</string>
     <string name="hint_input_address_2">address 2</string>
     <string name="hint_input_postcode">postcode</string>
     <string name="hint_input_url">Enter location URL</string>

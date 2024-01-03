@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployerHomeUploadJobsBinding
 import java.text.SimpleDateFormat
@@ -24,6 +25,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
     lateinit var binding: ActivityEmployerHomeUploadJobsBinding
     lateinit var requirementsAdapter: EmployerHomeUploadJobsRequirementsAdapter
     lateinit var selectedStateChoice: String
+    lateinit var viewModel: EmployerHomeUploadJobsViewModel
     var wagesAmount: Int = 10
     val stateChoices = arrayOf(
         "Cyberjaya",
@@ -55,6 +57,11 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_36px)
             setDisplayShowTitleEnabled(false)
         }
+
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(EmployerHomeUploadJobsViewModel::class.java)
 
         updateWages(wagesAmount)
 
@@ -393,7 +400,34 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
 
     private fun submit() {
         // TODO: UPLOAD DATABASE HERE
-        Toast.makeText(this, "HAHA NOT YET SUBMITTED NEED TO DATABASE", Toast.LENGTH_SHORT).show()
+        val jobTitle = binding.uploadJobInputJobTitle.text.toString()
+        val startDate = binding.uploadJobInputStartDate.text.toString()
+        val endDate = binding.uploadJobInputEndDate.text.toString()
+        val startTime = binding.uploadJobInputStartTime.text.toString()
+        val endTime = binding.uploadJobInputEndTime.text.toString()
+        val address = binding.uploadJobInputAddress.text.toString()
+        val postcode = binding.uploadJobInputPostcode.text.toString()
+        val description = binding.uploadJobInputDescription.text.toString()
+
+        val job = EntityJob(
+            0,
+            1,
+            jobTitle,
+            selectedStateChoice,
+            address,
+            postcode,
+            wagesAmount,
+            startDate,
+            endDate,
+            startTime,
+            endTime,
+            description,"APPROVED"
+
+        )
+
+        viewModel.addJob(job)
+        // TODO : TOBE REPLACE WITH REAL EMPLOYER ID AND IMPLEMENT REQUIREMENTS
+        Toast.makeText(this, "Job successfully submitted", Toast.LENGTH_SHORT).show()
     }
 
     private fun hideSoftInput(view: View) {

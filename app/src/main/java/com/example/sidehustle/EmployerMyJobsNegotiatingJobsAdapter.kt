@@ -4,12 +4,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sidehustle.databinding.ListitemEmployerMyJobsNegotiatingJobsBinding
 
 
-class EmployerMyJobsNegotiatingJobsAdapter (private val negotiatingJobs: List<EntityJob>):RecyclerView.Adapter<EmployerMyJobsNegotiatingJobsAdapter.ViewHolder>(){
+class EmployerMyJobsNegotiatingJobsAdapter(
+    private val negotiatingJobs: List<EntityJob>,
+    private val viewModel: EmployerMyJobsNegotiatingViewModel,
+    private val fragment: Fragment
+) : RecyclerView.Adapter<EmployerMyJobsNegotiatingJobsAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ListitemEmployerMyJobsNegotiatingJobsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(job: EntityJob) {
@@ -25,38 +30,21 @@ class EmployerMyJobsNegotiatingJobsAdapter (private val negotiatingJobs: List<En
                 }
             }
 
-            val adapter = EmployerMyJobsNegotiatingApplicantsAdapter(populateEmployee())
+            var adapter = EmployerMyJobsNegotiatingApplicantsAdapter(emptyList())
+
+            viewModel.negotiatingEmployees.observe(fragment.viewLifecycleOwner) {
+                adapter = EmployerMyJobsNegotiatingApplicantsAdapter(it)
+                binding.employerMyJobsNegotiatingRecyclerview.adapter = adapter
+            }
+
+            // TODO : WAGES AND STARS NOT YET GET FROM DATABASE
+
             binding.employerMyJobsNegotiatingRecyclerview.adapter = adapter
             binding.employerMyJobsNegotiatingRecyclerview.layoutManager =
                 LinearLayoutManager(binding.root.context)
             binding.executePendingBindings()
         }
 
-        private fun populateEmployee(): List<EntityEmployee> {
-            return listOf(
-                EntityEmployee(
-                    1,
-                    "Gan Yee Jing",
-                    "gyjemployee@email.com",
-                    "abc123",
-                    byteArrayOf(0x48, 101, 108, 108, 111)
-                ),
-                EntityEmployee(
-                    2,
-                    "Yeap Jie Shen",
-                    "yjsemployee@email.com",
-                    "abc123",
-                    byteArrayOf(0x48, 101, 108, 108, 111)
-                ),
-                EntityEmployee(
-                    3,
-                    "Jerome Subash",
-                    "jeromeemployee@email.com",
-                    "abc123",
-                    byteArrayOf(0x48, 101, 108, 108, 111)
-                )
-            )
-        }
     }
 
     override fun getItemCount(): Int {
