@@ -36,17 +36,17 @@ class EmployerHomeJobDetailsActivity : AppCompatActivity() {
             finish()
         }
 
+        viewModel.starCount.observe(this) {
+            Log.i("AVG", it.toString())
+            updateStarColors(it)
+        }
         viewModel.viewModelScope.launch {
             binding.job = viewModel.getJobByJobID(jobID)
             binding.employer = viewModel.getEmployerByJobID(jobID)
+            viewModel.getAverageRatingByJobIDAndCommenter(binding.employer!!.employerID, "EMPLOYEE")
         }
 
-        viewModel.starCount.observe(this) {
-            Log.i("AVG",it.toString())
-            updateStarColors(it)
-        }
 
-        viewModel.getAverageRatingByJobIDAndCommenter(jobID,"EMPLOYEE")
 
         setup()
         setListeners()

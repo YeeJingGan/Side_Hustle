@@ -253,35 +253,15 @@
             app:layout_constraintStart_toStartOf="@+id/employer_job_details_div_1"
             app:layout_constraintTop_toBottomOf="@+id/employer_job_details_div_1" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/employer_job_details_container_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="@+id/employer_job_details_div_1"
             app:layout_constraintStart_toStartOf="@+id/employer_job_details_div_1"
-            app:layout_constraintTop_toBottomOf="@+id/employer_job_details_title_requirement">
-
-            <ImageView
-                android:id="@+id/employer_job_details_ic_check_box"
-                android:layout_width="@dimen/icon_width_height"
-                android:layout_height="@dimen/icon_width_height"
-                android:contentDescription="@string/ic_description_requirements"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_check_box" />
-
-            <TextView
-                android:id="@+id/employer_job_details_tv_requirement"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/common_constraint_16"
-                android:text="@string/employer_upload_jobs_requirement"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/employer_job_details_ic_check_box"
-                app:layout_constraintTop_toTopOf="@+id/employer_job_details_ic_check_box" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@+id/employer_job_details_title_requirement"
+            tools:listitem="@layout/listitem_employee_home_job_details_requirements" />
 
         <View
             android:id="@+id/employer_job_details_div_2"
