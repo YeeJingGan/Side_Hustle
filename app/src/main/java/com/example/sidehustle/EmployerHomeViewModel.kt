@@ -32,12 +32,6 @@ class EmployerHomeViewModel(private val application: Application) : AndroidViewM
         _query.value = query
     }
 
-//    fun getApplicantCount(jobID: Long){
-//        viewModelScope.launch {
-//            _applicantCount.postValue(applicationRepository.getApplicantCountByJobID(jobID))
-//        }
-//    }
-
     suspend fun getApplicantCount(jobID: Long):Int {
         return applicationRepository.getApplicantCountByJobID(jobID)
     }

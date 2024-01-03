@@ -9,4 +9,8 @@ class EntityEmployerRepository(private val employerDao: EntityEmployerDao) {
         employerDao.insert(employer)
     }
 
+    suspend fun getEmployerByJobID(jobID:Long):EntityEmployer{
+        return employerDao.getEmployerByJobID(jobID)
+    }
+
 }

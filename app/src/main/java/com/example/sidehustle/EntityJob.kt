@@ -32,3 +32,5 @@ data class EntityJob(
     val description: String,
     val status: String
 )
+
+// STATUS CAN BE : PENDING, CLOSED, REJECTED, HISTORY, ONGOING

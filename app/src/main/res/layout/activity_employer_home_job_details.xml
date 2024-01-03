@@ -5,6 +5,12 @@
 
     <data>
 
+        <variable
+            name="job"
+            type="com.example.sidehustle.EntityJob" />
+        <variable
+            name="employer"
+            type="com.example.sidehustle.EntityEmployer" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_constraint_16"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_upload_jobs_company_name"
+            android:text="@{employer.employerUsername}"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/employer_job_details_pic"
@@ -104,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_constraint_8"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_upload_jobs_company_address"
+            android:text="@{job.state}"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/employer_job_details_ic_location"
             app:layout_constraintStart_toEndOf="@+id/employer_job_details_ic_location" />
@@ -160,7 +166,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_constraint_24"
             android:fontFamily="@font/andika_new_basic_bold"
-            android:text="@string/ongoing_jobs_position"
+            android:text="@{job.title}"
             android:textColor="@color/black"
             android:textSize="@dimen/employee_details_text_size"
             app:layout_constraintStart_toStartOf="@+id/employer_job_details_pic"
@@ -202,7 +208,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_constraint_8"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_approved_jobs_wages"
+            android:text = "@{`RM ` + String.valueOf(job.wages)}"
             app:layout_constraintBottom_toBottomOf="@+id/employer_job_details_ic_money"
             app:layout_constraintStart_toEndOf="@+id/employer_job_details_ic_money" />
 
@@ -211,7 +217,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_approved_jobs_date"
+            android:text="@{job.startDate + ` to ` + job.endDate}"
             app:layout_constraintBottom_toBottomOf="@+id/employer_job_details_ic_calendar"
             app:layout_constraintStart_toStartOf="@+id/employer_job_details_tv_wages" />
 
@@ -220,7 +226,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_approved_jobs_time"
+            android:text="@{job.startTime + ` to ` + job.endTime}"
             app:layout_constraintBottom_toBottomOf="@+id/employer_job_details_ic_schedule"
             app:layout_constraintStart_toStartOf="@+id/employer_job_details_tv_date" />
 
@@ -304,7 +310,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_constraint_8"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_upload_jobs_description"
+            android:text="@{job.description}"
             app:layout_constraintStart_toStartOf="@+id/employer_job_details_title_description"
             app:layout_constraintTop_toBottomOf="@+id/employer_job_details_title_description" />
 
