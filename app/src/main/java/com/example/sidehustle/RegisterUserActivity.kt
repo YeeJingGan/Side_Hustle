@@ -12,11 +12,11 @@ import android.view.MenuItem
 import com.google.android.material.appbar.MaterialToolbar
 
 
-class register_user : AppCompatActivity() {
+class RegisterUserActivity : AppCompatActivity() {
     private lateinit var passwordEditText: TextInputEditText
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.register_user)
+        setContentView(R.layout.activity_register_user)
 
         // set the up button #1
         val toolbar: MaterialToolbar = findViewById(R.id.materialToolbar2)

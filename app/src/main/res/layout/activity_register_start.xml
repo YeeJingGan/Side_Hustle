@@ -11,7 +11,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/white"
     android:orientation="vertical"
-    tools:context=".register_start">
+    tools:context=".RegisterStartActivity">
     <VideoView
         android:id="@+id/register_bgVideo"
         android:layout_width="match_parent"

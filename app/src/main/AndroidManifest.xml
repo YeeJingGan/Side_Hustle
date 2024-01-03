@@ -24,14 +24,14 @@
             android:name=".AdminHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".register_user"
+            android:name=".RegisterUserActivity"
             android:exported="false"
-            android:parentActivityName=".register_start" />
+            android:parentActivityName=".RegisterStartActivity" />
         <activity
-            android:name=".register_start"
+            android:name=".RegisterStartActivity"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".LoginActivity"
             android:exported="true" />
         <activity
             android:name=".EmployerMyJobsActivity"

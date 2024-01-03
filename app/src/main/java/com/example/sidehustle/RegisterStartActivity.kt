@@ -7,11 +7,11 @@ import android.os.Bundle
 import android.widget.VideoView
 import androidx.cardview.widget.CardView
 
-class register_start : AppCompatActivity() {
+class RegisterStartActivity : AppCompatActivity() {
     lateinit var register_bgVideo: VideoView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.register_start)
+        setContentView(R.layout.activity_register_start)
 
         //To set the background video
         val bgVideoUri: Uri = Uri.parse("android.resource://$packageName/${R.raw.register_bgvideo}")
@@ -27,11 +27,11 @@ class register_start : AppCompatActivity() {
         val register_employeeCard: CardView = findViewById(R.id.register_employeeCard)
         val register_employerCard: CardView = findViewById(R.id.register_employerCard)
         register_employeeCard.setOnClickListener{
-            val Intent = Intent(this, register_user::class.java)
+            val Intent = Intent(this, RegisterUserActivity::class.java)
             startActivity(Intent)
         }
         register_employerCard.setOnClickListener{
-            val Intent = Intent(this, register_user::class.java)
+            val Intent = Intent(this, RegisterUserActivity::class.java)
             startActivity(Intent)
         }
     }

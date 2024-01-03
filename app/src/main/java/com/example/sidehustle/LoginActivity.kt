@@ -7,14 +7,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
-class login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login)
+        setContentView(R.layout.activity_login)
 
         val signupBtn: Button = findViewById(R.id.login_signupBtn)
         signupBtn.setOnClickListener{
-            val Intent = Intent(this, register_start::class.java)
+            val Intent = Intent(this, RegisterStartActivity::class.java)
             startActivity(Intent)
         }
 

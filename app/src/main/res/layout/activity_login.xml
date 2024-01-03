@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingHorizontal="55dp"
-        tools:context=".login">
+        tools:context=".LoginActivity">
 
         <ImageView
             android:id="@+id/name_logo"
@@ -76,7 +76,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/theme_yellow"
             android:text="@string/login_continue"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
@@ -102,7 +104,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/theme_yellow"
             android:text="@string/login_signup"
+            android:textColor="@color/white"
             android:textStyle="bold" />
 
         <TextView
