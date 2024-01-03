@@ -1,10 +1,12 @@
 package com.example.sidehustle
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,7 +35,6 @@ class AdminJobsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_admin_jobs, container, false)
     }
@@ -60,5 +61,19 @@ class AdminJobsFragment : Fragment() {
 
     interface OnFragmentInteractionListener {
         fun onButtonClicked(buttonId: Int)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Find the flag button by its ID
+        val flagButton: ImageButton = view.findViewById(R.id.flag_button)
+
+        // Set a click listener for the flag button
+        flagButton.setOnClickListener {
+            // When the button is clicked, start the AdminFlaggedJobsActivity
+            val flaggedJobsIntent = Intent(activity, AdminFlaggedJobsActivity::class.java)
+            startActivity(flaggedJobsIntent)
+        }
     }
 }
