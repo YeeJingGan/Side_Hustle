@@ -36,13 +36,13 @@
         android:id="@+id/review_username_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:text="@string/my_profile_name_txt"
         app:layout_constraintBaseline_toBaselineOf="@+id/review_username_2"
         app:layout_constraintStart_toEndOf="@+id/review_profile_photo_1" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/review_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_arrow_forward_12px"
@@ -71,7 +71,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/review_username_2"
         app:layout_constraintStart_toEndOf="@+id/review_profile_photo_2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/review_arrow" />
 
     <ImageButton
         android:id="@+id/review_yes_button"
