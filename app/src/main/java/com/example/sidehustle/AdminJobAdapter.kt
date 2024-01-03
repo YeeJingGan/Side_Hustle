@@ -56,7 +56,7 @@ class AdminJobAdapter(private val context: Context, private val jobList: List<Ad
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JobViewHolder {
         val view = LayoutInflater.from(context)
-            .inflate(R.layout.layout_admin_home_job_item, parent, false)
+            .inflate(R.layout.listitem_admin_home_job, parent, false)
         return JobViewHolder(view)
     }
 

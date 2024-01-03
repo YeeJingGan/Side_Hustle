@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/layout_admin_review_comment_job_item"
+        tools:listitem="@layout/listitem_admin_review_comment_job"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!--<TextView
