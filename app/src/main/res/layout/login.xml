@@ -20,7 +20,7 @@
             android:background="#00FFFFFF"
             android:padding="30dp"
             android:visibility="visible"
-            app:srcCompat="@drawable/name_logo" />
+            app:srcCompat="@drawable/ic_name_logo_138px" />
 
         <TextView
             android:id="@+id/login_welcome"

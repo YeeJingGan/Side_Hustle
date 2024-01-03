@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="150dp"
-        android:src="@drawable/logo_icon"
+        android:src="@drawable/ic_logo_80px"
         app:layout_constraintBottom_toTopOf="@+id/register_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/register_employericon" />
+            android:src="@drawable/ic_register_employer_60px" />
 
         <TextView
             android:id="@+id/register_employer"
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/register_employeeicon" />
+            android:src="@drawable/ic_register_employee_60px" />
 
         <TextView
 

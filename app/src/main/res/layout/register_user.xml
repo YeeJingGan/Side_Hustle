@@ -19,7 +19,7 @@
         android:elevation="100dp"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIcon="@drawable/ic_arrow_back_30px"
         app:navigationIconTint="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +155,7 @@
         android:drawablePadding="10dp"
         android:text="@string/register_minimumCharacter"
         android:textColor="@color/theme_textgray"
-        app:drawableStartCompat="@drawable/register_checkcircle"
+        app:drawableStartCompat="@drawable/ic_register_checkcircle_18px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/register_passwordShould" />
@@ -170,7 +170,7 @@
         android:drawablePadding="10dp"
         android:text="@string/register_leastLowercase"
         android:textColor="@color/theme_textgray"
-        app:drawableStartCompat="@drawable/register_checkcircle"
+        app:drawableStartCompat="@drawable/ic_register_checkcircle_18px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/register_minimumCharacter" />
@@ -185,7 +185,7 @@
         android:drawablePadding="10dp"
         android:text="@string/register_leastUppercase"
         android:textColor="@color/theme_textgray"
-        app:drawableStartCompat="@drawable/register_checkcircle"
+        app:drawableStartCompat="@drawable/ic_register_checkcircle_18px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/register_leastLowercase" />
@@ -200,7 +200,7 @@
         android:drawablePadding="10dp"
         android:text="@string/register_leastNumber"
         android:textColor="@color/theme_textgray"
-        app:drawableStartCompat="@drawable/register_checkcircle"
+        app:drawableStartCompat="@drawable/ic_register_checkcircle_18px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/register_leastUppercase" />
@@ -215,7 +215,7 @@
         android:drawablePadding="10dp"
         android:text="@string/register_leastUnique"
         android:textColor="@color/theme_textgray"
-        app:drawableStartCompat="@drawable/register_checkcircle"
+        app:drawableStartCompat="@drawable/ic_register_checkcircle_18px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/register_leastNumber" />

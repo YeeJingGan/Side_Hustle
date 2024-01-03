@@ -98,7 +98,7 @@ class register_user : AppCompatActivity() {
     // this is the general update function, takes in the id and condition
     private fun updateDrawableBasedOnCondition(viewId: Int, condition: Boolean) {
         val textView: TextView = findViewById(viewId)
-        val drawableResId = if (condition) R.drawable.register_checkcircleyellow else R.drawable.register_checkcircle
+        val drawableResId = if (condition) R.drawable.ic_register_checkcircleyellow_18px else R.drawable.ic_register_checkcircle_18px
         val drawable = ContextCompat.getDrawable(this, drawableResId)
         textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawable, null, null, null)
     }

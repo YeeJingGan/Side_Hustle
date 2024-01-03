@@ -14,7 +14,7 @@ class AdminSettingsActivity : AppCompatActivity() {
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.arrow_back)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back_30px)
             setDisplayShowTitleEnabled(false)
         }
     }
