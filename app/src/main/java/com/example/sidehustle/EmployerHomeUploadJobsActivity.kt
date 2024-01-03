@@ -5,7 +5,6 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
@@ -16,9 +15,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployerHomeUploadJobsBinding
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import java.lang.System.err
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -30,18 +26,17 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
     lateinit var requirementsAdapter: EmployerHomeUploadJobsRequirementsAdapter
     lateinit var selectedStateChoice: String
     lateinit var viewModel: EmployerHomeUploadJobsViewModel
-    lateinit var database: DatabaseReference
     var wagesAmount: Int = 10
     val stateChoices = arrayOf(
         "Cyberjaya",
         "Kelantan",
+        "Johor",
         "Kuala Lumpur",
         "Labuan",
         "Melaka",
         "Negeri Sembilan",
         "Pahang",
         "Perak",
-        "Perlis",
         "Perlis",
         "Pulau Pinang",
         "Putrajaya",
@@ -54,7 +49,6 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employer_home_upload_jobs)
-        database = FirebaseDatabase.getInstance().getReference("Jobs")
 
         setSupportActionBar(binding.employerUploadJobToolbar)
 
@@ -430,27 +424,6 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
             description,"APPROVED"
 
         )
-
-        //FireBase
-        val jobID = database.push().key!!
-        val thisJob = EntityJob(
-            0,
-            2,
-            jobTitle,
-            selectedStateChoice,
-            address,
-            postcode,
-            wagesAmount,
-            startDate,
-            endDate,
-            startTime,
-            endTime,
-            description,"APPROVED"
-        )
-        database.child(jobID).setValue(thisJob).addOnFailureListener{
-            Toast.makeText(this, "Failed: ${it.message}", Toast.LENGTH_SHORT).show()
-            Log.e("Firebase", "Error writing document", it)
-        }
 
         viewModel.addJob(job)
         // TODO : TOBE REPLACE WITH REAL EMPLOYER ID AND IMPLEMENT REQUIREMENTS

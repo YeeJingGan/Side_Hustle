@@ -21,4 +21,5 @@ class EntityJobRepository(private val jobDao: EntityJobDao) {
     fun getByEmployerIDJobsStartingTodayOrLater(employerID:Long): LiveData<List<EntityJob>>{
         return jobDao.getByEmployerIDJobsStartingTodayOrLater(employerID)
     }
+
 }

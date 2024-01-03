@@ -1,6 +1,5 @@
 package com.example.sidehustle
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
@@ -23,4 +22,10 @@ interface EntityApplicationDao {
 
     @Query("SELECT * FROM application_table ORDER BY jobID ASC, employeeID ASC")
     fun readAllData(): LiveData<List<EntityApplication>>
+
+    @Query("SELECT * FROM application_table WHERE jobID = :jobID")
+    fun getApplicantsByJobID(jobID: Long): LiveData<List<EntityApplication>>
+
+    @Query("SELECT COUNT(DISTINCT employeeID) FROM application_table WHERE jobID = :jobID")
+    suspend fun getApplicantCountByJobID(jobID:Long):Int
 }

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="applicant_count"
+            type="int" />
         <variable
             name="job"
             type="com.example.sidehustle.EntityJob" />
@@ -113,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:background="@drawable/background_reactangle_white"
-            android:text="@string/employer_applicants_num"
+            android:text="@{String.valueOf(applicant_count)}"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/employer_home_approved_jobs_employee"
             app:layout_constraintEnd_toEndOf="@+id/employer_home_approved_jobs_view_details_button"

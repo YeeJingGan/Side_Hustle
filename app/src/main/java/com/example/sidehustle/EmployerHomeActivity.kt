@@ -29,21 +29,21 @@ class EmployerHomeActivity : AppCompatActivity() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         ).get(EmployerHomeViewModel::class.java)
 
-        approvedJobsAdapter = EmployerHomeJobAdapter(emptyList())
-        pendingJobsAdapter = EmployerHomeJobAdapter(emptyList())
+        approvedJobsAdapter = EmployerHomeJobAdapter(emptyList(),viewModel)
+        pendingJobsAdapter = EmployerHomeJobAdapter(emptyList(),viewModel)
 
         viewModel.searchQuery.observe(this) { query ->
             approvedJobsAdapter.filter.filter(query)
-            approvedJobsAdapter.filter.filter(query)
+            pendingJobsAdapter.filter.filter(query)
         }
 
         viewModel.approvedJobs.observe(this){ jobs ->
-            approvedJobsAdapter = EmployerHomeJobAdapter(jobs)
+            approvedJobsAdapter = EmployerHomeJobAdapter(jobs,viewModel)
             binding.employerHomeRecyclerviewApprovedJobs.adapter = approvedJobsAdapter
         }
 
         viewModel.pendingJobs.observe(this){ jobs ->
-            pendingJobsAdapter = EmployerHomeJobAdapter(jobs)
+            pendingJobsAdapter = EmployerHomeJobAdapter(jobs,viewModel)
             binding.employerHomeRecyclerviewPendingApproval.adapter = pendingJobsAdapter
         }
 
