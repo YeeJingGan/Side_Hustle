@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployerHomeJobDetailsBinding
 import kotlinx.coroutines.launch
 
@@ -37,19 +38,23 @@ class EmployerHomeJobDetailsActivity : AppCompatActivity() {
         }
 
         viewModel.starCount.observe(this) {
-            Log.i("AVG", it.toString())
             updateStarColors(it)
         }
+
+        var adapter = EmployeeHomeJobDetailsRequirementAdapter(emptyList())
+        binding.employerJobDetailsRecyclerview.adapter = adapter
+        binding.employerJobDetailsRecyclerview.layoutManager = LinearLayoutManager(this)
+
         viewModel.viewModelScope.launch {
             binding.job = viewModel.getJobByJobID(jobID)
             binding.employer = viewModel.getEmployerByJobID(jobID)
             viewModel.getAverageRatingByJobIDAndCommenter(binding.employer!!.employerID, "EMPLOYEE")
+            adapter =
+                EmployeeHomeJobDetailsRequirementAdapter(viewModel.getRequirementsByJobID(jobID))
+            binding.employerJobDetailsRecyclerview.adapter = adapter
         }
 
-
-
         setup()
-        setListeners()
 
     }
 
@@ -63,17 +68,6 @@ class EmployerHomeJobDetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun setListeners() {
-        // TODO : DELETE POST AND CLOSE APPLICATION RMB
-        binding.employerJobDetailsButtonClose.setOnClickListener {
-            Toast.makeText(this, "HEHEHE NOT YET DO CLOSE APPLICATION", Toast.LENGTH_SHORT).show()
-            finish()
-        }
-        binding.employerJobDetailsButtonDelete.setOnClickListener {
-            Toast.makeText(this, "HEHEHE NOT YET DO DELETE", Toast.LENGTH_SHORT).show()
-            finish()
-        }
-    }
 
     private fun updateStarColors(starsCount: Int) {
         val stars = arrayOf(

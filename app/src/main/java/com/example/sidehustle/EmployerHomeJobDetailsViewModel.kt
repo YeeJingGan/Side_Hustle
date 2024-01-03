@@ -13,15 +13,20 @@ class EmployerHomeJobDetailsViewModel(private val application: Application) :
     private val employerRepository: EntityEmployerRepository
     private val jobRepository: EntityJobRepository
     private val ratingRepository: EntityRatingRepository
+    private val requirementRepository: EntityRequirementRepository
 
     private val _starCount = MutableLiveData<Int>()
     val starCount: LiveData<Int> get() = _starCount
+
+    private val _requirements = MutableLiveData<List<String>>()
+    val requirements: LiveData<List<String>> get() = _requirements
 
     init {
         val database = SideHustleDatabase.getDatabase(application)
         employerRepository = EntityEmployerRepository(database.employerDao())
         jobRepository = EntityJobRepository(database.jobDao())
         ratingRepository = EntityRatingRepository(database.ratingDao())
+        requirementRepository = EntityRequirementRepository(database.requirementDao())
     }
 
     suspend fun getJobByJobID(jobID: Long): EntityJob {
@@ -33,9 +38,18 @@ class EmployerHomeJobDetailsViewModel(private val application: Application) :
     }
 
 
-    fun getAverageRatingByJobIDAndCommenter(jobID: Long, commenter: String){
+    fun getAverageRatingByJobIDAndCommenter(jobID: Long, commenter: String) {
         viewModelScope.launch {
-            _starCount.postValue(ratingRepository.getAverageRatingByJobIDAndCommenter(jobID, commenter).toInt())
+            _starCount.postValue(
+                ratingRepository.getAverageRatingByJobIDAndCommenter(
+                    jobID,
+                    commenter
+                ).toInt()
+            )
         }
+    }
+
+    suspend fun getRequirementsByJobID(jobID: Long): List<String> {
+        return requirementRepository.getByJobID(jobID)
     }
 }
