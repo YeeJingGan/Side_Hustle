@@ -1,8 +1,10 @@
 package com.example.sidehustle
 
 import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -15,6 +17,7 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
     lateinit var binding: ActivityEmployeeHomeJobDetailsApplyJobsBinding
     var wagesAmount : Int = 10
     lateinit var languageAdapter : EmployeeHomeJobDetailsApplyJobsLanguageAdapter
+    var JOBID : Long = -100
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(
@@ -26,6 +29,7 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
         val jobID = intent.getLongExtra("jobID", -100)
         Toast.makeText(this, "JOBID is $jobID", Toast.LENGTH_SHORT).show()
 
+        JOBID = jobID
         setupScreen()
 
         getData()
@@ -87,9 +91,24 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
     private fun apply() {
         Toast.makeText(this, "HAHA NOT YET APPLY NEED DATABASE", Toast.LENGTH_SHORT).show()
         // TODO : UPLOAD TO DATABASE HERE
+        setResult(RESULT_OK, Intent().putExtra("jobID",JOBID))
         finish()
     }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed() // This will navigate back and finish the activity
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
 
+    override fun onBackPressed(){
+        super.onBackPressed()
+        setResult(RESULT_OK, Intent().putExtra("jobID",JOBID))
+        finish()
+    }
     private fun showResetConfirmationDialog() {
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setTitle("Reset Confirmation")

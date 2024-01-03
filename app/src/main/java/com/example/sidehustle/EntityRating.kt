@@ -26,9 +26,3 @@ data class EntityRating(
     val comment: String,
     val commenter: String,
 )
-
-// Sample to populate the entity
-
-//RatingEntity(1,5,"yeejingComment","EMPLOYEE")
-//RatingEntity(2,4,"jieshenComment","EMPLOYEE")
-//RatingEntity(3,3,"jeromeComment","EMPLOYER")

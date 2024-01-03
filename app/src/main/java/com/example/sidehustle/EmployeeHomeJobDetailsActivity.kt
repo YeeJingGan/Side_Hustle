@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployeeHomeJobDetailsBinding
 
 class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
-
+    var JOB_DETAILS_REQUEST_CODE: Int = 88
     lateinit var binding: ActivityEmployeeHomeJobDetailsBinding
     lateinit var job: EntityJob
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +33,8 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
         setListeners()
 
         // TODO : CHECK POP WILL GET THE SAME ID OR NOT
-        val jobID = intent.getLongExtra("jobID",-100)
-        Toast.makeText(this,"JOBID is $jobID",Toast.LENGTH_SHORT).show()
+        val jobID = intent.getLongExtra("jobID", -200)
+        Toast.makeText(this, "JOBID is $jobID", Toast.LENGTH_SHORT).show()
     }
 
     private fun setListeners() {
@@ -56,9 +56,16 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
     private fun apply(view: View) {
         val intent = Intent(view.context, EmployeeHomeJobDetailsApplyJobsActivity::class.java)
         intent.putExtra("jobID", job.jobID)
-        view.context.startActivity((intent))
+        startActivityForResult((intent),JOB_DETAILS_REQUEST_CODE)
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == JOB_DETAILS_REQUEST_CODE && resultCode == RESULT_OK) {
+            val JOBID = data?.getLongExtra("jobID",-100)
+            Toast.makeText(this,"jobID is $JOBID",Toast.LENGTH_SHORT).show()
+        }
+    }
     private fun getData() {
         // TODO: RMB GET FROM DATABASE, GET STARS AS WELL AND REQUIREMENTS ALSO
         binding.employee = EntityEmployee(
@@ -72,14 +79,14 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
             1,
             1,
             "Job1",
-            "JobState1",                "Address3",
+            "JobState1", "Address3",
             "70000",
             70,
             "2024-01-01",
             "2024-02-02",
             "10:00:00Z",
             "16:00:00Z",
-            "jobDescription1","APPROVED"
+            "jobDescription1", "APPROVED"
         )
         binding.job = job
 

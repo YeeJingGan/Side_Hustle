@@ -1,16 +1,22 @@
 package com.example.sidehustle
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sidehustle.databinding.ListitemEmployerHomeJobsBinding
+import kotlinx.coroutines.launch
 import java.util.Locale
 
-class EmployerHomeJobAdapter(private val jobs: List<EntityJob>) :
+class EmployerHomeJobAdapter(
+    private val jobs: List<EntityJob>,
+    private val viewModel: EmployerHomeViewModel,
+) :
     RecyclerView.Adapter<EmployerHomeJobAdapter.ViewHolder>(), Filterable {
 
     private var filteredJobs: List<EntityJob> = jobs
@@ -20,6 +26,9 @@ class EmployerHomeJobAdapter(private val jobs: List<EntityJob>) :
 
         fun bind(job: EntityJob) {
             binding.job = job
+            viewModel.viewModelScope.launch {
+                binding.applicantCount = viewModel.getApplicantCount(job.jobID)
+            }
             // TODO : PUT EXTRA PASS DATA TO DESTINATION ACTIVITY
             binding.employerHomeApprovedJobsViewDetailsButton.setOnClickListener {
                 val intent = Intent(it.context, EmployerHomeJobDetailsActivity::class.java)
@@ -60,7 +69,10 @@ class EmployerHomeJobAdapter(private val jobs: List<EntityJob>) :
                     val filterPattern = constraint.toString().lowercase(Locale.ROOT).trim()
 
                     for (job in jobs) {
-                        if (job.title.lowercase(Locale.ROOT).contains(filterPattern) || job.state.lowercase(Locale.ROOT).contains(filterPattern)) {
+                        if (job.title.lowercase(Locale.ROOT)
+                                .contains(filterPattern) || job.state.lowercase(Locale.ROOT)
+                                .contains(filterPattern)
+                        ) {
                             filteredList.add(job)
                         }
                     }

@@ -155,6 +155,7 @@
                     android:clickable="false"
                     android:dividerHeight="@dimen/listViewDividerHeight"
                     android:scrollbars="none"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/employer_home_divider_2"
