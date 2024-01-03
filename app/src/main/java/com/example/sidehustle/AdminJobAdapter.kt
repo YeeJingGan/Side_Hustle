@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -49,8 +48,8 @@ import androidx.recyclerview.widget.RecyclerView
         }
     }*/
 
-class JobAdapter(private val context: Context, private val jobList: List<Job>) :
-    RecyclerView.Adapter<JobAdapter.JobViewHolder>() {
+class AdminJobAdapter(private val context: Context, private val jobList: List<AdminJob>) :
+    RecyclerView.Adapter<AdminJobAdapter.JobViewHolder>() {
 
     // ViewHolder class for holding the views
     class JobViewHolder(view: View) : RecyclerView.ViewHolder(view)
@@ -69,7 +68,7 @@ class JobAdapter(private val context: Context, private val jobList: List<Job>) :
         return jobList.size
     }
 
-    private fun bindJobData(view: View, job: Job) {
+    private fun bindJobData(view: View, job: AdminJob) {
         val jobProfilePhotoView = view.findViewById<ImageView>(R.id.job_profile_photo_imageview)
         val jobNameView = view.findViewById<TextView>(R.id.job_name_textview)
         val jobPriceView = view.findViewById<TextView>(R.id.job_price_textview)
@@ -87,7 +86,7 @@ class JobAdapter(private val context: Context, private val jobList: List<Job>) :
     }
 
 
-    private fun toJobDetails(view: View, job: Job) {
+    private fun toJobDetails(view: View, job: AdminJob) {
 //      RMB Remove this
         /*val context = view.context
         val intent = Intent(context, AdminHomeJobDetailsActivity::class.java)

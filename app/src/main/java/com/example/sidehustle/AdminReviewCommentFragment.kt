@@ -38,7 +38,7 @@ class AdminReviewCommentFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_admin_review_comment, container, false)
     }*/
-    private lateinit var jobAdapter: JobAdapter
+    private lateinit var jobAdapter: AdminJobAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,15 +46,15 @@ class AdminReviewCommentFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_admin_review_comment, container, false)
 
-        val jobList: List<Job> = listOf(
-            Job(
+        val jobList: List<AdminJob> = listOf(
+            AdminJob(
                 R.drawable.sample_profile_photo,
                 "Job 1",
                 100,
                 "City 1",
                 "State 1"
             ),
-            Job(
+            AdminJob(
                 R.drawable.sample_profile_photo,
                 "Job 2",
                 150,
@@ -63,7 +63,7 @@ class AdminReviewCommentFragment : Fragment() {
             )
         )
 
-        jobAdapter = JobAdapter(requireContext(), jobList)
+        jobAdapter = AdminJobAdapter(requireContext(), jobList)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.jobRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

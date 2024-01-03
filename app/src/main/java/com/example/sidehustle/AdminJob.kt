@@ -1,11 +1,9 @@
 package com.example.sidehustle
 
-import java.sql.Time
 import java.time.LocalDate
 import java.time.LocalTime
-import java.util.Date
 
-data class Job(
+data class AdminJob(
     val photoResId: Int,
     val jobName: String,
     val jobPrice: Int,
