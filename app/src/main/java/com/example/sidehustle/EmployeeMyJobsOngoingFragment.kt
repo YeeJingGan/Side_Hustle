@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.FragmentEmployeeMyJobsOngoingBinding
 class EmployeeMyJobsOngoingFragment : Fragment() {
 
     lateinit var binding: FragmentEmployeeMyJobsOngoingBinding
+    lateinit var viewModel : EmployeeMyJobsOngoingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,53 +20,24 @@ class EmployeeMyJobsOngoingFragment : Fragment() {
     ): View {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_employee_my_jobs_ongoing,container,false)
-        val adapter = EmployeeMyJobsOngoingAdapter(populateJobs())
+
+
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
+        ).get(EmployeeMyJobsOngoingViewModel::class.java)
+
+
+        var adapter = EmployeeMyJobsOngoingAdapter(emptyList())
+
+        viewModel.ongoingJobs.observe(viewLifecycleOwner){
+            adapter = EmployeeMyJobsOngoingAdapter(it)
+            binding.employeeOngoingRecyclerView.adapter = adapter
+        }
 
         binding.employeeOngoingRecyclerView.adapter = adapter
         binding.employeeOngoingRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         return binding.root
-    }
-
-    private fun populateJobs(): List<EntityJob> {
-        // TODO: REPLACE WITH REAL DATA FROM DATABASE
-        return listOf(
-            EntityJob(
-                1,
-                1,
-                "Job1",
-                "JobState1",
-                70,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription1"
-            ),
-            EntityJob(
-                2,
-                2,
-                "Job2",
-                "JobState2",
-                80,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription2"
-            ),
-            EntityJob(
-                3,
-                3,
-                "Job3",
-                "JobState3",
-                90,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription3"
-            )
-        )
     }
 
 }

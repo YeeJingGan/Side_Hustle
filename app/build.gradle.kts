@@ -65,4 +65,5 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     kapt("androidx.room:room-compiler:2.6.1")
+    implementation ("androidx.fragment:fragment:1.6.2")
 }

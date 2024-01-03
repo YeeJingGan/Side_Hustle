@@ -49,7 +49,6 @@
             android:layout_height="@dimen/icon_width_height"
             android:layout_marginTop="@dimen/backButtonConstraint"
             android:contentDescription="@string/ic_description_approved_date"
-            android:src="@drawable/ic_schedule"
             app:layout_constraintStart_toStartOf="@+id/employer_history_position"
             app:layout_constraintTop_toBottomOf="@+id/employer_history_position"
             app:srcCompat="@drawable/ic_calendar" />
@@ -60,7 +59,6 @@
             android:layout_height="@dimen/icon_width_height"
             android:layout_marginTop="@dimen/backButtonConstraint"
             android:contentDescription="@string/ic_description_approved_time"
-            android:src="@drawable/ic_schedule"
             app:layout_constraintStart_toStartOf="@+id/employer_history_calendar"
             app:layout_constraintTop_toBottomOf="@+id/employer_history_calendar"
             app:srcCompat="@drawable/ic_schedule" />

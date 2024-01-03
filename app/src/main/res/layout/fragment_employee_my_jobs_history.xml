@@ -6,7 +6,9 @@
     <data>
 
     </data>
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -67,13 +69,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/employee_history_recyclerview"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/employee_history_fragment_circle_1"
             tools:listitem="@layout/listitem_employee_my_jobs_history_fragment" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout></ScrollView>
 </layout>

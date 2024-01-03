@@ -11,7 +11,6 @@ data class EntityEmployer(
     var employerUsername: String,
     val employerEmail: String,
     var employerPassword: String,
-    var employerProfilePicture: ByteArray?
 )
 
 // Sample to populate the entity

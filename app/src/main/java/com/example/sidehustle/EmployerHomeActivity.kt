@@ -2,30 +2,51 @@ package com.example.sidehustle
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployerHomeBinding
 
 class EmployerHomeActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployerHomeBinding
-    lateinit var jobs: List<EntityJob>
     lateinit var approvedJobsAdapter: EmployerHomeJobAdapter
     lateinit var pendingJobsAdapter: EmployerHomeJobAdapter
+    lateinit var viewModel: EmployerHomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employer_home)
 
-        populateJobs()
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(EmployerHomeViewModel::class.java)
 
-        approvedJobsAdapter = EmployerHomeJobAdapter(jobs)
-        pendingJobsAdapter = EmployerHomeJobAdapter(jobs)
+        approvedJobsAdapter = EmployerHomeJobAdapter(emptyList())
+        pendingJobsAdapter = EmployerHomeJobAdapter(emptyList())
+
+        viewModel.searchQuery.observe(this) { query ->
+            approvedJobsAdapter.filter.filter(query)
+            approvedJobsAdapter.filter.filter(query)
+        }
+
+        viewModel.approvedJobs.observe(this){ jobs ->
+            approvedJobsAdapter = EmployerHomeJobAdapter(jobs)
+            binding.employerHomeRecyclerviewApprovedJobs.adapter = approvedJobsAdapter
+        }
+
+        viewModel.pendingJobs.observe(this){ jobs ->
+            pendingJobsAdapter = EmployerHomeJobAdapter(jobs)
+            binding.employerHomeRecyclerviewPendingApproval.adapter = pendingJobsAdapter
+        }
+
 
         setupRecyclerView()
 
@@ -76,8 +97,7 @@ class EmployerHomeActivity : AppCompatActivity() {
                         finish()
                         startActivity(
                             Intent(
-                                applicationContext,
-                                EmployerMyJobsActivity::class.java
+                                applicationContext, EmployerMyJobsActivity::class.java
                             )
                         )
                         true
@@ -87,8 +107,7 @@ class EmployerHomeActivity : AppCompatActivity() {
                         finish()
                         startActivity(
                             Intent(
-                                applicationContext,
-                                EmployerMyProfileActivity::class.java
+                                applicationContext, EmployerMyProfileActivity::class.java
                             )
                         )
                         true
@@ -106,61 +125,26 @@ class EmployerHomeActivity : AppCompatActivity() {
         binding.employerHomeSearchSearchview.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
             override fun onQueryTextChange(query: String?): Boolean {
-                approvedJobsAdapter.filter.filter(query)
-                pendingJobsAdapter.filter.filter(query)
-
+                viewModel.setSearchQuery(query?:"")
                 return true
             }
 
             override fun onQueryTextSubmit(query: String?): Boolean {
                 val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(
-                    binding.employerHomeSearchSearchview.windowToken,
-                    0
+                    binding.employerHomeSearchSearchview.windowToken, 0
                 )
                 return true
             }
         })
     }
+    private fun hideSoftInput(view: View) {
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+    }
 
-    private fun populateJobs() {
-        jobs = listOf(
-            EntityJob(
-                1,
-                1,
-                "Job1",
-                "JobState1",
-                70,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription1"
-            ),
-            EntityJob(
-                2,
-                2,
-                "Job2",
-                "JobState2",
-                80,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription2"
-            ),
-            EntityJob(
-                3,
-                3,
-                "Job3",
-                "JobState3",
-                90,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription3"
-            )
-        )
+    private fun showSoftInput(view: View) {
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
     }
 }

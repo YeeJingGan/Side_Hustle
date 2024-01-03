@@ -5,23 +5,35 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployeeHomeBinding
 
 class EmployeeHomeActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployeeHomeBinding
-    lateinit var jobs: List<EntityJob>
     lateinit var jobAdapter: EmployeeHomeJobAdapter
+    lateinit var viewModel: EmployeeHomeViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employee_home)
 
-        populateJobs()
+        viewModel = ViewModelProvider(this).get(EmployeeHomeViewModel::class.java)
 
-        setAdapter()
+        viewModel.searchQuery.observe(this) { query ->
+            jobAdapter.filter.filter(query)
+        }
+
+        jobAdapter = EmployeeHomeJobAdapter(emptyList())
+
+        viewModel.applicableJobs.observe(this) { jobs ->
+            jobAdapter = EmployeeHomeJobAdapter(jobs)
+            binding.employeeHomeJobRecyclerview.adapter = jobAdapter
+        }
+
 
         setupRecyclerView()
 
@@ -33,51 +45,6 @@ class EmployeeHomeActivity : AppCompatActivity() {
         binding.employeeHomeJobRecyclerview.layoutManager = LinearLayoutManager(this)
     }
 
-    private fun populateJobs() {
-        // TODO: Replace with a real job list
-        jobs = listOf(
-            EntityJob(
-                1,
-                1,
-                "Job1",
-                "JobState1",
-                70,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription1"
-            ),
-            EntityJob(
-                2,
-                2,
-                "Job2",
-                "JobState2",
-                80,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription2"
-            ),
-            EntityJob(
-                3,
-                3,
-                "Job3",
-                "JobState3",
-                90,
-                "2024-01-01",
-                "2024-02-02",
-                "10:00:00Z",
-                "16:00:00Z",
-                "jobDescription1"
-            ),
-        )
-    }
-
-    private fun setAdapter() {
-        jobAdapter = EmployeeHomeJobAdapter(jobs)
-    }
 
     private fun setListeners() {
         binding.favoriteButton.setOnClickListener {
@@ -119,7 +86,7 @@ class EmployeeHomeActivity : AppCompatActivity() {
         binding.employeeHomeSearchSearchview.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
             override fun onQueryTextChange(query: String?): Boolean {
-                jobAdapter.filter.filter(query)
+                viewModel.setSearchQuery(query ?: "")
 
                 return true
             }
@@ -133,6 +100,12 @@ class EmployeeHomeActivity : AppCompatActivity() {
                 return true
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "HIHIHI ${intent.getLongExtra("jobID", -100)}", Toast.LENGTH_LONG)
+            .show()
     }
 
 }

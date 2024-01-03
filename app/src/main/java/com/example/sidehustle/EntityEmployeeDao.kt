@@ -20,4 +20,6 @@ interface EntityEmployeeDao {
     @Query("DELETE FROM employee_table")
     suspend fun clear()
 
+    @Query("SELECT * FROM employee_table ORDER BY employeeID ASC")
+    fun getAll():LiveData<List<EntityEmployee>>
 }
