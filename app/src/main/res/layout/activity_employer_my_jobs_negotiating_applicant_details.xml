@@ -286,13 +286,14 @@
                     android:paddingVertical="10dp"
                     android:text="Proficiency"
                     android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/applicant_details_language_title_textview"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/applicant_details_language_title_textview"
                     app:layout_constraintTop_toTopOf="@+id/applicant_details_language_title_textview" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/applicants_details_tableLayout"
+                    android:id="@+id/employer_my_jobs_negotiating_appplicant_details_recyclerview"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="@+id/applicant_details_language_proficiency_textview"
@@ -309,7 +310,7 @@
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_tableLayout" />
+                    app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_appplicant_details_recyclerview" />
 
                 <TextView
                     android:id="@+id/applicants_details_review_header"
@@ -323,39 +324,39 @@
                     app:layout_constraintTop_toBottomOf="@+id/applicants_details_divider_4" />
 
                 <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPager2_2"
+                    android:id="@+id/employer_my_jobs_negotiating_applicant_details_viewpager"
                     android:layout_width="0dp"
-                    android:layout_height="500dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="#FF0000"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton2_2"
-                    app:layout_constraintHorizontal_bias="0.488"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton_1"
+                    app:layout_constraintEnd_toStartOf="@+id/employer_my_jobs_negotiating_applicant_details_next_button"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_negotiating_applicant_details_previous_button"
                     app:layout_constraintTop_toBottomOf="@+id/applicants_details_review_header" />
 
                 <ImageButton
-                    android:id="@+id/imageButton_1"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/employer_my_jobs_negotiating_applicant_details_previous_button"
+                    android:layout_width="24dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@android:color/transparent"
+                    android:padding="0dp"
                     android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/viewPager2_2"
+                    app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_applicant_details_viewpager"
                     app:layout_constraintStart_toStartOf="@+id/applicants_details_review_header"
-                    app:layout_constraintTop_toTopOf="@+id/viewPager2_2"
+                    app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_applicant_details_viewpager"
                     app:srcCompat="@drawable/ic_chevron_left_24px"
-                    tools:visibility="visible" />
+                    tools:visibility="invisible" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2_2"
+                    android:id="@+id/employer_my_jobs_negotiating_applicant_details_next_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@android:color/transparent"
-                    app:layout_constraintBottom_toBottomOf="@+id/viewPager2_2"
+                    android:padding="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_applicant_details_viewpager"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/viewPager2_2"
-                    app:srcCompat="@drawable/ic_chevron_right_24px" />
+                    app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_negotiating_applicant_details_viewpager"
+                    app:srcCompat="@drawable/ic_chevron_right_24px"
+                    tools:visibility="visible" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

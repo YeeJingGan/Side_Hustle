@@ -28,4 +28,7 @@ interface EntityRatingDao {
 
     @Query("SELECT AVG(rating) FROM rating_table WHERE employeeID = :employeeID AND commenter LIKE :commenter")
     suspend fun getAverageRatingByEmployeeIDAndCommenter(employeeID:Long,commenter: String):Double?
+
+    @Query("SELECT * FROM rating_table WHERE employeeID = :employeeID AND commenter LIKE :commenter")
+    suspend fun getRatingByEmployeeIDAndCommenter(employeeID: Long,commenter: String):List<EntityRating>
 }

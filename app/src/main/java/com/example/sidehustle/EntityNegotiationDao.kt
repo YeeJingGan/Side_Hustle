@@ -1,6 +1,5 @@
 package com.example.sidehustle
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -21,5 +20,5 @@ interface EntityNegotiationDao {
     suspend fun clear()
 
     @Query("SELECT * FROM negotiation_table WHERE employeeID = :employeeID AND jobID = :jobID LIMIT 1")
-    suspend fun getLastestNegotiationByEmployeeIDAndJobID(employeeID:Long,jobID:Long):EntityNegotiation
+    suspend fun getLatestNegotiationByEmployeeIDAndJobID(employeeID:Long, jobID:Long):EntityNegotiation
 }

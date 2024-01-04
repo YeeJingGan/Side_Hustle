@@ -29,5 +29,6 @@ interface EntityApplicationDao {
     @Query("SELECT COUNT(DISTINCT employeeID) FROM application_table WHERE jobID = :jobID")
     suspend fun getApplicantCountByJobID(jobID:Long):Int
 
-
+    @Query("UPDATE application_table SET status = :status WHERE employeeID = :employeeId AND jobID = :jobId")
+    suspend fun updateStatus(employeeId: Long, jobId: Long, status :String)
 }

@@ -17,4 +17,8 @@ class EntityApplicationRepository(private val applicationDao: EntityApplicationD
     suspend fun getApplicantCountByJobID(jobID:Long):Int{
         return applicationDao.getApplicantCountByJobID(jobID)
     }
+
+    suspend fun updateStatus(employeeId: Long, jobId: Long, status :String){
+        applicationDao.updateStatus(employeeId , jobId, status)
+    }
 }

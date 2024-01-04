@@ -2,10 +2,6 @@ package com.example.sidehustle
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
 
 class EmployerMyJobsNegotiatingViewModel(private val application: Application) :
     AndroidViewModel(application) {
@@ -43,7 +39,7 @@ class EmployerMyJobsNegotiatingViewModel(private val application: Application) :
     }
 
     suspend fun getLastestNegotiationByEmployeeIDAndJobID(employeeID:Long,jobID:Long):EntityNegotiation{
-        return negotiationRepository.getLastestNegotiationByEmployeeIDAndJobID(employeeID,jobID)
+        return negotiationRepository.getLatestNegotiationByEmployeeIDAndJobID(employeeID,jobID)
     }
 
 }

@@ -3,13 +3,15 @@ package com.example.sidehustle
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 
-class EmployerMyJobsNegotiatingApplicantDetailsViewModel (private val application: Application) :
+class EmployerMyJobsNegotiatingApplicantDetailsViewModel(private val application: Application) :
     AndroidViewModel(application) {
     private val jobRepository: EntityJobRepository
     private val employeeRepository: EntityEmployeeRepository
-    private val ratingRepository : EntityRatingRepository
-    private val negotiationRepository : EntityNegotiationRepository
-    private val languagesRepository : EntityLanguageRepository
+    private val ratingRepository: EntityRatingRepository
+    private val negotiationRepository: EntityNegotiationRepository
+    private val languagesRepository: EntityLanguageRepository
+    private val employerRepository: EntityEmployerRepository
+    private val applicationRepository: EntityApplicationRepository
 
     init {
         val database = SideHustleDatabase.getDatabase(application)
@@ -18,9 +20,41 @@ class EmployerMyJobsNegotiatingApplicantDetailsViewModel (private val applicatio
         ratingRepository = EntityRatingRepository(database.ratingDao())
         negotiationRepository = EntityNegotiationRepository(database.negotiationDao())
         languagesRepository = EntityLanguageRepository(database.languageDao())
+        employerRepository = EntityEmployerRepository(database.employerDao())
+        applicationRepository = EntityApplicationRepository(database.applicationDao())
     }
 
-    suspend fun getEmployeeByEmployeeID(employeeID: Long):EntityEmployee?{
+    suspend fun getEmployeeByEmployeeID(employeeID: Long): EntityEmployee? {
         return employeeRepository.get(employeeID)
+    }
+
+    suspend fun getByJobID(jobID: Long): EntityJob {
+        return jobRepository.getByJobID(jobID)
+    }
+
+    suspend fun getLatestNegotiationByEmployeeIDAndJobID(
+        employeeID: Long,
+        jobID: Long
+    ): EntityNegotiation {
+        return negotiationRepository.getLatestNegotiationByEmployeeIDAndJobID(employeeID, jobID)
+    }
+
+    suspend fun getByEmployeeIDAndJobID(employeeID: Long, jobID: Long): List<EntityLanguage> {
+        return languagesRepository.getByEmployeeIDAndJobID(employeeID, jobID)
+    }
+
+    suspend fun getEmployerByJobIDAndEmployeeID(jobID: Long, employeeID: Long): EntityEmployer {
+        return employerRepository.getEmployerByJobIDAndEmployeeID(jobID, employeeID)
+    }
+
+    suspend fun getRatingByEmployeeIDAndCommenter(
+        employeeID: Long,
+        commenter: String
+    ): List<EntityRating> {
+        return ratingRepository.getRatingByEmployeeIDAndCommenter(employeeID, commenter)
+    }
+
+    suspend fun updateStatus(employeeId: Long, jobId: Long, status: String) {
+        applicationRepository.updateStatus(employeeId, jobId, status)
     }
 }
