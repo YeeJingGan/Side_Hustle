@@ -1,6 +1,7 @@
 package com.example.sidehustle
 
 import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -24,7 +25,27 @@ class EmployerMyJobsOngoingEmployeesAdapter(private val allEmployees: List<Entit
                 intent.putExtra("employeeID", employee.employeeID)
                 it.context.startActivity(intent)
             }
+            updateStarColors(5)
             binding.executePendingBindings()
+        }
+        private fun updateStarColors(starsCount: Int) {
+            val stars = arrayOf(
+                binding.employerMyJobsOngoingEmployeeListLisitemStar1,
+                binding.employerMyJobsOngoingEmployeeListLisitemStar2,
+                binding.employerMyJobsOngoingEmployeeListLisitemStar3,
+                binding.employerMyJobsOngoingEmployeeListLisitemStar4,
+                binding.employerMyJobsOngoingEmployeeListLisitemStar5
+            )
+
+            for (i in 0..<stars.size) {
+                if (i < starsCount) {
+                    stars[i].setImageResource(R.drawable.ic_star_24px)
+                    stars[i].setColorFilter(Color.parseColor("#FDB915"))
+                } else {
+                    stars[i].setImageResource(R.drawable.ic_star_hollow_24px)
+                    stars[i].setColorFilter(Color.parseColor("#000000"))
+                }
+            }
         }
     }
 
