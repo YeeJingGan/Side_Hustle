@@ -40,8 +40,7 @@
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/reviews_comments_profile_picture"
             app:layout_constraintTop_toTopOf="@+id/reviews_comments_profile_picture"
-            tools:text="@string/my_profile_name_txt"
-            />
+            tools:text="@string/my_profile_name_txt" />
 
         <TextView
             android:id="@+id/reviews_comments_content_textview"

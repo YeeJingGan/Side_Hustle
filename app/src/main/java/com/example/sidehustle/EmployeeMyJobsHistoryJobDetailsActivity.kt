@@ -41,6 +41,8 @@ class EmployeeMyJobsHistoryJobDetailsActivity : AppCompatActivity() {
             binding.employer = viewModel.getEmployerByJobID(jobID)
             viewModel.getAverageRatingByJobIDAndCommenter(binding.employer!!.employerID, "EMPLOYEE")
         }
+
+        
     }
 
     private fun setListeners(){

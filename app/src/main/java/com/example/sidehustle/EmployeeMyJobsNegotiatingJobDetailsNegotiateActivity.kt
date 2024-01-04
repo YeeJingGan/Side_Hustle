@@ -48,7 +48,7 @@ class EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity : AppCompatActivity()
 
         binding.employeeNegotiateWithEmployerMinusButton.setOnClickListener {
             if (finalWages > wagesAmount) {
-                wagesAmount -= 10
+                finalWages -= 10
                 updateWages(finalWages)
             }
         }
@@ -93,7 +93,6 @@ class EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity : AppCompatActivity()
         }
 
         binding.employeeNegotiateWithEmployerCommentInput.text = null
-        wagesAmount = 10
         updateWages(wagesAmount)
     }
 

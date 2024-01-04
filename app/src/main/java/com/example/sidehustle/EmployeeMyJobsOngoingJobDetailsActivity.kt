@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployeeMyJobsOngoingJobDetailsBinding
+import kotlinx.coroutines.launch
 
 class EmployeeMyJobsOngoingJobDetailsActivity : AppCompatActivity() {
 
@@ -59,6 +61,11 @@ class EmployeeMyJobsOngoingJobDetailsActivity : AppCompatActivity() {
 
         })
         viewModel.get(jobID)
+
+        viewModel.viewModelScope.launch {
+            val employer = viewModel.getEmployerByJobID(jobID)
+            binding.employeeOngoingJobDetailsCompanyName.text = employer.employerUsername
+        }
 
     }
 

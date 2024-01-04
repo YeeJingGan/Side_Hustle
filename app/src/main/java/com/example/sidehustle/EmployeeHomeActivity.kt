@@ -102,11 +102,4 @@ class EmployeeHomeActivity : AppCompatActivity() {
             }
         })
     }
-
-    override fun onResume() {
-        super.onResume()
-        Toast.makeText(this, "HIHIHI ${intent.getLongExtra("jobID", -100)}", Toast.LENGTH_LONG)
-            .show()
-    }
-
 }
