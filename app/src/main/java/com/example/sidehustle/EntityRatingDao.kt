@@ -31,4 +31,10 @@ interface EntityRatingDao {
 
     @Query("SELECT * FROM rating_table WHERE employeeID = :employeeID AND commenter LIKE :commenter")
     suspend fun getRatingByEmployeeIDAndCommenter(employeeID: Long,commenter: String):List<EntityRating>
+
+    @Query("SELECT rating_table.* FROM rating_table " +
+            "INNER JOIN application_table ON rating_table.employeeID = application_table.employeeID AND rating_table.jobID = application_table.jobID " +
+            "INNER JOIN job_table ON application_table.jobID = job_table.jobID " +
+            "WHERE job_table.employerID = :employerID AND rating_table.commenter = :commenter")
+    suspend fun getRatingsForEmployer(employerID: Long,commenter: String): List<EntityRating>
 }

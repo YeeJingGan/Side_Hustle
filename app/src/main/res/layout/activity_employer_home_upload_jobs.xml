@@ -421,59 +421,31 @@
                     app:layout_constraintStart_toStartOf="@+id/upload_job_input_postcode"
                     app:layout_constraintTop_toBottomOf="@+id/upload_job_input_postcode" />
 
-                <EditText
-                    android:id="@+id/upload_job_input_url"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/common_constraint_24"
-                    android:background="@drawable/background_upload_jobs_input_box"
-                    android:hint="@string/hint_input_url"
-                    android:inputType="text|textUri"
-                    android:paddingVertical="15dp"
-                    android:textColor="@color/grey"
-                    app:layout_constraintEnd_toEndOf="@+id/upload_job_input_address"
-                    app:layout_constraintStart_toStartOf="@+id/upload_job_input_address"
-                    app:layout_constraintTop_toBottomOf="@+id/upload_job_input_address" />
-
-                <TextView
-                    android:id="@+id/upload_job_title_url"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
-                    android:layout_marginTop="@dimen/upload_jobs_constraint_14"
-                    android:background="@drawable/background_reactangle_white"
-                    android:fontFamily="@font/inter"
-                    android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
-                    android:paddingRight="@dimen/uploadJobsInputTittlePadding"
-                    android:text="@string/title_location_url"
-                    app:layout_constraintStart_toStartOf="@+id/upload_job_input_url"
-                    app:layout_constraintTop_toBottomOf="@+id/upload_job_input_address" />
-
                 <TextView
                     android:id="@+id/upload_job_input_requirement"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginTop="@dimen/common_constraint_24"
+                    android:layout_marginTop="24dp"
                     android:layout_marginBottom="-16dp"
                     android:background="@drawable/background_upload_jobs_input_box"
                     app:layout_constraintBottom_toBottomOf="@id/employer_upload_jobs_requirements_recyclerview"
-                    app:layout_constraintEnd_toEndOf="@+id/upload_job_input_url"
-                    app:layout_constraintStart_toStartOf="@+id/upload_job_input_url"
-                    app:layout_constraintTop_toBottomOf="@+id/upload_job_input_url" />
+                    app:layout_constraintEnd_toEndOf="@+id/upload_job_input_address"
+                    app:layout_constraintStart_toStartOf="@+id/upload_job_input_address"
+                    app:layout_constraintTop_toBottomOf="@+id/upload_job_input_address" />
 
                 <TextView
                     android:id="@+id/upload_job_title_requirement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/uploadJobsInputTittleConstraint"
-                    android:layout_marginTop="@dimen/upload_jobs_constraint_14"
+                    android:layout_marginTop="16dp"
                     android:background="@drawable/background_reactangle_white"
                     android:fontFamily="@font/inter"
                     android:paddingLeft="@dimen/uploadJobsInputTittlePadding"
                     android:paddingRight="@dimen/uploadJobsInputTittlePadding"
                     android:text="@string/title_requirements"
                     app:layout_constraintStart_toStartOf="@+id/upload_job_input_requirement"
-                    app:layout_constraintTop_toBottomOf="@+id/upload_job_input_url" />
+                    app:layout_constraintTop_toBottomOf="@+id/upload_job_input_address" />
 
                 <ImageButton
                     android:id="@+id/upload_job_requirement_button_add"

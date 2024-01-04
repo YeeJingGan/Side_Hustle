@@ -37,7 +37,7 @@ class EmployerMyJobsNegotiatingApplicantsAdapter(
                 if(latestNegotiation.negotiator == "EMPLOYER"){
                     binding.offerStatus.text = "Offer Sent"
                 }else{
-                    binding.offerStatus.text = "Pending Review"
+                    binding.offerStatus.text = "Pending Offer"
                 }
 
                 if(application.status != "NEGOTIATING"){

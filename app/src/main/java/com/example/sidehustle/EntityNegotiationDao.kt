@@ -20,7 +20,7 @@ interface EntityNegotiationDao {
     @Query("DELETE FROM negotiation_table")
     suspend fun clear()
 
-    @Query("SELECT * FROM negotiation_table WHERE employeeID = :employeeID AND jobID = :jobID LIMIT 1")
+    @Query("SELECT * FROM negotiation_table WHERE employeeID = :employeeID AND jobID = :jobID ORDER BY negotiationID DESC LIMIT 1")
     suspend fun getLatestNegotiationByEmployeeIDAndJobID(employeeID:Long, jobID:Long):EntityNegotiation
 
     @Query("SELECT * FROM negotiation_table ORDER BY negotiationID ASC")

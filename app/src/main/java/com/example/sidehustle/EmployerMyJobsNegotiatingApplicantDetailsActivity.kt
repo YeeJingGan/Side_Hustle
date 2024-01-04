@@ -4,9 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
@@ -69,7 +67,7 @@ class EmployerMyJobsNegotiatingApplicantDetailsActivity : AppCompatActivity() {
             LinearLayoutManager(this)
 
         binding.employerMyJobsNegotiatingApplicantDetailsViewpager.adapter =
-            EmployerMyProfileReviewsCommentsAdapter(
+            EmployerNegotiatingApplicantsDetailsReviewsCommentsAdapter(
                 emptyList(), viewModel
             )
 
@@ -99,7 +97,7 @@ class EmployerMyJobsNegotiatingApplicantDetailsActivity : AppCompatActivity() {
                 )
 
             ratings = viewModel.getRatingByEmployeeIDAndCommenter(employeeID, "EMPLOYER")
-            val adapter = EmployerMyProfileReviewsCommentsAdapter(
+            val adapter = EmployerNegotiatingApplicantsDetailsReviewsCommentsAdapter(
                 ratings, viewModel
             )
             binding.employerMyJobsNegotiatingApplicantDetailsViewpager.adapter = adapter
@@ -143,7 +141,7 @@ class EmployerMyJobsNegotiatingApplicantDetailsActivity : AppCompatActivity() {
             )
             intentComment.putExtra("jobID",job.jobID)
             intentComment.putExtra("employeeID",employee.employeeID)
-            startActivity(intent)
+            startActivity(intentComment)
         }
     }
 
