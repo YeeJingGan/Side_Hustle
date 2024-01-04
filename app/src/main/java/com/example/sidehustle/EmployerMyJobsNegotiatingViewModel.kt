@@ -38,8 +38,12 @@ class EmployerMyJobsNegotiatingViewModel(private val application: Application) :
         return ratingRepository.getAverageRatingByEmployeeIDAndCommenter(employerID,commenter)
     }
 
-    suspend fun getLastestNegotiationByEmployeeIDAndJobID(employeeID:Long,jobID:Long):EntityNegotiation{
+    suspend fun getLatestNegotiationByEmployeeIDAndJobID(employeeID:Long, jobID:Long):EntityNegotiation{
         return negotiationRepository.getLatestNegotiationByEmployeeIDAndJobID(employeeID,jobID)
+    }
+
+    suspend fun getApplicationByEmployeeIDAndJobID(employeeID: Long,jobID: Long):EntityApplication{
+        return applicationRepository.getApplicationByEmployeeIDAndJobID(employeeID,jobID)
     }
 
 }

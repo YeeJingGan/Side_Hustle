@@ -2,6 +2,7 @@ package com.example.sidehustle
 
 import android.content.Intent
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -29,12 +30,18 @@ class EmployerMyJobsNegotiatingApplicantsAdapter(
             viewModel.viewModelScope.launch {
                 starCount = viewModel.getAverageRatingByEmployeeIDAndCommenter(employee.employeeID,"EMPLOYER").toInt()
                 updateStarColors(starCount)
-                val latestNegotiation = viewModel.getLastestNegotiationByEmployeeIDAndJobID(employee.employeeID,job.jobID)
+                val latestNegotiation = viewModel.getLatestNegotiationByEmployeeIDAndJobID(employee.employeeID,job.jobID)
+
+                val application = viewModel.getApplicationByEmployeeIDAndJobID(employee.employeeID,job.jobID)
 
                 if(latestNegotiation.negotiator == "EMPLOYER"){
                     binding.offerStatus.text = "Offer Sent"
                 }else{
                     binding.offerStatus.text = "Pending Review"
+                }
+
+                if(application.status != "NEGOTIATING"){
+                    binding.offerStatus.text = application.status
                 }
 
                 binding.applicantsWagesOffered.text = "RM ${latestNegotiation.pay}"

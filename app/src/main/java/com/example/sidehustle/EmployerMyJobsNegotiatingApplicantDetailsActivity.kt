@@ -44,15 +44,6 @@ class EmployerMyJobsNegotiatingApplicantDetailsActivity : AppCompatActivity() {
             showConfirmationDialog("ACCEPT")
         }
 
-        binding.negotiateApplicantButton.setOnClickListener {
-            val context = it.context
-            val intent = Intent(
-                context,
-                EmployerMyJobsNegotiatingApplicantDetailsNegotiateActivity::class.java
-            )
-            startActivity(intent)
-        }
-
         viewModel = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
@@ -132,9 +123,28 @@ class EmployerMyJobsNegotiatingApplicantDetailsActivity : AppCompatActivity() {
                 }
             }
 
+            val application = viewModel.getApplicationByEmployeeIDAndJobID(employeeID, jobID)
+            if (application.status != "NEGOTIATING"){
+                binding.rejectApplicantButton.isEnabled = false
+                binding.rejectApplicantButton.visibility = View.GONE
+                binding.negotiateApplicantButton.isEnabled = false
+                binding.negotiateApplicantButton.visibility = View.GONE
+                binding.acceptApplicantButton.isEnabled = false
+                binding.acceptApplicantButton.visibility = View.GONE
+            }
+
         }
 
-
+        binding.negotiateApplicantButton.setOnClickListener {
+            val context = it.context
+            val intentComment = Intent(
+                context,
+                EmployerMyJobsNegotiatingApplicantDetailsNegotiateActivity::class.java
+            )
+            intentComment.putExtra("jobID",job.jobID)
+            intentComment.putExtra("employeeID",employee.employeeID)
+            startActivity(intent)
+        }
     }
 
     private fun updateStarColors(starsCount: Int) {
@@ -189,12 +199,10 @@ class EmployerMyJobsNegotiatingApplicantDetailsActivity : AppCompatActivity() {
 
     private fun updateStatus(message: String){
         viewModel.viewModelScope.launch {
-            Log.i("JOB",job.jobID.toString()+employee.employeeID.toString()+"${message}ED")
-            viewModel.updateStatus(job.jobID, employee.employeeID, "${message}ED")
-
-//                if ("${message}ED".contains("REJECTED")) {
-//                    finish()
-//                }
+            viewModel.updateStatus(employee.employeeID, job.jobID, "${message}ED")
+            if ("${message}ED".contains("REJECTED")) {
+                finish()
+            }
         }
     }
 }

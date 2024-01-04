@@ -37,6 +37,7 @@ class EmployerMyJobsNegotiatingJobsAdapter(
             viewModel.viewModelScope.launch {
                 binding.applicantCount = viewModel.getApplicantCount(job.jobID)
                 val negotiatingEmployees = viewModel.getNegotiatingEmployees(job.jobID)
+
                 adapter = EmployerMyJobsNegotiatingApplicantsAdapter(negotiatingEmployees,viewModel,job)
                 binding.employerMyJobsNegotiatingRecyclerview.adapter = adapter
             }

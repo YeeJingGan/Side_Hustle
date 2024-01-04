@@ -1,6 +1,7 @@
 package com.example.sidehustle
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 
 class EmployerMyJobsNegotiatingApplicantDetailsViewModel(private val application: Application) :
@@ -54,7 +55,11 @@ class EmployerMyJobsNegotiatingApplicantDetailsViewModel(private val application
         return ratingRepository.getRatingByEmployeeIDAndCommenter(employeeID, commenter)
     }
 
-    suspend fun updateStatus(employeeId: Long, jobId: Long, status: String) {
-        applicationRepository.updateStatus(employeeId, jobId, status)
+    suspend fun updateStatus(employeeID: Long, jobID: Long, status: String) {
+        applicationRepository.updateStatus(employeeID, jobID, status)
+    }
+
+    suspend fun getApplicationByEmployeeIDAndJobID(employeeID: Long,jobID: Long):EntityApplication{
+        return applicationRepository.getApplicationByEmployeeIDAndJobID(employeeID,jobID)
     }
 }
