@@ -2,6 +2,7 @@ package com.example.sidehustle
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -108,21 +109,23 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
         viewModel.viewModelScope.launch {
             val employee = viewModel.getEmployee(2)
             if (employee != null) {
+                val application = EntityApplication(
+                    2,
+                    finalJobID,
+                    "NEGOTIATING"
+                )
+                viewModel.insertApplication(application)
                 val negotiation = EntityNegotiation(
                     0,
                     2,
                     finalJobID,
                     finalWages,
                     binding.jobApplicationComment.toString(),
-                    employee.employeeUsername
+                    "EMPLOYEE"
                 )
                 viewModel.insertNegotiation(negotiation)
-                val application = EntityApplication(
-                    2,
-                    finalJobID,
-                    "Negotiating"
-                )
-                viewModel.insertApplication(application)
+                Toast.makeText(this@EmployeeHomeJobDetailsApplyJobsActivity, "Application sent", Toast.LENGTH_SHORT)
+                    .show()
             } else {
                 Toast.makeText(applicationContext, "An unknown error occured", Toast.LENGTH_SHORT)
                     .show()
@@ -130,6 +133,7 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
                 setResult(RESULT_OK, Intent().putExtra("jobID", finalJobID))
 
         }
+        binding.employeeApplicationApplyButton.visibility = View.GONE
         finish()
     }
 

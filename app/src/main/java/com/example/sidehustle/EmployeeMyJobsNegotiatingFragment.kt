@@ -28,11 +28,11 @@ class EmployeeMyJobsNegotiatingFragment : Fragment() {
 
 
         var adapter = EmployeeMyJobsNegotiatingAdapter(emptyList())
-
-        viewModel.negotiatingJobs.observe(viewLifecycleOwner){
-            adapter = EmployeeMyJobsNegotiatingAdapter(it)
-            binding.employeeNegotiatingRecyclerview.adapter = adapter
-        }
+//
+//        viewModel.negotiatingJobs.observe(viewLifecycleOwner){
+//            adapter = EmployeeMyJobsNegotiatingAdapter(it)
+//            binding.employeeNegotiatingRecyclerview.adapter = adapter
+//        }
 
         binding.employeeNegotiatingRecyclerview.adapter = adapter
         binding.employeeNegotiatingRecyclerview.layoutManager = LinearLayoutManager(requireContext())

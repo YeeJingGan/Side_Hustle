@@ -3,17 +3,21 @@ package com.example.sidehustle
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.liveData
 
 class EmployeeMyJobsNegotiatingViewModel(private val application: Application) :
     AndroidViewModel(application) {
-    private val jobRepository: EntityJobRepository
-    val negotiatingJobs: LiveData<List<EntityJob>>
+    private val negotiationRepository: EntityNegotiationRepository
 
     init {
         val database = SideHustleDatabase.getDatabase(application)
-        jobRepository = EntityJobRepository(database.jobDao())
-        negotiatingJobs = jobRepository.allData
+        negotiationRepository = EntityNegotiationRepository(database.negotiationDao())
 
-        // TODO : REPLACE WITH REALREAL ONCE HAVE APPLICATION
+    }
+
+    fun getLatestNegotiationsByEmployeeID(employeeID: Long): LiveData<List<EntityNegotiation>> {
+        return liveData {
+            emit(negotiationRepository.getLatestNegotiationsByEmployeeID(employeeID))
+        }
     }
 }

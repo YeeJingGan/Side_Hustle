@@ -1,6 +1,7 @@
 package com.example.sidehustle
 
 import android.app.AlertDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,40 +9,47 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.sidehustle.databinding.ActivityEmployeeMyJobsNegotiatingJobDetailsNegotiateBinding
 
 class EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity : AppCompatActivity() {
     lateinit var binding: ActivityEmployeeMyJobsNegotiatingJobDetailsNegotiateBinding
+    lateinit var viewModel: EmployeeMyJobsNegotiatingNegotiateViewModel
     var wagesAmount: Int = 10
+    var finalWages: Int = 0
+    var jobID: Long = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =
             DataBindingUtil.setContentView(this, R.layout.activity_employee_my_jobs_negotiating_job_details_negotiate)
-
+        viewModel =
+            ViewModelProvider(this).get(EmployeeMyJobsNegotiatingNegotiateViewModel::class.java)
         val intent = intent
 
-        val jobID = intent.getLongExtra("jobID", -100)
+        jobID = intent.getLongExtra("jobID", -100)
         Log.i("JOB ID", jobID.toString())
 
-        setSupportActionBar(binding.employeeNegotiateWithEmployerToolbar)
+        viewModel.selectedJob.observe(this, Observer { selectedJob ->
+            selectedJob?.let {
+                wagesAmount = selectedJob.wages
+                finalWages =wagesAmount
+                updateWages(wagesAmount)
+            }
+        })
+        viewModel.get(jobID)
 
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_36px)
-            setDisplayShowTitleEnabled(false)
-        }
-
-        updateWages(wagesAmount)
 
         binding.employeeNegotiateWithEmployerPlusButton.setOnClickListener {
-            wagesAmount += 10
-            updateWages(wagesAmount)
+            finalWages += 10
+            updateWages(finalWages)
         }
 
         binding.employeeNegotiateWithEmployerMinusButton.setOnClickListener {
-            if (wagesAmount > 10) {
+            if (finalWages > wagesAmount) {
                 wagesAmount -= 10
-                updateWages(wagesAmount)
+                updateWages(finalWages)
             }
         }
 
@@ -53,6 +61,10 @@ class EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity : AppCompatActivity()
             if (validateAllFields()) {
                 showOfferConfirmationDialog()
             }
+        }
+
+        binding.employeeNegotiateBackButton.setOnClickListener {
+            finish()
         }
 
     }
@@ -119,7 +131,15 @@ class EmployeeMyJobsNegotiatingJobDetailsNegotiateActivity : AppCompatActivity()
 
     private fun offer() {
         // TODO: UPLOAD DATABASE HERE
-        Toast.makeText(this, "HAHA NOT YET OFFERED NEED TO DATABASE", Toast.LENGTH_SHORT).show()
+        val negotiation = EntityNegotiation(
+            0,
+            2,
+            jobID,
+            finalWages,
+            binding.employeeNegotiateWithEmployerCommentInput.toString(),
+            "EMPLOYEE"
+        )
+        viewModel.insertNegotiation(negotiation)
         finish()
     }
 

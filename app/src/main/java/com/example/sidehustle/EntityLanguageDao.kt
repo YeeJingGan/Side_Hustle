@@ -19,4 +19,7 @@ interface EntityLanguageDao {
     @Query("SELECT * FROM language_table WHERE employeeID = :employeeID AND jobID =:jobID")
     suspend fun getByEmployeeIDAndJobID(employeeID:Long,jobID:Long):List<EntityLanguage>
 
+    @Query("SELECT * FROM language_table ORDER BY languageID ASC")
+    fun getAll(): LiveData<List<EntityLanguage>>
+
 }

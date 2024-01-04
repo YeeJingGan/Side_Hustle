@@ -8,12 +8,10 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class EmployeeHomeJobDetailsApplyJobsViewModel(private val application: Application): AndroidViewModel(application) {
+class EmployeeMyJobsNegotiatingNegotiateViewModel(private val application: Application): AndroidViewModel(application) {
     private val jobRepository: EntityJobRepository
-    private val applicationRepository : EntityApplicationRepository
     private val employeeRepository : EntityEmployeeRepository
     private val negotiationRepository : EntityNegotiationRepository
-    private val languageRepository : EntityLanguageRepository
 
     val allData: LiveData<List<EntityJob>>
 
@@ -26,10 +24,8 @@ class EmployeeHomeJobDetailsApplyJobsViewModel(private val application: Applicat
         val database = SideHustleDatabase.getDatabase(application)
         jobRepository = EntityJobRepository(database.jobDao())
         allData = jobRepository.getJobsStartingTodayOrLater()
-        applicationRepository = EntityApplicationRepository(database.applicationDao())
         employeeRepository = EntityEmployeeRepository(database.employeeDao())
         negotiationRepository = EntityNegotiationRepository(database.negotiationDao())
-        languageRepository = EntityLanguageRepository(database.languageDao())
     }
 
     fun get(jobID:Long){
@@ -42,12 +38,6 @@ class EmployeeHomeJobDetailsApplyJobsViewModel(private val application: Applicat
         return employeeRepository.get(employeeID)
     }
 
-    fun insertApplication(application: EntityApplication) {
-        viewModelScope.launch(Dispatchers.IO) {
-            applicationRepository.addApplication(application)
-        }
-    }
-
     fun insertNegotiation(negotiation: EntityNegotiation) {
         viewModelScope.launch(Dispatchers.IO) {
             negotiationRepository.insert(negotiation)
@@ -55,9 +45,4 @@ class EmployeeHomeJobDetailsApplyJobsViewModel(private val application: Applicat
     }
 
 
-    fun insertLanguage(language: EntityLanguage){
-        viewModelScope.launch(Dispatchers.IO){
-            languageRepository.insert(language)
-        }
-    }
 }
