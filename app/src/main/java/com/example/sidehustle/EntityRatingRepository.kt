@@ -14,4 +14,12 @@ class EntityRatingRepository(private val ratingDao: EntityRatingDao) {
         return value ?: 0.0
     }
 
+    suspend fun getAverageRatingByEmployeeIDAndCommenter(employeeID : Long,commenter : String):Double{
+        return ratingDao.getAverageRatingByEmployeeIDAndCommenter(employeeID,commenter) ?: 0.0
+    }
+
+    suspend fun getRatingByEmployeeIDAndCommenter(employeeID: Long,commenter: String):List<EntityRating>{
+        return ratingDao.getRatingByEmployeeIDAndCommenter(employeeID,commenter)
+    }
+
 }

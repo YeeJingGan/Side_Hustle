@@ -165,7 +165,6 @@
         app:layout_constraintEnd_toStartOf="@+id/my_profile_next_review_button"
         app:layout_constraintStart_toEndOf="@+id/my_profile_previous_review_button"
         app:layout_constraintTop_toBottomOf="@+id/my_profile_reviews_comments_textview">
-
     </androidx.viewpager2.widget.ViewPager2>
 
     <View

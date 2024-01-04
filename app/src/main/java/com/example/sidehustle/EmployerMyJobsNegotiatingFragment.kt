@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.FragmentEmployerMyJobsNegotiatingBinding
+import kotlinx.coroutines.launch
 
 
 class EmployerMyJobsNegotiatingFragment : Fragment() {
@@ -26,13 +28,16 @@ class EmployerMyJobsNegotiatingFragment : Fragment() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
         ).get(EmployerMyJobsNegotiatingViewModel::class.java)
 
+        val employerID = 1L
+        var adapter = EmployerMyJobsNegotiatingJobsAdapter(emptyList(),viewModel)
 
-        var adapter = EmployerMyJobsNegotiatingJobsAdapter(emptyList(),viewModel,this)
 
-        viewModel.negotiatingJobs.observe(viewLifecycleOwner){
-            adapter = EmployerMyJobsNegotiatingJobsAdapter(it,viewModel,this)
+        viewModel.viewModelScope.launch {
+            val negotiatingJobs = viewModel.getByEmployerIDApprovedJobsWithApplications(employerID)
+            adapter = EmployerMyJobsNegotiatingJobsAdapter(negotiatingJobs,viewModel)
             binding.employerNegotiatingRecyclerview.adapter = adapter
         }
+
 
         binding.employerNegotiatingRecyclerview.adapter = adapter
         binding.employerNegotiatingRecyclerview.layoutManager = LinearLayoutManager(requireContext())

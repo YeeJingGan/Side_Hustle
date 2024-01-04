@@ -23,4 +23,7 @@ interface EntityEmployeeDao {
     @Query("SELECT * FROM employee_table ORDER BY employeeID ASC")
     fun getAll():LiveData<List<EntityEmployee>>
 
+    @Query("SELECT * FROM employee_table WHERE employeeID IN (SELECT employeeID FROM application_table WHERE jobID = :jobId)")
+    suspend fun getByJobIDNegotiatingEmployees(jobId: Long): List<EntityEmployee>
+
 }

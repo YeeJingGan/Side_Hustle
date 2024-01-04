@@ -1,6 +1,10 @@
 package com.example.sidehustle
-
 import androidx.lifecycle.LiveData
+
+class EntityNegotiationRepository (private val negotiationDao: EntityNegotiationDao) {
+    suspend fun getLatestNegotiationByEmployeeIDAndJobID(employeeID:Long, jobID:Long):EntityNegotiation{
+        return negotiationDao.getLatestNegotiationByEmployeeIDAndJobID(employeeID,jobID)
+    }
 
 class EntityNegotiationRepository(private val negotiationDao: EntityNegotiationDao) {
 

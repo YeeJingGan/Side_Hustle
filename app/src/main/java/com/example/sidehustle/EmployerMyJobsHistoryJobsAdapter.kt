@@ -31,17 +31,17 @@ class EmployerMyJobsHistoryJobsAdapter(
                 }
             }
 
-            var adapter = EmployerMyJobsNegotiatingApplicantsAdapter(emptyList())
-
-            viewModel.historyEmployees.observe(fragment.viewLifecycleOwner) {
-                adapter = EmployerMyJobsNegotiatingApplicantsAdapter(it)
-                binding.employerMyJobsHistoryRecyclerview.adapter = adapter
-            }
-
-            // TODO : WAGES AND STARS NOT YET GET FROM DATABASE
-            binding.employerMyJobsHistoryRecyclerview.adapter = adapter
-            binding.employerMyJobsHistoryRecyclerview.layoutManager =
-                LinearLayoutManager(binding.root.context)
+//            var adapter = EmployerMyJobsNegotiatingApplicantsAdapter(emptyList(),viewModel)
+//
+//            viewModel.historyEmployees.observe(fragment.viewLifecycleOwner) {
+//                adapter = EmployerMyJobsNegotiatingApplicantsAdapter(it, viewModel)
+//                binding.employerMyJobsHistoryRecyclerview.adapter = adapter
+//            }
+//
+//            // TODO : WAGES AND STARS NOT YET GET FROM DATABASE
+//            binding.employerMyJobsHistoryRecyclerview.adapter = adapter
+//            binding.employerMyJobsHistoryRecyclerview.layoutManager =
+//                LinearLayoutManager(binding.root.context)
             binding.executePendingBindings()
         }
     }

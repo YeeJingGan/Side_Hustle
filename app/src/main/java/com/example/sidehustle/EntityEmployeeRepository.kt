@@ -1,7 +1,6 @@
 package com.example.sidehustle
 
 import androidx.lifecycle.LiveData
-import org.w3c.dom.Entity
 
 class EntityEmployeeRepository(private val employeeDao:EntityEmployeeDao) {
 
@@ -10,7 +9,13 @@ class EntityEmployeeRepository(private val employeeDao:EntityEmployeeDao) {
     suspend fun insert(employee: EntityEmployee){
         employeeDao.insert(employee)
     }
-    suspend fun get(employeeID:Long): EntityEmployee ? {
-        return employeeDao.get(employeeID)
+
+    suspend fun getByJobIDNegotiatingEmployees(jobId: Long): List<EntityEmployee>{
+        return employeeDao.getByJobIDNegotiatingEmployees(jobId)
     }
+
+    suspend fun get(key:Long):EntityEmployee?{
+        return employeeDao.get(key)
+    }
+
 }
