@@ -266,4 +266,7 @@
     <string name="title_suspended_jobs">Suspended Jobs</string>
     <string name="settings_toolbarTitle">Settings</string>
     <string name="flagged_jobs_toolbarTitle">Flagged Jobs</string>
+    <string name="suspend_adminjobdetails">Suspend</string>
+    <string name="flag_adminjobdetails">Flag</string>
+    <string name="approve_admin_jobdetails">Approve</string>
 </resources>
