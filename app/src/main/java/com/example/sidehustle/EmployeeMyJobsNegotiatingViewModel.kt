@@ -15,9 +15,10 @@ class EmployeeMyJobsNegotiatingViewModel(private val application: Application) :
 
     }
 
-    fun getLatestNegotiationsByEmployeeID(employeeID: Long): LiveData<List<EntityNegotiation>> {
-        return liveData {
-            emit(negotiationRepository.getLatestNegotiationsByEmployeeID(employeeID))
-        }
+    suspend fun getLatestNegotiationByEmployeeIDAndJobID(
+        employeeID: Long,
+        jobID: Long
+    ): EntityNegotiation {
+        return negotiationRepository.getLatestNegotiationByEmployeeIDAndJobID(employeeID, jobID)
     }
 }

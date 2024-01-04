@@ -26,4 +26,7 @@ interface EntityNegotiationDao {
     @Query("SELECT * FROM negotiation_table ORDER BY negotiationID ASC")
     fun getAll(): LiveData<List<EntityNegotiation>>
 
+    @Query("SELECT * FROM negotiation_table WHERE employeeID = :employeeID AND (employeeID, jobID) IN (SELECT employeeID, jobID FROM negotiation_table WHERE employeeID = :employeeID GROUP BY employeeID, jobID HAVING MAX(negotiationID))")
+    suspend fun getLatestNegotiationsByEmployeeID(employeeID: Long): List<EntityNegotiation>
+
 }

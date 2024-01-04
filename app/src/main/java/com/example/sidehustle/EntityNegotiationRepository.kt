@@ -1,20 +1,17 @@
 package com.example.sidehustle
+
 import androidx.lifecycle.LiveData
 
-class EntityNegotiationRepository (private val negotiationDao: EntityNegotiationDao) {
-    suspend fun getLatestNegotiationByEmployeeIDAndJobID(employeeID:Long, jobID:Long):EntityNegotiation{
-        return negotiationDao.getLatestNegotiationByEmployeeIDAndJobID(employeeID,jobID)
-    }
 
 class EntityNegotiationRepository(private val negotiationDao: EntityNegotiationDao) {
 
     val allData: LiveData<List<EntityNegotiation>> = negotiationDao.getAll()
 
-    suspend fun insert(negotiation: EntityNegotiation){
+    suspend fun insert(negotiation: EntityNegotiation) {
         negotiationDao.insert(negotiation)
     }
 
-    suspend fun update(negotiation: EntityNegotiation){
+    suspend fun update(negotiation: EntityNegotiation) {
         negotiationDao.update(negotiation)
     }
 
@@ -22,4 +19,11 @@ class EntityNegotiationRepository(private val negotiationDao: EntityNegotiationD
         return negotiationDao.get(negotiationID)
     }
 
+    suspend fun getLatestNegotiationByEmployeeIDAndJobID(
+        employeeID: Long,
+        jobID: Long
+    ): EntityNegotiation {
+        return negotiationDao.getLatestNegotiationByEmployeeIDAndJobID(employeeID, jobID)
+    }
 }
+
