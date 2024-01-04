@@ -52,7 +52,7 @@
             app:layout_constraintStart_toStartOf="@+id/my_profile_profile_avatar"
             app:layout_constraintTop_toBottomOf="@+id/my_profile_profile_avatar"
             tools:text="@string/my_profile_name_txt"
-            android:text="@{employee.employeeUsername}"/>
+            android:text="Gan Yee Jing"/>
 
         <ImageView
             android:id="@+id/my_profile_star_1"
