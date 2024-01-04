@@ -100,7 +100,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
         viewModel.selectedJob.observe(this, Observer { selectedJob -> selectedJob?.let{
             binding.employeeJobDetailsCompanyLocation.text = selectedJob.state
             binding.employeeJobDetailsOfferedPosition.text = selectedJob.title
-            binding.employeeJobDetailsOfferedWages.text = selectedJob.wages.toString()
+            binding.employeeJobDetailsOfferedWages.text = "RM ${selectedJob.wages}"
             binding.employeeJobDetailsDate.text = "${selectedJob.startDate} to ${selectedJob.endDate}"
             binding.employeeJobDetailsTime.text = "${selectedJob.startTime} to ${selectedJob.endTime}"
             binding.employeeJobDetailsJobDesc.text = selectedJob.description

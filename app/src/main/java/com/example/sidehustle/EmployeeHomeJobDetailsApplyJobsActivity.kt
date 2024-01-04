@@ -9,37 +9,42 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployeeHomeJobDetailsApplyJobsBinding
+import kotlinx.coroutines.launch
 
 class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityEmployeeHomeJobDetailsApplyJobsBinding
-    var wagesAmount : Int = 10
-    lateinit var languageAdapter : EmployeeHomeJobDetailsApplyJobsLanguageAdapter
-    var JOBID : Long = -100
+    lateinit var languageAdapter: EmployeeHomeJobDetailsApplyJobsLanguageAdapter
+    lateinit var viewModel: EmployeeHomeJobDetailsApplyJobsViewModel
+    var finalJobID: Long = -100
+    var wagesAmount: Int = 20
+    var finalWages: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(
             this,
             R.layout.activity_employee_home_job_details_apply_jobs
         )
+        viewModel =
+            ViewModelProvider(this).get(EmployeeHomeJobDetailsApplyJobsViewModel::class.java)
 
         val intent = intent
         val jobID = intent.getLongExtra("jobID", -100)
         Toast.makeText(this, "JOBID is $jobID", Toast.LENGTH_SHORT).show()
 
-        JOBID = jobID
-        setupScreen()
+        finalJobID = jobID
 
-        getData()
+        getData(finalJobID)
 
-        setRecyclerView()
 
-        setListeners()
     }
 
-    private fun setupScreen() {
+    private fun setupScreen(wagesAmount: Int) {
         setSupportActionBar(binding.employeeHomeApplyJobsToolbar)
 
         supportActionBar?.apply {
@@ -47,14 +52,23 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_36px)
             setDisplayShowTitleEnabled(false)
         }
-
         updateWages(wagesAmount)
 
     }
 
-    private fun getData() {
+    private fun getData(finalJobID: Long) {
         // TODO : GET DATA HERE
-        return
+        viewModel.selectedJob.observe(this, Observer { selectedJob ->
+            selectedJob?.let {
+                wagesAmount = selectedJob.wages
+                finalWages =wagesAmount
+                setupScreen(wagesAmount)
+                setRecyclerView()
+                setListeners()
+            }
+        })
+        viewModel.get(finalJobID)
+
     }
 
     private fun validateAllFields(): Boolean {
@@ -89,26 +103,53 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
     }
 
     private fun apply() {
-        Toast.makeText(this, "HAHA NOT YET APPLY NEED DATABASE", Toast.LENGTH_SHORT).show()
         // TODO : UPLOAD TO DATABASE HERE
-        setResult(RESULT_OK, Intent().putExtra("jobID",JOBID))
+        //job,comment,pay,negotiator
+        viewModel.viewModelScope.launch {
+            val employee = viewModel.getEmployee(1)
+            if (employee != null) {
+                val negotiation = EntityNegotiation(
+                    0,
+                    1,
+                    finalJobID,
+                    finalWages,
+                    binding.jobApplicationComment.toString(),
+                    employee.employeeUsername
+                )
+                viewModel.insertNegotiation(negotiation)
+                val application = EntityApplication(
+                    1,
+                    finalJobID,
+                    "Negotiating"
+                )
+                viewModel.insertApplication(application)
+            } else {
+                Toast.makeText(applicationContext, "An unknown error occured", Toast.LENGTH_SHORT)
+                    .show()
+            }
+                setResult(RESULT_OK, Intent().putExtra("jobID", finalJobID))
+
+        }
         finish()
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
                 onBackPressed() // This will navigate back and finish the activity
                 return true
             }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }
 
-    override fun onBackPressed(){
+    override fun onBackPressed() {
         super.onBackPressed()
-        setResult(RESULT_OK, Intent().putExtra("jobID",JOBID))
+        setResult(RESULT_OK, Intent().putExtra("jobID", finalJobID))
         finish()
     }
+
     private fun showResetConfirmationDialog() {
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setTitle("Reset Confirmation")
@@ -122,7 +163,7 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
         dialogBuilder.create().show()
     }
 
-    private fun reset(){
+    private fun reset() {
         currentFocus?.let {
             it.clearFocus()
             hideSoftInput(it)
@@ -131,14 +172,13 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
         binding.apply {
             employerHomeApplyJobsScrollview.fullScroll(View.FOCUS_UP)
             jobApplicationComment.text = null
-            wagesAmount = 10
             updateWages(wagesAmount)
             languageAdapter.removeAllLanguages()
             employeeApplicationMinusLanguageButton.visibility = View.GONE
         }
     }
 
-    private fun setRecyclerView(){
+    private fun setRecyclerView() {
         languageAdapter = EmployeeHomeJobDetailsApplyJobsLanguageAdapter(mutableListOf(""))
         binding.employeeHomeApplyJobsRecyclerview.adapter = languageAdapter
         binding.employeeHomeApplyJobsRecyclerview.layoutManager = LinearLayoutManager(this)
@@ -154,16 +194,16 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
             showResetConfirmationDialog()
         }
         binding.employeeApplicationAddWagesButton.setOnClickListener {
-            wagesAmount += 10
-            updateWages(wagesAmount)
+            finalWages += 10
+            updateWages(finalWages)
         }
         binding.employeeApplicationMinusWagesButton.setOnClickListener {
-            if(wagesAmount > 10){
-                wagesAmount -= 10
-                updateWages(wagesAmount)
+            if (finalWages > wagesAmount) {
+                finalWages -= 10
+                updateWages(finalWages)
             }
         }
-        binding.employeeApplicationAddLanguageButton.setOnClickListener{
+        binding.employeeApplicationAddLanguageButton.setOnClickListener {
             languageAdapter.addLanguage()
             if (languageAdapter.itemCount > 1) {
                 binding.employeeApplicationMinusLanguageButton.visibility = View.VISIBLE
@@ -177,9 +217,10 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
                 binding.employeeApplicationMinusLanguageButton.visibility = View.GONE
             }
         }
+
     }
 
-    private fun updateWages(amount: Int){
+    private fun updateWages(amount: Int) {
         binding.employeeApplicationExpectedPay.text = "RM ${amount}"
     }
 

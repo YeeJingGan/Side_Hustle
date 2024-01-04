@@ -10,4 +10,7 @@ class EntityEmployeeRepository(private val employeeDao:EntityEmployeeDao) {
     suspend fun insert(employee: EntityEmployee){
         employeeDao.insert(employee)
     }
+    suspend fun get(employeeID:Long): EntityEmployee ? {
+        return employeeDao.get(employeeID)
+    }
 }

@@ -22,4 +22,5 @@ interface EntityEmployeeDao {
 
     @Query("SELECT * FROM employee_table ORDER BY employeeID ASC")
     fun getAll():LiveData<List<EntityEmployee>>
+
 }
