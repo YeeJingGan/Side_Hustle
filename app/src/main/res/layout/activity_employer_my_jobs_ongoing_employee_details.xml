@@ -74,7 +74,6 @@
                     android:layout_width="@dimen/portrait_width_height"
                     android:layout_height="@dimen/portrait_width_height"
                     android:contentDescription="@string/pic_description_employee_pic"
-                    app:layout_constraintBottom_toBottomOf="@+id/employee_details_view_resume_button"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/employer_my_jobs_employee_details_employee_name"
                     tools:src="@tools:sample/avatars" />
@@ -138,21 +137,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_employee_details_star_4"
                     app:layout_constraintStart_toEndOf="@+id/employer_my_jobs_employee_details_star_4" />
 
-                <Button
-                    android:id="@+id/employee_details_view_resume_button"
-                    android:layout_width="@dimen/large_button_width"
-                    android:layout_height="@dimen/button_width_height"
-                    android:backgroundTint="@color/theme_color"
-                    android:text="@string/button_text_view_resume"
-                    android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="@+id/employer_my_jobs_employee_details_star_1"
-                    app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_employee_details_star_3" />
-
                 <TextView
                     android:id="@+id/employer_my_jobs_employee_details_position"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/listViewConstraint"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/andika_new_basic_bold"
                     android:paddingLeft="4dp"
                     android:paddingRight="4dp"
@@ -160,7 +149,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/employee_details_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/employee_details_view_resume_button" />
+                    app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_employee_details_employee_pic" />
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -230,102 +219,55 @@
                     app:layout_constraintStart_toStartOf="@+id/employee_details_comment_header"
                     app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_2" />
 
-                <TableLayout
-                    android:id="@+id/tableLayout"
-                    android:layout_width="wrap_content"
+
+                <TextView
+                    android:id="@+id/applicant_details_language_title_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/theme_color"
+                    android:paddingVertical="10dp"
+                    android:text="Language"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@+id/applicant_details_language_proficiency_textview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/employee_details_languages_header" />
+
+                <TextView
+                    android:id="@+id/applicant_details_language_proficiency_textview"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="@+id/employee_details_comment"
-                    app:layout_constraintTop_toBottomOf="@+id/employee_details_languages_header">
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/theme_color"
+                    android:paddingVertical="10dp"
+                    android:text="Proficiency"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/applicant_details_language_title_textview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/applicant_details_language_title_textview"
+                    app:layout_constraintTop_toTopOf="@+id/applicant_details_language_title_textview" />
 
-                    <TableRow
-                        android:id="@+id/table_row_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/employer_my_jobs_negotiating_appplicant_details_recyclerview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/applicant_details_language_proficiency_textview"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/applicant_details_language_title_textview"
+                    app:layout_constraintTop_toBottomOf="@+id/applicant_details_language_title_textview"
+                    tools:listitem="@layout/listitem_employer_my_jobs_applicant_details_languages" />
 
-                        <TextView
-                            android:id="@+id/employee_details_languages_header_2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/background_rectangle_theme_color"
-                            android:fontFamily="@font/inter"
-                            android:paddingLeft="@dimen/list_item_padding"
-                            android:paddingTop="@dimen/list_item_padding"
-                            android:paddingRight="@dimen/list_item_padding"
-                            android:paddingBottom="@dimen/list_item_padding"
-                            android:text="@string/title_languages"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/employee_details_text_size" />
-
-                        <TextView
-                            android:id="@+id/employee_details_proficiency_header"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/background_rectangle_theme_color"
-                            android:fontFamily="@font/inter"
-                            android:paddingLeft="@dimen/list_item_padding"
-                            android:paddingTop="@dimen/list_item_padding"
-                            android:paddingRight="@dimen/list_item_padding"
-                            android:paddingBottom="@dimen/list_item_padding"
-                            android:text="@string/title_proficiency"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/employee_details_text_size"
-                            app:layout_constraintBottom_toBottomOf="@+id/table_row_1"
-                            app:layout_constraintStart_toEndOf="@+id/table_row_1"
-                            app:layout_constraintTop_toTopOf="@+id/table_row_1" />
-                    </TableRow>
-
-
-                    <TableRow
-                        android:id="@+id/table_row_2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/employee_details_language_value"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/background_reactangle_white"
-                            android:fontFamily="@font/inter"
-                            android:paddingLeft="@dimen/list_item_padding"
-                            android:paddingTop="@dimen/list_item_padding"
-                            android:paddingRight="@dimen/list_item_padding"
-                            android:paddingBottom="@dimen/list_item_padding"
-                            android:text="@string/employee_language"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/employee_details_text_size" />
-
-                        <TextView
-                            android:id="@+id/employee_details_proficiency_value"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/background_reactangle_white"
-                            android:fontFamily="@font/inter"
-                            android:paddingLeft="@dimen/list_item_padding"
-                            android:paddingTop="@dimen/list_item_padding"
-                            android:paddingRight="@dimen/list_item_padding"
-                            android:paddingBottom="@dimen/list_item_padding"
-                            android:text="@string/employee_proficiency"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/employee_details_text_size"
-                            app:layout_constraintBottom_toBottomOf="@+id/employee_details_proficiency_header"
-                            app:layout_constraintStart_toEndOf="@+id/employee_details_proficiency_header"
-                            app:layout_constraintTop_toTopOf="@+id/employee_details_proficiency_header" />
-                    </TableRow>
-
-                </TableLayout>
 
                 <View
                     android:id="@+id/employer_details_divider_4"
                     android:layout_width="375dp"
                     android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+                    app:layout_constraintTop_toBottomOf="@+id/employer_my_jobs_negotiating_appplicant_details_recyclerview" />
 
                 <TextView
                     android:id="@+id/employee_details_review_header"
@@ -338,40 +280,6 @@
                     app:layout_constraintStart_toStartOf="@+id/employee_details_languages_header"
                     app:layout_constraintTop_toBottomOf="@+id/employer_details_divider_4" />
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPager2"
-                    android:layout_width="0dp"
-                    android:layout_height="800dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="296dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="#FF0000"
-                    app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/imageButton"
-                    app:layout_constraintTop_toBottomOf="@+id/employee_details_review_header" />
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@android:color/transparent"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/viewPager2"
-                    app:layout_constraintStart_toStartOf="@+id/employee_details_review_header"
-                    app:layout_constraintTop_toTopOf="@+id/viewPager2"
-                    app:srcCompat="@drawable/ic_minus"
-                    tools:visibility="visible" />
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@android:color/transparent"
-                    app:layout_constraintBottom_toBottomOf="@+id/viewPager2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/viewPager2"
-                    app:srcCompat="@drawable/ic_plus" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

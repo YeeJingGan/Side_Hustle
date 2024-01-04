@@ -1,5 +1,6 @@
 package com.example.sidehustle
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,6 +46,8 @@ class EmployerMyJobsOngoingJobsAdapter(
                 LinearLayoutManager(binding.root.context)
             binding.executePendingBindings()
         }
+
+
     }
 
     override fun getItemCount(): Int {
