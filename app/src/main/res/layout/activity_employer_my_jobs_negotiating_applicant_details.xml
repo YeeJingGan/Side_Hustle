@@ -5,6 +5,15 @@
 
     <data>
 
+        <variable
+            name="employee"
+            type="com.example.sidehustle.EntityEmployee" />
+        <variable
+            name="job"
+            type="com.example.sidehustle.EntityJob" />
+        <variable
+            name="negotiation"
+            type="com.example.sidehustle.EntityNegotiation" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,7 +111,6 @@
                     android:layout_width="@dimen/portrait_width_height"
                     android:layout_height="@dimen/portrait_width_height"
                     android:contentDescription="@string/pic_description_applicant_pic"
-                    app:layout_constraintBottom_toBottomOf="@+id/applicants_details_view_resume_button"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/applicants_details_applicant_name"
                     tools:src="@tools:sample/avatars" />
@@ -115,7 +123,7 @@
                     android:fontFamily="@font/andika_new_basic_bold"
                     android:paddingLeft="4dp"
                     android:paddingRight="4dp"
-                    android:text="@string/applicant_name"
+                    android:text="@{employee.employeeUsername}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/employee_details_text_size"
                     app:layout_constraintStart_toEndOf="@+id/applicants_details_applicants_pic"
@@ -166,30 +174,19 @@
                     app:layout_constraintBottom_toBottomOf="@+id/applicants_details_applicant_star_4"
                     app:layout_constraintStart_toEndOf="@+id/applicants_details_applicant_star_4" />
 
-                <Button
-                    android:id="@+id/applicants_details_view_resume_button"
-                    android:layout_width="@dimen/large_button_width"
-                    android:layout_height="@dimen/button_width_height"
-                    android:backgroundTint="@color/theme_color"
-                    android:text="@string/button_text_view_resume"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/button_text_size"
-                    app:layout_constraintStart_toStartOf="@+id/applicants_details_applicant_star_1"
-                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_applicant_star_3" />
-
                 <TextView
                     android:id="@+id/applicants_details_applicant_position"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/listViewConstraint"
+                    android:layout_marginTop="16dp"
                     android:fontFamily="@font/andika_new_basic_bold"
                     android:paddingLeft="4dp"
                     android:paddingRight="4dp"
-                    android:text="@string/employer_approved_jobs_position"
+                    android:text="@{job.title}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/employee_details_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_view_resume_button" />
+                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_applicants_pic" />
 
                 <ImageView
                     android:id="@+id/applicants_details_money_icon"
@@ -208,7 +205,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:fontFamily="@font/inter"
-                    android:text="@string/applicant_offered_wages"
+                    android:text="@{`RM ` + String.valueOf(negotiation.pay)}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/employee_details_text_size"
                     app:layout_constraintBottom_toBottomOf="@+id/applicants_details_money_icon"
@@ -241,52 +238,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/andika"
-                    android:text="@string/applicant_comment"
+                    android:text="@{negotiation.comment}"
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="@+id/applicants_details_money_icon"
                     app:layout_constraintTop_toBottomOf="@+id/applicants_details_comment_header" />
 
                 <View
-                    android:id="@+id/applicants_details_divider_2"
+                    android:id="@+id/applicants_details_divider_3"
                     android:layout_width="375dp"
                     android:layout_height="1dp"
-                    android:layout_marginStart="9dp"
-                    android:layout_marginTop="8dp"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/applicants_details_comment" />
-
-                <TextView
-                    android:id="@+id/applicants_details_document_header"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="@font/inter_bold"
-                    android:text="@string/title_supporting_document"
-                    android:textSize="@dimen/employee_details_text_size"
-                    app:layout_constraintStart_toStartOf="@+id/applicants_details_comment_header"
-                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_divider_2" />
-
-                <Button
-                    android:id="@+id/applicants_details_supporting_docuemnt_view_button"
-                    android:layout_width="@dimen/backButtonWidthHeight"
-                    android:layout_height="@dimen/backButtonWidthHeight"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/ic_picture_as_pdf_24px"
-                    android:contentDescription="@string/button_description_pdf"
-                    app:layout_constraintStart_toStartOf="@+id/applicants_details_comment"
-                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_document_header" />
-
-                <View
-                    android:id="@+id/applicants_details_divider_3"
-                    android:layout_width="375dp"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
-                    android:background="?android:attr/listDivider"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_supporting_docuemnt_view_button" />
 
                 <TextView
                     android:id="@+id/applicants_details_languages_header"
@@ -296,95 +260,46 @@
                     android:fontFamily="@font/inter_bold"
                     android:text="@string/title_languages"
                     android:textSize="@dimen/employee_details_text_size"
-                    app:layout_constraintStart_toStartOf="@+id/applicants_details_document_header"
+                    app:layout_constraintStart_toStartOf="@+id/applicants_details_comment_header"
                     app:layout_constraintTop_toBottomOf="@+id/applicants_details_divider_3" />
 
-                <TableLayout
-                    android:id="@+id/applicants_details_tableLayout"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/applicant_details_language_title_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/theme_color"
+                    android:paddingVertical="10dp"
+                    android:text="Language"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toStartOf="@+id/applicant_details_language_proficiency_textview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_languages_header" />
+
+                <TextView
+                    android:id="@+id/applicant_details_language_proficiency_textview"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintStart_toStartOf="@+id/applicants_details_supporting_docuemnt_view_button"
-                    app:layout_constraintTop_toBottomOf="@+id/applicants_details_languages_header">
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/theme_color"
+                    android:paddingVertical="10dp"
+                    android:text="Proficiency"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/applicant_details_language_title_textview"
+                    app:layout_constraintTop_toTopOf="@+id/applicant_details_language_title_textview" />
 
-                    <TableRow
-                        android:id="@+id/applicants_details_table_row_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="56dp">
-
-                        <TextView
-                            android:id="@+id/applicants_details_languages_header_2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/background_rectangle_theme_color"
-                            android:fontFamily="@font/inter"
-                            android:paddingLeft="@dimen/list_item_padding"
-                            android:paddingTop="@dimen/list_item_padding"
-                            android:paddingRight="@dimen/list_item_padding"
-                            android:paddingBottom="@dimen/list_item_padding"
-                            android:text="@string/title_languages"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/employee_details_text_size" />
-
-                        <TextView
-                            android:id="@+id/applicants_details_proficiency_header"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/background_rectangle_theme_color"
-                            android:fontFamily="@font/inter"
-                            android:paddingLeft="@dimen/list_item_padding"
-                            android:paddingTop="@dimen/list_item_padding"
-                            android:paddingRight="@dimen/list_item_padding"
-                            android:paddingBottom="@dimen/list_item_padding"
-                            android:text="@string/title_proficiency"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/employee_details_text_size"
-                            app:layout_constraintBottom_toBottomOf="@+id/applicants_details_table_row_1"
-                            app:layout_constraintStart_toEndOf="@+id/applicants_details_table_row_1"
-                            app:layout_constraintTop_toTopOf="@+id/applicants_details_table_row_1" />
-                    </TableRow>
-
-
-                    <TableRow
-                        android:id="@+id/applicants_details_table_row_2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/applicants_details_languages_value"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/background_reactangle_white"
-                            android:fontFamily="@font/inter"
-                            android:paddingLeft="@dimen/list_item_padding"
-                            android:paddingTop="@dimen/list_item_padding"
-                            android:paddingRight="@dimen/list_item_padding"
-                            android:paddingBottom="@dimen/list_item_padding"
-                            android:text="@string/applicant_language"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/employee_details_text_size" />
-
-                        <TextView
-                            android:id="@+id/applicants_details_proficiency_value"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/background_reactangle_white"
-                            android:fontFamily="@font/inter"
-                            android:paddingLeft="@dimen/list_item_padding"
-                            android:paddingTop="@dimen/list_item_padding"
-                            android:paddingRight="@dimen/list_item_padding"
-                            android:paddingBottom="@dimen/list_item_padding"
-                            android:text="@string/applicant_proficiency"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/employee_details_text_size"
-                            app:layout_constraintBottom_toBottomOf="@+id/applicants_details_proficiency_header"
-                            app:layout_constraintStart_toEndOf="@+id/applicants_details_proficiency_header"
-                            app:layout_constraintTop_toTopOf="@+id/applicants_details_proficiency_header" />
-                    </TableRow>
-
-                </TableLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/applicants_details_tableLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/applicant_details_language_proficiency_textview"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/applicant_details_language_title_textview"
+                    app:layout_constraintTop_toBottomOf="@+id/applicant_details_language_title_textview"
+                    tools:listitem="@layout/listitem_employer_my_jobs_applicant_details_languages" />
 
                 <View
                     android:id="@+id/applicants_details_divider_4"
@@ -410,7 +325,7 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPager2_2"
                     android:layout_width="0dp"
-                    android:layout_height="1500dp"
+                    android:layout_height="500dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
@@ -429,7 +344,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/viewPager2_2"
                     app:layout_constraintStart_toStartOf="@+id/applicants_details_review_header"
                     app:layout_constraintTop_toTopOf="@+id/viewPager2_2"
-                    app:srcCompat="@drawable/ic_minus"
+                    app:srcCompat="@drawable/ic_chevron_left_24px"
                     tools:visibility="visible" />
 
                 <ImageButton
@@ -440,7 +355,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/viewPager2_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/viewPager2_2"
-                    app:srcCompat="@drawable/ic_plus" />
+                    app:srcCompat="@drawable/ic_chevron_right_24px" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

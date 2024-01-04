@@ -46,7 +46,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/rowdies"
-            android:text="@string/applicant_offered_wages"
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/applicants_name"

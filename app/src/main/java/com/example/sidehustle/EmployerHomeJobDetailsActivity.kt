@@ -23,17 +23,12 @@ class EmployerHomeJobDetailsActivity : AppCompatActivity() {
         val intent = intent
         val jobID = intent.getLongExtra("jobID", -100)
 
-
-        Log.i("INTENT", jobID.toString())
-        Toast.makeText(this, "HI HI ID IS $jobID", Toast.LENGTH_SHORT).show()
-        // Test PASSED
-
         viewModel = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         ).get(EmployerHomeJobDetailsViewModel::class.java)
 
-        if (jobID.equals(-100)) {
+        if (jobID == -100L) {
             finish()
         }
 

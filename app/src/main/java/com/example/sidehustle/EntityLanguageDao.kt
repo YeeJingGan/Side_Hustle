@@ -16,5 +16,7 @@ interface EntityLanguageDao {
     suspend fun get(key: Long): EntityLanguage?
     @Query("DELETE FROM language_table")
     suspend fun clear()
+    @Query("SELECT * FROM language_table WHERE employeeID = :employeeID AND jobID =:jobID")
+    suspend fun getByEmployeeIDAndJobID(employeeID:Long,jobID:Long):List<EntityLanguage>
 
 }

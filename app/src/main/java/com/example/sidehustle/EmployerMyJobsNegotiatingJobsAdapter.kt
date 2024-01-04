@@ -5,15 +5,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sidehustle.databinding.ListitemEmployerMyJobsNegotiatingJobsBinding
+import kotlinx.coroutines.launch
 
 
 class EmployerMyJobsNegotiatingJobsAdapter(
     private val negotiatingJobs: List<EntityJob>,
     private val viewModel: EmployerMyJobsNegotiatingViewModel,
-    private val fragment: Fragment
 ) : RecyclerView.Adapter<EmployerMyJobsNegotiatingJobsAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ListitemEmployerMyJobsNegotiatingJobsBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -30,14 +31,15 @@ class EmployerMyJobsNegotiatingJobsAdapter(
                 }
             }
 
-            var adapter = EmployerMyJobsNegotiatingApplicantsAdapter(emptyList())
+            var adapter = EmployerMyJobsNegotiatingApplicantsAdapter(emptyList(),viewModel,job)
 
-            viewModel.negotiatingEmployees.observe(fragment.viewLifecycleOwner) {
-                adapter = EmployerMyJobsNegotiatingApplicantsAdapter(it)
+
+            viewModel.viewModelScope.launch {
+                binding.applicantCount = viewModel.getApplicantCount(job.jobID)
+                val negotiatingEmployees = viewModel.getNegotiatingEmployees(job.jobID)
+                adapter = EmployerMyJobsNegotiatingApplicantsAdapter(negotiatingEmployees,viewModel,job)
                 binding.employerMyJobsNegotiatingRecyclerview.adapter = adapter
             }
-
-            // TODO : WAGES AND STARS NOT YET GET FROM DATABASE
 
             binding.employerMyJobsNegotiatingRecyclerview.adapter = adapter
             binding.employerMyJobsNegotiatingRecyclerview.layoutManager =

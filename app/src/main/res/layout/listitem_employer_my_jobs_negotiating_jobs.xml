@@ -7,6 +7,9 @@
         <variable
             name="job"
             type="com.example.sidehustle.EntityJob" />
+        <variable
+            name="applicant_count"
+            type="int" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,7 +105,7 @@
             android:id="@+id/employer_my_jobs_negotiating_applicant_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/employer_applicants_num"
+            android:text="@{String.valueOf(applicant_count)}"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@+id/employer_my_jobs_negotiating_ic_applicants"
             app:layout_constraintEnd_toEndOf="parent"

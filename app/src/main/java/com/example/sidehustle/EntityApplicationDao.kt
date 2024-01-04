@@ -28,4 +28,6 @@ interface EntityApplicationDao {
 
     @Query("SELECT COUNT(DISTINCT employeeID) FROM application_table WHERE jobID = :jobID")
     suspend fun getApplicantCountByJobID(jobID:Long):Int
+
+
 }
