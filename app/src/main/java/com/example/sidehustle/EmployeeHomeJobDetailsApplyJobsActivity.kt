@@ -106,11 +106,11 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
         // TODO : UPLOAD TO DATABASE HERE
         //job,comment,pay,negotiator
         viewModel.viewModelScope.launch {
-            val employee = viewModel.getEmployee(1)
+            val employee = viewModel.getEmployee(2)
             if (employee != null) {
                 val negotiation = EntityNegotiation(
                     0,
-                    1,
+                    2,
                     finalJobID,
                     finalWages,
                     binding.jobApplicationComment.toString(),
@@ -118,7 +118,7 @@ class EmployeeHomeJobDetailsApplyJobsActivity : AppCompatActivity() {
                 )
                 viewModel.insertNegotiation(negotiation)
                 val application = EntityApplication(
-                    1,
+                    2,
                     finalJobID,
                     "Negotiating"
                 )
