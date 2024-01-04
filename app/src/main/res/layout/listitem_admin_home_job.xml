@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_listitem_admin_home_job"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:background="@drawable/background_job_list_rounded_corner">
+
+    <ImageView
+        android:id="@+id/job_profile_photo_imageview"
+        android:layout_width="@dimen/employee_home_job_list_photo_size"
+        android:layout_height="@dimen/employee_home_job_list_photo_size"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="@dimen/employee_home_job_list_photo_margin"
+        android:layout_marginBottom="@dimen/employee_home_job_list_photo_margin"
+        android:background="@drawable/background_circle_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sample_profile_photo" />
+
+    <TextView
+        android:id="@+id/job_name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/employee_home_job_list_textview_margin"
+        android:fontFamily="@font/andika_new_basic_bold"
+        android:textSize="@dimen/job_name_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/job_price_textview"
+        app:layout_constraintStart_toEndOf="@+id/job_profile_photo_imageview"
+        app:layout_constraintTop_toTopOf="@+id/job_profile_photo_imageview"
+        tools:text="@string/sample_text" />
+
+    <TextView
+        android:id="@+id/job_price_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rowdies"
+        android:textSize="@dimen/job_price_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/job_name_textview"
+        app:layout_constraintTop_toBottomOf="@+id/job_name_textview"
+        tools:text="@string/sample_text" />
+
+    <TextView
+        android:id="@+id/job_place_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/employee_home_job_list_textview_margin"
+        android:fontFamily="@font/andika"
+        android:text="Test3"
+        android:textSize="@dimen/job_place_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/details_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_details_height"
+        android:background="@drawable/background_button_details"
+        android:backgroundTint="@color/theme_yellow"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="0dp"
+        android:text="@string/details_txt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/job_profile_photo_imageview"
+        app:layout_constraintStart_toStartOf="@+id/job_price_textview"
+        app:layout_constraintTop_toBottomOf="@+id/job_price_textview"
+        app:srcCompat="@drawable/ic_distance_24px" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

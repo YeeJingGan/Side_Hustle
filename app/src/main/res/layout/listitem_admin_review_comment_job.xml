@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="20dp"
+    android:background="@drawable/background_job_list_rounded_corner">
+
+    <ImageView
+        android:id="@+id/review_profile_photo_1"
+        android:layout_width="@dimen/employee_home_job_list_photo_size"
+        android:layout_height="@dimen/employee_home_job_list_photo_size"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="@dimen/employee_home_job_list_photo_margin"
+        android:layout_marginBottom="@dimen/employee_home_job_list_photo_margin"
+        android:background="@drawable/background_circle_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sample_profile_photo" />
+
+    <ImageView
+        android:id="@+id/review_profile_photo_2"
+        android:layout_width="@dimen/employee_home_job_list_photo_size"
+        android:layout_height="@dimen/employee_home_job_list_photo_size"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="@dimen/employee_home_job_list_photo_margin"
+        android:background="@drawable/background_circle_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sample_profile_photo" />
+
+    <TextView
+        android:id="@+id/review_username_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/my_profile_name_txt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/review_username_2"
+        app:layout_constraintStart_toEndOf="@+id/review_profile_photo_1" />
+
+    <ImageView
+        android:id="@+id/review_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_forward_12px"
+        app:layout_constraintBottom_toBottomOf="@+id/review_username_1"
+        app:layout_constraintEnd_toStartOf="@+id/review_username_2"
+        app:layout_constraintStart_toEndOf="@+id/review_username_1"
+        app:layout_constraintTop_toTopOf="@+id/review_username_2" />
+
+    <TextView
+        android:id="@+id/review_username_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/employee_name"
+        app:layout_constraintEnd_toStartOf="@+id/review_yes_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/review_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="@string/employee_comment"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/review_username_2"
+        app:layout_constraintStart_toEndOf="@+id/review_profile_photo_2"
+        app:layout_constraintTop_toBottomOf="@+id/review_arrow" />
+
+    <ImageButton
+        android:id="@+id/review_yes_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/background_circle_theme_color"
+        android:src="@drawable/ic_check_18px"
+        app:layout_constraintBottom_toTopOf="@+id/review_no_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/review_no_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/background_circle_theme_color"
+        android:src="@drawable/ic_close_18px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/review_yes_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

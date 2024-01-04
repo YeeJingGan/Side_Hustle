@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_fragment_admin_jobs"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminJobsFragment">
+
+    <!--<ListView
+        android:id="@+id/admin_home_job_list_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/layout_admin_home_job_item">
+    </ListView>-->
+
+    <TextView
+        android:id="@+id/admin_home_title_approved_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/title_approved_jobs"
+        app:layout_constraintBottom_toTopOf="@+id/admin_home_divider_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/admin_home_button_expand_1" />
+
+    <ImageButton
+        android:id="@+id/admin_home_button_expand_1"
+        android:layout_width="@dimen/backButtonWidthHeight"
+        android:layout_height="@dimen/button_width_height"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/button_description_expand_less"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_expand_less"
+        app:tint="@color/theme_gray" />
+
+    <View
+        android:id="@+id/admin_home_divider_1"
+        android:layout_width="391dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_button_expand_1" />
+
+    <ListView
+        android:id="@+id/employer_home_listview_approved_jobs"
+        android:layout_width="350dp"
+        android:layout_height="540dp"
+        android:layout_marginTop="@dimen/list_view_constraint"
+        android:clickable="false"
+        android:dividerHeight="@dimen/listViewDividerHeight"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_divider_1"
+        tools:listitem="@layout/listitem_admin_home_job"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/admin_home_title_suspended_jobs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/title_suspended_jobs"
+        app:layout_constraintBottom_toTopOf="@+id/admin_home_divider_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/admin_home_button_expand_2" />
+
+    <ImageButton
+        android:id="@+id/admin_home_button_expand_2"
+        android:layout_width="@dimen/backButtonWidthHeight"
+        android:layout_height="@dimen/backButtonWidthHeight"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/button_description_expand_less"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employer_home_listview_approved_jobs"
+        app:srcCompat="@drawable/ic_expand_less"
+        app:tint="@color/theme_gray" />
+
+    <View
+        android:id="@+id/admin_home_divider_2"
+        android:layout_width="391dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_button_expand_2" />
+
+    <ListView
+        android:id="@+id/admin_home_listview_suspended_jobs"
+        android:layout_width="350dp"
+        android:layout_height="540dp"
+        android:layout_marginTop="@dimen/list_view_constraint"
+        android:clickable="false"
+        android:dividerHeight="@dimen/listViewDividerHeight"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_home_divider_2"
+        tools:listitem="@layout/listitem_admin_home_job"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/flag_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/favorite_button_margin"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_circle_theme_color"
+        android:contentDescription="@string/flag_button_description"
+        android:padding="@dimen/favorite_button_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_flag_24px"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

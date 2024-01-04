@@ -234,4 +234,39 @@
     <string name="password">Password</string>
     <string name="new_username">New Username</string>
     <string name="new_password">New Password</string>
+    <!-- Jrom's Strings   -->
+    <string name="login_instruction">Please enter your registration email and password</string>
+    <string name="login_welcome">Welcome to Side Hustle</string>
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Password</string>
+    <string name="login_continue">Continue</string>
+    <string name="login_or">or</string>
+    <string name="login_signupPrompt">Don\'t Have an Account? Sign up here!</string>
+    <string name="login_signup">Sign Up</string>
+    <string name="login_forgotPassword">Forgot Password?</string>
+    <string name="register_employer">Employer</string>
+    <string name="register_employerDescription">Find the right employee!</string>
+    <string name="register_employee">Employee</string>
+    <string name="register_employeeDescription">Find the right job for you!</string>
+    <string name="register_whoareyou">Who are you?</string>
+    <string name="register_toolbarTitle">Registration</string>
+    <string name="register_slogan">Value Your Work,\nNegotiate Your Worth</string>
+    <string name="register_joinUs">Join Side Hustle now. It\'s free!</string>
+    <string name="register_username">Username</string>
+    <string name="register_passwordShould">Your password should:</string>
+    <string name="register_minimumCharacter">Be a minimum of 8 characters</string>
+    <string name="register_leastLowercase">Include at least one lowercase character (a-z)</string>
+    <string name="register_leastUppercase">Include at least one uppercase character (A-Z)</string>
+    <string name="register_leastNumber">Include at least one number (0–9)</string>
+    <string name="register_leastUnique">Include at least one unique character (*,$,&amp;,…)</string>
+    <string name="register_terms">By signing up, you agree to our <a href="https://generator.lorem-ipsum.info/terms-and-conditions">Terms and Conditions</a></string>
+    <string name="admin_toolbar_search_hint">Search for jobs to review</string>
+    <string name="ic_description_review">Review Comments</string>
+    <string name="flag_button_description">Flag Button</string>
+    <string name="title_suspended_jobs">Suspended Jobs</string>
+    <string name="settings_toolbarTitle">Settings</string>
+    <string name="flagged_jobs_toolbarTitle">Flagged Jobs</string>
+    <string name="suspend_adminjobdetails">Suspend</string>
+    <string name="flag_adminjobdetails">Flag</string>
+    <string name="approve_admin_jobdetails">Approve</string>
 </resources>

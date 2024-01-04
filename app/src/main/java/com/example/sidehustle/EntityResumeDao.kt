@@ -16,5 +16,7 @@ interface EntityResumeDao {
     suspend fun get(key: Long): EntityResume?
     @Query("DELETE FROM resume_table")
     suspend fun clear()
+    @Query("SELECT * FROM resume_table ORDER BY employeeID DESC")
+    fun getAll():LiveData<List<EntityResume>>
 
 }
