@@ -3,24 +3,52 @@ package com.example.sidehustle
 import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.example.sidehustle.databinding.ActivityEmployerMyJobsNegotiatingApplicantDetailsNegotiateBinding
+import kotlinx.coroutines.launch
 
 class EmployerMyJobsNegotiatingApplicantDetailsNegotiateActivity : AppCompatActivity() {
-
+    lateinit var viewModel: EmployerMyJobsNegotiatingApplicantDetailsNegotiateViewModel
     lateinit var binding: ActivityEmployerMyJobsNegotiatingApplicantDetailsNegotiateBinding
     var wagesAmount: Int = 10
+    lateinit var job: EntityJob
+    var employeeID = -100L
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =
-            DataBindingUtil.setContentView(this, R.layout.activity_employer_my_jobs_negotiating_applicant_details_negotiate)
+            DataBindingUtil.setContentView(
+                this,
+                R.layout.activity_employer_my_jobs_negotiating_applicant_details_negotiate
+            )
 
         binding.employerMyJobsNegotiatingApplicantDetailsNegotiateBackButton.setOnClickListener { finish() }
 
         updateWages(wagesAmount)
+
+        viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        ).get(EmployerMyJobsNegotiatingApplicantDetailsNegotiateViewModel::class.java)
+
+        val intent = intent
+        val jobID = intent.getLongExtra("jobID", -100)
+        employeeID = intent.getLongExtra("employeeID", -100)
+
+        if (jobID == -100L || employeeID == -100L) {
+            Toast.makeText(this, "Unknown Error Occured", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+        viewModel.viewModelScope.launch {
+            job = viewModel.getByJobID(jobID)
+            wagesAmount = job.wages
+            updateWages(wagesAmount)
+        }
 
         binding.employerNegotiateWithEmployeePlusButton.setOnClickListener {
             wagesAmount += 10
@@ -28,7 +56,7 @@ class EmployerMyJobsNegotiatingApplicantDetailsNegotiateActivity : AppCompatActi
         }
 
         binding.employerNegotiateWithEmployeeMinusButton.setOnClickListener {
-            if (wagesAmount > 10) {
+            if (wagesAmount > job.wages) {
                 wagesAmount -= 10
                 updateWages(wagesAmount)
             }
@@ -108,7 +136,15 @@ class EmployerMyJobsNegotiatingApplicantDetailsNegotiateActivity : AppCompatActi
 
     private fun offer() {
         // TODO: UPLOAD DATABASE HERE
-        Toast.makeText(this, "HAHA NOT YET OFFERED NEED TO DATABASE", Toast.LENGTH_SHORT).show()
+
+        viewModel.viewModelScope.launch {
+            val comment = binding.employerNegotiateWithEmployeeCommentInput.text.toString()
+            Log.i("SADASHDHAS",job.jobID.toString()+employeeID.toString()+comment)
+            viewModel.insert(
+                EntityNegotiation(0, employeeID,job.jobID, wagesAmount, comment, "EMPLOYER")
+            )
+        }
+        Toast.makeText(this, "Job Offered", Toast.LENGTH_SHORT).show()
         finish()
     }
 

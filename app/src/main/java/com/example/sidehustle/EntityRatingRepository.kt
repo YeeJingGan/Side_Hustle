@@ -22,4 +22,7 @@ class EntityRatingRepository(private val ratingDao: EntityRatingDao) {
         return ratingDao.getRatingByEmployeeIDAndCommenter(employeeID,commenter)
     }
 
+    suspend fun getRatingsForEmployer(employerID: Long,commenter: String): List<EntityRating>{
+        return ratingDao.getRatingsForEmployer(employerID, commenter)
+    }
 }

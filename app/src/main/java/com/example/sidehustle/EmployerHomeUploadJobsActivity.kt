@@ -268,9 +268,12 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
                     )
 
                     if (selectedTime.timeInMillis < validTime.timeInMillis) {
+                        validTime.add(Calendar.HOUR_OF_DAY, 10)
+
                         textView.text = SimpleDateFormat(
                             "HH:mm", Locale.getDefault()
                         ).format(validTime.time)
+                        validTime.add(Calendar.HOUR_OF_DAY, -10)
 
                         Toast.makeText(
                             applicationContext,
@@ -367,13 +370,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
                 requestFocus()
                 showSoftInput(this)
             }
-        } else if (binding.uploadJobInputUrl.text.isNullOrEmpty()) {
-            Toast.makeText(this, "Location URL is empty", Toast.LENGTH_SHORT).show()
-            binding.uploadJobInputUrl.apply {
-                requestFocus()
-                showSoftInput(this)
-            }
-        } else if (binding.uploadJobInputDescription.text.isNullOrEmpty()) {
+        }  else if (binding.uploadJobInputDescription.text.isNullOrEmpty()) {
             Toast.makeText(this, "Description is empty", Toast.LENGTH_SHORT).show()
             binding.uploadJobInputDescription.apply {
                 requestFocus()
@@ -399,7 +396,6 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
     }
 
     private fun submit() {
-        // TODO: UPLOAD DATABASE HERE
         val jobTitle = binding.uploadJobInputJobTitle.text.toString()
         val startDate = binding.uploadJobInputStartDate.text.toString()
         val endDate = binding.uploadJobInputEndDate.text.toString()
@@ -428,6 +424,7 @@ class EmployerHomeUploadJobsActivity : AppCompatActivity() {
         viewModel.addJob(job)
         // TODO : TOBE REPLACE WITH REAL EMPLOYER ID AND IMPLEMENT REQUIREMENTS
         Toast.makeText(this, "Job successfully submitted", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     private fun hideSoftInput(view: View) {

@@ -107,7 +107,7 @@ abstract class SideHustleDatabase : RoomDatabase() {
                                     EntityApplication(2,2,"ACCEPTED"),
                                     EntityApplication(1,3,"ACCEPTED"),
                                     EntityApplication(2,3,"ACCEPTED"),
-                                    EntityApplication(1,4,"ACCEPTED"),
+                                    EntityApplication(1,4,"NEGOTIATING"),
                                 )
 
                                 val languages = listOf(

@@ -9,25 +9,25 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sidehustle.databinding.ListitemReviewsCommentsBinding
 import kotlinx.coroutines.launch
 
-class EmployerMyProfileReviewsCommentsAdapter(
+class EmployerNegotiatingApplicantsDetailsReviewsCommentsAdapter(
     private val ratings: List<EntityRating>,
     private val viewModel: EmployerMyJobsNegotiatingApplicantDetailsViewModel
 ) :
-    RecyclerView.Adapter<EmployerMyProfileReviewsCommentsAdapter.ViewHolder>() {
+    RecyclerView.Adapter<EmployerNegotiatingApplicantsDetailsReviewsCommentsAdapter.ViewHolder>() {
 
     inner class ViewHolder(private val binding: ListitemReviewsCommentsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(ratings: EntityRating) {
-            binding.rating = ratings
+        fun bind(rating: EntityRating) {
+            binding.rating = rating
 
 
             viewModel.viewModelScope.launch {
-                val employer = viewModel.getEmployerByJobIDAndEmployeeID(ratings.jobID,ratings.employeeID)
+                val employer = viewModel.getEmployerByJobIDAndEmployeeID(rating.jobID,rating.employeeID)
                 binding.username = employer.employerUsername
             }
 
-            updateStarColors(ratings.rating)
+            updateStarColors(rating.rating)
 
             binding.executePendingBindings()
         }

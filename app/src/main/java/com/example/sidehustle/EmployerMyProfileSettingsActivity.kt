@@ -14,7 +14,8 @@ class EmployerMyProfileSettingsActivity : AppCompatActivity() {
     lateinit var binding: ActivityEmployerMyProfileSettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding =  DataBindingUtil.setContentView(this, R.layout.activity_employer_my_profile_settings)
+        binding =
+            DataBindingUtil.setContentView(this, R.layout.activity_employer_my_profile_settings)
 
         val toolbar = findViewById<Toolbar>(R.id.employer_settings_toolbar)
         setSupportActionBar(toolbar)
@@ -25,39 +26,38 @@ class EmployerMyProfileSettingsActivity : AppCompatActivity() {
             setDisplayShowTitleEnabled(false)
         }
 
-        binding.employerSettingsRightIcon2.setOnClickListener{
+        binding.employerSettingsRightIcon2.setOnClickListener {
             val context = it.context
-            val intent = Intent(context,ChangePasswordActivity::class.java)
+            val intent = Intent(context, ChangePasswordActivity::class.java)
             context.startActivity(intent)
         }
-        binding.employerSettingsNotificationsSwitch.setOnCheckedChangeListener{ buttonView, isChecked -> // Display a Toast when the Switch is checked
+        binding.employerSettingsNotificationsSwitch.setOnCheckedChangeListener { buttonView, isChecked -> // Display a Toast when the Switch is checked
             if (isChecked) {
                 switchToast("Notification is enabled")
             } else {
                 switchToast("Notification is disabled")
             }
         }
-        binding.employerSettingsRightIcon5.setOnClickListener{
+        binding.employerSettingsRightIcon5.setOnClickListener {
             val phoneNum = "+60129869029"
             val dialIntent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNum"))
             startActivity(dialIntent)
         }
-        binding.employerSettingsRightIcon6.setOnClickListener{
+        binding.employerSettingsRightIcon6.setOnClickListener {
             val context = it.context
-            val intent = Intent(context,AboutSideHustleActivity::class.java) //To be updated
+            val intent = Intent(context, AboutSideHustleActivity::class.java) //To be updated
             context.startActivity(intent)
         }
-        binding.employerSettingsLogoutIcon.setOnClickListener{
+        binding.employerSettingsLogoutIcon.setOnClickListener {
             val context = it.context
-            val intent = Intent(context,MainActivity::class.java) //To be updated
+            val intent = Intent(context, MainActivity::class.java) //To be updated
             context.startActivity(intent)
         }
-        binding.employerSettingsLogoutTextview.setOnClickListener{
-            val context = it.context
-            val intent = Intent(context,MainActivity::class.java) //To be updated
-            context.startActivity(intent)
+        binding.employerSettingsLogoutTextview.setOnClickListener {
+            finishAffinity()
         }
     }
+
     fun switchToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }

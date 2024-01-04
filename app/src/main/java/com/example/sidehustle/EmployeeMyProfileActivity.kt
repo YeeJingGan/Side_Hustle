@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class EmployeeMyProfileActivity : AppCompatActivity() {
 
     lateinit var viewPager2: ViewPager2
-    lateinit var adapter: EmployerMyProfileReviewsCommentsAdapter
+    lateinit var adapter: EmployerNegotiatingApplicantsDetailsReviewsCommentsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_employee_my_profile)
@@ -104,9 +104,5 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
             val intent = Intent(it, destinationActivity)
             it.startActivity(intent)
         }
-    }
-    override fun onBackPressed() {
-        super.onBackPressed()
-        finishAffinity()
     }
 }
