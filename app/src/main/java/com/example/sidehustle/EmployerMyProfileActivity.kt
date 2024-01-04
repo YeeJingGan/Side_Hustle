@@ -33,7 +33,7 @@ class EmployerMyProfileActivity : AppCompatActivity() {
                         startActivity(
                             Intent(
                                 applicationContext,
-                                EmployeeMyJobsActivity::class.java
+                                EmployerMyJobsActivity::class.java
                             )
                         )
                         true
@@ -44,7 +44,7 @@ class EmployerMyProfileActivity : AppCompatActivity() {
                         startActivity(
                             Intent(
                                 applicationContext,
-                                EmployeeHomeActivity::class.java
+                                EmployerHomeActivity::class.java
                             )
                         )
                         true
