@@ -8,8 +8,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class EmployeeHomeJobDetailsViewModel(private val application: Application): AndroidViewModel(application) {
-
+class EmployeeMyJobsHistoryJobDetailsViewModel (private val application: Application): AndroidViewModel(application) {
     private val jobRepository: EntityJobRepository
     private val employerRepository: EntityEmployerRepository
     private val ratingRepository: EntityRatingRepository

@@ -53,25 +53,8 @@
             android:textColor="@color/white"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/employee_home_job_details_love_button"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageButton
-            android:id="@+id/employee_home_job_details_love_button"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/background_reactangle_white"
-            android:backgroundTint="@color/white"
-            android:contentDescription="@string/button_description_favourite"
-            android:fontFamily="@font/inter_bold"
-            android:src="@drawable/ic_favorite_24px"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/employee_home_job_details_apply_button"
-            app:layout_constraintTop_toTopOf="@+id/employee_home_job_details_apply_button"
-            app:tint="@android:color/holo_red_light" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ScrollView
             android:layout_width="0dp"

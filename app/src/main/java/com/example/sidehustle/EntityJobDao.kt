@@ -23,6 +23,8 @@ interface EntityJobDao {
     @Query("SELECT * FROM job_table ORDER BY jobID ASC")
     fun getAll(): LiveData<List<EntityJob>>
 
+    @Query("SELECT * FROM job_table WHERE jobID IN (:jobIds)")
+    suspend fun getJobsByIds(jobIds: List<Long>): List<EntityJob>
     @Query("SELECT * FROM job_table WHERE jobID = :jobID")
     suspend fun getByJobID(jobID: Long): EntityJob
 

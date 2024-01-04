@@ -25,5 +25,9 @@ class EntityNegotiationRepository(private val negotiationDao: EntityNegotiationD
     ): EntityNegotiation {
         return negotiationDao.getLatestNegotiationByEmployeeIDAndJobID(employeeID, jobID)
     }
+
+    suspend fun getLatestNegotiationsByEmployeeID(employeeID: Long): List<EntityNegotiation> {
+        return negotiationDao.getLatestNegotiationsByEmployeeID(employeeID)
+    }
 }
 

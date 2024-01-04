@@ -34,4 +34,5 @@ interface EntityApplicationDao {
 
     @Query("SELECT * FROM application_table WHERE employeeID = :employeeID AND jobID =:jobID")
     suspend fun getApplicationByEmployeeIDAndJobID(employeeID: Long,jobID: Long):EntityApplication
+
 }

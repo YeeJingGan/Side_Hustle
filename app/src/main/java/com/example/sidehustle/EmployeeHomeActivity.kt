@@ -51,9 +51,6 @@ class EmployeeHomeActivity : AppCompatActivity() {
 
 
     private fun setListeners() {
-        binding.favoriteButton.setOnClickListener {
-            startActivity((Intent(it.context, EmployeeHomeFavoriteJobsActivity::class.java)))
-        }
 
         binding.employeeHomeBottomNav.apply {
             selectedItemId = R.id.bottom_nav_home_button

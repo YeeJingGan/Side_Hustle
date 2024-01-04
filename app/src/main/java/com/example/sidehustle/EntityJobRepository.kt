@@ -34,4 +34,9 @@ class EntityJobRepository(private val jobDao: EntityJobDao) {
         return jobDao.getByEmployerIDApprovedJobsWithApplications(employerID)
     }
 
+        suspend fun getJobsByIds(jobIds: List<Long>): List<EntityJob> {
+            return jobDao.getJobsByIds(jobIds)
+        }
+
+
 }

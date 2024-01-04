@@ -63,10 +63,6 @@ class EmployeeMyProfileActivity : AppCompatActivity() {
             toAnotherActivity(it, EmployeeMyProfileSettingsActivity::class.java)
         }
 
-        findViewById<ImageButton>(R.id.my_profile_upload_icon).setOnClickListener {
-            toAnotherActivity(it, EmployeeMyProfileUploadResumeActivity::class.java)
-        }
-
         val previousButton = findViewById<ImageButton>(R.id.my_profile_previous_review_button)
         val nextButton = findViewById<ImageButton>(R.id.my_profile_next_review_button)
         nextButton.setOnClickListener {

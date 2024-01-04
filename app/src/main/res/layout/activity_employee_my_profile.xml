@@ -121,41 +121,15 @@
         android:id="@+id/my_profile_settings_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="@drawable/background_my_profile_rounded_corner"
         android:backgroundTint="@android:color/white"
         android:contentDescription="@string/settings_txt"
         android:padding="9dp"
-        app:layout_constraintBottom_toBottomOf="@+id/my_profile_upload_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/my_profile_upload_icon"
-        app:srcCompat="@drawable/ic_settings_50px" />
-
-    <ImageButton
-        android:id="@+id/my_profile_upload_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/background_my_profile_rounded_corner"
-        android:backgroundTint="@android:color/white"
-        android:contentDescription="@string/upload_resume_txt"
-        android:padding="9dp"
-        app:layout_constraintEnd_toStartOf="@+id/my_profile_settings_icon"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_profile_divider_1"
-        app:srcCompat="@drawable/ic_upload_file_50px" />
-
-    <TextView
-        android:id="@+id/my_profile_upload_resume_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/inter"
-        android:text="@string/upload_resume_txt"
-        app:layout_constraintEnd_toEndOf="@+id/my_profile_upload_icon"
-        app:layout_constraintStart_toStartOf="@+id/my_profile_upload_icon"
-        app:layout_constraintTop_toBottomOf="@+id/my_profile_upload_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/my_profile_star_3"
+        app:srcCompat="@drawable/ic_settings_50px" />
 
     <TextView
         android:id="@+id/my_profile_settings_textview"
@@ -172,11 +146,10 @@
         android:id="@+id/my_profile_divider_2"
         android:layout_width="0dp"
         android:layout_height="3dp"
-        android:layout_marginTop="10dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_profile_upload_resume_textview" />
+        tools:layout_editor_absoluteY="437dp" />
 
     <TextView
         android:id="@+id/my_profile_reviews_comments_textview"

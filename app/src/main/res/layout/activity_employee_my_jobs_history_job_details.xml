@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="employer"
+            type="com.example.sidehustle.EntityEmployer" />
+
+        <variable
+            name="job"
+            type="com.example.sidehustle.EntityJob" />
 
     </data>
 
@@ -65,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_upload_jobs_company_name"
+            android:text="@{employer.employerUsername}"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_pic"
@@ -87,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_constraint_8"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_upload_jobs_company_address"
+            android:text="@{job.state}"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_company_location_pin"
             app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_company_location_pin" />
@@ -145,7 +152,7 @@
             android:fontFamily="@font/andika_new_basic_bold"
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
-            android:text="@string/ongoing_jobs_position"
+            android:text="@{job.title}"
             android:textColor="@color/black"
             android:textSize="@dimen/employee_details_text_size"
             app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_pic"
@@ -187,7 +194,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/inter"
-            android:text="@string/employee_wages"
+            android:text="@{`RM ` + String.valueOf(job.wages)}"
             app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_money_icon"
             app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_money_icon" />
 
@@ -196,7 +203,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_approved_jobs_date"
+            android:text="@{job.startDate + ` to ` + job.endDate}"
             app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_calendar_icon"
             app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_offered_wages" />
 
@@ -205,7 +212,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_approved_jobs_time"
+            android:text="@{job.startTime + ` to ` + job.endTime}"
             app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_schedule_icon"
             app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_date" />
 
@@ -232,35 +239,15 @@
             app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_div_1"
             app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_div_1" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/employee_history_pending_comment_container_1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/employee_my_jobs_history_job_details_recyclerview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/common_constraint_8"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="@+id/employee_history_pending_comment_div_1"
             app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_div_1"
-            app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_requirement">
-
-            <ImageView
-                android:id="@+id/employee_history_pending_comment_check_box"
-                android:layout_width="@dimen/icon_width_height"
-                android:layout_height="@dimen/icon_width_height"
-                android:contentDescription="@string/ic_description_requirement"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_check_box" />
-
-            <TextView
-                android:id="@+id/employee_history_pending_comment_requirement_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/employer_upload_jobs_requirement"
-                app:layout_constraintBottom_toBottomOf="@+id/employee_history_pending_comment_check_box"
-                app:layout_constraintStart_toEndOf="@+id/employee_history_pending_comment_check_box"
-                app:layout_constraintTop_toTopOf="@+id/employee_history_pending_comment_check_box" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_requirement"
+            tools:listitem="@layout/listitem_employee_home_job_details_requirements" />
 
         <View
             android:id="@+id/employee_history_pending_comment_div_2"
@@ -270,7 +257,7 @@
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="@+id/employee_history_pending_comment_div_1"
             app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_div_1"
-            app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_container_1" />
+            app:layout_constraintTop_toBottomOf="@+id/employee_my_jobs_history_job_details_recyclerview" />
 
         <TextView
             android:id="@+id/employee_history_pending_comment_description"
@@ -289,7 +276,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/common_constraint_8"
             android:fontFamily="@font/inter"
-            android:text="@string/employer_upload_jobs_description"
+            android:text="@{job.description}"
             app:layout_constraintStart_toStartOf="@+id/employee_history_pending_comment_description"
             app:layout_constraintTop_toBottomOf="@+id/employee_history_pending_comment_description" />
 

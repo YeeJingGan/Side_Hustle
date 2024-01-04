@@ -13,13 +13,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sidehustle.databinding.ActivityEmployeeHomeJobDetailsBinding
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
     var JOB_DETAILS_REQUEST_CODE: Int = 88
     lateinit var binding: ActivityEmployeeHomeJobDetailsBinding
     lateinit var job: EntityJob
     lateinit var viewModel: EmployeeHomeJobDetailsViewModel
+    var jobID : Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,7 +42,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
 
 
         // TODO : CHECK POP WILL GET THE SAME ID OR NOT
-        val jobID = intent.getLongExtra("jobID", -200)
+        jobID = intent.getLongExtra("jobID", -200)
         Toast.makeText(this, "JOBID is $jobID", Toast.LENGTH_SHORT).show()
 
         getData(jobID)
@@ -62,16 +65,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
         binding.employeeHomeJobDetailsApplyButton.setOnClickListener {
             apply(it, jobID)
         }
-        binding.employeeHomeJobDetailsLoveButton.setOnClickListener {
-            addToFavourites()
-        }
-    }
 
-    private fun addToFavourites() {
-        // TODO : ADD TO DATABASE
-
-        Toast.makeText(this, "HAHAHA NOT YET IMPLEMENT DATABASE", Toast.LENGTH_SHORT)
-            .show()
     }
 
     private fun apply(view: View, jobID : Long) {
@@ -91,7 +85,7 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
         // TODO: RMB GET FROM DATABASE, GET STARS AS WELL AND REQUIREMENTS ALSO
 //
 
-        val adapter = EmployeeHomeJobDetailsRequirementAdapter(listOf("REQ 1", "REQ 2", "REQ 3"))
+        val adapter = EmployeeHomeJobDetailsRequirementAdapter(listOf("Hard Working", "Punctual", "Friendly"))
 
         binding.employeeHomeJobDetailsRequirementsRecyclerview.adapter = adapter
         binding.employeeHomeJobDetailsRequirementsRecyclerview.layoutManager =
@@ -135,4 +129,5 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
             }
         }
     }
+
 }

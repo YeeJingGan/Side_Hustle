@@ -26,4 +26,5 @@ class EntityApplicationRepository(private val applicationDao: EntityApplicationD
     suspend fun getApplicationByEmployeeIDAndJobID(employeeID: Long,jobID: Long):EntityApplication{
         return applicationDao.getApplicationByEmployeeIDAndJobID(employeeID,jobID)
     }
+
 }
