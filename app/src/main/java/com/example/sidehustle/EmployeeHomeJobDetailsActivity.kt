@@ -43,7 +43,6 @@ class EmployeeHomeJobDetailsActivity : AppCompatActivity() {
 
         // TODO : CHECK POP WILL GET THE SAME ID OR NOT
         jobID = intent.getLongExtra("jobID", -200)
-        Toast.makeText(this, "JOBID is $jobID", Toast.LENGTH_SHORT).show()
 
         getData(jobID)
 

@@ -55,16 +55,6 @@
             android:text="@{employee.employeeUsername}"/>
 
         <ImageView
-            android:id="@+id/my_profile_edit_name_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/employee_home_job_list_textview_margin"
-            app:layout_constraintBottom_toBottomOf="@+id/my_profile_profile_name"
-            app:layout_constraintStart_toEndOf="@+id/my_profile_profile_name"
-            app:layout_constraintTop_toTopOf="@+id/my_profile_profile_name"
-            app:srcCompat="@drawable/ic_edit_24px" />
-
-        <ImageView
             android:id="@+id/my_profile_star_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

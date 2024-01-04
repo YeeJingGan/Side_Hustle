@@ -28,7 +28,6 @@ class EmployeeMyJobsNegotiatingJobDetailsActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(EmployeeMyJobsNegotiatingJobDetailsViewModel::class.java)
         val intent = intent
         jobID = intent.getLongExtra("jobID", -100)
-        Toast.makeText(this, jobID.toString(), Toast.LENGTH_SHORT).show()
 
         getData(jobID)
         setListeners()

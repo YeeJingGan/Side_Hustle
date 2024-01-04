@@ -26,7 +26,6 @@ class EmployeeMyJobsHistoryJobDetailsActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(EmployeeMyJobsHistoryJobDetailsViewModel::class.java)
         val intent = intent
         jobID = intent.getLongExtra("jobID",-100)
-        Toast.makeText(this,jobID.toString(),Toast.LENGTH_SHORT).show()
 
         setListeners()
 

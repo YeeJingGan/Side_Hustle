@@ -25,35 +25,22 @@ class MainActivity : AppCompatActivity() {
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         ).get(MainViewModel::class.java)
 
-        populateSampleData()
-
-        setListeners()
-
-
-    }
-
-    private fun populateSampleData() {
-        employers = listOf(
-            EntityEmployer(0,"IOI Sdn. Bhd.","ioi@mail.com","Employer4!"),
-        )
-    }
-
-    private fun setListeners() {
-        binding.apply {
-            setListenerAndToAnotherActivity(mainButton1, EmployerHomeActivity::class.java)
-            setListenerAndToAnotherActivity(mainButton2, EmployeeHomeActivity::class.java)
-
+        binding.apply{
+            sideHustleMainButton1.setOnClickListener {
+                startActivity(Intent(this@MainActivity,EmployeeHomeActivity::class.java))
+            }
+            sideHustleMainButton2.setOnClickListener {
+                startActivity(Intent(this@MainActivity,EmployerHomeActivity::class.java))
+            }
+            sideHustleMainButton3.setOnClickListener {
+                startActivity(Intent(this@MainActivity,AdminHomeActivity::class.java))
+            }
+            sideHustleMainButton4.setOnClickListener {
+                startActivity(Intent(this@MainActivity,LoginActivity::class.java))
+            }
         }
 
-        binding.mainButton3.setOnClickListener{
-            viewModel.insertEmployers(employers)
-            // TODO : DK Y INSERT THIS FIRST BEFORE INITIALIZING THE DATA INSIDE
-        }
+
     }
 
-    private fun setListenerAndToAnotherActivity(view: View, destinationActivity: Class<*>) {
-        view.setOnClickListener {
-            startActivity(Intent(it.context, destinationActivity))
-        }
-    }
 }
